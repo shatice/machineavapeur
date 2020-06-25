@@ -66,12 +66,12 @@ const Coal = () => {
   const [coalImage, setCoalImage] = useState(initialCoalImage);
 
   const addAMeca = (i) => {
-    let newMecas = [...mecas, (mecaSize[i].display = true)];
+    let newMecas = [...mecas, (initialMeca[i].display = true)];
     setMecas(newMecas);
   };
 
   const removeMeca = (i) => {
-    let newMecas = [...mecas, (mecaSize[i].display = false)];
+    let newMecas = [...mecas, (initialMeca[i].display = false)];
     setMecas(newMecas);
   };
 
@@ -128,7 +128,7 @@ const Coal = () => {
                 <CoalImage
                   display={c && c.display}
                   width={c && c.width}
-                  src={require(`../../assets/coal/coal${c}.png`)}
+                  src={require(`../../assets/coal/coal${c.path}.png`)}
                 />
               );
             })}
