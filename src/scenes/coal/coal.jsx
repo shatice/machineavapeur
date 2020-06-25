@@ -36,6 +36,14 @@ let initialMeca = [
     width: "1200",
     display: false,
   },
+  {
+    width: "1400",
+    display: false,
+  },
+  {
+    width: "1600",
+    display: false,
+  },
 ];
 
 let initialCoalImage = [
@@ -65,31 +73,60 @@ const Coal = () => {
   const [mecas, setMecas] = useState(initialMeca);
   const [coalImage, setCoalImage] = useState(initialCoalImage);
 
-  const addAMeca = (i) => {
-    let newMecas = [...mecas, (initialMeca[i].display = true)];
+  const addAMeca = (i, isImage) => {
+    let newImages, newMecas;
+
+    if (i < 5 && initialCoalImage[i] && isImage) {
+      newImages = [
+        ...initialCoalImage,
+        (initialCoalImage[i - 1].display = true),
+      ];
+    }
+    if (initialMeca[i]) {
+      newMecas = [...mecas, (initialMeca[i].display = true)];
+    }
+
     setMecas(newMecas);
+    setCoalImage(newImages);
   };
 
   const removeMeca = (i) => {
-    let newMecas = [...mecas, (initialMeca[i].display = false)];
-    setMecas(newMecas);
-  };
+    let newImages, newMecas;
 
+    if (i < 5 && initialCoalImage[i]) {
+      newImages = [...initialCoalImage, (initialCoalImage[i].display = false)];
+    }
+    if (initialMeca[i]) {
+      newMecas = [...mecas, (initialMeca[i].display = false)];
+    }
+
+    setMecas(newMecas);
+    setCoalImage(newImages);
+  };
   let lastScroll = 0;
 
   const handleScroll = () => {
     const position = window.pageYOffset;
     let upDirrection = false;
-
+    const total = window.innerHeight;
+    let myScroll = window.pageYOffset;
+    if (myScroll >= total) {
+      myScroll = total;
+    }
+    const average = myScroll / total;
+    console.log(average);
+  
     if (lastScroll < position) {
       upDirrection = true;
     }
 
     if (position > 100 && upDirrection) addAMeca(0);
-    if (position > 300 && upDirrection) addAMeca(1);
-    if (position > 400 && upDirrection) addAMeca(2);
-    if (position > 500 && upDirrection) addAMeca(3);
-    if (position > 600 && upDirrection) addAMeca(4);
+    if (position > 300 && upDirrection) addAMeca(1, true);
+    if (position > 400 && upDirrection) addAMeca(2, false);
+    if (position > 500 && upDirrection) addAMeca(3, true);
+    if (position > 600 && upDirrection) addAMeca(4, false);
+    if (position > 600 && upDirrection) addAMeca(5, true);
+    if (position > 600 && upDirrection) addAMeca(6, true);
 
     if (position > 100 && position < 120 && !upDirrection) removeMeca(0);
     if (position > 300 && position < 320 && !upDirrection) removeMeca(1);
@@ -113,25 +150,31 @@ const Coal = () => {
       <CoalWrapper>
         <MecaContainer>
           <MecaWrapper>
-            {mecas.map((m) => {
-              return (
-                <MecaElem
-                  width={m && m.width}
-                  display={m && m.display}
-                  src={MecaSrc}
-                  alt="meca"
-                />
-              );
-            })}
-            {coalImage.map((c) => {
-              return (
-                <CoalImage
-                  display={c && c.display}
-                  width={c && c.width}
-                  src={require(`../../assets/coal/coal${c.path}.png`)}
-                />
-              );
-            })}
+            {mecas &&
+              mecas.map((m) => {
+                return (
+                  <MecaElem
+                    width={m && m.width}
+                    display={m && m.display}
+                    src={MecaSrc}
+                    alt="meca"
+                  />
+                );
+              })}
+            {coalImage &&
+              coalImage.map((c) => {
+                return (
+                  <CoalImage
+                    display={c && c.display}
+                    width={c && c.width}
+                    src={
+                      c.path !== undefined
+                        ? require(`../../assets/coal/coal${c.path}.png`)
+                        : null
+                    }
+                  />
+                );
+              })}
             {/* <CoalImage width="200" src="../../assets/coal/coal1.png" /> */}
           </MecaWrapper>
         </MecaContainer>
