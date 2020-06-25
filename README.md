@@ -1,18 +1,22 @@
-# Ce webdoc, est la réalisation d'un projet de fin d'année d'étudiant de l'Hetic, a savoir :
+# La Folle Histoire du Progrès
 
-- Sarah Güngör
-- Helene Maragary
-- Pierre Secher
-- Rami Cakir
-- Arthur Barré
+Un web-documentaire de : 
+
+- [Arthur Barré](https://github.com/ArthurBarre)
+- [Rami Cakir](https://github.com/Laroki)
+- [Sarah Güngör](https://github.com/shatice)
+- [Hélène Margary](https://github.com/hlnmargary)
+- [Pierre Secher](https://github.com/InSecker)
 
 ## Choix techniques
 
 ### Front
 
-> React
+> - React ( framework front )
+> - Styled-Components ( gestion des styles )
+> - Gsap ( animations )
+> - PropTypes ( validation de types )
 
 ### Back
 
 > Symfony
-
