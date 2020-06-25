@@ -10,9 +10,11 @@
 
 ### Front
 
-> React
+> React ( framework front )
+> Styled-Components ( gestion des styles )
+> Gsap ( animation )
+> PropTypes ( Validation de types )
 
 ### Back
 
 > Symfony
-
