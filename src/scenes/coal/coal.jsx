@@ -1,46 +1,14 @@
 import React, { useEffect } from "react";
-import styled from "styled-components";
 import MecaSrc from "../../assets/meca.png";
 import { useState } from "react";
+import {
+  InfiniteScroll,
+  CoalWrapper,
+  MecaContainer,
+  MecaWrapper,
+  MecaElem,
+} from "./coalStyle";
 
-const InfiniteScroll = styled.section`
-  height: 300vh;
-  z-index: -1000;
-`;
-
-const CoalWrapper = styled.section`
-  position: fixed;
-  width: 100vw;
-  min-height: 100vh;
-  background-color: #d8d6c8;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const MecaContainer = styled.div`
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const MecaWrapper = styled.div`
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const MecaElem = styled.img`
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: ${(props) => props.width}px;
-  display: ${({ display }) => (display ? "flex" : "none")};
-  transform: scale(0.8);
-`;
 let mecaSize = [
   {
     width: "100",
@@ -86,9 +54,11 @@ const Coal = () => {
   const handleScroll = () => {
     const position = window.pageYOffset;
     let upDirrection = false;
+
     if (lastScroll < position) {
       upDirrection = true;
     }
+
     if (position > 100 && upDirrection) addAMeca(0);
     if (position > 300 && upDirrection) addAMeca(1);
     if (position > 400 && upDirrection) addAMeca(2);
@@ -112,7 +82,6 @@ const Coal = () => {
     };
   }, []);
 
-  console.log(mecas);
   return (
     <InfiniteScroll>
       <CoalWrapper>
