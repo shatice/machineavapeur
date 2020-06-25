@@ -1,14 +1,7 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import MecaSrc from "../../assets/meca.png";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useState } from "react";
-
-if (typeof window !== `undefined`) {
-  gsap.registerPlugin(ScrollTrigger);
-  gsap.core.globals("ScrollTrigger", ScrollTrigger);
-}
 
 const InfiniteScroll = styled.section`
   height: 300vh;
@@ -66,44 +59,49 @@ let mecaSize = [
     display: false,
   },
   {
-    width: "800",
+    width: "900",
     display: false,
   },
   {
-    width: "1100",
+    width: "1200",
     display: false,
   },
 ];
 
 const Coal = () => {
-  const [mecas, setMecas] = useState([]);
-  const [scrollPosition, setSrollPosition] = useState(0);
-  const [tempScrollPosition, setTempSrollPosition] = useState(0);
+  const [mecas, setMecas] = useState(mecaSize);
 
-  const addAMeca = () => {
-    let len = mecas.length;
-    let mecaSave = mecas;
-    mecaSave.push(mecaSize[len]);
-    setMecas(mecaSave);
+  const addAMeca = (i) => {
+    let newMecas = [...mecas, (mecaSize[i].display = true)];
+    setMecas(newMecas);
   };
+
+  const removeMeca = (i) => {
+    let newMecas = [...mecas, (mecaSize[i].display = false)];
+    setMecas(newMecas);
+  };
+
+  let lastScroll = 0;
 
   const handleScroll = () => {
     const position = window.pageYOffset;
-    setSrollPosition(position);
-    debugger;
-    setTempSrollPosition(position);
-    debugger;
-    console.log(position);
-    debugger;
+    let upDirrection = false;
+    if (lastScroll < position) {
+      upDirrection = true;
+    }
+    if (position > 100 && upDirrection) addAMeca(0);
+    if (position > 300 && upDirrection) addAMeca(1);
+    if (position > 400 && upDirrection) addAMeca(2);
+    if (position > 500 && upDirrection) addAMeca(3);
+    if (position > 600 && upDirrection) addAMeca(4);
 
-    console.log(tempScrollPosition);
-    debugger;
+    if (position > 100 && position < 120 && !upDirrection) removeMeca(0);
+    if (position > 300 && position < 320 && !upDirrection) removeMeca(1);
+    if (position > 400 && position < 420 && !upDirrection) removeMeca(2);
+    if (position > 500 && position < 520 && !upDirrection) removeMeca(3);
+    if (position > 600 && position < 620 && !upDirrection) removeMeca(4);
 
-    if (tempScrollPosition > position) console.log("bottom");
-    console.log(scrollPosition);
-    if (position > 100 && position < 120) addAMeca();
-    if (position > 300 && position < 320) addAMeca();
-    if (position > 400 && position < 420) addAMeca();
+    lastScroll = position;
   };
 
   useEffect(() => {
@@ -114,13 +112,7 @@ const Coal = () => {
     };
   }, []);
 
-  // useEffect(() => {
-  //   tl.to(container, {
-  //     x: 100,
-  //     duration: 2,
-  //   });
-  // }, []);
-
+  console.log(mecas);
   return (
     <InfiniteScroll>
       <CoalWrapper>
@@ -130,7 +122,7 @@ const Coal = () => {
               return (
                 <MecaElem
                   width={m && m.width}
-                  display={m && !m.display}
+                  display={m && m.display}
                   src={MecaSrc}
                   alt="meca"
                 />
