@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import MecaSrc from "../../assets/coal/meca.png";
+import MecaSrc from "../../assets/coal/gear4.png";
 import MecaSrc2 from "../../assets/coal/coal1.png";
 import { useState } from "react";
 import {
@@ -40,10 +40,6 @@ let initialMeca = [
     width: "1400",
     display: false,
   },
-  {
-    width: "1600",
-    display: false,
-  },
 ];
 
 let initialCoalImage = [
@@ -70,17 +66,17 @@ let initialCoalImage = [
 ];
 
 const Coal = () => {
+  
   const [mecas, setMecas] = useState(initialMeca);
   const [coalImage, setCoalImage] = useState(initialCoalImage);
+  const [average, setAverage] = useState(0);
+  let lastScroll = 0;
 
-  const addAMeca = (i, isImage) => {
+  const addAMeca = (i, image) => {
     let newImages, newMecas;
 
-    if (i < 5 && initialCoalImage[i] && isImage) {
-      newImages = [
-        ...initialCoalImage,
-        (initialCoalImage[i - 1].display = true),
-      ];
+    if (initialCoalImage[image]) {
+      newImages = [...coalImage, (initialCoalImage[image].display = true)];
     }
     if (initialMeca[i]) {
       newMecas = [...mecas, (initialMeca[i].display = true)];
@@ -90,11 +86,11 @@ const Coal = () => {
     setCoalImage(newImages);
   };
 
-  const removeMeca = (i) => {
+  const removeMeca = (i, image) => {
     let newImages, newMecas;
 
-    if (i < 5 && initialCoalImage[i]) {
-      newImages = [...initialCoalImage, (initialCoalImage[i].display = false)];
+    if (i < 5 && initialCoalImage[image]) {
+      newImages = [...coalImage, (initialCoalImage[image].display = false)];
     }
     if (initialMeca[i]) {
       newMecas = [...mecas, (initialMeca[i].display = false)];
@@ -103,7 +99,6 @@ const Coal = () => {
     setMecas(newMecas);
     setCoalImage(newImages);
   };
-  let lastScroll = 0;
 
   const handleScroll = () => {
     const position = window.pageYOffset;
@@ -114,25 +109,25 @@ const Coal = () => {
       myScroll = total;
     }
     const average = myScroll / total;
-    console.log(average);
-  
+    setAverage(average);
+
     if (lastScroll < position) {
       upDirrection = true;
     }
 
-    if (position > 100 && upDirrection) addAMeca(0);
-    if (position > 300 && upDirrection) addAMeca(1, true);
-    if (position > 400 && upDirrection) addAMeca(2, false);
-    if (position > 500 && upDirrection) addAMeca(3, true);
-    if (position > 600 && upDirrection) addAMeca(4, false);
-    if (position > 600 && upDirrection) addAMeca(5, true);
-    if (position > 600 && upDirrection) addAMeca(6, true);
+    if (position > 100 && upDirrection) addAMeca(0, 0);
+    if (position > 300 && upDirrection) addAMeca(1, 0);
+    if (position > 400 && upDirrection) addAMeca(2, 0);
+    if (position > 500 && upDirrection) addAMeca(3, 1);
+    if (position > 600 && upDirrection) addAMeca(4, 0);
+    if (position > 600 && upDirrection) addAMeca(5, 2);
+    if (position > 600 && upDirrection) addAMeca(6, 3);
 
-    if (position > 100 && position < 120 && !upDirrection) removeMeca(0);
-    if (position > 300 && position < 320 && !upDirrection) removeMeca(1);
-    if (position > 400 && position < 420 && !upDirrection) removeMeca(2);
-    if (position > 500 && position < 520 && !upDirrection) removeMeca(3);
-    if (position > 600 && position < 620 && !upDirrection) removeMeca(4);
+    if (position > 100 && position < 120 && !upDirrection) removeMeca(0, null);
+    if (position > 300 && position < 320 && !upDirrection) removeMeca(1, 0);
+    if (position > 400 && position < 420 && !upDirrection) removeMeca(2, 1);
+    if (position > 500 && position < 520 && !upDirrection) removeMeca(3, 2);
+    if (position > 600 && position < 620 && !upDirrection) removeMeca(4, 3);
 
     lastScroll = position;
   };
@@ -144,7 +139,7 @@ const Coal = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
+  console.log(coalImage);
   return (
     <InfiniteScroll>
       <CoalWrapper>
@@ -167,6 +162,7 @@ const Coal = () => {
                   <CoalImage
                     display={c && c.display}
                     width={c && c.width}
+                    average={average}
                     src={
                       c.path !== undefined
                         ? require(`../../assets/coal/coal${c.path}.png`)
