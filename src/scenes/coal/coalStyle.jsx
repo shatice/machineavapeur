@@ -45,7 +45,6 @@ const CoalImage = styled.img`
   align-items: center;
   width: ${({ width }) => width}px;
   display: ${({ display }) => (display ? "flex" : "none")};
-  /* transform: ${(props) => scale(props.isSelected)}; */
 `;
 
 export {

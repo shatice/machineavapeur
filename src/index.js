@@ -1,13 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import App from "./App";
-
+import Routes from "./routes";
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Routes />
   </React.StrictMode>,
   document.getElementById("root")
 );
