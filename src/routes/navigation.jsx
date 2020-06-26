@@ -41,10 +41,9 @@ const BottomBar = styled.div`
 `;
 
 const ChapterListContainer = styled.div`
-  position: absolute;
-  left: 16px;
-  top: 32px;
   width: auto;
+  margin-top: 16px;
+  margin-left: 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -58,6 +57,13 @@ const ChapterElem = styled.div`
     text-decoration: underline;
     text-decoration-color: red;
   }
+  :before {
+    content: "@";
+    display: none;
+    &:hover {
+      display: block;
+    }
+  }
 `;
 
 const Navigation = (
@@ -65,32 +71,49 @@ const Navigation = (
     // isTopBar
   }
 ) => {
-  const { chaptersTitle } = chaptersList;
+  const [isList, setIsList] = useState(false);
+  const { chapters } = chaptersList;
   const isTopBar = true;
   const {
     selectedChapter: { value: chapterValue, label: chapterLabel },
     selectChapter,
   } = useContext(NavigationStore);
 
+  const selectChapter2 = (chapter) => {
+    selectChapter(chapter.value);
+    setIsList(!isList);
+  };
   return (
     <NavigationWrapper>
       {isTopBar && (
         <TopBar>
-          <ChapterElem>{chapterLabel}</ChapterElem>
-          <ChapterListContainer>
-            {chaptersTitle.map((chapter) => {
-              return (
-                <ChapterElem onClick={() => selectChapter(chapter.value)}>
-                  {chapter.label}
-                </ChapterElem>
-              );
-            })}
+          <ChapterListContainer
+            onMouseLeave={() => {
+              setIsList(!isList);
+            }}
+            onMouseEnter={() => setIsList(!isList)}
+          >
+            <ChapterElem>{chapterLabel}</ChapterElem>
+            {isList &&
+              chapters.map((chapter) => {
+                return (
+                  chapter.label !== chapterLabel && (
+                    <ChapterElem onClick={() => selectChapter2(chapter)}>
+                      {chapter.label}
+                    </ChapterElem>
+                  )
+                );
+              })}
           </ChapterListContainer>
           <div>mute button</div>
         </TopBar>
       )}
 
-      <BottomBar></BottomBar>
+      <BottomBar>
+        {chapters[chapterValue].subtitles.map((subtitle) => {
+          return <div style={{ color: "white" }}>{subtitle}</div>;
+        })}
+      </BottomBar>
     </NavigationWrapper>
   );
 };

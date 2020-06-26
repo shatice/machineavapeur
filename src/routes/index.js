@@ -2,27 +2,22 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Coal from "../scenes/coal/coal.jsx";
 import Navigation from "./navigation.jsx";
-import {
-  NavigationStore,
-  selectedChapter,
-  selectChapter,
-} from "./navigationStore.jsx";
+import { NavigationStore } from "./navigationStore.jsx";
 import { chaptersList } from "../constant";
 
 const App = () => {
   const [selectedChapter, setSelectedChapter] = useState({
-    label: "La machine a vapeur & le charbon",
+    label: "La machine a vapeur & le charbon1",
     value: 0,
   });
   const selectChapter = (value) => {
-    console.log(value);
-    const { chaptersTitle } = chaptersList;
-    const newChapter = chaptersTitle.filter(
+    const { chapters } = chaptersList;
+    const newChapter = chapters.filter(
       (chapterTitle) => value === chapterTitle.value
     );
-    console.log(newChapter);
     setSelectedChapter(newChapter[0]);
   };
+
   return (
     <Router>
       <NavigationStore.Provider value={{ selectedChapter, selectChapter }}>
