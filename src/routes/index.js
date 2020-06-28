@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import Coal from "../scenes/coal/coal.jsx";
-import Navigation from "./navigation.jsx";
+import Coal from "../scenes/coal/Coal.jsx";
+import Navigation from "./Navigation.jsx";
 import {
   NavigationStore,
   selectedChapter,
   selectChapter,
-} from "./navigationStore.jsx";
+} from "./NavigationStore.jsx";
 import { chaptersList } from "../constant";
 
 const App = () => {
@@ -23,32 +23,32 @@ const App = () => {
     console.log(newChapter);
     setSelectedChapter(newChapter[0]);
   };
-  return (
-    <Router>
-      <NavigationStore.Provider value={{ selectedChapter, selectChapter }}>
-        <Navigation />
-      </NavigationStore.Provider>
+  // return (
+  //   <Router>
+  //     <NavigationStore.Provider value={{ selectedChapter, selectChapter }}>
+  //       <Navigation />
+  //     </NavigationStore.Provider>
 
-      <Switch>
-        <Route path="/about">
-          <About />
-        </Route>
-        <Route path="/chapter-1">
-          <Coal />
-        </Route>
-        <Route path="/">
-          <Home />
-        </Route>
-      </Switch>
-    </Router>
-  );
+  //     <Switch>
+  //       <Route path="/about">
+  //         <About />
+  //       </Route>
+  //       <Route path="/chapter-1">
+  //         <Coal />
+  //       </Route>
+  //       <Route path="/">
+  //         <Home />
+  //       </Route>
+  //     </Switch>
+  //   </Router>
+  // );
 };
 export default App;
 
-function Home() {
-  return <h2>Home</h2>;
-}
+// function Home() {
+//   return <h2>Home</h2>;
+// }
 
-function About() {
-  return <h2>About</h2>;
-}
+// function About() {
+//   return <h2>About</h2>;
+// }
