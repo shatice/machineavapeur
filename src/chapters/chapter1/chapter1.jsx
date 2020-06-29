@@ -33,8 +33,8 @@ const Chapter1 = () => {
         // PAPER ANIMATION
         paperAnims = {
             paperTarget: gsap.to(".paper__container svg circle", { stroke: "#D2B550", strokeOpacity: 0.8, paused: true }),
-            paper: gsap.to(".paper__container", {y: -250,duration:1, ease: "back", paused: true }),
-            paperColor: gsap.to('.paper', {filter: "grayscale(0)", paused: true})
+            paper: gsap.to(".paper__container", { y: -250, duration: 1, ease: "back", paused: true }),
+            paperColor: gsap.to('.paper', { filter: "grayscale(0)", paused: true })
         }
 
     }, []);
@@ -69,19 +69,27 @@ const Chapter1 = () => {
     }
 
     const portraitAnim = () => {
+        gsap.to('.portrait', { filter: "grayscale(0)", rotate: 20, duration: 1, ease: "elastic" })
 
-        
-        gsap.to(".portrait", {filter: "grayscale(0)"})
-        gsap.to(window, {duration: 2, scrollTo: ".page2__container", ease:"power1"})
-        gsap.to(".portrait", {duration: 1, delay:1.8, yPercent: 130})
-        
+        gsap.to(window, { delay: 0.8, duration: 1, scrollTo: ".page2__container", ease: "none" })
+        gsap.to(".portrait", { duration: 1, delay: 1, yPercent: 130, ease: "exp" })
     }
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+        document.querySelector('.container').addEventListener('wheel', (e) => {
+            const delta = Math.sign(e.deltaY);
+            if (delta === 1) {
+                portraitAnim();
+            }
+        })
+    }, []);
 
     return (
         <div>
             <div className="container">
                 <img className="bg" src={bg} alt="" />
-                <img onClick={portraitAnim} className="portrait" src={portrait} alt="" />
+                <img className="portrait" src={portrait} alt="" />
                 <div className="paper__container">
                     <img className="paper" src={paper} alt="" />
                     {/* composant pour le svg */}

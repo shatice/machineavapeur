@@ -1,6 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
+
+import { gsap } from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
+gsap.registerPlugin(ScrollToPlugin);
+
 
 const Chapter1Page2 = () => {
+
+    useEffect(() => {
+        document.querySelector('.page2__container').addEventListener('wheel', (e) => {
+            const delta = Math.sign(e.deltaY);
+            console.info(delta);
+
+            if (delta === -1) {
+                gsap.to(".portrait", { duration: 1, delay: 1, yPercent: 0, ease: "exp" })
+                gsap.to(window, { delay: 0.8, duration: 1, scrollTo: ".container", ease: "none" })
+                gsap.to('.portrait', { filter: "grayscale(1)", rotate: 0, duration: 1, ease: "elastic" })
+
+            }
+        })
+    }, []);
 
 
     return (
