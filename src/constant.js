@@ -34,6 +34,60 @@ export const chaptersList = {
   title: "La folle histoire du progrès",
 };
 
+export const initialMeca = [
+  {
+    width: "100",
+    display: false,
+  },
+  {
+    width: "200",
+    display: false,
+  },
+  {
+    width: "400",
+    display: false,
+  },
+  {
+    width: "600",
+    display: false,
+  },
+  {
+    width: "900",
+    display: false,
+  },
+  {
+    width: "1200",
+    display: false,
+  },
+  {
+    width: "1400",
+    display: false,
+  },
+];
+
+export const initialCoalImage = [
+  {
+    width: "100",
+    path: 1,
+    display: false,
+  },
+  {
+    width: "200",
+    path: 2,
+    display: false,
+  },
+  {
+    width: "400",
+    path: 3,
+    display: false,
+  },
+  {
+    width: "600",
+    path: 4,
+    display: false,
+  },
+];
+
 const test = {
   chapters: [
     {

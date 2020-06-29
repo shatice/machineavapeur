@@ -1,7 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import MecaSrc from "./assets/gear4.png";
 
-import { useState } from "react";
 import {
   InfiniteScroll,
   CoalWrapper,
@@ -11,59 +10,7 @@ import {
   CoalImage,
 } from "./coalStyle";
 
-let initialMeca = [
-  {
-    width: "100",
-    display: false,
-  },
-  {
-    width: "200",
-    display: false,
-  },
-  {
-    width: "400",
-    display: false,
-  },
-  {
-    width: "600",
-    display: false,
-  },
-  {
-    width: "900",
-    display: false,
-  },
-  {
-    width: "1200",
-    display: false,
-  },
-  {
-    width: "1400",
-    display: false,
-  },
-];
-
-let initialCoalImage = [
-  {
-    width: "100",
-    path: 1,
-    display: false,
-  },
-  {
-    width: "200",
-    path: 2,
-    display: false,
-  },
-  {
-    width: "400",
-    path: 3,
-    display: false,
-  },
-  {
-    width: "600",
-    path: 4,
-    display: false,
-  },
-];
+import { initialMeca, initialCoalImage } from "../../constant";
 
 const Coal = () => {
   const [mecas, setMecas] = useState(initialMeca);
@@ -164,7 +111,7 @@ const Coal = () => {
                     average={average}
                     src={
                       c.path !== undefined
-                        ? require(`../../assets/coal/coal${c.path}.png`)
+                        ? require(`./assets/coal${c.path}.png`)
                         : null
                     }
                   />
