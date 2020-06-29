@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useContext } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
-import { NavigationStore } from "./NavigationStore";
+import NavigationStore from "./navigationStore";
 
 //constants
-import { chaptersList } from "../constant";
+import { chaptersList } from "../../constant";
 
 const NavigationWrapper = styled.section`
   width: 100vw;

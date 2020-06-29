@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
-import MecaSrc from "../../assets/coal/gear4.png";
-import MecaSrc2 from "../../assets/coal/coal1.png";
+import MecaSrc from "./assets/gear4.png";
+import MecaSrc2 from "./assets/coal1.png";
+
 import { useState } from "react";
 import {
   InfiniteScroll,
@@ -9,7 +10,7 @@ import {
   MecaWrapper,
   MecaElem,
   CoalImage,
-} from "./CoalStyle";
+} from "./coalStyle";
 
 let initialMeca = [
   {
@@ -66,7 +67,6 @@ let initialCoalImage = [
 ];
 
 const Coal = () => {
-  
   const [mecas, setMecas] = useState(initialMeca);
   const [coalImage, setCoalImage] = useState(initialCoalImage);
   const [average, setAverage] = useState(0);
