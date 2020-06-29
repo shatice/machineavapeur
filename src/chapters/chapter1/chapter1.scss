@@ -1,0 +1,89 @@
+.container{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.bg {
+    width: 100%;
+    height: 100%;
+    background: url('../../assets/bgChapter1.jpg');
+    background-size: cover;
+    position: absolute;
+}
+
+.portrait {
+    position: fixed;
+    z-index: 12;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    filter: grayscale(1);
+}
+
+svg {
+    cursor: pointer;
+    circle:hover {
+        stroke: #D2B550;
+        stroke-opacity: 0.8;
+    }
+}
+
+.paper__container {
+    position: absolute;
+    bottom: -260px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+
+    .paper {
+        filter: grayscale(1);
+        cursor: pointer;
+    }
+    
+    svg {
+        position: absolute;
+        top: 155px;
+        right: 195px;
+    }
+}
+
+.james__container{
+    position: absolute;
+    right: 741px;
+    bottom: 715px;
+
+    svg {
+        position: absolute;
+        top: 185px;
+        right: -460px;
+        z-index: 2;
+    }
+
+    .james {
+        position: relative;
+        filter: grayscale(1);
+
+        img {
+            position: absolute;
+            top:0;
+            left:0;
+        }
+
+        .head{
+            top: -125px;
+            left: 277px;
+        }
+
+        .body {
+            top: 20px;
+            left:15px;
+        }
+
+        .arm {
+            top:215px;
+            left:-120px;
+        }
+    }
+}
