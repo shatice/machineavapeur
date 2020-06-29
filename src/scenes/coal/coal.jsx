@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import MecaSrc from "./assets/gear4.png";
-import MecaSrc2 from "./assets/coal1.png";
 
 import { useState } from "react";
 import {
