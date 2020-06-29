@@ -19,12 +19,13 @@ const Richard = () => {
 }
 
 const Container = styled.div `
-  width: 40%; 
+  width: 35%; 
   height: fit-content; 
   display: grid; 
   grid-template-columns: 1fr; 
   grid-template-rows: 1fr; 
-  position: relative; 
+  position: relative;
+  transform: rotate(5deg); 
 
   img {
     width: 100%;

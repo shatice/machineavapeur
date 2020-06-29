@@ -5,8 +5,7 @@ import styled from "styled-components";
 /***** COMPONENTS *****/
 import BackgroundImage from '../../components/BackgroundImage'; 
 import Richard from './Richard'; 
-import Bordeaux from './Bordeaux'; 
-import Sncf from './Sncf'; 
+import LittleFrame from './LittleFrame'; 
 import Train from './Train'; 
 
 const Chap1Part3 = () => {
@@ -16,8 +15,12 @@ const Chap1Part3 = () => {
       src="assets/img/chap_1/partie_3/c1p3_background.jpg" 
       alt=""/>
       <Richard />
-      <Bordeaux />
-      <Sncf />
+      <LittleFrame 
+      src="assets/img/chap_1/partie_3/c1p3_frame_bordeaux.png"
+      alt=""/>
+      <LittleFrame 
+      src="assets/img/chap_1/partie_3/c1p3_frame_sncf.png"
+      alt=""/>
       <Train />
     </Container>
   ); 
@@ -27,10 +30,11 @@ const Container = styled.section `
   overflow: hidden; 
   width: 100vw; 
   height: 100vh; 
-  padding: 0 10% 0 15%; 
+  padding: 0 10%; 
   display: flex; 
   flex-direction: row; 
   justify-content: space-between; 
+  align-items: center; 
 `
 
 export default Chap1Part3; 
