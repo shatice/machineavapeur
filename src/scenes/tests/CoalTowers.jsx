@@ -1,5 +1,6 @@
 import React, { } from "react";
 import styled from "styled-components";
+import './style.scss'; 
 
 const CoalTowers = () => {
   return (
@@ -39,6 +40,27 @@ const Container= styled.section`
 
   &:hover {
     filter: grayscale(0); 
+
+    ul li {
+      opacity: 1;
+      animation: floating 2s .6s alternate infinite linear; 
+
+      &:first-child {
+        transition: opacity .2s .6s ease-out;
+      }
+
+      &:nth-child(2) {
+        transition: opacity .2s .4s ease-out;
+      }
+
+      &:nth-child(3) {
+        transition: opacity .2s .2s ease-out;
+      }
+
+      &:nth-child(4) {
+        transition: opacity .2s ease-out; 
+      }
+    }
   }
 `
 
@@ -57,6 +79,7 @@ const Tower = styled.section `
     grid-template-rows: 1fr;
 
     li {
+      opacity: 0;
       grid-column: 1;
       grid-row: 1;
     }
