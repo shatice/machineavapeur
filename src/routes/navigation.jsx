@@ -42,7 +42,6 @@ const BottomBar = styled.div`
 
 const ChapterListContainer = styled.div`
   width: auto;
-  margin-top: 16px;
   margin-left: 16px;
   display: flex;
   flex-direction: column;
@@ -51,26 +50,26 @@ const ChapterListContainer = styled.div`
 `;
 
 const ChapterElem = styled.div`
-  padding-top: 16px;
+  display: flex;
+  align-items: center;
   :hover {
     cursor: pointer;
     text-decoration: underline;
     text-decoration-color: red;
   }
-  :before {
-    content: "@";
-    display: none;
-    &:hover {
-      display: block;
-    }
-  }
 `;
 
-const Navigation = (
-  {
-    // isTopBar
-  }
-) => {
+const LogoWrapper = styled.div`
+  width: 100px;
+  height: 45px;
+  margin-left: 16px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const Navigation = () => {
   const [isList, setIsList] = useState(false);
   const { chapters } = chaptersList;
   const isTopBar = true;
@@ -87,13 +86,10 @@ const Navigation = (
     <NavigationWrapper>
       {isTopBar && (
         <TopBar>
-          <ChapterListContainer
-            onMouseLeave={() => {
-              setIsList(!isList);
-            }}
-            onMouseEnter={() => setIsList(!isList)}
-          >
-            <ChapterElem>{chapterLabel}</ChapterElem>
+          <ChapterListContainer>
+            <ChapterElem onClick={() => setIsList(!isList)}>
+              {chapterLabel}
+            </ChapterElem>
             {isList &&
               chapters.map((chapter) => {
                 return (
@@ -110,6 +106,7 @@ const Navigation = (
       )}
 
       <BottomBar>
+        <LogoWrapper>Logo</LogoWrapper>
         {chapters[chapterValue].subtitles.map((subtitle) => {
           return <div style={{ color: "white" }}>{subtitle}</div>;
         })}

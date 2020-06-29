@@ -33,3 +33,12 @@ export const chaptersList = {
   ],
   title: "La folle histoire du progrès",
 };
+
+const test = {
+  chapters: [
+    {
+      title: "",
+      urlFetch: " http://",
+    },
+  ],
+};
