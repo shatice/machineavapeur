@@ -4,26 +4,25 @@ import './style.scss';
 
 const CoalTowers = () => {
   return (
-    <Container
-    className="coalTowers"
-    filter={true}> 
+    <Container filter={true}> 
+      {/** TO BE LOOPED */}
       <Tower>
         <ul>
-          {/* <li><img src="assets/img/chap_1/partie_4/c1p4_cloud4.png" alt=""/></li> */}
-          <li><img src="assets/img/chap_1/partie_4/c1p4_cloud3.png" alt=""/></li>
-          <li><img src="assets/img/chap_1/partie_4/c1p4_cloud2.png" alt=""/></li>
-          <li><img src="assets/img/chap_1/partie_4/c1p4_cloud1.png" alt=""/></li>
+          {/* <li><img src="assets/img/chap_1/partie_4/c1p4_smoke4.png" alt="fumee"/></li> */}
+          <li><img src="assets/img/chap_1/partie_4/c1p4_smoke3.png" alt="fumee"/></li>
+          <li><img src="assets/img/chap_1/partie_4/c1p4_smoke2.png" alt="fumee"/></li>
+          <li><img src="assets/img/chap_1/partie_4/c1p4_smoke1.png" alt="fumee"/></li>
         </ul>
-        <img src="assets/img/chap_1/partie_4/c1p4_tower.png" alt=""/>
+        <img src="assets/img/chap_1/partie_4/c1p4_tower.png" alt="tour-usine-charbon"/>
       </Tower>
       <Tower>
         <ul>
-          <li><img src="assets/img/chap_1/partie_4/c1p4_cloud4.png" alt=""/></li>
-          <li><img src="assets/img/chap_1/partie_4/c1p4_cloud3.png" alt=""/></li>
-          <li><img src="assets/img/chap_1/partie_4/c1p4_cloud2.png" alt=""/></li>
-          <li><img src="assets/img/chap_1/partie_4/c1p4_cloud1.png" alt=""/></li>
+          <li><img src="assets/img/chap_1/partie_4/c1p4_smoke4.png" alt="fumee"/></li>
+          <li><img src="assets/img/chap_1/partie_4/c1p4_smoke3.png" alt="fumee"/></li>
+          <li><img src="assets/img/chap_1/partie_4/c1p4_smoke2.png" alt="fumee"/></li>
+          <li><img src="assets/img/chap_1/partie_4/c1p4_smoke1.png" alt="fumee"/></li>
         </ul>
-        <img src="assets/img/chap_1/partie_4/c1p4_tower.png" alt=""/>
+        <img src="assets/img/chap_1/partie_4/c1p4_tower.png" alt="tour-usine-charbon"/>
       </Tower>
     </Container>
   ); 
@@ -38,6 +37,7 @@ const Container= styled.section`
   align-self: flex-end;
   filter: ${({ filter }) => (filter ? "grayscale(1)" : "grayscale(0)")};
 
+  /** TO BE LINKED WITH TARGET ON HOVER */
   &:hover {
     filter: grayscale(0); 
 

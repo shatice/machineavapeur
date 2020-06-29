@@ -5,7 +5,7 @@ const BackgroundImage = () => {
   return (
     <Image 
     src="assets/img/chap_1/partie_4/c1p4_background.jpg"
-    alt=""
+    alt="ciel-nuageux-rose"
     filter={true}
     className="backgroundImage"/>
   ); 

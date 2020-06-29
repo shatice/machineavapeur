@@ -6,11 +6,11 @@ const Ecology = () => {
     <Container>
       <Nature 
       src="assets/img/chap_1/partie_4/c1p4_nature.png" 
-      alt=""
+      alt="nature"
       filter={true}/>
       <Water 
       src="assets/img/chap_1/partie_4/c1p4_water.jpg" 
-      alt=""
+      alt="ocean"
       filter={true}/>
     </Container>
   ); 
