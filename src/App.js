@@ -6,10 +6,10 @@ import Home from "./views/Home";
 import Chapter from "./views/Chapter";
 import End from "./views/End";
 
-import Coal from "./scenes/coal/coal.jsx";
+import Coal from "./scenes/coal/Coal.jsx";
 import Test1 from "./testGsap/Test1";
-import Navigation from "./components/navigation/navigation";
-import NavigationStore from "./components/navigation/navigationStore";
+import Navigation from "./components/navigation/Navigation";
+import NavigationStore from "./components/navigation/NavigationStore";
 
 import { chaptersList } from "./constant";
 

@@ -9,7 +9,7 @@ import {
   MecaWrapper,
   MecaElem,
   CoalImage,
-} from "./coalStyle";
+} from "./CoalStyle";
 
 let initialMeca = [
   {
@@ -162,11 +162,11 @@ const Coal = () => {
                     display={c && c.display}
                     width={c && c.width}
                     average={average}
-                    src={
-                      c.path !== undefined
-                        ? require(`../../assets/coal/coal${c.path}.png`)
-                        : null
-                    }
+                    // src={
+                    //   c.path !== undefined
+                    //     ? require(`../../assets/coal/coal${c.path}.png`)
+                    //     : null
+                    // }
                   />
                 );
               })}
