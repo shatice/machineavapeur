@@ -21,10 +21,17 @@ const UseNavigation = () => {
       if (subChapter >= chaptersData[chapter].data.length - 1) {
         setSelectedChapter(chaptersData[chapter + 1]);
         setChapter(chapter + 1);
-        // setSubChapter(0);
-      }
-      setSubChapter(subChapter + 1);
-    } else setSubChapter(subChapter - 1);
+        setSubChapter(0);
+      } else setSubChapter(subChapter + 1);
+    } else {
+      if (subChapter === 0 && chapter !== 0) {
+        setSelectedChapter(chaptersData[chapter - 1]);
+        setChapter(chapter - 1);
+        setSubChapter(3);
+      } else setSubChapter(subChapter - 1);
+    }
+    console.log("chapter " + chapter);
+    console.log("subChapter " + subChapter);
   };
 
   return {

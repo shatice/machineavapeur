@@ -22,9 +22,6 @@ function App() {
             <Route path="/end" component={End} />
             <Route path="/chapter" component={Chapter} />
             <Navigation />
-
-            {/* <Route path="/coal" component={Coal} />
-            <Route path="/test1" component={Test1} /> */}
           </NavigationStore.Provider>
         </Switch>
       </Router>
