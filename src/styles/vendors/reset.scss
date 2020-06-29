@@ -28,9 +28,6 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-	background: $primary-bg;
-	font-family: $primary-font;
-	color: $primary-text-color;
 }
 ol, ul {
 	list-style: none;
@@ -49,7 +46,6 @@ table {
 }
 a, button {
 	text-decoration: none;
-	color: $primary-text-color;
 }
 button {
 	cursor: pointer;
