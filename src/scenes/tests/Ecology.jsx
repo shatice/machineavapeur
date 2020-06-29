@@ -8,10 +8,14 @@ const Ecology = () => {
       src="assets/img/chap_1/partie_4/c1p4_nature.png" 
       alt="nature"
       filter={true}/>
-      <Water 
-      src="assets/img/chap_1/partie_4/c1p4_water.jpg" 
-      alt="ocean"
-      filter={true}/>
+      <Water>
+        <img className="rocks" src="assets/img/chap_1/partie_4/c1p4_rocks.png" 
+        alt="ocean"
+        filter={true}/>
+        <img src="assets/img/chap_1/partie_4/c1p4_water.jpg" 
+        alt="ocean"
+        filter={true}/>
+      </Water>
     </Container>
   ); 
 }
@@ -36,7 +40,9 @@ const Nature = styled.img `
     filter: grayscale(0); 
   }
 `
-const Water = styled.img `
+const Water = styled.div `
+  position: relative; 
+  overflow: hidden; 
   transform: translateY(-10%); 
   transition: transform .2s ease-in-out; 
   width: 90%;
@@ -47,8 +53,21 @@ const Water = styled.img `
   filter: ${({ filter }) => (filter ? "grayscale(1)" : "grayscale(0)")}; 
 
   &:hover {
-    transform: translateY(-50%);
+    transform: translateY(-30%);
     filter: grayscale(0);
+
+    .rocks {
+      transform: translateX(0);
+    }
+  }
+
+  .rocks {
+    position: absolute; 
+    width:80%; 
+    top: 20%; 
+    left: 0;
+    transform: translateX(-100%); 
+    transition: transform .4s .2s ease-out; 
   }
 `
 
