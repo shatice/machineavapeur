@@ -3,6 +3,7 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 
 import NavigationStore from "./navigationStore";
+import UseNavigation from "./use-navigation";
 
 //constants
 import { chaptersList } from "../../constant";
@@ -74,14 +75,16 @@ const Navigation = () => {
   const { chapters } = chaptersList;
   const isTopBar = true;
   const {
-    selectedChapter: { value: chapterValue, label: chapterLabel },
+    subChapter,
     selectChapter,
-  } = useContext(NavigationStore);
+    selectedChapter: { value: chapterValue, label: chapterLabel },
+  } = UseNavigation();
 
   const selectChapter2 = (chapter) => {
     selectChapter(chapter.value);
     setIsList(!isList);
   };
+  console.log(subChapter);
   return (
     <NavigationWrapper>
       {isTopBar && (

@@ -164,7 +164,7 @@ const Coal = () => {
                     average={average}
                     src={
                       c.path !== undefined
-                        ? require(`../../assets/coal/coal${c.path}.png`)
+                        ? require(`./assets/coal${c.path}.png`)
                         : null
                     }
                   />

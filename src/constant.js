@@ -34,11 +34,17 @@ export const chaptersList = {
   title: "La folle histoire du progrès",
 };
 
-const test = {
-  chapters: [
-    {
-      title: "",
-      urlFetch: " http://",
-    },
-  ],
-};
+export const chaptersData = [
+  {
+    title: "Chapitre 1",
+    data: ["Partie 1", "Partie 2", "Partie 3", "Partie 4"],
+  },
+  {
+    title: "Chapitre 2",
+    data: ["Partie 1", "Partie 2", "Partie 3", "Partie 4"],
+  },
+  {
+    title: "Chapitre 3",
+    data: ["Partie 1", "Partie 2", "Partie 3", "Partie 4"],
+  },
+];
