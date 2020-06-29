@@ -4,13 +4,15 @@ import styled from "styled-components";
 
 /***** COMPONENTS *****/
 import CoalTowers from './CoalTowers'; 
-import BackgroundImage from './BackgroundImage'; 
+import BackgroundImage from '../../components/BackgroundImage'; 
 import Ecology from './Ecology'; 
 
 const Chap1Part4 = () => {
   return (
     <Container>
-      <BackgroundImage />
+      <BackgroundImage 
+      src="assets/img/chap_1/partie_4/c1p4_background.jpg" 
+      alt="nuages"/>
       <CoalTowers />
       <Ecology />
     </Container>
