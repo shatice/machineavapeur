@@ -34,9 +34,24 @@ const MecaElem = styled.img`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: ${(props) => props.width}px;
+  width: ${({ width }) => width}px;
   display: ${({ display }) => (display ? "flex" : "none")};
   transform: scale(0.8);
 `;
+const CoalImage = styled.img`
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: ${({ width }) => width}px;
+  display: ${({ display }) => (display ? "flex" : "none")};
+`;
 
-export { InfiniteScroll, CoalWrapper, MecaContainer, MecaWrapper, MecaElem };
+export {
+  InfiniteScroll,
+  CoalWrapper,
+  MecaContainer,
+  MecaWrapper,
+  MecaElem,
+  CoalImage,
+};

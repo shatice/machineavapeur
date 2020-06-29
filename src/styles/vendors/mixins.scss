@@ -1,0 +1,15 @@
+@mixin flexbox($direction, $justify, $align, $wrap) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  wrap: $wrap; 
+}
+
+@mixin setFont($family, $size, $weight, $style, $transform) {
+  font-family: $family;
+  font-size: $size;
+  font-weight: $weight;
+  font-style: unset;
+  text-transform: unset; 
+}

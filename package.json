@@ -8,9 +8,11 @@
     "@testing-library/user-event": "^7.2.1",
     "gsap": "^3.3.4",
     "node-sass": "^4.14.1",
+    "polished": "^3.6.5",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "react-waypoint": "^9.0.3",
     "styled-components": "^5.1.1"
