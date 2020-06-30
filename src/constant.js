@@ -1,6 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
+import Chap1Part1 from "./chapters/chapter1/chapter1";
+import Chap1Part3 from "./scenes/test_c1p3/Chap1Part3";
+import Chap1Part4 from "./scenes/test_c1p4/Chap1Part4";
+
 const Green = styled.section`
   width: 100vw;
   height: 100vh;
@@ -119,32 +123,43 @@ const test = {
     },
   ],
 };
+
 export const chaptersData = [
   {
-    title: "Chapitre 1",
+    id: "lamachineavapeur",
+    title: "La machine à vapeur",
     data: [
-      { title: "Partie 1", path: "chapter/1-part1", elem: <Green /> },
+      { title: "Intro", path: "chapter/1-intro"},
+      { title: "Partie 1", path: "chapter/1-part1", elem: <Chap1Part1 /> },
       { title: "Partie 2", path: "chapter/1-part2", elem: <Red /> },
-      { title: "Partie 3", path: "chapter/1-part3", elem: <Blue /> },
-      { title: "Partie 4", path: "chapter/1-part4", elem: <Orange /> },
+      { title: "Partie 3", path: "chapter/1-part3", elem: <Chap1Part3 />  },
+      { title: "Partie 4", path: "chapter/1-part4", elem: <Chap1Part4 />  },
+      { title: "Conclusion", path: "chapter/1-conclusion"}
     ],
   },
   {
-    title: "Chapitre 2",
+    id: "laviation",
+    title: "L'aviation",
     data: [
+      { title: "Intro", path: "chapter/2-intro"},
       { title: "Partie 1", path: "chapter/2-part1", elem: <Green /> },
       { title: "Partie 2", path: "chapter/2-part2", elem: <Red /> },
       { title: "Partie 3", path: "chapter/2-part3", elem: <Blue /> },
       { title: "Partie 4", path: "chapter/2-part4", elem: <Orange /> },
+      { title: "Conclusion", path: "chapter/2-conclusion"}
     ],
   },
   {
-    title: "Chapitre 3",
+    id: "lenucleaire",
+    title: "Le nucléaire",
     data: [
+      { title: "Intro", path: "chapter/3-intro"},
       { title: "Partie 1", path: "chapter/3-part1", elem: <Green /> },
       { title: "Partie 2", path: "chapter/3-part2", elem: <Red /> },
       { title: "Partie 3", path: "chapter/3-part3", elem: <Blue /> },
       { title: "Partie 4", path: "chapter/3-part4", elem: <Orange /> },
+      { title: "Conclusion", path: "chapter/3-conclusion"}
     ],
   },
 ];
+

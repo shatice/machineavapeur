@@ -14,7 +14,6 @@ const Layout = styled.section`
   align-items: center;
   font-size: 52px;
   color: black;
-  z-index: -1;
 `;
 
 const Chapter = ({ history }) => {

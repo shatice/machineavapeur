@@ -20,7 +20,7 @@ const Footer = () => {
 };
 
 const Container = styled.footer`
-  position: absolute;
+  position: fixed;
   transition: height .2s ease-out; 
   left: 0;
   bottom: 0;
