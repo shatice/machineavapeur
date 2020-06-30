@@ -1,11 +1,5 @@
-import React, { } from "react";
 import styled from "styled-components";
 
-const Target = () => {
-  return (
-    <TargetUI></TargetUI>
-  ); 
-}
 
 const TargetUI = styled.div `
   cursor: pointer;
@@ -15,10 +9,14 @@ const TargetUI = styled.div `
   opacity: .5; 
   border-radius: 50%;
   border: 7px solid white;
+  position: absolute;
+  top: ${({ top }) => top}px;
+  right: ${({ right }) => right}px;
+  z-index: 10;
   
   &:hover {
     border-color: #C09C1C;
   }
 `
 
-export default Target; 
+export { TargetUI }; 
