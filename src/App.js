@@ -12,16 +12,14 @@ import Navigation from "./components/navigation";
 
 function App() {
   return (
-    <div>
-      <Router>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/end" component={End} />
-          <Route path="/chapter" component={Chapter} />
-        </Switch>
-        <Navigation />
-      </Router>
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/end" component={End} />
+        <Route path="/chapter" component={Chapter} />
+      </Switch>
+      <Navigation />
+    </Router>
   );
 }
 
