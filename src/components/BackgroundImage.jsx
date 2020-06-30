@@ -1,17 +1,20 @@
 import React, { } from "react";
 import styled from "styled-components";
 
-const BackgroundImage = () => {
+const BackgroundImage = ({
+  src, 
+  alt
+}) => {
   return (
     <Image 
-    src="assets/img/chap_1/partie_4/c1p4_background.jpg"
-    alt="ciel-nuageux-rose"
-    filter={true}
-    className="backgroundImage"/>
+    src={ src }
+    alt={ alt }
+    filter="true"/>
   ); 
 }
 
 const Image = styled.img `
+  z-index: -1; 
   width: 100%; 
   height: 100%; 
   position: absolute; 

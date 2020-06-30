@@ -4,7 +4,7 @@ import './style.scss';
 
 const CoalTowers = () => {
   return (
-    <Container filter={true}> 
+    <Container filter="true"> 
       {/** TO BE LOOPED */}
       <Tower>
         <ul>

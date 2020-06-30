@@ -24,15 +24,15 @@ const Chapter = ({ history }) => {
   const chapterDatas = chaptersData[chapter].data;
   const subTitle = chaptersData[chapter].data[subChapter].title;
 
-  useEffect(() => {
-    history.replace("/chapter", "");
-    history.push(chapterDatas[subChapter].path);
-  }, []);
+  // useEffect(() => {
+  //   history.replace("/chapter", "");
+  //   history.push(chapterDatas[subChapter].path);
+  // }, []);
 
   const setPart = (action) => {
     setNextPart(action);
-    history.replace("/chapter", "");
-    history.push(chapterDatas[subChapter].path);
+    // history.replace("/chapter", "");
+    // history.push(chapterDatas[subChapter].path);
   };
   return (
     <Layout>
