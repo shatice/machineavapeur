@@ -5,10 +5,14 @@ import ctaAduio from '../../assets/svg/cta_audio.svg';
 
 const CtaAudio = () => {
   return (
-    <AudioUI src={ ctaAduio }/>
+    <AudioUI >
+      <img 
+      src={ ctaAduio } 
+      alt=""/>
+    </AudioUI>
   );
 };
-const AudioUI = styled.img `
+const AudioUI = styled.button `
   cursor: pointer; 
   position: absolute; 
   top: 2rem; 
@@ -18,6 +22,10 @@ const AudioUI = styled.img `
 
   &:hover {
     opacity: .2; 
+  }
+
+  img {
+    width: 100%; 
   }
 `
 

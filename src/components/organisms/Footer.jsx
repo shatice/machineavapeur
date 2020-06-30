@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 /***** COMPONENTS *****/
 import NavChapters from "../navigation/NavChapters";
@@ -10,7 +11,9 @@ const Footer = () => {
   return (
     <Container>
       <NavChapters />
-      <Logo />
+      <Link to="/">
+        <Logo />
+      </Link>
       <NavParts />
     </Container>
   );
