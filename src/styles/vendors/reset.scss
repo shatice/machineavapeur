@@ -45,10 +45,14 @@ table {
 	border-spacing: 0;
 }
 a, button {
+	padding: 0;
 	text-decoration: none;
 	background-color: transparent;
 	border: none;
-	padding: 0;
+	outline: none;
+	color: unset;
+	-moz-appearance: none;
+	-webkit-appearance: none; 
 }
 button {
 	cursor: pointer;

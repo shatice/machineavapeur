@@ -10,10 +10,10 @@ import Logo from "../atoms/Logo";
 const Footer = () => {
   return (
     <Container>
-      <NavChapters />
       <Link to="/">
         <Logo />
       </Link>
+      <NavChapters />
       <NavParts />
     </Container>
   );
@@ -23,12 +23,13 @@ const Container = styled.footer`
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 100vw;
-  height: 86px;
+  width: 100%;
+  height: 102px; 
+  padding: 2rem; 
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  background-color: #242323;
+  justify-content: flex-start;
+  background: linear-gradient(180deg, rgba(31,31,33,0.31) 0%, rgba(31,31,33,0.7) 49%, rgba(31,31,33,1) 100%);
   z-index: 100;
 `;
 

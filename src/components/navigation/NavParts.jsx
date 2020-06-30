@@ -1,4 +1,5 @@
 import React, { } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { chaptersList } from "../../constant";
 import UseNavigation from "../navigation/use-navigation";
@@ -13,20 +14,34 @@ const NavParts = () => {
   return (
     <Container>
       {chapters[chapterValue].subtitles.map((subtitle) => {
-        return <div style={{ color: "white" }}>{ subtitle }</div>;
+        return <li>
+          <Link>
+            { subtitle }
+          </Link>
+          </li>;
       })}
     </Container>
   );
 };
 
-const Container = styled.div `
-  width: 100px;
-  height: 45px;
-  margin-left: 16px;
-  background-color: white;
+const Container = styled.ul `
+  width: 70%;
+  margin-top: .5rem; 
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  align-self: center; 
+
+  li {
+    width: 100%; 
+    padding-top: .5rem;
+    font-size: .875rem; 
+    text-align: center; 
+
+    &:not(:first-child) {
+      border-left: .5px solid #ECECE9; 
+    }
+  }
 `
 
 export default NavParts;
