@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { chaptersList } from "../../constant";
-
 import UseNavigation from "../navigation/use-navigation";
+
+import NavChapters from "../navigation/NavChapters";
 
 const BottomBar = styled.div`
   position: absolute;
@@ -36,6 +37,7 @@ const Footer = () => {
 
   return (
     <BottomBar>
+      <NavChapters/>
       <LogoWrapper>Logo</LogoWrapper>
       {chapters[chapterValue].subtitles.map((subtitle) => {
         return <div style={{ color: "white" }}>{subtitle}</div>;
