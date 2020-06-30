@@ -19,7 +19,7 @@ const Layout = styled.section`
 `;
 
 const Chapter = ({ history }) => {
-  const { setNextPart, subChapter, chapter, path } = UseNavigation();
+  const { setNextPart, subChapter, chapter } = UseNavigation();
 
   const chapterDatas = chaptersData[chapter].data;
   const title = chaptersData[chapter].title;

@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-import PropTypes from "prop-types";
 import { chaptersList } from "../../constant";
 
 import UseNavigation from "../navigation/use-navigation";
@@ -41,10 +40,9 @@ const Header = () => {
   const [isList, setIsList] = useState(false);
 
   const {
-    subChapter,
     selectChapter,
     setChapter,
-    selectedChapter: { value: chapterValue, label: chapterLabel },
+    selectedChapter: { label: chapterLabel },
   } = UseNavigation();
 
   const { chapters } = chaptersList;

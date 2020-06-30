@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { chaptersList, chaptersData } from "../../constant";
 
 const UseNavigation = () => {
