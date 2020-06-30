@@ -12,7 +12,7 @@ const NavParts = () => {
   const { chapters } = chaptersList;
 
   return (
-    <Container>
+    <Container className="labelsList">
       {chapters[chapterValue].subtitles.map((subtitle) => {
         return <li>
           <Link>
@@ -30,16 +30,23 @@ const Container = styled.ul `
   display: flex;
   align-items: center;
   justify-content: space-between;
-  align-self: center; 
+  align-self: center;
+  transform: translateY(300%);  
+  transition: transform .3s ease-out; 
 
   li {
     width: 100%; 
     padding-top: .5rem;
     font-size: .875rem; 
     text-align: center; 
+    transition: letter-spacing .2s ease-out; 
 
     &:not(:first-child) {
       border-left: .5px solid #ECECE9; 
+    }
+
+    &:hover {
+      letter-spacing: .01rem; 
     }
   }
 `
