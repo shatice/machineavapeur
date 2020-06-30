@@ -1,47 +1,28 @@
-import React, { useState } from "react";
+import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { createBrowserHistory } from "history";
 
-/***** COMPONENTS *****/
+/***** VIEWS *****/
 import Home from "./views/Home";
 import Chapter from "./views/Chapter";
 import End from "./views/End";
 
-import Coal from "./scenes/coal/coal.jsx";
-import Test1 from "./testGsap/Test1";
-import Navigation from "./components/navigation/navigation";
-import NavigationStore from "./components/navigation/navigationStore";
+import Header from "./components/organisms/Header";
+import Footer from "./components/organisms/Footer";
+export const customHistory = createBrowserHistory(); //This maintains custom history
 
-import { chaptersList } from "./constant";
-
-function App() {
-  const [selectedChapter, setSelectedChapter] = useState({
-    label: "La machine a vapeur & le charbon1",
-    value: 0,
-  });
-  const selectChapter = (value) => {
-    const { chapters } = chaptersList;
-    const newChapter = chapters.filter(
-      (chapterTitle) => value === chapterTitle.value
-    );
-    setSelectedChapter(newChapter[0]);
-  };
+const App = () => {
   return (
-    <div>
-      <Router>
-        <Switch>
-          <NavigationStore.Provider value={{ selectedChapter, selectChapter }}>
-            <Navigation />
-          </NavigationStore.Provider>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/chapter" component={Chapter} />
-          <Route exact path="/end" component={End} />
-
-          <Route exact path="/coal" component={Coal} />
-          <Route exact path="/test1" component={Test1} />
-        </Switch>
-      </Router>
-    </div>
+    <Router history={customHistory}>
+      <Header />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/end" component={End} />
+        <Route path="/chapter" component={Chapter} />
+      </Switch>
+      <Footer />
+    </Router>
   );
-}
+};
 
 export default App;
