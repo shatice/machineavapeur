@@ -55,8 +55,6 @@ const Chapter1 = () => {
 
     const paperClick = () => {
         if (paperIsClicked) {
-            console.log('lol');
-
             for (const key in paperAnims) {
                 eval(`paperAnims.${key}.reverse()`)
             }
@@ -70,7 +68,6 @@ const Chapter1 = () => {
 
     const portraitAnim = () => {
         gsap.to('.portrait', { filter: "grayscale(0)", rotate: 20, duration: 1, ease: "elastic" })
-
         gsap.to(window, { delay: 0.8, duration: 1, scrollTo: ".page2__container", ease: "none" })
         gsap.to(".portrait", { duration: 1, delay: 1, yPercent: 130, ease: "exp" })
     }
