@@ -1,21 +1,18 @@
 import React, { } from "react";
 import styled from "styled-components";
 
+import logo from '../../assets/logo/logo.svg';
+
 const Logo = () => {
   return (
-    <LogoUI>
-      LOGO
-    </LogoUI>
+    <LogoUI 
+    src={ logo }
+    alt="logo"/>
   );
 };
-const LogoUI = styled.div `
-  width: 100px;
-  height: 45px;
-  margin-left: 16px;
-  background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+const LogoUI = styled.img `
+  width: 2.5rem; 
+  height: 2.5rem;
 `
 
 export default Logo;
