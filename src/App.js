@@ -8,8 +8,8 @@ import End from "./views/End";
 
 import Coal from "./scenes/coal/Coal.jsx";
 import Test1 from "./testGsap/Test1";
-import Navigation from "./components/navigation/Navigation";
-import NavigationStore from "./components/navigation/NavigationStore";
+// import Navigation from "./components/navigation";
+// import NavigationStore from "./components/navigation/NavigationStore";
 import Chap1Part4 from "./scenes/test_c1p4/Chap1Part4";
 import Chap1Part3 from "./scenes/test_c1p3/Chap1Part3";
 import Target from "./components/Target";
