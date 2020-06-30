@@ -9,7 +9,7 @@ import {
   MecaWrapper,
   MecaElem,
   CoalImage,
-} from "./coalStyle";
+} from "./CoalStyle";
 
 let initialMeca = [
   {
@@ -138,7 +138,7 @@ const Coal = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  console.log(coalImage);
+
   return (
     <InfiniteScroll>
       <CoalWrapper>

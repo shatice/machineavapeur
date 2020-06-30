@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
-import NavigationStore from "./navigationStore";
+// navigation-hooks
 import UseNavigation from "./use-navigation";
 
 //constants

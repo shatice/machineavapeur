@@ -1,5 +1,5 @@
 import React from "react";
-import Coal from "./scenes/coal/coal.jsx";
+import Coal from "./scenes/coal/Coal.jsx";
 
 export const chaptersList = {
   chapters: [

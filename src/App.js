@@ -7,8 +7,7 @@ import Home from "./views/Home";
 import Chapter from "./views/Chapter";
 import End from "./views/End";
 
-import Coal from "./scenes/coal/coal.jsx";
-import Test1 from "./testGsap/Test1";
+import Coal from "./scenes/coal/Coal.jsx";
 import Navigation from "./components/navigation";
 
 function App() {
