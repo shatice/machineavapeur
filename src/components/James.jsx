@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import styled from "styled-components";
 
 import gsap from "gsap";
@@ -8,33 +8,34 @@ import body from "../assets/jamesWatt_body_cropped.png";
 import arm from "../assets/jamesWatt_arm_cropped.png";
 
 import TargetUI from "../components/Target";
+import Card from "../components/organisms/Card";
 
 const James = () => {
   let ref = useRef([]);
-  let jamesIsHover = false;
-  let jamesAnims = {};
-
+  const [jamesIsHover, setJamesIsHover] = useState(false);
+  const [jamesAnims, setJamesAnims] = useState({});
+  const currentRef = ref.current;
   useEffect(() => {
-    jamesAnims = {
-      filterAnim: gsap.to(ref.current["jamesBody"], {
+    setJamesAnims({
+      filterAnim: gsap.to(currentRef["jamesBody"], {
         filter: "grayscale(0)",
         paused: true,
       }),
-      armAnim: gsap.to(ref.current["arm"], {
+      armAnim: gsap.to(currentRef["arm"], {
         rotation: 82,
         x: -100,
         duration: 2,
         transformOrigin: "100% bottom",
         paused: true,
       }),
-      headAnim: gsap.to(ref.current["head"], {
+      headAnim: gsap.to(currentRef["head"], {
         rotation: -15,
         x: -25,
         delay: 0.25,
         duration: 1.75,
         paused: true,
       }),
-    };
+    });
   }, []);
 
   const jamesHover = () => {
@@ -47,32 +48,32 @@ const James = () => {
         eval(`jamesAnims.${key}.play()`);
       }
     }
-    jamesIsHover = !jamesIsHover;
+    setJamesIsHover(!jamesIsHover);
   };
-
   return (
     <JamesContainer>
       <JamesBody
         ref={(element) => {
-          ref.current["jamesBody"] = element;
+          currentRef["jamesBody"] = element;
         }}
       >
         <TargetUI
           top={185}
           right={-460}
+          isActive={jamesIsHover}
           onMouseEnter={jamesHover}
           onMouseLeave={jamesHover}
         />
         <Head
           ref={(element) => {
-            ref.current["head"] = element;
+            currentRef["head"] = element;
           }}
           src={head}
         />
         <Body src={body} />
         <Arm
           ref={(element) => {
-            ref.current["arm"] = element;
+            currentRef["arm"] = element;
           }}
           src={arm}
         />

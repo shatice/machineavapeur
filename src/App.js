@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { createBrowserHistory } from "history";
 
-/***** COMPONENTS *****/
+/***** VIEWS *****/
 import Chapter1 from "./chapters/chapter1/chapter1";
 import Chapter1Page2 from "./chapters/chapter1/chapter1Page2";
 
@@ -14,7 +14,7 @@ import Test1 from "./testGsap/Test1";
 import Chap1Part4 from "./scenes/test_c1p4/Chap1Part4";
 import Chap1Part3 from "./scenes/test_c1p3/Chap1Part3";
 import Target from "./components/Target";
-import Card from "./components/Card";
+// import Card from "./components/Card";
 
 /***** COMPONENTS *****/
 import Header from "./components/organisms/Header";
@@ -38,7 +38,7 @@ const App = () => {
         <Route exact path="/chap1part4" component={Chap1Part4} />
         <Route exact path="/chap1part3" component={Chap1Part3} />
         <Route exact path="/target" component={Target} />
-        <Route exact path="/card" component={Card} />
+        {/* <Route exact path="/card" component={Card} /> */}
       </Switch>
       <Footer />
     </Router>
