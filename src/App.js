@@ -33,6 +33,7 @@ const App = () => {
 
         {/** TO BE REMOVED - FOR TEST */}
         <Route exact path="/coal" component={Coal} />
+        <Route exact path="/chap1part1" component={Chapter1} />
         <Route exact path="/test1" component={Test1} />
         <Route exact path="/chap1part4" component={Chap1Part4} />
         <Route exact path="/chap1part3" component={Chap1Part3} />
