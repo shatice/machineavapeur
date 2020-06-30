@@ -9,7 +9,7 @@ import {
   MecaWrapper,
   MecaElem,
   CoalImage,
-} from "./coalStyle";
+} from "./CoalStyle";
 
 let initialMeca = [
   {
