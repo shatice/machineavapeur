@@ -1,7 +1,7 @@
 import React, { } from "react";
 import styled from "styled-components";
 
-const Header = () => {
+const CtaAudio = () => {
   return (
     <AudioUI>
       AUDIO
@@ -12,4 +12,4 @@ const AudioUI = styled.div `
   border: solid red; 
 `
 
-export default Header;
+export default CtaAudio;
