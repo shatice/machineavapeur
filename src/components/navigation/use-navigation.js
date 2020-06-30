@@ -30,8 +30,6 @@ const UseNavigation = () => {
         setSubChapter(3);
       } else setSubChapter(subChapter - 1);
     }
-    console.log("chapter " + chapter);
-    console.log("subChapter " + subChapter);
   };
 
   return {
@@ -39,6 +37,7 @@ const UseNavigation = () => {
     subChapter,
     selectChapter,
     selectedChapter,
+    setChapter,
     chapter,
   };
 };

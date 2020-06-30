@@ -10,20 +10,17 @@ import End from "./views/End";
 import Coal from "./scenes/coal/coal.jsx";
 import Test1 from "./testGsap/Test1";
 import Navigation from "./components/navigation";
-import NavigationStore from "./components/navigation/navigationStore";
 
 function App() {
   return (
     <div>
       <Router>
         <Switch>
-          <NavigationStore.Provider>
-            <Route exact path="/" component={Home} />
-            <Route path="/end" component={End} />
-            <Route path="/chapter" component={Chapter} />
-            <Navigation />
-          </NavigationStore.Provider>
+          <Route exact path="/" component={Home} />
+          <Route path="/end" component={End} />
+          <Route path="/chapter" component={Chapter} />
         </Switch>
+        <Navigation />
       </Router>
     </div>
   );

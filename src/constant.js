@@ -1,3 +1,6 @@
+import React from "react";
+import Coal from "./scenes/coal/coal.jsx";
+
 export const chaptersList = {
   chapters: [
     {
@@ -38,13 +41,16 @@ export const chaptersData = [
   {
     title: "Chapitre 1",
     data: ["Partie 1", "Partie 2", "Partie 3", "Partie 4"],
+    elem: <Coal />,
   },
   {
     title: "Chapitre 2",
     data: ["Partie 1", "Partie 2", "Partie 3", "Partie 4"],
+    elem: <Coal />,
   },
   {
     title: "Chapitre 3",
     data: ["Partie 1", "Partie 2", "Partie 3", "Partie 4"],
+    elem: <Coal />,
   },
 ];

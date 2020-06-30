@@ -2,13 +2,18 @@ import React, { useState, useContext } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
+<<<<<<< HEAD:src/components/navigation/index.jsx
 import NavigationStore from "./navigationStore";
 import UseNavigation from "./use-navigation";
+=======
+import NavigationStore from "./NavigationStore";
+>>>>>>> b6fe076e4d9647ab93652a6c2da4f9685eb0420d:src/components/navigation/navigation.jsx
 
 //constants
 import { chaptersList } from "../../constant";
 
 const NavigationWrapper = styled.section`
+  width: 100vw;
   height: 100vh;
   position: relative;
   display: flex;
@@ -25,21 +30,19 @@ const TopBar = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid white;
-  background-color: transparent;
+  border: 1px solid blue;
 `;
 
 const BottomBar = styled.div`
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 100vw;
+  width: 100%;
   height: 86px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: #242323;
-  z-index: 100;
 `;
 
 const ChapterListContainer = styled.div`
@@ -78,16 +81,14 @@ const Navigation = () => {
   const {
     subChapter,
     selectChapter,
-    setChapter,
     selectedChapter: { value: chapterValue, label: chapterLabel },
   } = UseNavigation();
 
-  const selectChapter2 = (value) => {
-    selectChapter(value);
-    setChapter(value);
+  const selectChapter2 = (chapter) => {
+    selectChapter(chapter.value);
     setIsList(!isList);
   };
-
+  console.log(subChapter);
   return (
     <NavigationWrapper>
       {isTopBar && (
@@ -100,7 +101,7 @@ const Navigation = () => {
               chapters.map((chapter) => {
                 return (
                   chapter.label !== chapterLabel && (
-                    <ChapterElem onClick={() => selectChapter2(chapter.value)}>
+                    <ChapterElem onClick={() => selectChapter2(chapter)}>
                       {chapter.label}
                     </ChapterElem>
                   )

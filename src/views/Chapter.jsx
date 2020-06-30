@@ -6,7 +6,7 @@ import UseNavigation from "../components/navigation/use-navigation";
 const Layout = styled.section`
   position: absolute;
   left: 0;
-  top: 65px;
+  top: 0;
   height: 100vh;
   width: 100%;
   display: flex;
@@ -14,22 +14,22 @@ const Layout = styled.section`
   align-items: center;
   font-size: 52px;
   color: black;
-  z-index: 300;
+  background-color: lightcoral;
+  z-index: -1;
 `;
 
 const Chapter = () => {
   const { setNextPart, subChapter, chapter } = UseNavigation();
-  const chapterSelected = chaptersData;
-  const chapterDatas = chapterSelected[chapter].data;
-  const title = chapterSelected[chapter].title;
-  console.log(chapterDatas[subChapter]);
-  console.log(subChapter);
+
+  const chapterDatas = chaptersData[chapter].data;
+  const title = chaptersData[chapter].title;
 
   return (
     <Layout>
       <button onClick={() => setNextPart("decrement")}>LAST PART</button>
       {title}
       {chapterDatas[subChapter]}
+      {/* {React.cloneElement(chaptersData[chapter].elem)} */}
       <button onClick={() => setNextPart("increment")}>NEXT PART</button>
     </Layout>
   );
