@@ -2,7 +2,10 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { createBrowserHistory } from "history";
 
-/***** VIEWS *****/
+/***** COMPONENTS *****/
+import Chapter1 from "./chapters/chapter1/chapter1";
+import Chapter1Page2 from "./chapters/chapter1/chapter1Page2";
+
 import Home from "./views/Home";
 import Chapter from "./views/Chapter";
 import End from "./views/End";
