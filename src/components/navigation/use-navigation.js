@@ -10,16 +10,18 @@ const UseNavigation = () => {
     value: 0,
   });
 
-  const { chapters } = chaptersList;
   const selectChapter = (value) => {
+    const { chapters } = chaptersList;
     const newChapter = chapters.filter(
       (chapterTitle) => value === chapterTitle.value
     );
     setSelectedChapter(newChapter[0]);
   };
+
   const setUrlPath = (c, sC) => {
     setPath(`/chapter/?chap${c}part-${sC}`);
   };
+
   const setNextPart = (action) => {
     if (action === "increment") {
       if (subChapter >= chaptersData[chapter].data.length - 1) {
