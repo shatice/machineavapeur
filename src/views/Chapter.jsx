@@ -20,8 +20,9 @@ const Layout = styled.section`
 const Chapter = ({ history }) => {
   const { setNextPart, subChapter, chapter } = UseNavigation();
 
-  const chapterDatas = chaptersData[chapter].data;
   const title = chaptersData[chapter].title;
+  const chapterDatas = chaptersData[chapter].data;
+  const subTitle = chaptersData[chapter].data[subChapter].title;
 
   useEffect(() => {
     history.replace("/chapter", "");
@@ -36,16 +37,31 @@ const Chapter = ({ history }) => {
   return (
     <Layout>
       <div style={{ position: "absolute" }}>
-        <button style={{ zIndex: 1000 }} onClick={() => setPart("decrement")}>
+        <button
+          style={{ zIndex: 1000 }}
+          onClick={() => {
+            if (chapter === 0 && subChapter === 0) {
+              return;
+            } else setPart("decrement");
+          }}
+        >
           LAST PART
         </button>
-        {title}
-        {chapterDatas[subChapter].title}
-        <button style={{ zIndex: 1000 }} onClick={() => setPart("increment")}>
+        {title && title}
+        {subTitle && subTitle}
+        <button
+          style={{ zIndex: 1000 }}
+          onClick={() => {
+            if (chapter === 2 && subChapter === 3) {
+              return;
+            } else setPart("increment");
+          }}
+        >
           NEXT PART
         </button>
       </div>
-      {React.cloneElement(chapterDatas[subChapter].elem)}
+      {chapterDatas[subChapter].elem &&
+        React.cloneElement(chapterDatas[subChapter].elem)}
     </Layout>
   );
 };

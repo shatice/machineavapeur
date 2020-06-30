@@ -10,8 +10,8 @@ const UseNavigation = () => {
     value: 0,
   });
 
+  const { chapters } = chaptersList;
   const selectChapter = (value) => {
-    const { chapters } = chaptersList;
     const newChapter = chapters.filter(
       (chapterTitle) => value === chapterTitle.value
     );
