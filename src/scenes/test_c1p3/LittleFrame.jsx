@@ -4,12 +4,14 @@ import styled from "styled-components";
 const LittleFrame = ({
   src, 
   alt, 
+  rotate, 
   audio
 }) => {
   return (
     <Image 
     src={ src }
     alt={ alt }
+    rotate= { rotate }
     className="littleFrame"/>
   ); 
 }

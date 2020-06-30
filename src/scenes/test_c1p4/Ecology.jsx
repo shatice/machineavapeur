@@ -7,14 +7,14 @@ const Ecology = () => {
       <Nature 
       src="assets/img/chap_1/partie_4/c1p4_nature.png" 
       alt="nature"
-      filter={true}/>
+      filter="true"/>
       <Water>
         <img className="rocks" src="assets/img/chap_1/partie_4/c1p4_rocks.png" 
         alt="ocean"
-        filter={true}/>
+        filter="true"/>
         <img src="assets/img/chap_1/partie_4/c1p4_water.jpg" 
         alt="ocean"
-        filter={true}/>
+        filter="true"/>
       </Water>
     </Container>
   ); 

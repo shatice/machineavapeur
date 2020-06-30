@@ -17,7 +17,8 @@ const Chap1Part3 = () => {
       <Richard />
       <LittleFrame 
       src="assets/img/chap_1/partie_3/c1p3_frame_bordeaux.png"
-      alt=""/>
+      alt=""
+      rotate="10"/>
       <LittleFrame 
       src="assets/img/chap_1/partie_3/c1p3_frame_sncf.png"
       alt=""/>

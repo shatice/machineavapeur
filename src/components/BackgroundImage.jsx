@@ -9,7 +9,7 @@ const BackgroundImage = ({
     <Image 
     src={ src }
     alt={ alt }
-    filter={true}/>
+    filter="true"/>
   ); 
 }
 
