@@ -17,15 +17,15 @@ import Target from "./components/Target";
 // import Card from "./components/Card";
 
 /***** COMPONENTS *****/
-import Header from "./components/organisms/Header";
 import Footer from "./components/organisms/Footer";
+import CtaAudio from "./components/atoms/CtaAudio";
 
 export const customHistory = createBrowserHistory();
 
 const App = () => {
   return (
-    <Router history={customHistory}>
-      <Header />
+    <Router history={ customHistory }>
+      <CtaAudio/>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/chapter" component={Chapter} />
