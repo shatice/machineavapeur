@@ -14,7 +14,6 @@ import Test1 from "./testGsap/Test1";
 import Navigation from "./components/navigation/Navigation";
 import NavigationStore from "./components/navigation/NavigationStore";
 import Chap1Part4 from "./scenes/tests/Chap1Part4";
-import Target from "./components/Target";
 import Card from "./components/Card";
 
 import { chaptersList } from "./constant";
@@ -51,7 +50,6 @@ function App() {
           <Route exact path="/coal" component={Coal} />
           <Route exact path="/test1" component={Test1} />
           <Route exact path="/chap1part4" component={Chap1Part4} />
-          <Route exact path="/target" component={Target} />
           <Route exact path="/card" component={Card} />
         </Switch>
       </Router>
