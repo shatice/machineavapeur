@@ -50,7 +50,7 @@ const Paper = () => {
 
 const PaperContainer = styled.div`
   position: absolute;
-  bottom: -260px;
+  bottom: -145px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
