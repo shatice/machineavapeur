@@ -115,15 +115,6 @@ export const initialCoalImage = [
   },
 ];
 
-const test = {
-  chapters: [
-    {
-      title: "",
-      urlFetch: " http://",
-    },
-  ],
-};
-
 export const chaptersData = [
   {
     id: "lamachineavapeur",

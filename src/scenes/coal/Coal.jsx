@@ -79,6 +79,8 @@ const Coal = () => {
   };
 
   useEffect(() => {
+    /* eslint-disable */
+
     window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {

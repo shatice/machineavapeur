@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
 
 import gsap from "gsap";
@@ -11,31 +11,34 @@ import TargetUI from "../components/Target";
 import Card from "../components/organisms/Card";
 
 const James = () => {
+  /* eslint-disable */
   let ref = useRef([]);
-  let jamesIsHover = false;
-  let jamesAnims = {};
+  const [jamesIsHover, setJamesIsHover] = useState(false);
+  const [jamesAnims, setJamesAnims] = useState({});
+
+  const currentRef = ref.current;
 
   useEffect(() => {
-    jamesAnims = {
-      filterAnim: gsap.to(ref.current["jamesBody"], {
+    setJamesAnims({
+      filterAnim: gsap.to(currentRef["jamesBody"], {
         filter: "grayscale(0)",
         paused: true,
       }),
-      armAnim: gsap.to(ref.current["arm"], {
+      armAnim: gsap.to(currentRef["arm"], {
         rotation: 82,
         x: -100,
-        duration: 1,
+        duration: 2,
         transformOrigin: "100% bottom",
         paused: true,
       }),
-      headAnim: gsap.to(ref.current["head"], {
+      headAnim: gsap.to(currentRef["head"], {
         rotation: -15,
         x: -25,
-        delay: 0.5,
-        duration: 0.5,
+        delay: 0.25,
+        duration: 1.75,
         paused: true,
       }),
-    };
+    });
   }, []);
 
   const jamesHover = () => {
@@ -48,32 +51,44 @@ const James = () => {
         eval(`jamesAnims.${key}.play()`);
       }
     }
-    jamesIsHover = !jamesIsHover;
+    setJamesIsHover(!jamesIsHover);
   };
-
+  const content =
+    "Ingénieur écossais, il fait breveter en 1769 la chambre de condensation séparée pour la machine à vapeur et crée une entreprise à Soho, en Angleterre, pour produire sa machine à vapeur améliorée. C’est la source d’énergie principale de la révolution industrielle naissante, dont elle a considérablement accru la capacité de production. En 1800, environ 500 de ses machines à vapeur sont en service.";
   return (
     <JamesContainer>
       <JamesBody
         ref={(element) => {
-          ref.current["jamesBody"] = element;
+          currentRef["jamesBody"] = element;
         }}
       >
         <TargetUI
           top={185}
           right={-460}
+          title="James Watt"
+          isActive={jamesIsHover}
           onMouseEnter={jamesHover}
           onMouseLeave={jamesHover}
         />
+        {jamesIsHover && (
+          <Card
+            title="Industrialisation"
+            width={"340"}
+            content={content}
+            top={"240"}
+            left={"70"}
+          />
+        )}
         <Head
           ref={(element) => {
-            ref.current["head"] = element;
+            currentRef["head"] = element;
           }}
           src={head}
         />
         <Body src={body} />
         <Arm
           ref={(element) => {
-            ref.current["arm"] = element;
+            currentRef["arm"] = element;
           }}
           src={arm}
         />

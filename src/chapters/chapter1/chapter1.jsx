@@ -54,7 +54,7 @@ const Chapter1 = () => {
   };
   const content =
     "La machine à vapeur est un moteur à combustion externe qui transforme l'énergie thermique de la vapeur d'eau (produite par une ou des chaudières) en énergie mécanique. Elle fonctionne grâce au charbon qui est alors la seule énergie qui produit assez de chaleur. À partir de là commence l'exploitation industrielle des mines de charbon un peu partout en Europe, puis dans le monde.";
-
+  const title = "Industrialisation";
   return (
     <div>
       <div className="container">
@@ -63,6 +63,7 @@ const Chapter1 = () => {
         <TargetUI
           top={140}
           right={window.innerWidth - 150}
+          title={title}
           isActive={isCard}
           onMouseEnter={() => setIsCard(true)}
           onMouseLeave={() => setIsCard(false)}
@@ -71,9 +72,9 @@ const Chapter1 = () => {
         <James />
         {isCard && (
           <Card
+            title={title}
             width={"340"}
             content={content}
-            img={portrait}
             top={"150"}
             left={"150"}
           />

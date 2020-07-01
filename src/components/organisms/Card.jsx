@@ -6,10 +6,11 @@ const CardUI = styled.article`
   position: absolute;
   top: ${({ top }) => top}px;
   left: ${({ left }) => left}px;
-  min-height: 250px;
   max-height: 500px;
   background-color: #282828d7;
   z-index: 10;
+  min-width: 500px;
+  text-align: justify;
 
   img {
     width: 100%;
@@ -27,10 +28,19 @@ const CardUI = styled.article`
   }
 `;
 
-const Card = ({ content, img, width, top, left }) => {
+const Title = styled.div`
+  font-size: 12px;
+  color: white;
+  text-transform: uppercase;
+  margin-top: 20px;
+  margin-left: 20px;
+`;
+
+const Card = ({ title, content, img, width, top, left }) => {
   return (
     <CardUI width={width} top={top} left={left}>
-      <img src={img} alt="card" />
+      {title && <Title>{title}</Title>}
+      {img && <img src={img} alt="card" />}
       <p>{content}</p>
     </CardUI>
   );

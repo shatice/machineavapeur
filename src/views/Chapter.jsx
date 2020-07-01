@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { } from "react";
 import styled from "styled-components";
 import { chaptersData } from "../constant";
 import UseNavigation from "../components/navigation/use-navigation";
@@ -35,7 +35,7 @@ const Chapter = ({ history }) => {
   };
   return (
     <Layout>
-      <div style={{ position: "absolute" }}>
+      <div style={{ position: "absolute", zIndex: "1000" }}>
         <button
           style={{ zIndex: 1000 }}
           onClick={() => {

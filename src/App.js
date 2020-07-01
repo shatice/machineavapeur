@@ -4,7 +4,7 @@ import { createBrowserHistory } from "history";
 
 /***** VIEWS *****/
 import Chapter1 from "./chapters/chapter1/chapter1";
-import Chapter1Page2 from "./chapters/chapter1/chapter1Page2";
+// import Chapter1Page2 from "./chapters/chapter1/chapter1Page2";
 
 import Home from "./views/Home";
 import Chapter from "./views/Chapter";
@@ -24,8 +24,8 @@ export const customHistory = createBrowserHistory();
 
 const App = () => {
   return (
-    <Router history={ customHistory }>
-      <CtaAudio/>
+    <Router history={customHistory}>
+      <CtaAudio />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/chapter" component={Chapter} />
