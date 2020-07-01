@@ -70,15 +70,6 @@ const Chapter1 = () => {
         />
         <Paper />
         <James />
-        {isCard && (
-          <Card
-            title={title}
-            width={"340"}
-            content={content}
-            top={"150"}
-            left={"150"}
-          />
-        )}
       </div>
       <Chapter1Page2 />
     </div>
