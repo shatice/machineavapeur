@@ -1,5 +1,7 @@
 # La Folle Histoire du Progrès
 
+Site en ligne : https://lafollehistoireduprogres.netlify.app/
+
 Un web-documentaire de : 
 
 - [Arthur Barré](https://github.com/ArthurBarre)
