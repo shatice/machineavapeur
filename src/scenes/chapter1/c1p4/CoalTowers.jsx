@@ -3,34 +3,19 @@ import styled from "styled-components";
 import './style.scss'; 
 
 /***** COMPONENTS *****/
-import Card from "../../../components/organisms/Card";
-import Target from "../../../components/Target";
+import Infos from "../../../components/organisms/Infos";
 
-const CoalTowers = () => {
-  const [isCard, setIsCard] = useState(false);
+const CoalTowers = ( ) => {
+
+  const [isAnimated, setIsAnimated] = useState(false);
 
   return (
-    <Container className={ isCard ? "isSmoking" : ""}> 
-      {isCard && (
-        <Card
-        title="Le charbon"
-        content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-        width={"340"}
-        bottom={"100"}
-        left={"200"}
-        />
-      )}
-      <Target
-      title="Le charbon"
-      bottom="300"
-      left="0"
-      isActive={ isCard }
-      onMouseEnter={ () => setIsCard(true) }
-      onMouseLeave={ () => setIsCard(false) }
-      />
-      {/** TO BE LOOPED */}
+    <Container 
+    className={ isAnimated ? "isSmoking" : ""}
+    > 
       <Tower
-      filter={ isCard ? true : false }>
+      filter={ isAnimated ? true : false }
+      >
         <ul>
           {/* <li><img src="assets/img/chap_1/partie_4/c1p4_smoke4.png" alt="fumee"/></li> */}
           <li><img src="assets/img/chap_1/partie_4/c1p4_smoke3.png" alt="fumee"/></li>
@@ -40,7 +25,8 @@ const CoalTowers = () => {
         <img src="assets/img/chap_1/partie_4/c1p4_tower.png" alt="tour-usine-charbon"/>
       </Tower>
       <Tower
-      filter={ isCard ? true : false }>
+      filter={ isAnimated ? true : false }
+      >
         <ul>
           <li><img src="assets/img/chap_1/partie_4/c1p4_smoke4.png" alt="fumee"/></li>
           <li><img src="assets/img/chap_1/partie_4/c1p4_smoke3.png" alt="fumee"/></li>
@@ -49,6 +35,15 @@ const CoalTowers = () => {
         </ul>
         <img src="assets/img/chap_1/partie_4/c1p4_tower.png" alt="tour-usine-charbon"/>
       </Tower>
+
+      <Infos 
+      setIsAnimated={ setIsAnimated }
+      title={ "Le charbon" }
+      content={ "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat." }
+      bottom="30"
+      left="10"
+      leftCard="200"
+      />
     </Container>
   ); 
 }
@@ -61,8 +56,7 @@ const Container= styled.section`
   display: flex; 
   justify-content: space-between; 
   align-self: flex-end;
-
-  /** TO BE LINKED WITH TARGET ON HOVER */
+  
   &.isSmoking {
 
     ul li {

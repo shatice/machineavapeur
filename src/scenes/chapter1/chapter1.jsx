@@ -3,7 +3,7 @@ import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
 //components
-import Card from "../../components/organisms/Card";
+import Card from "../../components/organisms/Infos";
 import Paper from "../../components/Paper";
 import James from "../../components/James";
 import TargetUI from "../../components/Target";

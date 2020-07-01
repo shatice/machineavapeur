@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 // components
 import TargetUI from "../../../components/Target";
-import Card from "../../../components/organisms/Card";
+import Card from "../../../components/organisms/Infos";
 
 const Bg = styled.section`
   width: 100vw;

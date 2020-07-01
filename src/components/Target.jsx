@@ -1,60 +1,42 @@
 import React from "react";
 import styled from "styled-components";
 
-const StyledTarget = styled.div`
-  transition: background-color 0.2s ease-out;
-  width: 13px;
-  height: 13px;
-  border-radius: 50%;
-  background-color: white;
-  background-color: #c09c1c;
-  z-index: 10;
+const TargetUI = ({ title, top, bottom, right, left, isActive, onMouseEnter, onMouseLeave }) => {
+  return (
+    <Container>
+      <Target 
+      isActive={ isActive }
+      />
+      <Text>
+        {title}
+      </Text>
+    </Container>
+  );
+};
 
-  &:hover {
-    /* background-color: #c09c1c; */
-  }
-`;
-const Position = styled.div`
-  cursor: pointer;
-  position: absolute;
-  top: ${({ top }) => top}px;
-  bottom: ${({ bottom }) => bottom}px;
-  right: ${({ right }) => right}px;
-  left: ${({ left }) => left}px;
+const Container = styled.div`
+  width: fit-content; 
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  align-self: flex-start; 
 `;
 
-const TargetText = styled.div`
-  color: white;
-  z-index: 12;
-  margin-top: 10px;
+const Target = styled.div`
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: ${({ isActive }) => (isActive ? "#C09C1C" : "#ECECE9")};
+  transition: background-color 0.2s ease-out;
 `;
 
-const TargetUI = ({
-  title,
-  top,
-  bottom,
-  right,
-  left,
-  onMouseEnter,
-  onMouseLeave,
-}) => {
-  return (
-    <Position
-      top={top}
-      bottom={bottom}
-      right={right}
-      left={left}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-    >
-      <StyledTarget top={top} right={right} />
-      <TargetText>{title}</TargetText>
-    </Position>
-  );
-};
+const Text = styled.h3`
+  max-width: 140px; 
+  margin-top: 1rem; 
+  font-size: .875rem; 
+  text-transform: uppercase; 
+  text-align: center; 
+`;
 
 export default TargetUI;

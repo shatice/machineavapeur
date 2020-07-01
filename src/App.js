@@ -15,6 +15,9 @@ import Chap1Part3 from "./scenes/chapter1/c1p3";
 /***** COMPONENTS *****/
 import Footer from "./components/organisms/Footer";
 import CtaAudio from "./components/atoms/CtaAudio";
+import Target from "./components/Target";
+import Infos from "./components/organisms/Infos";
+import Test from "./components/Test";
 
 export const customHistory = createBrowserHistory();
 
@@ -36,6 +39,9 @@ const App = () => {
         <Route exact path="/chap1part1" component={Chapter1} />
         <Route exact path="/chap1part4" component={Chap1Part4} />
         <Route exact path="/chap1part3" component={Chap1Part3} />
+        <Route exact path="/target" component={Target} />
+        <Route exact path="/card" component={Infos} />
+        <Route exact path="/test" component={Test} />
       </Switch>
       {/* <Footer /> */}
     </Router>

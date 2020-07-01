@@ -5,7 +5,7 @@ import paper from "../assets/paper.png";
 import TargetUI from "../components/Target";
 
 import { gsap } from "gsap";
-import Card from "./organisms/Card";
+import Card from "./organisms/Infos";
 
 const Paper = () => {
   let ref = useRef([]);

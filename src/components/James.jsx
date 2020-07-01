@@ -8,7 +8,7 @@ import body from "../assets/jamesWatt_body_cropped.png";
 import arm from "../assets/jamesWatt_arm_cropped.png";
 
 import TargetUI from "../components/Target";
-import Card from "../components/organisms/Card";
+import Card from "./organisms/Infos";
 
 const James = () => {
   /* eslint-disable */
