@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const TargetUI = ({ title, top, bottom, right, left, isActive, onMouseEnter, onMouseLeave }) => {
+const TargetUI = ({ title, isActive }) => {
   return (
     <Container>
       <Target 

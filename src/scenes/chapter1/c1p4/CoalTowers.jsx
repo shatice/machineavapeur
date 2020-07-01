@@ -49,8 +49,7 @@ const CoalTowers = ( ) => {
 }
 
 const Container= styled.section`
-  position: relative; 
-  z-index: 10; 
+  position: relative;  
   width: 25%; 
   height: fit-content; 
   display: flex; 
@@ -58,6 +57,7 @@ const Container= styled.section`
   align-self: flex-end;
   
   &.isSmoking {
+    z-index: 10;
 
     ul li {
       opacity: 1;
