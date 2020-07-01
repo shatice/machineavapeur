@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { createBrowserHistory } from "history";
 
 /***** VIEWS *****/
-import Chapter1 from "./chapters/chapter1/chapter1";
+import Chapter1 from "./scenes/chapter1/chapter1";
 // import Chapter1Page2 from "./chapters/chapter1/chapter1Page2";
 
 import Home from "./views/Home";
