@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { chaptersList, chaptersData } from "../../constant";
-import { generatePath } from "react-router-dom";
+import { generatePath, useParams } from "react-router-dom";
 
 const UseNavigation = (history, match) => {
   const [subChapter, setSubChapter] = useState(0);
