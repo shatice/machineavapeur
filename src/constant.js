@@ -3,8 +3,8 @@ import styled from "styled-components";
 
 // Chapter 1
 import Chap1Part1 from "./scenes/chapter1/chapter1";
-import Chap1Part3 from "./scenes/test_c1p3/Chap1Part3";
-import Chap1Part4 from "./scenes/test_c1p4/Chap1Part4";
+import Chap1Part3 from "./scenes/chapter1/c1p3";
+import Chap1Part4 from "./scenes/chapter1/c1p4";
 
 // Chapter 2
 import Chapter2Part1 from "./scenes/chapter2/c2p1";

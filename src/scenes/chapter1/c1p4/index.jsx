@@ -1,10 +1,10 @@
 import React, { } from "react";
-import '../../styles/styles.scss'; 
+import '../../../styles/styles.scss'; 
 import styled from "styled-components";
 
 /***** COMPONENTS *****/
 import CoalTowers from './CoalTowers'; 
-import BackgroundImage from '../../components/BackgroundImage'; 
+import BackgroundImage from '../../../components/BackgroundImage'; 
 import Ecology from './Ecology'; 
 
 const Chap1Part4 = () => {

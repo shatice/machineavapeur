@@ -13,8 +13,6 @@ const ChaptersList = () => {
     // selectedChapter: { label: chapterLabel },
   } = UseNavigation();
 
-  const { chapters } = chaptersList;
-
   const selectChapter2 = (value) => {
     selectChapter(value);
     setChapter(value);
