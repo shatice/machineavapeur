@@ -1,20 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { chaptersList } from "../../constant";
-import UseNavigation from "./use-navigation";
+// import UseNavigation from "./use-navigation";
 
-import Title from "../atoms/Title"; 
-import ChaptersList from "./ChaptersList"; 
+import Title from "../atoms/Title";
+import ChaptersList from "./ChaptersList";
 
 const NavChapters = () => {
+  console.log(chaptersList);
   // const [isList, setIsList] = useState(false);
 
   return (
-    <ChapterListContainer 
+    <ChapterListContainer
     // onClick={() => setIsList(!isList)}
     >
-      <Title text="Tous les chapitres"/>
-      <ChaptersList/>
+      <Title text="Tous les chapitres" />
+      <ChaptersList />
     </ChapterListContainer>
   );
 };
@@ -23,7 +24,7 @@ const ChapterListContainer = styled.button`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between; 
+  justify-content: space-between;
 `;
 
 export default NavChapters;

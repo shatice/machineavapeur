@@ -12,6 +12,7 @@ const Paper = () => {
   let paperIsHover = false;
 
   useEffect(() => {
+    /* eslint-disable */
     paperAnim = gsap.to(ref.current["paper"], {
       filter: "grayscale(0)",
       y: -250,

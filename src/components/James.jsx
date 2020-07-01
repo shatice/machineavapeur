@@ -16,6 +16,7 @@ const James = () => {
   let jamesAnims = {};
 
   useEffect(() => {
+    /* eslint-disable */
     jamesAnims = {
       filterAnim: gsap.to(ref.current["jamesBody"], {
         filter: "grayscale(0)",
