@@ -24,6 +24,7 @@ const UseNavigation = (history, match) => {
   };
 
   const setNextPart = (action) => {
+    //increment action
     if (action === "increment") {
       if (subChapter >= chaptersData[chapter].data.length - 1) {
         setSelectedChapter(chaptersData[chapter + 1]);
@@ -46,12 +47,42 @@ const UseNavigation = (history, match) => {
         });
         setUrlPath(chapter, subChapter);
       }
-    } else {
-      if (subChapter === 0 && chapter !== 0) {
+    }
+    //decrement action
+    else {
+      if (chapter !== 0 && subChapter === 0) {
         setSelectedChapter(chaptersData[chapter - 1]);
         setChapter(chapter - 1);
         setSubChapter(3);
-      } else setSubChapter(subChapter - 1);
+        history.replace({
+          pathname: generatePath(match.path, {
+            chapterId: chapter - 1,
+            partId: 4,
+          }),
+        });
+      } else if (chapter === 0 && subChapter !== 0) {
+        setSelectedChapter(chaptersData[subChapter - 1]);
+        setChapter(0);
+        setSubChapter(subChapter - 1);
+        history.replace({
+          pathname: generatePath(match.path, {
+            chapterId: 0,
+            partId: subChapter - 1,
+          }),
+        });
+      }
+      // else if(){
+
+      // }
+      else {
+        setSubChapter(subChapter - 1);
+        history.replace({
+          pathname: generatePath(match.path, {
+            chapterId: chapter,
+            partId: subChapter - 1,
+          }),
+        });
+      }
     }
   };
 
