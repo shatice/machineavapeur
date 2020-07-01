@@ -102,7 +102,7 @@ export default James;
 const JamesContainer = styled.div`
   position: absolute;
   right: 741px;
-  bottom: 802px;
+  bottom: 780px;
 `;
 
 const JamesBody = styled.div`

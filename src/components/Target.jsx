@@ -24,6 +24,7 @@ const Position = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  z-index: 99;
 `;
 
 const TargetText = styled.div`
