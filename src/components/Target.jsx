@@ -17,7 +17,9 @@ const StyledTarget = styled.div`
 const Position = styled.div`
   position: absolute;
   top: ${({ top }) => top}px;
+  bottom: ${({ bottom }) => bottom}px;
   right: ${({ right }) => right}px;
+  left: ${({ left }) => left}px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,11 +32,21 @@ const TargetText = styled.div`
   margin-top: 10px;
 `;
 
-const TargetUI = ({ title, top, right, onMouseEnter, onMouseLeave }) => {
+const TargetUI = ({
+  title,
+  top,
+  bottom,
+  right,
+  left,
+  onMouseEnter,
+  onMouseLeave,
+}) => {
   return (
     <Position
       top={top}
+      bottom={bottom}
       right={right}
+      left={left}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >

@@ -5,6 +5,8 @@ const CardUI = styled.article`
   width: ${({ width }) => (width ? width : 340)}px;
   position: absolute;
   top: ${({ top }) => top}px;
+  bottom: ${({ bottom }) => bottom}px;
+  right: ${({ right }) => right}px;
   left: ${({ left }) => left}px;
   max-height: 500px;
   background-color: #282828d7;
@@ -36,9 +38,9 @@ const Title = styled.div`
   margin-left: 20px;
 `;
 
-const Card = ({ title, content, img, width, top, left }) => {
+const Card = ({ title, content, img, width, top, left, right, bottom }) => {
   return (
-    <CardUI width={width} top={top} left={left}>
+    <CardUI width={width} bottom={bottom} top={top} left={left} right={right}>
       {title && <Title>{title}</Title>}
       {img && <img src={img} alt="card" />}
       <p>{content}</p>
