@@ -111,14 +111,14 @@ export const initialCoalImage = [
   },
 ];
 
-const test = {
-  chapters: [
-    {
-      title: "",
-      urlFetch: " http://",
-    },
-  ],
-};
+// const test = {
+//   chapters: [
+//     {
+//       title: "",
+//       urlFetch: " http://",
+//     },
+//   ],
+// };
 export const chaptersData = [
   {
     title: "Chapitre 1",

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { } from "react";
 import styled from "styled-components";
 import { chaptersData } from "../constant";
 import UseNavigation from "../components/navigation/use-navigation";

@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
 
 import gsap from "gsap";
@@ -8,7 +8,7 @@ import body from "../assets/jamesWatt_body_cropped.png";
 import arm from "../assets/jamesWatt_arm_cropped.png";
 
 import TargetUI from "../components/Target";
-import Card from "../components/organisms/Card";
+// import Card from "../components/organisms/Card";
 
 const James = () => {
   let ref = useRef([]);

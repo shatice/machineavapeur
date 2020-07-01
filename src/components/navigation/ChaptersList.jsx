@@ -9,7 +9,7 @@ const ChaptersList = () => {
   const {
     selectChapter,
     setChapter,
-    selectedChapter: { label: chapterLabel },
+    // selectedChapter: { label: chapterLabel },
   } = UseNavigation();
 
   const { chapters } = chaptersList;
