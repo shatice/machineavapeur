@@ -24,7 +24,7 @@ const Ecology = () => {
       bottom="30"
       left="10"
       topCard="150"
-      leftCard="-300"
+      leftCard="-250"
       />
     </Container>
   ); 

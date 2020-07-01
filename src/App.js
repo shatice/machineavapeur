@@ -43,7 +43,7 @@ const App = () => {
         <Route exact path="/card" component={Infos} />
         <Route exact path="/test" component={Test} />
       </Switch>
-      {/* <Footer /> */}
+      <Footer />
     </Router>
   );
 };

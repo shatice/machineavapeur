@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 /***** COMPONENTS *****/
-import Infos from "../../../components/organisms/Infos";
 import Water from "./Water";
 import Nature from "./Nature";
 

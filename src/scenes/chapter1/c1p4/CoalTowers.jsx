@@ -43,6 +43,7 @@ const CoalTowers = ( ) => {
       bottom="30"
       left="10"
       leftCard="200"
+      bottomCard="20"
       />
     </Container>
   ); 

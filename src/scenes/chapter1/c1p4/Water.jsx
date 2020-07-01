@@ -5,17 +5,22 @@ import styled from "styled-components";
 import Infos from "../../../components/organisms/Infos";
 
 const Ecology = () => {
+
+  const [isAnimated, setIsAnimated] = useState(false);
+
   return (
-    <Water filter="true">
-      <img className="rocks" src="assets/img/chap_1/partie_4/c1p4_rocks.png" 
-      alt="ocean"/>
-      <img src="assets/img/chap_1/partie_4/c1p4_water.jpg" 
-      alt="ocean"/>
-    </Water>
+    <Container>
+      <div filter="true">
+        <img className="rocks" src="assets/img/chap_1/partie_4/c1p4_rocks.png" 
+        alt="ocean"/>
+        <img src="assets/img/chap_1/partie_4/c1p4_water.jpg" 
+        alt="ocean"/>
+      </div>
+    </Container>
   ); 
 }
 
-const Water = styled.div `
+const Container = styled.div `
   position: relative; 
   overflow: hidden; 
   transform: translateY(-10%); 
