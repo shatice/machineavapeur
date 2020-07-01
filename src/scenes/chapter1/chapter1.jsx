@@ -3,7 +3,6 @@ import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
 //components
-import Card from "../../components/organisms/Card";
 import Paper from "../../components/Paper";
 import James from "../../components/James";
 import TargetUI from "../../components/Target";
@@ -52,8 +51,7 @@ const Chapter1 = () => {
     gsap.to(".portrait", { duration: 1, delay: 1, yPercent: 130, ease: "exp" });
     gsap.to(".portrait", { rotate: 360, opacity: 0, duration: 1, delay: 2 });
   };
-  const content =
-    "La machine à vapeur est un moteur à combustion externe qui transforme l'énergie thermique de la vapeur d'eau (produite par une ou des chaudières) en énergie mécanique. Elle fonctionne grâce au charbon qui est alors la seule énergie qui produit assez de chaleur. À partir de là commence l'exploitation industrielle des mines de charbon un peu partout en Europe, puis dans le monde.";
+  
   const title = "Industrialisation";
   return (
     <div>
