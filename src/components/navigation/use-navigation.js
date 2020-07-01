@@ -57,7 +57,7 @@ const UseNavigation = (history, match) => {
         history.replace({
           pathname: generatePath(match.path, {
             chapterId: chapter - 1,
-            partId: 4,
+            partId: chaptersData[chapter - 1].data.length - 1,
           }),
         });
       } else if (chapter === 0 && subChapter !== 0) {
@@ -70,11 +70,7 @@ const UseNavigation = (history, match) => {
             partId: subChapter - 1,
           }),
         });
-      }
-      // else if(){
-
-      // }
-      else {
+      } else {
         setSubChapter(subChapter - 1);
         history.replace({
           pathname: generatePath(match.path, {
