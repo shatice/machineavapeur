@@ -40,8 +40,8 @@ const Chapter1 = () => {
     gsap.to(".portrait", {
       filter: "grayscale(0)",
       rotate: 20,
-      duration: 1,
-      ease: "elastic",
+      duration: 0.5,
+      ease: "bounce",
     });
     gsap.to(window, {
       delay: 0.8,
@@ -81,8 +81,6 @@ const Chapter1 = () => {
         )}
       </div>
       <Chapter1Page2 />
-      <Paper />
-      <James />
     </div>
   );
 };
