@@ -28,7 +28,11 @@ const App = () => {
       <CtaAudio />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/chapter:id/part:id" component={Chapter} />
+        <Route
+          exact
+          path="/chapter:chapterId/part:partId"
+          component={Chapter}
+        />
         <Route exact path="/end" component={End} />
 
         {/** TO BE REMOVED - FOR TEST */}

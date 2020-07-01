@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { chaptersData } from "../constant";
+import { generatePath } from "react-router-dom";
 import UseNavigation from "../components/navigation/use-navigation";
 
 const Layout = styled.section`
@@ -16,23 +17,15 @@ const Layout = styled.section`
   color: red;
 `;
 
-const Chapter = ({ history }) => {
-  const { setNextPart, subChapter, chapter } = UseNavigation();
+const Chapter = ({ history, match: { params }, match }) => {
+  const { setNextPart, subChapter, chapter } = UseNavigation(history, match);
   const title = chaptersData[chapter].title;
-  const chapterDatas = chaptersData[chapter].data;
   const subTitle = chaptersData[chapter].data[subChapter].title;
-  // const [locationPath, setLocationPath] = useState("");
-
-  // console.log(locationPath);
-
-  // useEffect(() => {
-  //   setLocationPath(history.location);
-  // }, [history]);
+  const { chapterId, partId } = params;
+  const chapterDatas = chaptersData[chapterId].data;
 
   const setPart = (action) => {
     setNextPart(action);
-    // history.replace(`/chapter${chapter}/part${subChapter}`, "");
-    // history.push(`/${chapterDatas[subChapter].path}`);
   };
   return (
     <Layout>
@@ -59,10 +52,9 @@ const Chapter = ({ history }) => {
         >
           NEXT PART
         </button>
-        {/* {locationPath.pathname} */}
       </div>
-      {chapterDatas[subChapter].elem &&
-        React.cloneElement(chapterDatas[subChapter].elem)}
+      {chapterDatas[partId].elem &&
+        React.cloneElement(chapterDatas[partId].elem)}
     </Layout>
   );
 };

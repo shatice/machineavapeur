@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { chaptersList, chaptersData } from "../../constant";
+import { generatePath } from "react-router-dom";
 
-const UseNavigation = () => {
+const UseNavigation = (history, match) => {
   const [subChapter, setSubChapter] = useState(0);
   const [path, setPath] = useState("");
   const [chapter, setChapter] = useState(0);
@@ -29,8 +30,20 @@ const UseNavigation = () => {
         setChapter(chapter + 1);
         setSubChapter(0);
         setUrlPath(chapter, subChapter);
+        history.replace({
+          pathname: generatePath(match.path, {
+            chapterId: chapter + 1,
+            partId: 0,
+          }),
+        });
       } else {
         setSubChapter(subChapter + 1);
+        history.replace({
+          pathname: generatePath(match.path, {
+            chapterId: chapter,
+            partId: subChapter + 1,
+          }),
+        });
         setUrlPath(chapter, subChapter);
       }
     } else {
