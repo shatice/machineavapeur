@@ -21,18 +21,18 @@ const Chapter = ({ history }) => {
   const title = chaptersData[chapter].title;
   const chapterDatas = chaptersData[chapter].data;
   const subTitle = chaptersData[chapter].data[subChapter].title;
-  const [locationPath, setLocationPath] = useState("");
+  // const [locationPath, setLocationPath] = useState("");
 
-  console.log(locationPath);
+  // console.log(locationPath);
 
-  useEffect(() => {
-    setLocationPath(history.location);
-  }, [history]);
+  // useEffect(() => {
+  //   setLocationPath(history.location);
+  // }, [history]);
 
   const setPart = (action) => {
     setNextPart(action);
-    history.replace(`/chapter${chapter}/part${subChapter}`, "");
-    history.push(`/${chapterDatas[subChapter].path}`);
+    // history.replace(`/chapter${chapter}/part${subChapter}`, "");
+    // history.push(`/${chapterDatas[subChapter].path}`);
   };
   return (
     <Layout>
@@ -59,7 +59,7 @@ const Chapter = ({ history }) => {
         >
           NEXT PART
         </button>
-        {locationPath.pathname}
+        {/* {locationPath.pathname} */}
       </div>
       {chapterDatas[subChapter].elem &&
         React.cloneElement(chapterDatas[subChapter].elem)}
