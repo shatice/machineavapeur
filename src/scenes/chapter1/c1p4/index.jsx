@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 /***** COMPONENTS *****/
 import CoalTowers from './CoalTowers'; 
-import BackgroundImage from '../../../components/BackgroundImage'; 
+import BackgroundImage from '../../../components/atoms/BackgroundImage'; 
 import Ecology from './Ecology'; 
 
 const Chap1Part4 = () => {

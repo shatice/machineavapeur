@@ -2,19 +2,20 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledTarget = styled.div`
-  cursor: pointer;
   transition: background-color 0.2s ease-out;
   width: 13px;
   height: 13px;
   border-radius: 50%;
   background-color: white;
+  background-color: #c09c1c;
   z-index: 10;
 
   &:hover {
-    background-color: #c09c1c;
+    /* background-color: #c09c1c; */
   }
 `;
 const Position = styled.div`
+  cursor: pointer;
   position: absolute;
   top: ${({ top }) => top}px;
   bottom: ${({ bottom }) => bottom}px;

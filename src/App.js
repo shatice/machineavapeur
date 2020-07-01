@@ -37,7 +37,7 @@ const App = () => {
         <Route exact path="/chap1part4" component={Chap1Part4} />
         <Route exact path="/chap1part3" component={Chap1Part3} />
       </Switch>
-      <Footer />
+      {/* <Footer /> */}
     </Router>
   );
 };
