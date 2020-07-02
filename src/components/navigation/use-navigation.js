@@ -1,8 +1,10 @@
 import { useState } from "react";
-import { chaptersList, chaptersData } from "../../constant";
-import { generatePath, useParams } from "react-router-dom";
+import { chaptersList } from "../../constant";
+import chaptersData from "../../navDatas";
+import { generatePath } from "react-router-dom";
 
 const UseNavigation = (history, match) => {
+  console.log(history);
   const [subChapter, setSubChapter] = useState(0);
   const [path, setPath] = useState("");
   const [chapter, setChapter] = useState(0);
@@ -27,30 +29,34 @@ const UseNavigation = (history, match) => {
     //increment action
     if (action === "increment") {
       if (subChapter >= chaptersData[chapter].data.length - 1) {
+        history.replace({
+          pathname: generatePath(match.path, {
+            chapterId: Number(chapter + 1),
+            partId: 0,
+          }),
+        });
         setSelectedChapter(chaptersData[chapter + 1]);
         setChapter(chapter + 1);
         setSubChapter(0);
         setUrlPath(chapter, subChapter);
-        history.replace({
-          pathname: generatePath(match.path, {
-            chapterId: chapter + 1,
-            partId: 0,
-          }),
-        });
       } else {
-        setSubChapter(subChapter + 1);
         history.replace({
           pathname: generatePath(match.path, {
-            chapterId: chapter,
-            partId: subChapter + 1,
+            chapterId: Number(chapter),
+            partId: Number(subChapter + 1),
           }),
         });
+        setSubChapter(subChapter + 1);
         setUrlPath(chapter, subChapter);
       }
-    }
-    //decrement action
-    else {
-      if (chapter !== 0 && subChapter === 0) {
+    } else {
+      if (subChapter === 0 && chapter !== 0) {
+        history.replace({
+          pathname: generatePath(match.path, {
+            chapterId: Number(chapter),
+            partId: Number(subChapter + 1),
+          }),
+        });
         setSelectedChapter(chaptersData[chapter - 1]);
         setChapter(chapter - 1);
         setSubChapter(3);
@@ -85,6 +91,7 @@ const UseNavigation = (history, match) => {
   return {
     setNextPart,
     subChapter,
+    setSubChapter,
     selectChapter,
     selectedChapter,
     setChapter,
