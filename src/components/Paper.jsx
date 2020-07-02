@@ -2,10 +2,9 @@ import React, { useRef, useEffect, useState } from "react";
 import styled from "styled-components";
 
 import paper from "../assets/paper.png";
-import TargetUI from "./organisms/Target";
 
 import { gsap } from "gsap";
-import Card from "./molecules/Infos";
+import Infos from "./molecules/Infos";
 
 const Paper = () => {
   let ref = useRef([]);
@@ -32,33 +31,24 @@ const Paper = () => {
     }
     setPaperIsHover(!paperIsHover);
   };
-  const content =
-    "La machine à vapeur est un moteur à combustion externe qui transforme l'énergie thermique de la vapeur d'eau en énergie mécanique. C’est la première source d'énergie mécanique maîtrisée par l’homme ; auparavant, l’énergie était d'origine humaine ou animale Elle est essentielle pour les progrès qui vont suivre dans le domaine des transports, comme le bateau à vapeur et surtout le chemin de fer, avec le quasi-monopole des locomotives à vapeur jusque dans la seconde moitié du xxe siècle.";
-  const title = "La machine a vapeur";
+
   return (
     <PaperContainer>
-      <TargetUI
-        top={155}
-        right={195}
-        onMouseEnter={paperHover}
-        onMouseLeave={paperHover}
-        title={title}
-      />
       <PaperIMG
         ref={(element) => {
           ref.current["paper"] = element;
         }}
         src={paper}
       />
-      {paperIsHover && (
-        <Card
-          title={title}
-          width={"340"}
-          content={content}
-          top={"-150"}
-          left={"0"}
-        />
-      )}
+      <Infos
+        setIsAnimated={paperHover}
+        title={"Paper"}
+        content={"Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."}
+        bottom="50"
+        left="0"
+        leftCard="-600"
+        bottomCard="800"
+      />
     </PaperContainer>
   );
 };
@@ -72,7 +62,7 @@ const PaperContainer = styled.div`
 `;
 
 const PaperIMG = styled.img`
-  filter: grayscale(1);
+  filter: grayscale(1);a
 `;
 
 export default Paper;
