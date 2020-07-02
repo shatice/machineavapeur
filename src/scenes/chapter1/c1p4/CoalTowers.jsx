@@ -11,7 +11,7 @@ const CoalTowers = ( ) => {
 
   return (
     <Container 
-    className={ isAnimated ? "isSmoking" : ""}
+    className={ isAnimated ? "isAnimated" : ""}
     > 
       <Tower
       filter={ isAnimated ? true : false }
@@ -57,7 +57,7 @@ const Container= styled.section`
   justify-content: space-between; 
   align-self: flex-end;
   
-  &.isSmoking {
+  &.isAnimated {
     z-index: 10;
 
     ul li {

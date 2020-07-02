@@ -17,6 +17,7 @@ const Infos = ({ setIsAnimated, title, content, top, bottom, right, left, topCar
     left={ left }
     onMouseEnter={ () => { setIsCard(true); setIsAnimated( true );  } }
     onMouseLeave={ () => { setIsCard(false); setIsAnimated( false ); } }
+    className="infos"
     >
       {/**
        * Au survol de Target, Card apparaît
