@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { chaptersList } from "../../constant";
 // import UseNavigation from "./use-navigation";
@@ -7,14 +7,12 @@ import Title from "./Title";
 import ChaptersList from "./ChaptersList";
 
 const NavChapters = () => {
-  // const [isList, setIsList] = useState(false);
+  const [isList, setIsList] = useState(false);
 
   return (
-    <ChapterListContainer
-    // onClick={() => setIsList(!isList)}
-    >
-      <Title text="Tous les chapitres" />
-      <ChaptersList />
+    <ChapterListContainer>
+      <Title onClick={() => setIsList(!isList)} text="Tous les chapitres" />
+      {isList && <ChaptersList isList={isList} setIsList={setIsList} />}
     </ChapterListContainer>
   );
 };

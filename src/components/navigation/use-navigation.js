@@ -7,6 +7,7 @@ const UseNavigation = (history, match) => {
   const [subChapter, setSubChapter] = useState(0);
   const [path, setPath] = useState("");
   const [chapter, setChapter] = useState(0);
+  const [isChapterList, setIsChapterList] = useState(false);
   const [selectedChapter, setSelectedChapter] = useState({
     label: "La machine a vapeur & le charbon1",
     value: 0,
@@ -97,6 +98,8 @@ const UseNavigation = (history, match) => {
     chapter,
     setUrlPath,
     path,
+    isChapterList,
+    setIsChapterList,
   };
 };
 export default UseNavigation;
