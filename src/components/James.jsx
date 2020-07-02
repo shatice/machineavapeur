@@ -80,8 +80,8 @@ const James = () => {
         title={"James"}
         content={"Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."}
         bottom="30"
-        left="10"
-        leftCard="-1000"
+        left="-10"
+        leftCard="-1400"
         bottomCard="-600"
       />
     </JamesContainer>
@@ -92,8 +92,10 @@ export default James;
 
 const JamesContainer = styled.div`
   position: absolute;
-  right: 741px;
-  bottom: 802px;
+  right: 446px;
+  bottom: 710px;
+  width:300px;
+  heigth: 300px;
 `;
 
 const JamesBody = styled.div`

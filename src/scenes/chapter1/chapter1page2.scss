@@ -3,15 +3,10 @@
     height: 100vh;
     overflow: hidden;
     position: relative;
-    background: #353535;
+}
 
-    div {
-        width: 10px;
-        height: 10px;
-        background: red;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
+.minorBg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
 }
