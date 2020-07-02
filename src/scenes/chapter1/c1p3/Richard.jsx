@@ -5,6 +5,12 @@ import './style.scss';
 /***** COMPONENTS *****/
 import Infos from "../../../components/molecules/Infos";
 
+/***** ASSETS *****/
+import frameRichard from "./img/c1p3_frame_richard.png";
+import richard from "./img/c1p3_richard.png";
+import coinQueen from "./img/c1p3_coin_queen.png";
+import coinWagon from "./img/c1p3_coin_wagon.png";
+
 const Richard = () => {
 
   const [isAnimated, setIsAnimated] = useState(false);
@@ -14,22 +20,22 @@ const Richard = () => {
     className={ isAnimated ? "isAnimated" : ""}
     >
       <img 
-      src="assets/img/chap_1/partie_3/c1p3_frame_richard.png" 
+      src={ frameRichard } 
       alt=""/>
       <img 
-      src="assets/img/chap_1/partie_3/c1p3_richard.png" 
+      src={ richard } 
       alt=""
       className="richard"/>
       <div class="scene">
         <div className="coin">
           <div className="coin__card">
             <img 
-            src="assets/img/chap_1/partie_3/c1p3_coin_queen.png" 
+            src={ coinQueen } 
             alt=""
             className="coin__side coin__side--queen"
             />
             <img 
-            src="assets/img/chap_1/partie_3/c1p3_coin_wagon.png" 
+            src={ coinWagon } 
             alt=""
             className="coin__side coin__side--wagon"
             />
