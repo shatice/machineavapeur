@@ -11,7 +11,6 @@ const Layout = styled.section`
   height: 100vh;
   width: 100%;
   font-size: 52px;
-  color: red;
 `;
 
 const NavTemp = styled.section`
