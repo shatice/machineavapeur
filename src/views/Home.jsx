@@ -20,6 +20,7 @@ const Home = () => {
 }
 
 const Container = styled.section `
+  position: relative; 
   width: 100%; 
   height: 100vh; 
   display: flex; 
@@ -37,7 +38,7 @@ const Container = styled.section `
 
   p {
     font-size: .875rem; 
-    max-width: 35%; 
+    max-width: 38%; 
     text-align: center;  
     line-height: 1.5; 
   }
@@ -48,7 +49,9 @@ const Container = styled.section `
   }
 
   a {
-    margin-top: 8rem;  
+    position: absolute; 
+    bottom: 4rem; 
+    margin: 0 auto; 
     text-transform: uppercase; 
     text-decoration: underline; 
     transition: letter-spacing .2s ease-out; 
