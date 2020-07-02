@@ -7,7 +7,6 @@ import Title from "./Title";
 import ChaptersList from "./ChaptersList";
 
 const NavChapters = () => {
-  console.log(chaptersList);
   // const [isList, setIsList] = useState(false);
 
   return (

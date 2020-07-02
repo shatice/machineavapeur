@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { chaptersData } from "../constant";
-import { generatePath } from "react-router-dom";
+import chaptersData from "../navDatas";
+import { useParams } from "react-router-dom";
 import UseNavigation from "../components/navigation/use-navigation";
 
 const Layout = styled.section`
@@ -10,49 +10,68 @@ const Layout = styled.section`
   top: 0;
   height: 100vh;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-size: 52px;
   color: red;
 `;
 
-const Chapter = ({ history, match: { params }, match }) => {
-  const { setNextPart, subChapter, chapter } = UseNavigation(history, match);
+const NavTemp = styled.section`
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 12px;
+  color: black;
+  z-index: 30;
+  background-color: white;
+  padding: 10px;
+`;
+
+const Chapter = ({ history, match }) => {
+  const {
+    setNextPart,
+    subChapter,
+    chapter,
+    setChapter,
+    setSubChapter,
+  } = UseNavigation(history, match);
+
+  const { chapterId, partId } = useParams();
   const title = chaptersData[chapter].title;
   const subTitle = chaptersData[chapter].data[subChapter].title;
-  const { chapterId, partId } = params;
   const chapterDatas = chaptersData[chapterId].data;
+  useEffect(() => {
+    setSubChapter(Number(partId));
+    setChapter(Number(chapterId));
+  }, [history.location.pathname]);
+  // window.onLoad = () => {};
 
-  const setPart = (action) => {
-    setNextPart(action);
-  };
   return (
     <Layout>
-      <div style={{ position: "absolute", zIndex: "1000" }}>
+      <NavTemp>
         <button
           style={{ zIndex: 1000 }}
           onClick={() => {
             if (chapter === 0 && subChapter === 0) {
               return;
-            } else setPart("decrement");
+            } else setNextPart("decrement");
           }}
         >
           LAST PART
         </button>
-        {title && title}
-        {subTitle && subTitle}
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          {title && title}
+          {subTitle && subTitle}
+        </div>
         <button
           style={{ zIndex: 1000 }}
           onClick={() => {
             if (chapter === 2 && subChapter === 3) {
               return;
-            } else setPart("increment");
+            } else setNextPart("increment");
           }}
         >
           NEXT PART
         </button>
-      </div>
+      </NavTemp>
       {chapterDatas[partId].elem &&
         React.cloneElement(chapterDatas[partId].elem)}
     </Layout>
