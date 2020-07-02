@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { Link, Redirect } from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import chaptersData from "../../navDatas";
 import UseNavigation from "../navigation/use-navigation";
@@ -31,7 +31,7 @@ const Container = styled.ul`
   }
 `;
 
-const NavParts = ({ history, match }) => {
+const NavParts = () => {
   const { chapter } = UseNavigation();
 
   const subChapters = chaptersData[chapter].data;

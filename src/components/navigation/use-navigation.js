@@ -4,7 +4,6 @@ import chaptersData from "../../navDatas";
 import { generatePath } from "react-router-dom";
 
 const UseNavigation = (history, match) => {
-  console.log(history);
   const [subChapter, setSubChapter] = useState(0);
   const [path, setPath] = useState("");
   const [chapter, setChapter] = useState(0);
@@ -88,16 +87,6 @@ const UseNavigation = (history, match) => {
     }
   };
 
-  const setSpecificPart = (chapter, part) => {
-    console.log(history);
-    history.replace({
-      pathname: generatePath(match.path, {
-        chapterId: Number(chapter),
-        partId: Number(part),
-      }),
-    });
-  };
-
   return {
     setNextPart,
     subChapter,
@@ -108,7 +97,6 @@ const UseNavigation = (history, match) => {
     chapter,
     setUrlPath,
     path,
-    setSpecificPart,
   };
 };
 export default UseNavigation;

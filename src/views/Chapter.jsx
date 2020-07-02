@@ -26,31 +26,12 @@ const NavTemp = styled.section`
 `;
 
 const Chapter = ({ history, match }) => {
-  const {
-    setNextPart,
-    subChapter,
-    chapter,
-    setChapter,
-    setSubChapter,
-  } = UseNavigation(history, match);
+  const { setNextPart, subChapter, chapter } = UseNavigation(history, match);
 
   const { chapterId, partId } = useParams();
   const title = chaptersData[chapter].title;
   const subTitle = chaptersData[chapter].data[subChapter].title;
-  console.log(subTitle);
   const chapterDatas = chaptersData[chapterId].data;
-
-  const setPart = (action) => {
-    setNextPart(action);
-  };
-  const cb = () => {
-    console.log(chapter);
-  };
-  window.onLoad = () => {
-    setSubChapter(partId);
-    setChapter(chapterId);
-    cb();
-  };
 
   return (
     <Layout>
@@ -60,7 +41,7 @@ const Chapter = ({ history, match }) => {
           onClick={() => {
             if (chapter === 0 && subChapter === 0) {
               return;
-            } else setPart("decrement");
+            } else setNextPart("decrement");
           }}
         >
           LAST PART
@@ -74,7 +55,7 @@ const Chapter = ({ history, match }) => {
           onClick={() => {
             if (chapter === 2 && subChapter === 3) {
               return;
-            } else setPart("increment");
+            } else setNextPart("increment");
           }}
         >
           NEXT PART
