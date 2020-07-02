@@ -1,0 +1,862 @@
+<body>
+  <header class="header">
+    <section class="steps">
+      <div class="step__text--default">
+        <p class="step__texts--mb">DE LA ROCHE À LA TERRE</p>
+        <p class="step__texts--years">IL Y A 1 MILLIARD D'ANNÉES</p>
+      </div>
+      <div class="step steps__bar">
+        <div class="step-indicator step__3bars"></div>
+        <div class="step-indicator step__3bars"></div>
+        <div class="step-indicator step__3bars"></div>
+      </div>
+      <div class="step__text--default two">
+        <p class="step__texts--mb">Le big bang biologique</p>
+        <p class="step__texts--years">500 millions d’années</p>
+      </div>
+      <div class="step steps__bar">
+        <div class="step-indicator step__2bars"></div>
+        <div class="step-indicator step__2bars"></div>
+      </div>
+      <div class="step__text--default three">
+        <p class="step__texts--mb">L’expansion de la vie terrestre</p>
+        <p class="step__texts--years">450 MILLIONS D’ANNÉES</p>
+      </div>
+      <div class="step steps__bar">
+        <div class="step-indicator step__2bars"></div>
+        <div class="step-indicator step__2bars"></div>
+      </div>
+      <div class="step__text--default four">
+        <p class="step__texts--mb">Le début d’une nouvelle ère</p>
+        <p class="step__texts--years">65 millions d’années</p>
+      </div>
+      <div class="step steps__bar">
+        <div class="step-indicator step__2bars"></div>
+        <div class="step-indicator step__2bars"></div>
+      </div>
+      <div class="step__text--default five">
+        <p class="step__texts--mb">Le WOOD WIDE WEB</p>
+        <p class="step__texts--years">10 millions d’années</p>
+      </div>
+      <div class="step steps__bar">
+        <div class="step-indicator step__2bars"></div>
+        <div class="step-indicator step__2bars"></div>
+      </div>
+      <div class="step__text--default six">
+        <p class="step__texts--mb">Relation Homme - Champignon</p>
+        <p class="step__texts--years">De nos jours</p>
+      </div>
+      <div class="step steps__bar">
+        <div class="step-indicator step__2bars"></div>
+        <div class="step-indicator step__2bars"></div>
+      </div>
+      <div class="step__text--default seven">
+        <p class="step__texts--mb">La Clé de notre Futur</p>
+        <p class="step__texts--years">Prochainement</p>
+      </div>
+    </section>
+  </header>
+  <main>
+    <button id="left">-</button>
+    <button id="right" onclick="scrollRight">+</button>
+  </main>
+</body>
+<style>
+  :root {
+    --pink-black: #110c0c;
+    --dark-pink: #b06766;
+    --brown: #473333;
+    --light-grey: #c8c8c8;
+    background: linear-gradient(
+      298.86deg,
+      rgba(226, 157, 156, 0.75) -1.85%,
+      rgba(0, 0, 0, 0.75) 65.64%
+    );
+  }
+  body {
+    overflow: hidden;
+    height: 200vh;
+  }
+
+  /* FONTS */
+
+  .title {
+    display: inline-block;
+    padding-top: 15%;
+    padding-left: 10%;
+    font-family: "Oswald", sans-serif;
+    font-size: 5.6rem;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: 4%;
+    color: white;
+  }
+
+  .subtitle {
+    display: block;
+    padding-top: 12%;
+    padding-left: 10%;
+    font-family: "Oswald", sans-serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 140%;
+    letter-spacing: 4%;
+    color: var(--dark-pink);
+  }
+
+  .paragraph {
+    display: inline-block;
+    margin-top: 33%;
+    margin-left: 17.5%;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 100;
+    font-size: 1.125rem;
+    line-height: 140%;
+    color: white;
+  }
+
+  .keyfigures1 {
+    display: block;
+    max-width: 1200px;
+    margin-top: 10%;
+    font-family: "Oswald", sans-serif;
+    font-weight: 600;
+    font-size: 3rem;
+    line-height: 75%;
+    /* letter-spacing: 10%; */
+    text-align: center;
+    color: white;
+  }
+
+  .keyfigures1-- {
+    display: block;
+    max-width: 1200px;
+    /* margin-top: 0%; */
+    font-family: "Oswald", sans-serif;
+    font-weight: 800;
+    font-size: 4.5rem;
+    /* letter-spacing: 10%; */
+    text-align: center;
+    color: white;
+  }
+
+  .keyfigures2 {
+    display: block;
+    max-width: 800px;
+    margin-top: 22%;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 100;
+    font-size: 12rem;
+    text-align: center;
+    color: white;
+  }
+
+  .keyfigures3 {
+    display: block;
+    max-width: 800px;
+    margin-top: 38%;
+    font-family: "Oswald", sans-serif;
+    font-weight: 500;
+    font-size: 2.5rem;
+    text-align: center;
+    color: white;
+  }
+
+  hr {
+    display: inline-block;
+    width: 90px;
+    height: 12px;
+    background-color: white;
+  }
+
+  /*
+  ICONS
+  */
+  .social__icon {
+    width: 17px;
+    margin: 0 10px;
+  }
+
+  /*
+  STYLE GÉNÉRAL
+  */
+  .container {
+  }
+
+  .container--page1 {
+    width: 1000vw;
+    height: 93.4vh;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .container--page2 {
+    background-color: yellow;
+  }
+
+  .header,
+  .footer {
+    width: 100vw;
+    height: 50px;
+    background-color: var(--pink-black);
+  }
+
+  /*
+  FOOTER DE NAVIGATION
+  */
+  .footer__items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* flex-direction: row-reverse; */
+    height: 50px;
+  }
+
+  .footer__grp {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* flex-direction: row-reverse; */
+    height: 50px;
+  }
+
+  .footer__item {
+    display: inline-block;
+    padding: 0 30px;
+    font-family: "Oswald", sans-serif;
+    font-weight: 400;
+    font-size: 0.8rem;
+    line-height: 140%;
+    color: var(--brown);
+    cursor: pointer;
+  }
+
+  .footer__item a {
+    color: var(--brown);
+  }
+
+  .footer__item a:hover {
+    color: var(--dark-pink);
+  }
+
+  .nav__footer {
+    position: fixed;
+    bottom: 0;
+    /* z-index: 100; */
+  }
+
+  /*
+  TIMELINE
+  */
+
+  .header {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 50px;
+    background-color: var(--pink-black);
+  }
+
+  .step__text--default {
+    position: absolute;
+    color: var(--light-grey);
+    font-family: "Oswald", sans-serif;
+    font-size: 0.62rem;
+    letter-spacing: 1px;
+  }
+
+  .step__text--default > p {
+    width: max-content;
+    text-transform: uppercase;
+  }
+
+  .step__texts--mb {
+    margin-bottom: 8%;
+    line-height: 140%;
+    color: var(--dark-pink);
+  }
+
+  .steps__bar {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .step__3bars {
+    width: 33.33333333%;
+    height: 80%;
+  }
+
+  .step__2bars {
+    width: 50%;
+    height: 80%;
+  }
+
+  .step__1bar {
+    width: 100%;
+    height: 80%;
+  }
+
+  .two {
+    transform: translateX(153%);
+  }
+
+  .two > .step__texts--years {
+    transform: translateX(3%);
+  }
+
+  .three {
+    transform: translateX(249%);
+  }
+
+  .three > .step__texts--years {
+    transform: translateX(20%);
+  }
+
+  .four {
+    transform: translateX(447%);
+  }
+
+  .four > .step__texts--years {
+    transform: translateX(17%);
+  }
+
+  .five {
+    transform: translateX(852%);
+  }
+
+  .five > .step__texts--years {
+    transform: translateX(-5%);
+  }
+
+  /* .five > .step__texts--mb {
+    margin-top: 10%;
+  } */
+
+  .six {
+    transform: translateX(720%);
+    text-align: center;
+  }
+
+  /* .six > p {
+    width: max-content;
+  } */
+
+  .six > .step__texts--years {
+    transform: translateX(72%);
+  }
+
+  .seven {
+    transform: translateX(1178%);
+    text-align: end;
+  }
+
+  .seven > .step__texts--years {
+    transform: translateX(43%);
+  }
+
+  .steps {
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .step {
+    width: 16%;
+    height: 3px;
+    background-color: var(--light-grey);
+    margin-right: 2px;
+  }
+
+  .completed {
+    border: 2px solid var(--dark-pink);
+  }
+
+  /*
+  HERO
+  */
+  .hero {
+    position: relative;
+    /* display: flex; */
+    width: 100vw;
+    height: 100vh;
+    background-color: grey;
+  }
+
+  .hero__title {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  /*
+  SOUS-PARTIES
+  */
+  .subpart {
+    width: 100vw;
+  }
+
+  .subpart9,
+  .subpart8,
+  .subpart7,
+  .subpart6,
+  .subpart5,
+  .subpart4,
+  .subpart3,
+  .subpart2,
+  .subpart1 {
+    position: relative;
+    height: 100vh;
+    background: linear-gradient(
+      298.86deg,
+      rgba(226, 157, 156, 0.75) -1.85%,
+      rgba(0, 0, 0, 0.75) 65.64%
+    );
+    background-image: url(../assets/media/BG_noise.jpg);
+  }
+
+  .subpart9__main,
+  .subpart5__main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .subpart8__title,
+  .subpart6__title,
+  .subpart4__title,
+  .subpart2__title,
+  .subpart1__title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    max-width: 1400px;
+    margin: 0px auto;
+  }
+
+  .subpart8__title {
+    padding-top: 10%;
+  }
+
+  .subpart2__number,
+  .subpart1__number {
+    position: absolute;
+    top: 9.5%;
+    right: 10.5%;
+    font-size: 14rem;
+    color: var(--dark-pink);
+  }
+
+  .subpart9__next,
+  .subpart1__scroll {
+    position: absolute;
+    top: 50%;
+    right: 12%;
+    z-index: 2;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+  }
+
+  .subpart1__scroll {
+    color: var(--dark-pink);
+  }
+
+  .subpart9__next--discover {
+    position: absolute;
+    top: 47%;
+    right: 16.5%;
+    z-index: 2;
+    font-size: 1rem;
+    color: var(--dark-pink);
+  }
+
+  .subpart9__next--number {
+    position: absolute;
+    top: 50%;
+    right: -15%;
+    font-size: 5rem;
+    color: var(--dark-pink);
+    /* filter: blur(3px); */
+    z-index: -1;
+  }
+
+  .subpart8__subtitle,
+  .subpart6__subtitle,
+  .subpart4__subtitle,
+  .subpart2__subtitle {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .subpart8__subtitle {
+    padding-top: 8%;
+  }
+
+  .subpart5__keyfigures3,
+  .subpart5__keyfigures2,
+  .subpart5__keyfigures1 {
+    position: absolute;
+    top: 0;
+  }
+
+  .subpart8__paragraph,
+  .subpart6__paragraph,
+  .subpart4__paragraph,
+  .subpart2__paragraph {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 400px;
+  }
+
+  .subpart9__paragraph,
+  .subpart8__paragraph,
+  .subpart6__paragraph {
+    max-width: 510px;
+  }
+
+  .subpart8__paragraph {
+    margin-top: 28%;
+  }
+
+  .subpart9__paragraph {
+    display: block;
+    position: absolute;
+    top: 45%;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  strong {
+    font-weight: bolder;
+  }
+
+  /*
+  IMAGES
+  */
+
+  .subpart2__image {
+    position: absolute;
+    max-width: 80%;
+    right: 0;
+    bottom: 0;
+  }
+
+  .subpart8__image {
+    position: absolute;
+    max-width: 430px;
+    bottom: 0;
+    z-index: 10;
+  }
+
+  .subpart8__image--2 {
+    position: absolute;
+    max-width: 750px;
+    top: 0;
+    right: 0;
+  }
+
+  /*
+  VIDEOS
+  */
+
+  .BG_video {
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: 100%;
+    height: 100%;
+    /* z-index: -100; */
+    object-fit: cover;
+  }
+
+  .BG_video--circle {
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    clip-path: circle(23% at 72% 50%);
+    transition: clip-path 2s;
+  }
+
+  .BG_video--circle:hover {
+    clip-path: circle(30% at 72% 50%);
+  }
+
+  .BG_video--triangle {
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: clip-path 2s;
+    clip-path: polygon(74% 90%, 49% 0, 100% 0);
+  }
+
+  .BG_video--triangle:hover {
+    clip-path: polygon(74% 80%, 49% 0, 100% 0);
+  }
+
+  /*
+  TOOLTIPS
+  */
+  .tooltipss {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: row;
+    width: 400px;
+    height: 100px;
+  }
+
+  .tooltipss__positionnement {
+    position: absolute;
+    bottom: 50px;
+    right: 1050px;
+  }
+
+  .tooltipss__positionnement--2 {
+    position: absolute;
+    bottom: 30px;
+    right: 550px;
+  }
+
+  .tooltips__name {
+    display: block;
+    /* position: absolute;
+    bottom: 100px;
+    right: 800px; */
+    max-width: 400px;
+    text-align: center;
+    /* padding-top: 12%;
+    padding-left: 10%; */
+    font-family: "Oswald", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 140%;
+    /* letter-spacing: 4%; */
+    color: var(--dark-pink);
+    transition: color 0.5s;
+  }
+
+  .tooltips__name:hover {
+    color: white;
+  }
+
+  .tooltips {
+    position: absolute;
+    margin-top: 8%;
+    /* bottom: 100px;
+    right: 800px; */
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: var(--light-grey);
+    border: 10px solid rgba(226, 157, 156, 0.1);
+    /* filter: blur(10%); */
+    transition: height 0.5s, width 0.5s, border-radius 0.3s, opacity 0.5s;
+  }
+
+  .tooltips.is-open {
+    height: 500px;
+    width: 700px;
+    border-radius: 1%;
+    border: 5px solid rgba(226, 157, 156, 0.1);
+    bottom: 30px;
+    right: -100px;
+    opacity: 1;
+    z-index: 100;
+  }
+
+  .tooltips__content {
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .tooltips__content.is-open {
+    opacity: 1;
+  }
+  main {
+    position: absolute;
+    left: 30;
+    top: 300;
+  }
+</style>
+<script>
+  const content = document.querySelectorAll(".sectionId");
+  console.log("content: ", content);
+  const prev = document.querySelector("#left");
+  const next = document.querySelector("#right");
+  var counter = 0;
+  const idlePeriod = 100;
+  const animationDuration = 10 - 000;
+
+  let lastAnimation = 0;
+  let index = 0;
+
+  const toggleText = (index, state) => {
+    if (state === "show") {
+      content[index].querySelector(".box__content").classList.add("show");
+    } else {
+      content[index].querySelector(".box__content").classList.remove("show");
+    }
+  };
+
+  function scrollLeft() {
+    if (index < 12) {
+      toggleText(index, "hide");
+      index--;
+      content.forEach((section, i) => {
+        if (i === index) {
+          toggleText(i, "show");
+          stepRemove();
+          section.scrollIntoView({ behavior: "smooth" });
+        }
+      });
+    } else {
+      console.log("finish to scroll sir");
+    }
+  }
+
+  function scrollRight() {
+    toggleText(index, "hide");
+    index++;
+    content.forEach((section, i) => {
+      if (i === index) {
+        toggleText(i, "show");
+        stepAdd();
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  }
+
+  toggleText(0, "show");
+
+  prev.addEventListener("click", () => {
+    if (index < 1) return;
+    scrollLeft();
+  });
+
+  next.addEventListener("click", () => {
+    if (index > 10) return;
+    scrollRight();
+  });
+
+  var steps = document.querySelectorAll(".step-indicator");
+  console.log("steps: ", steps);
+
+  function stepAdd() {
+    steps[index].classList.add("completed");
+  }
+  function stepRemove() {
+    let indexPosition = index;
+    if ((index = 0)) {
+      indexPosition = -1;
+    }
+    if (indexPosition != -1) {
+      steps[index + 1].classList.remove("completed");
+      console.log("index: ", index);
+    } else {
+      console.log("hey: ", "hey");
+    }
+  }
+
+  // /*
+  // // VIDEO
+  // */
+
+  // var vid = document.getElementById("bgvid");
+  // var pauseButton = document.querySelector(".pauseBtn");
+
+  // if (window.matchMedia('(prefers-reduced-motion)').matches) {
+  //   vid.removeAttribute("autoplay");
+  //   vid.pause();
+  // }
+  // //make fade effect on pause
+  // function vidFade() {
+  //   vid.classList.add("stopfade");
+  // }
+
+  // //function to end if there's not loop attribute
+  // vid.addEventListener('ended', function () {
+  //   // only functional if "loop" is removed
+  //   vid.pause();
+  //   // to capture IE10
+  //   vidFade();
+  // });
+
+  // //pause module
+  // pauseButton.addEventListener("click", function () {
+  //   vid.classList.toggle("stopfade");
+  //   if (vid.paused) {
+  //     vid.play();
+  //     pauseButton.classList.toggle('play')
+  //   } else {
+  //     vid.pause();
+  //     pauseButton.classList.add('pause')
+  //     pauseButton.classList.remove('play')
+  //   }
+  // })
+
+  /* 
+SCROLL FORCÉ
+*/
+
+  document.addEventListener("wheel", (event) => {
+    var delta = event.wheelDelta;
+    var timeNow = new Date().getTime();
+    // Cancel scroll if currently animating or within quiet period
+    if (timeNow - lastAnimation < idlePeriod + animationDuration) {
+      event.preventDefault();
+      return;
+    }
+    if (delta < 0) {
+      counter += 1;
+      if (counter % 10 === 0) {
+        var event = new Event("click");
+        next.dispatchEvent(event);
+        console.log(counter);
+        stepAdd();
+      }
+    } else {
+      counter += 1;
+      if (counter % 10 === 0) {
+        var event = new Event("click");
+        prev.dispatchEvent(event);
+        console.log(counter);
+        stepRemove();
+      }
+    }
+    lastAnimation = timeNow;
+  });
+
+  /*
+TOOLTIPS
+*/
+
+  // let toolTips = document.querySelectorAll('.tooltips');
+  // let toolTipsContent = document.querySelector('.tooltips__content');
+
+  // toolTips.addEventListener('click', function () {
+  //   toolTips.classList.toggle('is-open');
+  //   toolTipsContent.classList.toggle('is-open');
+  // });
+</script>

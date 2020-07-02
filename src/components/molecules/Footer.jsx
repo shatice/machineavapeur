@@ -26,7 +26,8 @@ const Container = styled.footer`
   bottom: 0;
   width: 100%;
   height: 62px;
-  padding: 2rem;
+  padding: 1rem;
+  padding-right: 10rem;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -43,6 +44,12 @@ const Container = styled.footer`
 
     .labelsList {
       transform: translateY(0);
+      width: 100%;
+      height: 100%;
+      /* border: 1px solid green; */
+      display: flex;
+      flex-direction: column;
+      align-items: space-between;
     }
   }
 `;
