@@ -3,25 +3,6 @@ import { Link, Redirect } from "react-router-dom";
 import styled from "styled-components";
 import chaptersData from "../../navDatas";
 import UseNavigation from "../navigation/use-navigation";
-import { useParams, generatePath } from "react-router-dom";
-
-const NavParts = ({ history, match }) => {
-  const { chapter, subChapter, setSpecificPart } = UseNavigation();
-  const { chapterId, partId } = useParams();
-
-  const subChapters = chaptersData[chapter].data;
-  return (
-    <Container className="labelsList">
-      {subChapters.map(({ path, title }) => {
-        return (
-          <li>
-            <Link to={path}>{title}</Link>
-          </li>
-        );
-      })}
-    </Container>
-  );
-};
 
 const Container = styled.ul`
   width: 70%;
@@ -49,5 +30,23 @@ const Container = styled.ul`
     }
   }
 `;
+
+const NavParts = ({ history, match }) => {
+  const { chapter } = UseNavigation();
+
+  const subChapters = chaptersData[chapter].data;
+
+  return (
+    <Container className="labelsList">
+      {subChapters.map(({ path, title }) => {
+        return (
+          <li>
+            <Link to={path}>{title}</Link>
+          </li>
+        );
+      })}
+    </Container>
+  );
+};
 
 export default NavParts;
