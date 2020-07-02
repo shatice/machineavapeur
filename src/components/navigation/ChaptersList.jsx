@@ -1,50 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { chaptersList } from "../../constant";
 import chaptersData from "../../navDatas";
 import UseNavigation from "./use-navigation";
 
-const ChaptersList = () => {
-  const [isList, setIsList] = useState(false);
-
-  const {
-    selectChapter,
-    setChapter,
-    setSpecificPart,
-    // selectedChapter: { label: chapterLabel },
-  } = UseNavigation();
-
-  const selectChapter2 = (value) => {
-    selectChapter(value);
-    setChapter(value);
-    setIsList(!isList);
-  };
+const ChaptersList = ({ isList, setIsList }) => {
+  const { selectChapter } = UseNavigation();
 
   const listeChapitres = chaptersData.map((el) => (
-    <Link onClick={() => setSpecificPart(el.id)}>
-      <li key={el.id}>{el.title}</li>
+    <Link to={el.chapterPath}>
+      <li onClick={() => setIsList(!isList)} key={el.id}>
+        {el.title}
+      </li>
     </Link>
   ));
 
-  return (
-    <Container>
-      {/* { !isList &&
-        chapters.map((chapter) => {
-          return (
-            chapter.label && (
-              <Link to="/chapter">
-                <ChapterElem onClick={() => selectChapter2(chapter.value)}>
-                  { chapter.label }
-                </ChapterElem>
-              </Link>
-            )
-          )
-      })} */}
-
-      {listeChapitres}
-    </Container>
-  );
+  return <Container>{listeChapitres}</Container>;
 };
 
 const Container = styled.ul`
