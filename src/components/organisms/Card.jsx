@@ -25,7 +25,8 @@ const Container = styled.article`
   width: 40vw; 
   margin-left: 2rem; 
   padding: 2rem; 
-  background: linear-gradient(3deg, rgba(31,31,33,0.31) 0%, rgba(31,31,33,0.7) 49%, rgba(31,31,33,1) 100%);
+  background: linear-gradient(3deg, rgba(31,31,33,0.3071603641456583) 0%, rgba(31,31,33,0.7161239495798319) 34%, rgba(31,31,33,1) 100%);
+  box-shadow: 1px 2px 10px black;
 
   p {
     font-size: .875rem;

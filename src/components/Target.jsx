@@ -26,6 +26,7 @@ const Container = styled.div`
 const Target = styled.div`
   width: 16px;
   height: 16px;
+  box-shadow: 1px 2px 5px black; 
   border-radius: 50%;
   background-color: ${({ isActive }) => (isActive ? "#C09C1C" : "#ECECE9")};
   transition: background-color 0.2s ease-out;
