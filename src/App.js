@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { createBrowserHistory } from "history";
+import './styles/styles.scss'; 
 
 import Home from "./views/Home";
 import Chapter from "./views/Chapter";
