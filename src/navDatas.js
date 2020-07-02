@@ -39,6 +39,7 @@ const chaptersData = [
   {
     id: "lamachineavapeur",
     title: "La machine à vapeur",
+    chapterPath: "/chapter0/part0",
     data: [
       { title: "Intro", path: "/chapter0/part0", elem: <Green /> },
       {
@@ -71,6 +72,7 @@ const chaptersData = [
   {
     id: "laviation",
     title: "L'aviation",
+    chapterPath: "/chapter1/part0",
     data: [
       { title: "Intro", path: "chapter1/part0", partId: 0, chapterId: 0 },
       {
@@ -109,6 +111,7 @@ const chaptersData = [
   {
     id: "lenucleaire",
     title: "Le nucléaire",
+    chapterPath: "/chapter2/part0",
     data: [
       { title: "Intro", path: "chapter2/part0" },
       { title: "Partie 1", path: "/chapter2/part1", elem: <Green /> },

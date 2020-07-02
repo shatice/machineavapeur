@@ -11,7 +11,6 @@ const ChaptersList = () => {
   const {
     selectChapter,
     setChapter,
-    setSpecificPart,
     // selectedChapter: { label: chapterLabel },
   } = UseNavigation();
 
@@ -20,9 +19,9 @@ const ChaptersList = () => {
     setChapter(value);
     setIsList(!isList);
   };
-
+  console.log(chaptersData);
   const listeChapitres = chaptersData.map((el) => (
-    <Link onClick={() => setSpecificPart(el.id)}>
+    <Link to={el.chapterPath}>
       <li key={el.id}>{el.title}</li>
     </Link>
   ));

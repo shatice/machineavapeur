@@ -25,6 +25,7 @@ const NavTemp = styled.section`
 `;
 
 const Chapter = ({ history, match }) => {
+
   const {
     setNextPart,
     subChapter,
@@ -37,11 +38,11 @@ const Chapter = ({ history, match }) => {
   const title = chaptersData[chapter].title;
   const subTitle = chaptersData[chapter].data[subChapter].title;
   const chapterDatas = chaptersData[chapterId].data;
+
   useEffect(() => {
     setSubChapter(Number(partId));
     setChapter(Number(chapterId));
   }, [history.location.pathname]);
-  // window.onLoad = () => {};
 
   return (
     <Layout>
