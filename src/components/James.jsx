@@ -7,8 +7,7 @@ import head from "../assets/jamesWatt_head_cropped.png";
 import body from "../assets/jamesWatt_body_cropped.png";
 import arm from "../assets/jamesWatt_arm_cropped.png";
 
-import TargetUI from "./organisms/Target";
-import Card from "./molecules/Infos";
+import Infos from "./molecules/Infos";
 
 const James = () => {
   /* eslint-disable */
@@ -62,23 +61,6 @@ const James = () => {
           currentRef["jamesBody"] = element;
         }}
       >
-        <TargetUI
-          top={185}
-          right={-460}
-          title="James Watt"
-          isActive={jamesIsHover}
-          onMouseEnter={jamesHover}
-          onMouseLeave={jamesHover}
-        />
-        {jamesIsHover && (
-          <Card
-            title="Industrialisation"
-            width={"340"}
-            content={content}
-            top={"240"}
-            left={"70"}
-          />
-        )}
         <Head
           ref={(element) => {
             currentRef["head"] = element;
@@ -93,6 +75,15 @@ const James = () => {
           src={arm}
         />
       </JamesBody>
+      <Infos
+        setIsAnimated={jamesHover}
+        title={"James"}
+        content={"Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."}
+        bottom="30"
+        left="10"
+        leftCard="-1000"
+        bottomCard="-600"
+      />
     </JamesContainer>
   );
 };
