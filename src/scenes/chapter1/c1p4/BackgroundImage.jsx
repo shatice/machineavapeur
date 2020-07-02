@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 /***** COMPONENTS *****/
-import Infos from "../../../components/organisms/Infos";
+import Infos from "../../../components/molecules/Infos";
 
 const BackgroundImage = ({ src, alt }) => {
 

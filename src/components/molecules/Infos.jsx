@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 /***** COMPONENTS *****/
-import Target from "../Target"; 
-import Card from "./Card"; 
+import Target from "../organisms/Target"; 
+import Card from "../organisms/Card"; 
 
 const Infos = ({ setIsAnimated, title, content, top, bottom, right, left, topCard, bottomCard, rightCard, leftCard }) => {
 

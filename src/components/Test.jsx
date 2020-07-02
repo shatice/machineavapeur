@@ -1,7 +1,7 @@
 import React, { } from "react";
 import styled from "styled-components";
 
-import Infos from "./organisms/Infos"; 
+import Infos from "./molecules/Infos"; 
 
 const Test = ( ) => {
   return (

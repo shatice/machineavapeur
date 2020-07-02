@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 /***** COMPONENTS *****/
 import Posters from "./Posters";
-import Infos from "../../../components/organisms/Infos";
+import Infos from "../../../components/molecules/Infos";
 
 const Train = () => {
 

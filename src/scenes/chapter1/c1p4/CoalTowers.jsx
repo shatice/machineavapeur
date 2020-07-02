@@ -3,7 +3,7 @@ import styled from "styled-components";
 import './style.scss'; 
 
 /***** COMPONENTS *****/
-import Infos from "../../../components/organisms/Infos";
+import Infos from "../../../components/molecules/Infos";
 
 const CoalTowers = ( ) => {
 

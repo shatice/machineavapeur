@@ -2,10 +2,10 @@ import React, { useRef, useEffect, useState } from "react";
 import styled from "styled-components";
 
 import paper from "../assets/paper.png";
-import TargetUI from "../components/Target";
+import TargetUI from "./organisms/Target";
 
 import { gsap } from "gsap";
-import Card from "./organisms/Infos";
+import Card from "./molecules/Infos";
 
 const Paper = () => {
   let ref = useRef([]);

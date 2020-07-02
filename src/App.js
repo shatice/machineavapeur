@@ -13,10 +13,10 @@ import Chap1Part4 from "./scenes/chapter1/c1p4";
 import Chap1Part3 from "./scenes/chapter1/c1p3";
 
 /***** COMPONENTS *****/
-import Footer from "./components/organisms/Footer";
+import Footer from "./components/molecules/Footer";
 import CtaAudio from "./components/atoms/CtaAudio";
-import Target from "./components/Target";
-import Infos from "./components/organisms/Infos";
+import Target from "./components/organisms/Target";
+import Infos from "./components/molecules/Infos";
 import Test from "./components/Test";
 
 export const customHistory = createBrowserHistory();
