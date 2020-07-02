@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { chaptersList, chaptersData } from "../../constant";
+import { chaptersList } from "../../constant";
+import chaptersData from "../../navDatas";
 import UseNavigation from "./use-navigation";
 
 const ChaptersList = () => {
@@ -10,6 +11,7 @@ const ChaptersList = () => {
   const {
     selectChapter,
     setChapter,
+    setSpecificPart,
     // selectedChapter: { label: chapterLabel },
   } = UseNavigation();
 
@@ -17,15 +19,13 @@ const ChaptersList = () => {
     selectChapter(value);
     setChapter(value);
     setIsList(!isList);
-  };  
+  };
 
-  const listeChapitres = chaptersData.map(( el ) =>
-    <Link to={`/${ el.id }`}>
-      <li key={ el.id }>
-        { el.title }
-      </li>
+  const listeChapitres = chaptersData.map((el) => (
+    <Link onClick={() => setSpecificPart(el.id)}>
+      <li key={el.id}>{el.title}</li>
     </Link>
-  );
+  ));
 
   return (
     <Container>
@@ -42,26 +42,30 @@ const ChaptersList = () => {
           )
       })} */}
 
-      { listeChapitres }
-      
+      {listeChapitres}
     </Container>
   );
 };
 
-const Container= styled.ul`
+const Container = styled.ul`
   /* transform: translateX(-100%);  */
-  position: fixed; 
-  bottom: 102px; 
-  left: 0; 
-  width: 272px; 
-  padding: 3rem 2rem; 
-  background: linear-gradient(3deg, rgba(31,31,33,0.31) 0%, rgba(31,31,33,0.7) 49%, rgba(31,31,33,1) 100%);
+  position: fixed;
+  bottom: 102px;
+  left: 0;
+  width: 272px;
+  padding: 3rem 2rem;
+  background: linear-gradient(
+    3deg,
+    rgba(31, 31, 33, 0.31) 0%,
+    rgba(31, 31, 33, 0.7) 49%,
+    rgba(31, 31, 33, 1) 100%
+  );
 
   li {
-    font-weight: bold; 
-    text-transform: uppercase; 
-    text-align: left; 
-    padding: 1rem 0; 
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: left;
+    padding: 1rem 0;
   }
 `;
 

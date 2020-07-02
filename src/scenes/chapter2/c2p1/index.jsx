@@ -16,7 +16,7 @@ const Bg = styled.section`
 const Chapter2Part1 = () => {
   const [ispostalPlaneCard, setIspostalPlaneCard] = useState(false);
   const [isarmyPlaneCard, setIsarmyPlaneCard] = useState(false);
-  const [isbrothersCard, setIsbrothersCard] = useState(true);
+  const [isbrothersCard, setIsbrothersCard] = useState(false);
   const height = window.innerHeight;
   const width = window.innerWidth;
 
