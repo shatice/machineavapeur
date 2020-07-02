@@ -15,8 +15,6 @@ const Infos = ({ setIsAnimated, title, content, top, bottom, right, left, topCar
     bottom={ bottom }
     right={ right }
     left={ left }
-    onMouseEnter={ () => { setIsCard(true); setIsAnimated( true );  } }
-    onMouseLeave={ () => { setIsCard(false); setIsAnimated( false ); } }
     className="infos"
     >
       {/**
@@ -25,6 +23,8 @@ const Infos = ({ setIsAnimated, title, content, top, bottom, right, left, topCar
       <Target 
       title={ title }
       isActive={ isCard }
+      onMouseEnter={ () => { setIsCard(true); setIsAnimated( true );  } }
+      onMouseLeave={ () => { setIsCard(false); setIsAnimated( false ); } }
       />
       {isCard && (
         <Card 
@@ -42,7 +42,7 @@ const Infos = ({ setIsAnimated, title, content, top, bottom, right, left, topCar
 
 const Container = styled.article`
   cursor: pointer;
-  width: fit-content; 
+  width: fit-content;
   position: absolute;
   top: ${({ top }) => top}%;
   bottom: ${({ bottom }) => bottom}%;

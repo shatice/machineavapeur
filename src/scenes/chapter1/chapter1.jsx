@@ -58,14 +58,6 @@ const Chapter1 = () => {
       <div className="container">
         <img className="bg" src={bg} alt="" />
         <img className="portrait" src={portrait} alt="" />
-        <TargetUI
-          top={140}
-          right={window.innerWidth - 150}
-          title={title}
-          isActive={isCard}
-          onMouseEnter={() => setIsCard(true)}
-          onMouseLeave={() => setIsCard(false)}
-        />
         <Paper />
         <James />
       </div>
