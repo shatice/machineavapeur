@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { chaptersList } from "../../constant";
 // import UseNavigation from "./use-navigation";
 
-import Title from "../atoms/Title";
+import Title from "./Title";
 import ChaptersList from "./ChaptersList";
 
 const NavChapters = () => {

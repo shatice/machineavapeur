@@ -1,12 +1,21 @@
-import React, { } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import './style.scss'; 
 
-const CoalTowers = () => {
+/***** COMPONENTS *****/
+import Infos from "../../../components/molecules/Infos";
+
+const CoalTowers = ( ) => {
+
+  const [isAnimated, setIsAnimated] = useState(false);
+
   return (
-    <Container filter="true"> 
-      {/** TO BE LOOPED */}
-      <Tower>
+    <Container 
+    className={ isAnimated ? "isAnimated" : ""}
+    > 
+      <Tower
+      filter={ isAnimated ? true : false }
+      >
         <ul>
           {/* <li><img src="assets/img/chap_1/partie_4/c1p4_smoke4.png" alt="fumee"/></li> */}
           <li><img src="assets/img/chap_1/partie_4/c1p4_smoke3.png" alt="fumee"/></li>
@@ -15,7 +24,9 @@ const CoalTowers = () => {
         </ul>
         <img src="assets/img/chap_1/partie_4/c1p4_tower.png" alt="tour-usine-charbon"/>
       </Tower>
-      <Tower>
+      <Tower
+      filter={ isAnimated ? true : false }
+      >
         <ul>
           <li><img src="assets/img/chap_1/partie_4/c1p4_smoke4.png" alt="fumee"/></li>
           <li><img src="assets/img/chap_1/partie_4/c1p4_smoke3.png" alt="fumee"/></li>
@@ -24,22 +35,30 @@ const CoalTowers = () => {
         </ul>
         <img src="assets/img/chap_1/partie_4/c1p4_tower.png" alt="tour-usine-charbon"/>
       </Tower>
+
+      <Infos 
+      setIsAnimated={ setIsAnimated }
+      title={ "Le charbon" }
+      content={ "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat." }
+      bottom="30"
+      left="10"
+      leftCard="200"
+      bottomCard="20"
+      />
     </Container>
   ); 
 }
 
 const Container= styled.section`
-  z-index: 10; 
+  position: relative;  
   width: 25%; 
   height: fit-content; 
   display: flex; 
   justify-content: space-between; 
   align-self: flex-end;
-  filter: ${({ filter }) => (filter ? "grayscale(1)" : "grayscale(0)")};
-
-  /** TO BE LINKED WITH TARGET ON HOVER */
-  &:hover {
-    filter: grayscale(0); 
+  
+  &.isAnimated {
+    z-index: 10;
 
     ul li {
       opacity: 1;
@@ -65,6 +84,8 @@ const Container= styled.section`
 `
 
 const Tower = styled.section `
+  filter: ${({ filter }) => (filter ? "grayscale(0)" : "grayscale(1)")};
+  
   &:first-child {
     transform: translateY(14%);
   }

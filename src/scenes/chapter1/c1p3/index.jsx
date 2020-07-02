@@ -3,7 +3,7 @@ import '../../../styles/styles.scss';
 import styled from "styled-components";
 
 /***** COMPONENTS *****/
-import BackgroundImage from '../../../components/BackgroundImage'; 
+import BackgroundImage from './BackgroundImage'; 
 import Richard from './Richard'; 
 import LittleFrame from './LittleFrame'; 
 import Train from './Train'; 

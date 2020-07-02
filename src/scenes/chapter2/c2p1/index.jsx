@@ -3,8 +3,8 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 
 // components
-import TargetUI from "../../../components/Target";
-import Card from "../../../components/organisms/Card";
+import TargetUI from "../../../components/organisms/Target";
+import Card from "../../../components/molecules/Infos";
 
 const Bg = styled.section`
   width: 100vw;

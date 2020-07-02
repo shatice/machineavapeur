@@ -17,8 +17,9 @@ const AudioUI = styled.button `
   position: absolute; 
   top: 2rem; 
   right: 2rem; 
-  width: 2rem; 
-  height: 2rem;
+  width: 1.4rem; 
+  height: 1.4rem;
+  z-index: 2; 
 
   &:hover {
     opacity: .2; 

@@ -20,6 +20,7 @@ const Image = styled.img `
   width: auto;
   height: 20%; 
   object-fit: contain;
+  filter: grayscale(1); 
 `
 
 export default LittleFrame; 

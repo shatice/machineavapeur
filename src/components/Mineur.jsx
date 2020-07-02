@@ -3,8 +3,8 @@ import styled from "styled-components";
 
 import hat from "../assets/mineur_chapeau.png";
 import minor from "../assets/mineur.png";
-import TargetUI from "./Target";
-import Card from "./organisms/Card";
+
+import Infos from "./molecules/Infos";
 
 import gsap from "gsap";
 
@@ -12,14 +12,12 @@ const Mineur = () => {
 
   const [display, setDisplay] = useState(false);
 
-  let content = "MINOR MINOR MINOR"
-
   const minorIshover = () => {
 
     if (display) {
-      gsap.to(".minorBg", {filter: "brightness(1)"})
+      gsap.to(".minorBg", { filter: "brightness(1)" })
     } else {
-      gsap.to(".minorBg", {filter: "brightness(1.6)"})
+      gsap.to(".minorBg", { filter: "brightness(1.6)" })
     }
 
     setDisplay(!display);
@@ -32,33 +30,26 @@ const Mineur = () => {
         <Minor src={minor} />
         <Hat src={hat} />
       </MineurBody>
-      <TargetUI
-        top={185}
-        right={-460}
-        title="Mineur"
-        isActive={display}
-        onMouseEnter={minorIshover}
-        onMouseLeave={minorIshover}
+      <Infos
+        setIsAnimated={minorIshover}
+        title={"Minor"}
+        content={"Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."}
+        bottom="8"
+        left="103"
+        leftCard="-1500"
+        bottomCard="-100"
       />
-
-      {display && (
-        <Card
-          title="Industrialisation"
-          width={"340"}
-          content={content}
-          top={"240"}
-          left={"70"}
-        />
-      )}
     </MineurContainer>
   );
 };
 
 const MineurContainer = styled.div`
   position: absolute;
-  top: 215px;
-  left: 1048px;
+  top: 267px;
+  left: 1111px;
   transform: scale(1.4);
+  width: 300px;
+  height: 300px;
 `;
 
 const MineurBody = styled.div`

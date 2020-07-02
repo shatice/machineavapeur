@@ -2,13 +2,11 @@ import React, { useRef, useEffect, useState } from "react";
 import styled from "styled-components";
 
 import lantern from "../assets/lantern.png";
-import TargetUI from "./Target";
-import Card from "./organisms/Card";
 
+import Infos from "./molecules/Infos";
 const Lanterns = () => {
 
     const [display, setDisplay] = useState(false);
-    let content = "LANTERN LANTERN LANTERN"
 
     const lanternIsHover = () => {
         setDisplay(!display);
@@ -22,24 +20,15 @@ const Lanterns = () => {
                 <Lantern src={lantern} top={205} left={-98} />
                 <Lantern src={lantern} top={210} left={9} />
             </LanternsWrapper>
-            <TargetUI
-                top={130}
-                right={100}
-                title="Lantern"
-                isActive={display}
-                onMouseEnter={lanternIsHover}
-                onMouseLeave={lanternIsHover}
+            <Infos
+                setIsAnimated={lanternIsHover}
+                title={"Lantern"}
+                content={"Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."}
+                bottom="30"
+                left="10"
+                leftCard="-1000"
+                bottomCard="-600"
             />
-
-            {display && (
-                <Card
-                    title="Industrialisation"
-                    width={"340"}
-                    content={content}
-                    top={"40"}
-                    left={"-700"}
-                />
-            )}
         </LanternContainer>
     );
 };
