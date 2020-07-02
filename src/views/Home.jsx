@@ -32,7 +32,7 @@ const Container = styled.section `
   h1 {
     font-size: 4rem; 
     text-transform: uppercase; 
-    max-width: 45%; 
+    max-width: 70%; 
     text-align: center; 
   }
 
