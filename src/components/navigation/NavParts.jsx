@@ -1,54 +1,57 @@
-import React, { } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, Redirect } from "react-router-dom";
 import styled from "styled-components";
-import { chaptersList } from "../../constant";
+import chaptersData from "../../navDatas";
 import UseNavigation from "../navigation/use-navigation";
+import { useParams, generatePath } from "react-router-dom";
 
-const NavParts = () => {
-  const {
-    selectedChapter: { value: chapterValue },
-  } = UseNavigation();
+const NavParts = ({ history, match }) => {
+  const { chapter, subChapter, setSpecificPart } = UseNavigation();
+  const { chapterId, partId } = useParams();
 
-  const { chapters } = chaptersList;
-
+  const subChapters = chaptersData[chapter].data;
   return (
     <Container className="labelsList">
-      {chapters[chapterValue].subtitles.map((subtitle) => {
-        return <li>
-          <Link>
-            { subtitle }
-          </Link>
-          </li>;
+      {subChapters.map((t) => {
+        return (
+          <li>
+            <li
+            // onClick={() => setSpecificPart(t.chapterId, t.partId)}
+            >
+              {t.title}
+            </li>
+          </li>
+        );
       })}
     </Container>
   );
 };
 
-const Container = styled.ul `
+const Container = styled.ul`
   width: 70%;
-  margin-top: .5rem; 
+  margin-top: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   align-self: center;
-  transform: translateY(300%);  
-  transition: transform .3s ease-out; 
+  transform: translateY(300%);
+  transition: transform 0.3s ease-out;
 
   li {
-    width: 100%; 
-    padding-top: .5rem;
-    font-size: .875rem; 
-    text-align: center; 
-    transition: letter-spacing .2s ease-out; 
+    width: 100%;
+    padding-top: 0.5rem;
+    font-size: 0.875rem;
+    text-align: center;
+    transition: letter-spacing 0.2s ease-out;
 
     &:not(:first-child) {
-      border-left: .5px solid #ECECE9; 
+      border-left: 0.5px solid #ecece9;
     }
 
     &:hover {
-      letter-spacing: .01rem; 
+      letter-spacing: 0.01rem;
     }
   }
-`
+`;
 
 export default NavParts;

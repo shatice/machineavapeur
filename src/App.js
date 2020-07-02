@@ -44,7 +44,7 @@ const App = () => {
         <Route exact path="/target" component={Target} />
         {/* <Route exact path="/card" component={Card} /> */}
       </Switch>
-      <Footer />
+      <Footer history={customHistory} />
     </Router>
   );
 };

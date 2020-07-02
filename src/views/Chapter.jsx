@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { chaptersData } from "../constant";
+import chaptersData from "../navDatas";
 import { useParams } from "react-router-dom";
 import UseNavigation from "../components/navigation/use-navigation";
 
@@ -19,20 +19,39 @@ const NavTemp = styled.section`
   left: 0;
   top: 0;
   font-size: 12px;
-  color: yellow;
+  color: black;
   z-index: 30;
+  background-color: white;
+  padding: 10px;
 `;
 
 const Chapter = ({ history, match }) => {
-  const { setNextPart, subChapter, chapter } = UseNavigation(history, match);
+  const {
+    setNextPart,
+    subChapter,
+    chapter,
+    setChapter,
+    setSubChapter,
+  } = UseNavigation(history, match);
+
   const { chapterId, partId } = useParams();
   const title = chaptersData[chapter].title;
   const subTitle = chaptersData[chapter].data[subChapter].title;
+  console.log(subTitle);
   const chapterDatas = chaptersData[chapterId].data;
 
   const setPart = (action) => {
     setNextPart(action);
   };
+  const cb = () => {
+    console.log(chapter);
+  };
+  window.onLoad = () => {
+    setSubChapter(partId);
+    setChapter(chapterId);
+    cb();
+  };
+
   return (
     <Layout>
       <NavTemp>
@@ -46,8 +65,10 @@ const Chapter = ({ history, match }) => {
         >
           LAST PART
         </button>
-        {title && title}
-        {subTitle && subTitle}
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          {title && title}
+          {subTitle && subTitle}
+        </div>
         <button
           style={{ zIndex: 1000 }}
           onClick={() => {
