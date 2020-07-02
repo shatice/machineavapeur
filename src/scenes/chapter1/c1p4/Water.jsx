@@ -4,6 +4,10 @@ import styled from "styled-components";
 /***** COMPONENTS *****/
 import Infos from "../../../components/molecules/Infos";
 
+/***** ASSETS *****/
+import water from "./img/c1p4_water.jpg";
+import rocks from "./img/c1p4_rocks.png";
+
 const Ecology = () => {
 
   const [isAnimated, setIsAnimated] = useState(false);
@@ -11,9 +15,9 @@ const Ecology = () => {
   return (
     <Container>
       <div filter="true">
-        <img className="rocks" src="assets/img/chap_1/partie_4/c1p4_rocks.png" 
+        <img className="rocks" src={ rocks } 
         alt="ocean"/>
-        <img src="assets/img/chap_1/partie_4/c1p4_water.jpg" 
+        <img src={ water } 
         alt="ocean"/>
       </div>
     </Container>

@@ -5,6 +5,10 @@ import styled from "styled-components";
 import Posters from "./Posters";
 import Infos from "../../../components/molecules/Infos";
 
+/***** ASSETS *****/
+import frameOrange from "./img/c1p3_frame_orange.png";
+import train1 from "./img/c1p3_train1.png";
+
 const Train = () => {
 
   const [isAnimated, setIsAnimated] = useState(false);
@@ -15,12 +19,12 @@ const Train = () => {
     >
       <li>
         <img 
-        src="assets/img/chap_1/partie_3/c1p3_frame_orange.png" 
+        src={ frameOrange } 
         alt=""/>
       </li>
       <li>
         <img 
-        src="assets/img/chap_1/partie_3/c1p3_train1.png" 
+        src={ train1 } 
         alt=""/>
       </li>
       <Posters/>

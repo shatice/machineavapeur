@@ -4,6 +4,9 @@ import styled from "styled-components";
 /***** COMPONENTS *****/
 import Infos from "../../../components/molecules/Infos";
 
+/***** ASSETS *****/
+import nature from "./img/c1p4_nature.png";
+
 const Ecology = () => {
 
   const [isAnimated, setIsAnimated] = useState(false);
@@ -13,7 +16,7 @@ const Ecology = () => {
     className={ isAnimated ? "isAnimated" : ""}
     >
       <img 
-      src="assets/img/chap_1/partie_4/c1p4_nature.png" 
+      src={ nature } 
       alt="nature"
       />
 

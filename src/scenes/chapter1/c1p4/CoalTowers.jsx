@@ -5,6 +5,13 @@ import './style.scss';
 /***** COMPONENTS *****/
 import Infos from "../../../components/molecules/Infos";
 
+/***** ASSETS *****/
+import smoke1 from "./img/c1p4_smoke1.png";
+import smoke2 from "./img/c1p4_smoke2.png";
+import smoke3 from "./img/c1p4_smoke3.png";
+import smoke4 from "./img/c1p4_smoke4.png";
+import tower from "./img/c1p4_tower.png";
+
 const CoalTowers = ( ) => {
 
   const [isAnimated, setIsAnimated] = useState(false);
@@ -17,23 +24,22 @@ const CoalTowers = ( ) => {
       filter={ isAnimated ? true : false }
       >
         <ul>
-          {/* <li><img src="assets/img/chap_1/partie_4/c1p4_smoke4.png" alt="fumee"/></li> */}
-          <li><img src="assets/img/chap_1/partie_4/c1p4_smoke3.png" alt="fumee"/></li>
-          <li><img src="assets/img/chap_1/partie_4/c1p4_smoke2.png" alt="fumee"/></li>
-          <li><img src="assets/img/chap_1/partie_4/c1p4_smoke1.png" alt="fumee"/></li>
+          <li><img src={ smoke3 } alt="fumee"/></li>
+          <li><img src={ smoke2 } alt="fumee"/></li>
+          <li><img src={ smoke1 } alt="fumee"/></li>
         </ul>
-        <img src="assets/img/chap_1/partie_4/c1p4_tower.png" alt="tour-usine-charbon"/>
+        <img src={ tower } alt="tour-usine-charbon"/>
       </Tower>
       <Tower
       filter={ isAnimated ? true : false }
       >
         <ul>
-          <li><img src="assets/img/chap_1/partie_4/c1p4_smoke4.png" alt="fumee"/></li>
-          <li><img src="assets/img/chap_1/partie_4/c1p4_smoke3.png" alt="fumee"/></li>
-          <li><img src="assets/img/chap_1/partie_4/c1p4_smoke2.png" alt="fumee"/></li>
-          <li><img src="assets/img/chap_1/partie_4/c1p4_smoke1.png" alt="fumee"/></li>
+          <li><img src={ smoke4 } alt="fumee"/></li>
+          <li><img src={ smoke3 } alt="fumee"/></li>
+          <li><img src={ smoke2 } alt="fumee"/></li>
+          <li><img src={ smoke1 } alt="fumee"/></li>
         </ul>
-        <img src="assets/img/chap_1/partie_4/c1p4_tower.png" alt="tour-usine-charbon"/>
+        <img src={ tower } alt="tour-usine-charbon"/>
       </Tower>
 
       <Infos 

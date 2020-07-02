@@ -7,11 +7,14 @@ import CoalTowers from './CoalTowers';
 import BackgroundImage from './BackgroundImage'; 
 import Ecology from './Ecology'; 
 
+/***** ASSETS *****/
+import bg from "./img/c1p4_background.jpg";
+
 const Chap1Part4 = () => {
   return (
     <Container>
       <BackgroundImage 
-      src="assets/img/chap_1/partie_4/c1p4_background.jpg" 
+      src={ bg } 
       alt="nuages"/>
       <CoalTowers />
       <Ecology />

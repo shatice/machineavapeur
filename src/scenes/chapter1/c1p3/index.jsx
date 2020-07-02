@@ -6,21 +6,26 @@ import styled from "styled-components";
 import BackgroundImage from './BackgroundImage'; 
 import Richard from './Richard'; 
 import LittleFrame from './LittleFrame'; 
-import Train from './Train'; 
+import Train from './Train';
+
+/***** ASSETS *****/
+import bg from "./img/c1p3_background.jpg";
+import frameBordeaux from "./img/c1p3_frame_bordeaux.png";
+import frameSncf from "./img/c1p3_frame_sncf.png";
 
 const Chap1Part3 = () => {
   return (
     <Container>
       <BackgroundImage 
-      src="assets/img/chap_1/partie_3/c1p3_background.jpg" 
+      src={ bg } 
       alt=""/>
       <Richard />
       <LittleFrame 
-      src="assets/img/chap_1/partie_3/c1p3_frame_bordeaux.png"
+      src={ frameBordeaux }
       alt=""
       rotate="10"/>
       <LittleFrame 
-      src="assets/img/chap_1/partie_3/c1p3_frame_sncf.png"
+      src={ frameSncf }
       alt=""/>
       <Train />
     </Container>
