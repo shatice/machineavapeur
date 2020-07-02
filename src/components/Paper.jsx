@@ -62,7 +62,7 @@ const PaperContainer = styled.div`
 `;
 
 const PaperIMG = styled.img`
-  filter: grayscale(1);a
+  filter: grayscale(1);
 `;
 
 export default Paper;
