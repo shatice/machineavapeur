@@ -16,16 +16,19 @@ const Green = styled.section`
   height: 100vh;
   background-color: green;
 `;
+
 const Red = styled.section`
   width: 100vw;
   height: 100vh;
   background-color: red;
 `;
+
 const Blue = styled.section`
   width: 100vw;
   height: 100vh;
   background-color: blue;
 `;
+
 const Orange = styled.section`
   width: 100vw;
   height: 100vh;
@@ -37,7 +40,7 @@ const chaptersData = [
     id: "lamachineavapeur",
     title: "La machine à vapeur",
     data: [
-      { title: "Intro", path: "chapter0/part0", elem: <Green /> },
+      { title: "Intro", path: "/chapter0/part0", elem: <Green /> },
       {
         title: "En avant l’industrialisation",
         path: "/chapter0/part1",
@@ -58,7 +61,11 @@ const chaptersData = [
         path: "/chapter0/part4",
         elem: <Chap1Part4 />,
       },
-      { title: "Conclusion", path: "chapter0/part5" },
+      {
+        title: "Conclusion",
+        path: "/chapter0/part5",
+        elem: <Green />,
+      },
     ],
   },
   {
@@ -70,36 +77,26 @@ const chaptersData = [
         title: "Partie 1",
         path: "/chapter1/part1",
         elem: <Chapter2Part1 />,
-        chapterId: 0,
-        partId: 0,
       },
       {
         title: "Partie 2",
         path: "/chapter1/part2",
         elem: <Chapter2Part2 />,
-        chapterId: 0,
-        partId: 1,
       },
       {
         title: "Partie 3",
         path: "/chapter1/part3",
         elem: <Chapter2Part3 />,
-        chapterId: 0,
-        partId: 2,
       },
       {
         title: "Partie 4",
         path: "/chapter1/part4",
         elem: <Orange />,
-        chapterId: 0,
-        partId: 3,
       },
       {
         title: "Conclusion",
         path: "/chapter1/part5",
         elem: <Green />,
-        chapterId: 0,
-        partId: 2,
       },
     ],
     subtitles: [
@@ -118,7 +115,7 @@ const chaptersData = [
       { title: "Partie 2", path: "/chapter2/part2", elem: <Red /> },
       { title: "Partie 3", path: "/chapter2/part3", elem: <Blue /> },
       { title: "Partie 4", path: "/chapter2/part4", elem: <Orange /> },
-      { title: "Conclusion", path: "/chapter/3-conclusion" },
+      { title: "Conclusion", path: "/chapter/3-conclusion", elem: <Orange /> },
     ],
     subtitles: [
       "En avant l’industrialisation3",
