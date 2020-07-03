@@ -1,7 +1,8 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState, useContext } from "react";
 import styled from "styled-components";
 
 import paper from "../assets/paper.png";
+import store from "../store";
 
 import { gsap } from "gsap";
 import Infos from "./molecules/Infos";
@@ -10,7 +11,8 @@ const Paper = () => {
   let ref = useRef([]);
   const [paperIsHover, setPaperIsHover] = useState(false);
   const [paperAnim, setPaperAnim] = useState({});
-
+  const [partData, setPartData] = useState([]);
+  const { data, subChapter2 } = useContext(store);
   useEffect(() => {
     setPaperAnim(
       gsap.to(ref.current["paper"], {
@@ -22,6 +24,10 @@ const Paper = () => {
       })
     );
   }, []);
+
+  useEffect(() => {
+    if (data !== undefined) setPartData(data?.parts);
+  }, [data]);
 
   const paperHover = () => {
     if (paperIsHover) {
@@ -40,15 +46,17 @@ const Paper = () => {
         }}
         src={paper}
       />
-      <Infos
-        setIsAnimated={paperHover}
-        title={"Paper"}
-        content={"Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."}
-        bottom="50"
-        left="0"
-        leftCard="-600"
-        bottomCard="800"
-      />
+      {partData && (
+        <Infos
+          setIsAnimated={paperHover}
+          title={partData[0]?.cards[2].title}
+          content={partData[0]?.cards[2].content}
+          bottom="50"
+          left="0"
+          leftCard="-600"
+          bottomCard="800"
+        />
+      )}
     </PaperContainer>
   );
 };

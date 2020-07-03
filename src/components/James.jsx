@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useContext } from "react";
 import styled from "styled-components";
 
 import gsap from "gsap";
@@ -8,12 +8,24 @@ import body from "../assets/jamesWatt_body_cropped.png";
 import arm from "../assets/jamesWatt_arm_cropped.png";
 
 import Infos from "./molecules/Infos";
+import store from "../store";
 
 const James = () => {
   /* eslint-disable */
   let ref = useRef([]);
   const [jamesIsHover, setJamesIsHover] = useState(false);
   const [jamesAnims, setJamesAnims] = useState({});
+  const [partData, setPartData] = useState([]);
+
+  const { data, subChapter2 } = useContext(store);
+
+  useEffect(() => {
+    if (data !== undefined) setPartData(data?.parts);
+  }, [data]);
+
+  if (partData) {
+    console.log(partData[0]?.cards);
+  }
 
   const currentRef = ref.current;
 
@@ -75,15 +87,17 @@ const James = () => {
           src={arm}
         />
       </JamesBody>
-      <Infos
-        setIsAnimated={jamesHover}
-        title={"James"}
-        content={"Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."}
-        bottom="-100"
-        right="-20"
-        rightCard="200"
-        bottomCard="100"
-      />
+      {partData && (
+        <Infos
+          setIsAnimated={jamesHover}
+          title={partData[0]?.cards[0].title}
+          content={partData[0]?.cards[0].content}
+          bottom="-100"
+          right="-20"
+          rightCard="200"
+          bottomCard="100"
+        />
+      )}
     </JamesContainer>
   );
 };
