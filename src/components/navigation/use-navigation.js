@@ -5,7 +5,7 @@ import { generatePath } from "react-router-dom";
 import NavStore from "../../store";
 
 const UseNavigation = (history, match) => {
-  const { setSubChapter2 } = useContext(NavStore);
+  const { setSubChapterContext } = useContext(NavStore);
   const [subChapter, setSubChapter] = useState(0);
   const [path, setPath] = useState("");
   const [chapter, setChapter] = useState(0);
@@ -41,7 +41,7 @@ const UseNavigation = (history, match) => {
         setSelectedChapter(chaptersData[chapter + 1]);
         setChapter(chapter + 1);
         setSubChapter(0);
-        setSubChapter2(0);
+        setSubChapterContext(0);
         setUrlPath(chapter, subChapter);
       } else {
         history.replace({
@@ -51,7 +51,7 @@ const UseNavigation = (history, match) => {
           }),
         });
         setSubChapter(subChapter + 1);
-        setSubChapter2(subChapter + 1);
+        setSubChapterContext(subChapter + 1);
         setUrlPath(chapter, subChapter);
       }
     } else {
@@ -65,7 +65,7 @@ const UseNavigation = (history, match) => {
         setSelectedChapter(chaptersData[chapter - 1]);
         setChapter(chapter - 1);
         setSubChapter(3);
-        setSubChapter2(3);
+        setSubChapterContext(3);
         history.replace({
           pathname: generatePath(match.path, {
             chapterId: chapter - 1,
@@ -76,7 +76,7 @@ const UseNavigation = (history, match) => {
         setSelectedChapter(chaptersData[subChapter - 1]);
         setChapter(0);
         setSubChapter(subChapter - 1);
-        setSubChapter2(subChapter - 1);
+        setSubChapterContext(subChapter - 1);
         history.replace({
           pathname: generatePath(match.path, {
             chapterId: 0,
@@ -85,7 +85,7 @@ const UseNavigation = (history, match) => {
         });
       } else {
         setSubChapter(subChapter - 1);
-        setSubChapter2(subChapter - 1);
+        setSubChapterContext(subChapter - 1);
         history.replace({
           pathname: generatePath(match.path, {
             chapterId: chapter,
