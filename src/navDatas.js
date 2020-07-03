@@ -40,6 +40,7 @@ const chaptersData = [
     id: "lamachineavapeur",
     title: "La machine à vapeur",
     chapterPath: "/chapter0/part0",
+    apiUrl: "http://folle-histoire-progres.herokuapp.com/api/chapters/1",
     data: [
       {
         title: "En avant l’industrialisation",
@@ -67,6 +68,8 @@ const chaptersData = [
     id: "laviation",
     title: "L'aviation",
     chapterPath: "/chapter1/part0",
+    apiUrl: "http://folle-histoire-progres.herokuapp.com/api/chapters/2",
+
     data: [
       {
         title: "Partie 1",
@@ -100,6 +103,7 @@ const chaptersData = [
     id: "lenucleaire",
     title: "Le nucléaire",
     chapterPath: "/chapter2/part0",
+    apiUrl: "http://folle-histoire-progres.herokuapp.com/api/chapters/3",
     data: [
       { title: "Partie 1", path: "/chapter2/part1", elem: <Green /> },
       { title: "Partie 2", path: "/chapter2/part2", elem: <Red /> },

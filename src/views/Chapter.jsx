@@ -3,6 +3,7 @@ import styled from "styled-components";
 import chaptersData from "../navDatas";
 import { useParams, useLocation } from "react-router-dom";
 import UseNavigation from "../components/navigation/use-navigation";
+import Fetch from "../Fetch";
 import NavStore from "../store";
 
 const Layout = styled.section`
@@ -36,7 +37,8 @@ const Chapter = ({ history, match }) => {
 
   const location = useLocation();
   const { chapterId, partId } = useParams();
-  const { setSubChapter2 } = useContext(NavStore);
+  const { setSubChapter2, data } = useContext(NavStore);
+  console.log(data);
 
   const title = chaptersData[chapter].title;
   const subTitle = chaptersData[chapter].data[subChapter].title;
@@ -78,6 +80,7 @@ const Chapter = ({ history, match }) => {
       </NavTemp>
       {chapterDatas[partId].elem &&
         React.cloneElement(chapterDatas[partId].elem)}
+      <Fetch url={chaptersData[chapter].apiUrl} />
     </Layout>
   );
 };

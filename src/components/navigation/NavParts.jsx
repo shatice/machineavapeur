@@ -109,14 +109,10 @@ const NavParts = ({ history }) => {
   const chevrons = () => {
     const arr = [];
     for (let i = 0; i < subChapters.length + 1; i++) {
-      arr.push(<PartIcon />);
+      arr.push(<PartIcon key={i} />);
     }
     return arr;
   };
-  console.log(subChapter2);
-  // useEffect(() => {
-  // }, [location]);
-  // console.log(subChapter2);
 
   return (
     <Container className="labelsList">
@@ -130,7 +126,11 @@ const NavParts = ({ history }) => {
       </ChevronContainer>
       <TextContainer>
         {subChapters.map(({ path, title }) => {
-          return <StyledLink to={path}>{title}</StyledLink>;
+          return (
+            <StyledLink key={path} to={path}>
+              {title}
+            </StyledLink>
+          );
         })}
       </TextContainer>
     </Container>

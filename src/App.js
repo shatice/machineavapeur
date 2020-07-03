@@ -25,9 +25,10 @@ export const customHistory = createBrowserHistory();
 
 const App = () => {
   const [subChapter2, setSubChapter2] = useState(0);
+  const [data, setData] = useState({});
   return (
     <Router history={customHistory}>
-      <NavStore.Provider value={{ subChapter2, setSubChapter2 }}>
+      <NavStore.Provider value={{ subChapter2, setSubChapter2, setData, data }}>
         <CtaAudio />
         <Switch>
           <Route exact path="/" component={Home} />
