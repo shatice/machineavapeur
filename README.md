@@ -1,8 +1,9 @@
 # La Folle Histoire du Progrès
 
 Site en ligne : https://lafollehistoireduprogres.netlify.app/
+API en ligne :http://folle-histoire-progres.herokuapp.com/api/chapters
 
-Un web-documentaire de : 
+Un web-documentaire de :
 
 - [Arthur Barré](https://github.com/ArthurBarre)
 - [Rami Cakir](https://github.com/Laroki)
