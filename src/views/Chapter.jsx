@@ -37,7 +37,9 @@ const Chapter = ({ history, match }) => {
 
   const location = useLocation();
   const { chapterId, partId } = useParams();
-  const { setSubChapterContext, data } = useContext(NavStore);
+  const { setSubChapterContext, data, setChapterContext } = useContext(
+    NavStore
+  );
   console.log(data);
 
   const title = chaptersData[chapter].title;
@@ -48,6 +50,7 @@ const Chapter = ({ history, match }) => {
     setChapter(Number(chapterId));
     setSubChapter(Number(partId));
     setSubChapterContext(Number(partId));
+    setChapterContext(Number(chapterId));
   }, [location]);
 
   return (

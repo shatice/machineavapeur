@@ -20,16 +20,27 @@ import Target from "./components/organisms/Target";
 import Infos from "./components/molecules/Infos";
 import Test from "./components/Test";
 import NavStore from "./store";
+import QuickNav from "./components/organisms/QuickNav";
 
 export const customHistory = createBrowserHistory();
 
-const App = () => {
-  const [subChapter2, setSubChapterContext] = useState(0);
+const App = ({ match }) => {
+  console.log(match);
+  const [subChapterContext, setSubChapterContext] = useState(0);
+  const [chapterContext, setChapterContext] = useState(0);
   const [data, setData] = useState({});
   return (
     <Router history={customHistory}>
       <NavStore.Provider
-        value={{ subChapter2, setSubChapterContext, setData, data }}
+        value={{
+          subChapterContext,
+          setSubChapterContext,
+          setData,
+          data,
+          setChapterContext,
+          chapterContext,
+          customHistory,
+        }}
       >
         <CtaAudio />
         <Switch>
@@ -50,10 +61,11 @@ const App = () => {
           <Route exact path="/card" component={Infos} />
           <Route exact path="/test" component={Test} />
         </Switch>
+        {/* <QuickNav /> */}
         <Footer
           history={customHistory}
           path="/chapter:chapterId/part:partId"
-          subChapter2={subChapter2}
+          subChapterContext={subChapterContext}
         />
       </NavStore.Provider>
     </Router>

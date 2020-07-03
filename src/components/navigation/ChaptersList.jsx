@@ -1,17 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import chaptersData from "../../navDatas";
-import UseNavigation from "./use-navigation";
+import store from "../../store";
 
 const ChaptersList = ({ isList, setIsList }) => {
-  const { selectChapter } = UseNavigation();
-
-  const listeChapitres = chaptersData.map((el) => (
+  const { chapterContext } = useContext(store);
+  console.log(chapterContext);
+  const listeChapitres = chaptersData.map((el, i) => (
     <Link to={el.chapterPath}>
-      <li onClick={() => setIsList(!isList)} key={el.id}>
+      <ChapterElem
+        isActive={chapterContext === i}
+        onClick={() => setIsList(!isList)}
+        key={el.id}
+      >
         {el.title}
-      </li>
+      </ChapterElem>
     </Link>
   ));
 
@@ -33,13 +37,21 @@ const Container = styled.ul`
   );
 
   li {
-    font-weight: bold;
-    text-transform: uppercase;
-    text-align: left;
-    padding: 1rem 0;
   }
 `;
-
+const ChapterElem = styled.li`
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: left;
+  padding: 1rem 0;
+  padding-left: 1.4rem;
+  ${({ isActive }) =>
+    isActive &&
+    css`
+      border-left: 1px solid #c09c1c;
+      border-left-height: 30px;
+    `}
+`;
 // const ChapterElem = styled.li`
 //   display: flex;
 //   align-items: center;

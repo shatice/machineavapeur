@@ -17,7 +17,7 @@ const James = () => {
   const [jamesAnims, setJamesAnims] = useState({});
   const [partData, setPartData] = useState([]);
 
-  const { data, subChapter2 } = useContext(store);
+  const { data, subChapterContext } = useContext(store);
 
   useEffect(() => {
     if (data !== undefined) setPartData(data?.parts);

@@ -19,7 +19,7 @@ gsap.registerPlugin(ScrollToPlugin);
 
 const Chapter1 = () => {
   const [partData, setPartData] = useState([]);
-  const { data, subChapter2 } = useContext(store);
+  const { data, subChapterContext } = useContext(store);
 
   useEffect(() => {
     if (data !== undefined) setPartData(data?.parts);

@@ -1,21 +1,31 @@
 import React, { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
-import { useParams, useLocation } from "react-router-dom";
 import styled from "styled-components";
-import chaptersData from "../../navDatas";
+
+//assets
+import Bullet from "../../assets/Bullet.png";
+import ActiveBullet from "../../assets/BulletActif.png";
+
 import UseNavigation from "../navigation/use-navigation";
+import chaptersData from "../../navDatas";
 import NavStore from "../../store";
 
 const Container = styled.ul`
   width: 70%;
-  margin-top: 0.5rem;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   flex-direction: column;
   align-self: flex-start;
-  transform: translateY(300%);
+  /* transform: translateY(300%); */
   transition: transform 0.3s ease-out;
+  transform: translateY(0);
+  width: 90%;
+  height: 100%;
+  display: flex;
+  align-items: space-between;
+  position: relative;
 
   li {
     width: 100%;
@@ -25,22 +35,11 @@ const Container = styled.ul`
     transition: letter-spacing 0.2s ease-out;
   }
 `;
-const TimelineContainer = styled.div`
-  width: 90%;
-  height: 50%;
-  /* border: 1px solid red; */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  padding-bottom: 10px;
-  position: relative;
-`;
 
 const ProgressBarContainer = styled.div`
   width: 100%;
   height: 2px;
-  top: 20px;
+  top: 15px;
   background-color: white;
   position: relative;
 `;
@@ -54,36 +53,27 @@ const ProgressBar = styled.div`
   width: ${({ currentPart, totalElem }) =>
     getProgressBarWidth(totalElem, currentPart)}%;
   height: 100%;
-  background-color: yellow;
-`;
-
-const Chevron = styled.div`
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background-color: orange;
+  background-color: #c09c1c;
 `;
 
 const ChevronContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
+  transform: translateY(-4px);
 `;
 const TextContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-around;
+  align-items: flex-end;
+  min-height: 15px;
+  margin-top: 10px;
 `;
 
-// const PartContainer = styled.div`
-//   display: flex;
-// `;
-
 const PartIcon = styled.div`
-  width: 10px;
-  height: 10px;
-  background-color: red;
-  margin-bottom: 10px;
+  width: auto;
+  height: auto;
   &:first-child {
     opacity: 0;
   }
@@ -95,44 +85,65 @@ const StyledLink = styled(Link)`
   flex-basis: 20px;
   padding-left: 15px;
   padding-right: 15px;
+`;
 
-  /* padding-left: 20px;
-  border-left: 0.5px solid #ecece9; */
+const getChevron = (isActive) => {
+  if (isActive) {
+    return `url(${ActiveBullet})`;
+  } else return `url(${Bullet})`;
+};
+
+const Chevron = styled.div`
+  width: auto;
+  min-width: 5px;
+  height: 5px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 2px;
+  /* background-color: ${({ isActive }) => getChevron(isActive)}; */
+  background-image: ${({ isActive }) => getChevron(isActive)};
 `;
 
 const NavParts = ({ history }) => {
   const { chapter, subChapter } = UseNavigation();
-  const { subChapter2 } = useContext(NavStore);
+  const [displayText, setDisplayText] = useState();
+  const { subChapterContext } = useContext(NavStore);
   const progress = 50;
   const subChapters = chaptersData[chapter].data;
 
-  const chevrons = () => {
-    const arr = [];
-    for (let i = 0; i < subChapters.length + 1; i++) {
-      arr.push(<PartIcon key={i} />);
-    }
-    return arr;
-  };
-
   return (
-    <Container className="labelsList">
+    <Container
+      onMouseEnter={() => setDisplayText(true)}
+      onMouseLeave={() => setDisplayText(false)}
+      className="labelsList"
+    >
       <ProgressBarContainer>
-        <ProgressBar totalElem={subChapters.length} currentPart={subChapter2} />
+        <ProgressBar
+          totalElem={subChapters.length}
+          currentPart={subChapterContext}
+        />
       </ProgressBarContainer>
       <ChevronContainer>
-        {chevrons().map((c) => {
-          return c;
-        })}
-      </ChevronContainer>
-      <TextContainer>
-        {subChapters.map(({ path, title }) => {
+        {subChapters.map((s, i) => {
           return (
-            <StyledLink key={path} to={path}>
-              {title}
-            </StyledLink>
+            <PartIcon>
+              <Chevron isActive={i <= subChapterContext} />
+            </PartIcon>
           );
         })}
-      </TextContainer>
+      </ChevronContainer>
+      {!displayText && <TextContainer></TextContainer>}
+      {displayText && (
+        <TextContainer>
+          {subChapters.map(({ path, title }) => {
+            return (
+              <StyledLink key={path} to={path}>
+                {title}
+              </StyledLink>
+            );
+          })}
+        </TextContainer>
+      )}
     </Container>
   );
 };

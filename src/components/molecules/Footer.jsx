@@ -8,14 +8,14 @@ import NavChapters from "../navigation/NavChapters";
 import NavParts from "../navigation/NavParts";
 import Logo from "../atoms/Logo";
 
-const Footer = ({ history, subChapter2 }) => {
+const Footer = ({ subChapterContext }) => {
   return (
     <Container>
       <Link to="/">
         <Logo />
       </Link>
       <NavChapters />
-      <NavParts subChapter2={subChapter2} />
+      <NavParts subChapterContext={subChapterContext} />
     </Container>
   );
 };
@@ -26,7 +26,7 @@ const Container = styled.footer`
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 62px;
+  height: 80px;
   padding: 1rem;
   padding-right: 10rem;
   display: flex;
@@ -39,20 +39,6 @@ const Container = styled.footer`
     rgba(31, 31, 33, 1) 100%
   );
   z-index: 100;
-
-  &:hover {
-    height: 102px;
-
-    .labelsList {
-      transform: translateY(0);
-      width: 90%;
-      height: 100%;
-      display: flex;
-      align-items: space-between;
-      border: 1px solid red;
-      position: relative;
-    }
-  }
 `;
 
 export default Footer;
