@@ -1,10 +1,9 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import "./style.scss";
 
 /***** COMPONENTS *****/
 import Infos from "../../../components/molecules/Infos";
-import store from "../../../store";
 
 /***** ASSETS *****/
 import frameRichard from "./img/c1p3_frame_richard.png";
@@ -12,20 +11,8 @@ import richard from "./img/c1p3_richard.png";
 import coinQueen from "./img/c1p3_coin_queen.png";
 import coinWagon from "./img/c1p3_coin_wagon.png";
 
-const Richard = () => {
+const Richard = ({ partData }) => {
   const [isAnimated, setIsAnimated] = useState(false);
-  const [partData, setPartData] = useState([]);
-
-  const { data, subChapter2 } = useContext(store);
-
-  useEffect(() => {
-    if (data !== undefined) setPartData(data?.parts);
-  }, [data]);
-
-  if (partData) {
-    console.log(partData[0]?.cards);
-  }
-
   return (
     <Container className={isAnimated ? "isAnimated" : ""}>
       <img src={frameRichard} alt="" />

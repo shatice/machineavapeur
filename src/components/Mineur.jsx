@@ -8,21 +8,20 @@ import Infos from "./molecules/Infos";
 
 import gsap from "gsap";
 
-const Mineur = () => {
-
+const Mineur = ({ partData }) => {
   const [display, setDisplay] = useState(false);
 
   const minorIshover = () => {
-
     if (display) {
-      gsap.to(".minorBg", { filter: "brightness(1)" })
+      gsap.to(".minorBg", { filter: "brightness(1)" });
     } else {
-      gsap.to(".minorBg", { filter: "brightness(1.6)" })
+      gsap.to(".minorBg", { filter: "brightness(1.6)" });
     }
 
     setDisplay(!display);
-  }
+  };
 
+  console.log(partData);
 
   return (
     <MineurContainer>
@@ -30,15 +29,17 @@ const Mineur = () => {
         <Minor src={minor} />
         <Hat src={hat} />
       </MineurBody>
-      <Infos
-        setIsAnimated={minorIshover}
-        title={"Minor"}
-        content={"Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."}
-        bottom="8"
-        left="103"
-        leftCard="-1500"
-        bottomCard="-100"
-      />
+      {partData && (
+        <Infos
+          setIsAnimated={minorIshover}
+          title={partData[1]?.cards[1].title}
+          content={partData[2]?.cards[1].content}
+          bottom="8"
+          left="103"
+          leftCard="-1500"
+          bottomCard="-100"
+        />
+      )}
     </MineurContainer>
   );
 };
@@ -68,7 +69,5 @@ const Minor = styled.img`
   top: -125px;
   left: 277px;
 `;
-
-
 
 export default Mineur;

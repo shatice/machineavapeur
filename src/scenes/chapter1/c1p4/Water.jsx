@@ -8,33 +8,30 @@ import Infos from "../../../components/molecules/Infos";
 import water from "./img/c1p4_water.jpg";
 import rocks from "./img/c1p4_rocks.png";
 
-const Ecology = () => {
-
+const Ecology = ({ partData }) => {
   const [isAnimated, setIsAnimated] = useState(false);
 
   return (
     <Container>
       <div filter="true">
-        <img className="rocks" src={ rocks } 
-        alt="ocean"/>
-        <img src={ water } 
-        alt="ocean"/>
+        <img className="rocks" src={rocks} alt="ocean" />
+        <img src={water} alt="ocean" />
       </div>
     </Container>
-  ); 
-}
+  );
+};
 
-const Container = styled.div `
-  position: relative; 
-  overflow: hidden; 
-  transform: translateY(-10%); 
-  transition: transform .2s ease-in-out; 
+const Container = styled.div`
+  position: relative;
+  overflow: hidden;
+  transform: translateY(-10%);
+  transition: transform 0.2s ease-in-out;
   width: 90%;
-  margin: 0 auto; 
-  height: auto; 
-  grid-column: 1; 
-  grid-row: 1; 
-  filter: ${({ filter }) => (filter ? "grayscale(1)" : "grayscale(0)")}; 
+  margin: 0 auto;
+  height: auto;
+  grid-column: 1;
+  grid-row: 1;
+  filter: ${({ filter }) => (filter ? "grayscale(1)" : "grayscale(0)")};
 
   &:hover {
     transform: translateY(-30%);
@@ -46,13 +43,13 @@ const Container = styled.div `
   }
 
   .rocks {
-    position: absolute; 
-    width:80%; 
-    top: 20%; 
+    position: absolute;
+    width: 80%;
+    top: 20%;
     left: 0;
-    transform: translateX(-100%); 
-    transition: transform .4s .2s ease-out; 
+    transform: translateX(-100%);
+    transition: transform 0.4s 0.2s ease-out;
   }
-`
+`;
 
-export default Ecology; 
+export default Ecology;

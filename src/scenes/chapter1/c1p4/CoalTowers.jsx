@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import './style.scss'; 
+import "./style.scss";
 
 /***** COMPONENTS *****/
 import Infos from "../../../components/molecules/Infos";
@@ -12,86 +12,94 @@ import smoke3 from "./img/c1p4_smoke3.png";
 import smoke4 from "./img/c1p4_smoke4.png";
 import tower from "./img/c1p4_tower.png";
 
-const CoalTowers = ( ) => {
-
+const CoalTowers = ({ partData }) => {
   const [isAnimated, setIsAnimated] = useState(false);
-
+  console.log(partData);
   return (
-    <Container 
-    className={ isAnimated ? "isAnimated" : ""}
-    > 
-      <Tower
-      filter={ isAnimated ? true : false }
-      >
+    <Container className={isAnimated ? "isAnimated" : ""}>
+      <Tower filter={isAnimated ? true : false}>
         <ul>
-          <li><img src={ smoke3 } alt="fumee"/></li>
-          <li><img src={ smoke2 } alt="fumee"/></li>
-          <li><img src={ smoke1 } alt="fumee"/></li>
+          <li>
+            <img src={smoke3} alt="fumee" />
+          </li>
+          <li>
+            <img src={smoke2} alt="fumee" />
+          </li>
+          <li>
+            <img src={smoke1} alt="fumee" />
+          </li>
         </ul>
-        <img src={ tower } alt="tour-usine-charbon"/>
+        <img src={tower} alt="tour-usine-charbon" />
       </Tower>
-      <Tower
-      filter={ isAnimated ? true : false }
-      >
+      <Tower filter={isAnimated ? true : false}>
         <ul>
-          <li><img src={ smoke4 } alt="fumee"/></li>
-          <li><img src={ smoke3 } alt="fumee"/></li>
-          <li><img src={ smoke2 } alt="fumee"/></li>
-          <li><img src={ smoke1 } alt="fumee"/></li>
+          <li>
+            <img src={smoke4} alt="fumee" />
+          </li>
+          <li>
+            <img src={smoke3} alt="fumee" />
+          </li>
+          <li>
+            <img src={smoke2} alt="fumee" />
+          </li>
+          <li>
+            <img src={smoke1} alt="fumee" />
+          </li>
         </ul>
-        <img src={ tower } alt="tour-usine-charbon"/>
+        <img src={tower} alt="tour-usine-charbon" />
       </Tower>
-
-      <Infos 
-      setIsAnimated={ setIsAnimated }
-      title={ "Le charbon" }
-      content={ "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat." }
-      bottom="30"
-      left="10"
-      leftCard="200"
-      bottomCard="20"
-      />
+      {partData && (
+        <Infos
+          setIsAnimated={setIsAnimated}
+          title={partData[3]?.cards[1].title}
+          content={partData[3]?.cards[1].content}
+          bottom="30"
+          left="10"
+          leftCard="200"
+          bottomCard="20"
+        />
+      )}
     </Container>
-  ); 
-}
+  );
+};
 
-const Container= styled.section`
-  position: relative;  
-  width: 25%; 
-  height: fit-content; 
-  display: flex; 
-  justify-content: space-between; 
+const Container = styled.section`
+  position: relative;
+  width: 25%;
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
   align-self: flex-end;
-  
+
   &.isAnimated {
     z-index: 10;
 
     ul li {
       opacity: 1;
-      animation: floating 2s .6s alternate infinite linear; 
+      animation: floating 2s 0.6s alternate infinite linear;
 
       &:first-child {
-        transition: opacity .2s .6s ease-out;
+        transition: opacity 0.2s 0.6s ease-out;
       }
 
       &:nth-child(2) {
-        transition: opacity .2s .4s ease-out;
+        transition: opacity 0.2s 0.4s ease-out;
       }
 
       &:nth-child(3) {
-        transition: opacity .2s .2s ease-out;
+        transition: opacity 0.2s 0.2s ease-out;
       }
 
       &:nth-child(4) {
-        transition: opacity .2s ease-out; 
+        transition: opacity 0.2s ease-out;
       }
     }
   }
-`
+`;
 
-const Tower = styled.section `
+const Tower = styled.section`
   filter: ${({ filter }) => (filter ? "grayscale(0)" : "grayscale(1)")};
-  
+
   &:first-child {
     transform: translateY(14%);
   }
@@ -101,8 +109,8 @@ const Tower = styled.section `
   }
 
   ul {
-    display: grid; 
-    grid-template-columns: 1fr; 
+    display: grid;
+    grid-template-columns: 1fr;
     grid-template-rows: 1fr;
 
     li {
@@ -112,9 +120,9 @@ const Tower = styled.section `
     }
 
     img {
-      width: 400%;;
+      width: 400%;
     }
   }
-`
+`;
 
-export default CoalTowers; 
+export default CoalTowers;

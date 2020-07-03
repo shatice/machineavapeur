@@ -7,12 +7,10 @@ import store from "../store";
 import { gsap } from "gsap";
 import Infos from "./molecules/Infos";
 
-const Paper = () => {
+const Paper = ({ partData }) => {
   let ref = useRef([]);
   const [paperIsHover, setPaperIsHover] = useState(false);
   const [paperAnim, setPaperAnim] = useState({});
-  const [partData, setPartData] = useState([]);
-  const { data, subChapter2 } = useContext(store);
   useEffect(() => {
     setPaperAnim(
       gsap.to(ref.current["paper"], {
@@ -24,10 +22,6 @@ const Paper = () => {
       })
     );
   }, []);
-
-  useEffect(() => {
-    if (data !== undefined) setPartData(data?.parts);
-  }, [data]);
 
   const paperHover = () => {
     if (paperIsHover) {

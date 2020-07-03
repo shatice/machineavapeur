@@ -1,24 +1,16 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 /***** COMPONENTS *****/
 import Posters from "./Posters";
 import Infos from "../../../components/molecules/Infos";
-import store from "../../../store";
 
 /***** ASSETS *****/
 import frameOrange from "./img/c1p3_frame_orange.png";
 import train1 from "./img/c1p3_train1.png";
 
-const Train = () => {
+const Train = ({ partData }) => {
   const [isAnimated, setIsAnimated] = useState(false);
-  const [partData, setPartData] = useState([]);
-  const { data, subChapter2 } = useContext(store);
-
-  useEffect(() => {
-    if (data !== undefined) setPartData(data?.parts);
-  }, [data]);
-
   return (
     <Container className={isAnimated ? "isAnimated" : ""}>
       <li>
