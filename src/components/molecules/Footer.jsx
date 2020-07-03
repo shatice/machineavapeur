@@ -1,20 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 /***** COMPONENTS *****/
 import NavChapters from "../navigation/NavChapters";
 import NavParts from "../navigation/NavParts";
 import Logo from "../atoms/Logo";
 
-const Footer = () => {
+const Footer = ({ history, subChapter2 }) => {
   return (
     <Container>
       <Link to="/">
         <Logo />
       </Link>
       <NavChapters />
-      <NavParts />
+      <NavParts subChapter2={subChapter2} />
     </Container>
   );
 };
@@ -44,12 +45,12 @@ const Container = styled.footer`
 
     .labelsList {
       transform: translateY(0);
-      width: 100%;
+      width: 90%;
       height: 100%;
-      /* border: 1px solid green; */
       display: flex;
-      flex-direction: column;
       align-items: space-between;
+      border: 1px solid red;
+      position: relative;
     }
   }
 `;

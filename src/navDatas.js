@@ -41,31 +41,25 @@ const chaptersData = [
     title: "La machine à vapeur",
     chapterPath: "/chapter0/part0",
     data: [
-      { title: "Intro", path: "/chapter0/part0", elem: <Green /> },
       {
         title: "En avant l’industrialisation",
-        path: "/chapter0/part1",
+        path: "/chapter0/part0",
         elem: <Chap1Part1 />,
       },
       {
         title: "Du charbon et des mines",
-        path: "/chapter0/part2",
+        path: "/chapter0/part1",
         elem: <Red />,
       },
       {
         title: "A fond le train",
-        path: "/chapter0/part3",
+        path: "/chapter0/part2",
         elem: <Chap1Part3 />,
       },
       {
         title: "Un monde couleur charbon",
-        path: "/chapter0/part4",
+        path: "/chapter0/part3",
         elem: <Chap1Part4 />,
-      },
-      {
-        title: "Conclusion",
-        path: "/chapter0/part5",
-        elem: <Green />,
       },
     ],
   },
@@ -74,7 +68,6 @@ const chaptersData = [
     title: "L'aviation",
     chapterPath: "/chapter1/part0",
     data: [
-      { title: "Intro", path: "chapter1/part0", partId: 0, chapterId: 0 },
       {
         title: "Partie 1",
         path: "/chapter1/part1",
@@ -95,11 +88,6 @@ const chaptersData = [
         path: "/chapter1/part4",
         elem: <Orange />,
       },
-      {
-        title: "Conclusion",
-        path: "/chapter1/part5",
-        elem: <Green />,
-      },
     ],
     subtitles: [
       "En avant l’industrialisation2",
@@ -113,12 +101,10 @@ const chaptersData = [
     title: "Le nucléaire",
     chapterPath: "/chapter2/part0",
     data: [
-      { title: "Intro", path: "chapter2/part0" },
       { title: "Partie 1", path: "/chapter2/part1", elem: <Green /> },
       { title: "Partie 2", path: "/chapter2/part2", elem: <Red /> },
       { title: "Partie 3", path: "/chapter2/part3", elem: <Blue /> },
       { title: "Partie 4", path: "/chapter2/part4", elem: <Orange /> },
-      { title: "Conclusion", path: "/chapter/3-conclusion", elem: <Orange /> },
     ],
     subtitles: [
       "En avant l’industrialisation3",

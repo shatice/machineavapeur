@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useContext } from "react";
 import styled from "styled-components";
 import chaptersData from "../navDatas";
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import UseNavigation from "../components/navigation/use-navigation";
+import NavStore from "../store";
 
 const Layout = styled.section`
   position: absolute;
@@ -25,7 +26,6 @@ const NavTemp = styled.section`
 `;
 
 const Chapter = ({ history, match }) => {
-
   const {
     setNextPart,
     subChapter,
@@ -34,15 +34,19 @@ const Chapter = ({ history, match }) => {
     setSubChapter,
   } = UseNavigation(history, match);
 
+  const location = useLocation();
   const { chapterId, partId } = useParams();
+  const { setSubChapter2 } = useContext(NavStore);
+
   const title = chaptersData[chapter].title;
   const subTitle = chaptersData[chapter].data[subChapter].title;
   const chapterDatas = chaptersData[chapterId].data;
 
   useEffect(() => {
-    setSubChapter(Number(partId));
     setChapter(Number(chapterId));
-  }, [history.location.pathname]);
+    setSubChapter(Number(partId));
+    setSubChapter2(Number(partId));
+  }, [location]);
 
   return (
     <Layout>

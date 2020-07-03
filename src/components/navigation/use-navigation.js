@@ -1,13 +1,16 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { chaptersList } from "../../constant";
 import chaptersData from "../../navDatas";
 import { generatePath } from "react-router-dom";
+import NavStore from "../../store";
 
 const UseNavigation = (history, match) => {
+  const { setSubChapter2 } = useContext(NavStore);
   const [subChapter, setSubChapter] = useState(0);
   const [path, setPath] = useState("");
   const [chapter, setChapter] = useState(0);
   const [isChapterList, setIsChapterList] = useState(false);
+  const [progress, setProgress] = useState(0);
   const [selectedChapter, setSelectedChapter] = useState({
     label: "La machine a vapeur & le charbon1",
     value: 0,
@@ -24,11 +27,11 @@ const UseNavigation = (history, match) => {
   const setUrlPath = (c, sC) => {
     setPath(`/chapter/?chap${c}part-${sC}`);
   };
-
+  const subParts = chaptersData[chapter].data;
   const setNextPart = (action) => {
     //increment action
     if (action === "increment") {
-      if (subChapter >= chaptersData[chapter].data.length - 1) {
+      if (subChapter >= subParts.length - 1) {
         history.replace({
           pathname: generatePath(match.path, {
             chapterId: Number(chapter + 1),
@@ -38,6 +41,7 @@ const UseNavigation = (history, match) => {
         setSelectedChapter(chaptersData[chapter + 1]);
         setChapter(chapter + 1);
         setSubChapter(0);
+        setSubChapter2(0);
         setUrlPath(chapter, subChapter);
       } else {
         history.replace({
@@ -47,6 +51,7 @@ const UseNavigation = (history, match) => {
           }),
         });
         setSubChapter(subChapter + 1);
+        setSubChapter2(subChapter + 1);
         setUrlPath(chapter, subChapter);
       }
     } else {
@@ -60,6 +65,7 @@ const UseNavigation = (history, match) => {
         setSelectedChapter(chaptersData[chapter - 1]);
         setChapter(chapter - 1);
         setSubChapter(3);
+        setSubChapter2(3);
         history.replace({
           pathname: generatePath(match.path, {
             chapterId: chapter - 1,
@@ -70,6 +76,7 @@ const UseNavigation = (history, match) => {
         setSelectedChapter(chaptersData[subChapter - 1]);
         setChapter(0);
         setSubChapter(subChapter - 1);
+        setSubChapter2(subChapter - 1);
         history.replace({
           pathname: generatePath(match.path, {
             chapterId: 0,
@@ -78,6 +85,7 @@ const UseNavigation = (history, match) => {
         });
       } else {
         setSubChapter(subChapter - 1);
+        setSubChapter2(subChapter - 1);
         history.replace({
           pathname: generatePath(match.path, {
             chapterId: chapter,
@@ -100,6 +108,8 @@ const UseNavigation = (history, match) => {
     path,
     isChapterList,
     setIsChapterList,
+    progress,
+    history,
   };
 };
 export default UseNavigation;
