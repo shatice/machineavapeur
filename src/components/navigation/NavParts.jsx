@@ -79,6 +79,7 @@ const PartIcon = styled.div`
     opacity: 0;
   }
 `;
+
 const StyledLink = styled(Link)`
   text-align: center;
   flex-grow: 1;
@@ -101,7 +102,6 @@ const Chevron = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   padding: 2px;
-  /* background-color: ${({ isActive }) => getChevron(isActive)}; */
   background-image: ${({ isActive }) => getChevron(isActive)};
 `;
 
