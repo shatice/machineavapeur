@@ -6,7 +6,7 @@ import store from "../../store";
 
 const ChaptersList = ({ isList, setIsList }) => {
   const { chapterContext } = useContext(store);
-  console.log(chapterContext);
+  // console.log(chapterContext);
   const listeChapitres = chaptersData.map((el, i) => (
     <Link to={el.chapterPath}>
       <ChapterElem

@@ -54,7 +54,9 @@ const UseNavigation = (history, match) => {
         setSubChapterContext(subChapter + 1);
         setUrlPath(chapter, subChapter);
       }
-    } else {
+    } 
+    //decrement
+    else {
       if (subChapter === 0 && chapter !== 0) {
         history.replace({
           pathname: generatePath(match.path, {

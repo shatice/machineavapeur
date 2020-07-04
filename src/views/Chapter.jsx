@@ -2,7 +2,7 @@ import React, { useEffect, useContext } from "react";
 import styled from "styled-components";
 import chaptersData from "../navDatas";
 import { useParams, useLocation } from "react-router-dom";
-import UseNavigation from "../components/navigation/use-navigation";
+import context from "../store/context";
 import Fetch from "../Fetch";
 import NavStore from "../store";
 
@@ -26,30 +26,21 @@ const NavTemp = styled.section`
   padding: 10px;
 `;
 
-const Chapter = ({ history, match }) => {
+const Chapter = () => {
   const {
-    setNextPart,
-    subChapter,
+    incrementPart,
+    decrementPart,
     chapter,
-    setChapter,
-    setSubChapter,
-  } = UseNavigation(history, match);
+    subChapter,
+    setPart,
+  } = useContext(context);
 
-  const location = useLocation();
   const { chapterId, partId } = useParams();
-  const { setSubChapterContext, data, setChapterContext } = useContext(
-    NavStore
-  );
-
-  const title = chaptersData[chapter].title;
-  const subTitle = chaptersData[chapter].data[subChapter].title;
+  const location = useLocation();
+  console.log(chapter, subChapter);
   const chapterDatas = chaptersData[chapterId].data;
-
   useEffect(() => {
-    setChapter(Number(chapterId));
-    setSubChapter(Number(partId));
-    setSubChapterContext(Number(partId));
-    setChapterContext(Number(chapterId));
+    setPart(chapterId, partId);
   }, [location]);
 
   return (
@@ -60,28 +51,28 @@ const Chapter = ({ history, match }) => {
           onClick={() => {
             if (chapter === 0 && subChapter === 0) {
               return;
-            } else setNextPart("decrement");
+            } else decrementPart();
           }}
         >
           LAST PART
         </button>
         <div style={{ display: "flex", flexDirection: "column" }}>
-          {title && title}
-          {subTitle && subTitle}
+          {/* {title && title}
+          {subTitle && subTitle} */}
         </div>
         <button
           style={{ zIndex: 1000 }}
           onClick={() => {
             if (chapter === 2 && subChapter === 3) {
               return;
-            } else setNextPart("increment");
+            } else incrementPart();
           }}
         >
           NEXT PART
         </button>
       </NavTemp>
-      {chapterDatas[partId].elem &&
-        React.cloneElement(chapterDatas[partId].elem)}
+      {chapterDatas[subChapter].elem &&
+        React.cloneElement(chapterDatas[subChapter].elem)}
       <Fetch url={chaptersData[chapter].apiUrl} />
     </Layout>
   );

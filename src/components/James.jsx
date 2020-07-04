@@ -8,7 +8,7 @@ import body from "../assets/jamesWatt_body_cropped.png";
 import arm from "../assets/jamesWatt_arm_cropped.png";
 
 import Infos from "./molecules/Infos";
-import store from "../store";
+import context from "../store/context";
 
 const James = () => {
   /* eslint-disable */
@@ -17,14 +17,14 @@ const James = () => {
   const [jamesAnims, setJamesAnims] = useState({});
   const [partData, setPartData] = useState([]);
 
-  const { data, subChapterContext } = useContext(store);
+  const { data, subChapter } = useContext(context);
 
   useEffect(() => {
     if (data !== undefined) setPartData(data?.parts);
   }, [data]);
 
   if (partData) {
-    console.log(partData[0]?.cards);
+    // console.log(partData[0]?.cards);
   }
 
   const currentRef = ref.current;

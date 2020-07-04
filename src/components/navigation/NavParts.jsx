@@ -7,6 +7,7 @@ import Bullet from "../../assets/Bullet.png";
 import ActiveBullet from "../../assets/BulletActif.png";
 
 import UseNavigation from "../navigation/use-navigation";
+import context from "../../store/context";
 import chaptersData from "../../navDatas";
 import NavStore from "../../store";
 
@@ -105,11 +106,9 @@ const Chevron = styled.div`
   background-image: ${({ isActive }) => getChevron(isActive)};
 `;
 
-const NavParts = ({ history }) => {
-  const { chapter, subChapter } = UseNavigation();
+const NavParts = () => {
   const [displayText, setDisplayText] = useState();
-  const { subChapterContext } = useContext(NavStore);
-  const progress = 50;
+  const { subChapter, chapter } = useContext(context);
   const subChapters = chaptersData[chapter].data;
 
   return (
@@ -119,16 +118,13 @@ const NavParts = ({ history }) => {
       className="labelsList"
     >
       <ProgressBarContainer>
-        <ProgressBar
-          totalElem={subChapters.length}
-          currentPart={subChapterContext}
-        />
+        <ProgressBar totalElem={subChapters.length} currentPart={subChapter} />
       </ProgressBarContainer>
       <ChevronContainer>
         {subChapters.map((s, i) => {
           return (
             <PartIcon>
-              <Chevron isActive={i <= subChapterContext} />
+              <Chevron isActive={i <= subChapter} />
             </PartIcon>
           );
         })}

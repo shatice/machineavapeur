@@ -1,15 +1,14 @@
 import React, { useState, useEffect, useContext } from "react";
 import useAxios from "axios-hooks";
 
-import store from "./store";
+import context from "./store/context";
 import { url } from "./navDatas";
 
 const Fetch = () => {
-  const { setData, chapterContext } = useContext(store);
-  console.log(chapterContext);
+  const { setData, chapter } = useContext(context);
 
   const [{ data: res }, executeFetch] = useAxios({
-    url: url + `/${chapterContext + 1}`,
+    url: url + `/${Number(chapter + 1)}`,
     method: "GET",
     headers: {
       Accept: "application/json",
@@ -18,7 +17,7 @@ const Fetch = () => {
   });
   useEffect(() => {
     executeFetch();
-  }, [chapterContext]);
+  }, [chapter]);
 
   useEffect(() => {
     if (res) setData(res);

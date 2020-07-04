@@ -6,7 +6,7 @@ import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import Paper from "../../components/Paper";
 import James from "../../components/James";
 import TargetUI from "../../components/organisms/Target";
-import store from "../../store";
+import context from "../../store/context";
 
 import Chapter1Page2 from "./chapter1Page2";
 
@@ -19,13 +19,11 @@ gsap.registerPlugin(ScrollToPlugin);
 
 const Chapter1 = () => {
   const [partData, setPartData] = useState([]);
-  const { data, subChapterContext } = useContext(store);
-
+  const { subChapter, data } = useContext(context);
   useEffect(() => {
     if (data !== undefined) setPartData(data?.parts);
   }, [data]);
 
-  const [isCard, setIsCard] = useState(false);
   useEffect(() => {
     window.scrollTo(0, 0);
     document.querySelector(".container").addEventListener("wheel", (e) => {

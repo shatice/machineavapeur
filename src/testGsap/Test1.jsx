@@ -5,7 +5,7 @@ export default () => {
   let cardRef = useRef([]);
 
   useEffect(() => {
-    console.log(cardRef);
+    // console.log(cardRef);
 
     TweenMax.staggerFrom(
       cardRef.current,

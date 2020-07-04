@@ -5,7 +5,7 @@ import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
 import Mineur from "../../components/Mineur";
 import mineurBG from "../../assets/mineurs_descente.jpg";
-import store from "../../store";
+import context from "../../store/context";
 
 import Lanterns from "../../components/Lanterns";
 
@@ -13,7 +13,7 @@ gsap.registerPlugin(ScrollToPlugin);
 
 const Chapter1Page2 = () => {
   const [partData, setPartData] = useState([]);
-  const { data, subChapterContext } = useContext(store);
+  const { data, subChapter } = useContext(context);
 
   useEffect(() => {
     if (data !== undefined) setPartData(data?.parts);

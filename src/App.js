@@ -21,35 +21,20 @@ import Infos from "./components/molecules/Infos";
 import Test from "./components/Test";
 import NavStore from "./store";
 import QuickNav from "./components/organisms/QuickNav";
+import GlobalState from "./store/GlobalState";
 
 export const customHistory = createBrowserHistory();
 
-const App = ({ match }) => {
-  console.log(match);
-  const [subChapterContext, setSubChapterContext] = useState(0);
-  const [chapterContext, setChapterContext] = useState(0);
-  const [data, setData] = useState({});
+const App = () => {
   return (
-    <Router history={customHistory}>
-      <NavStore.Provider
-        value={{
-          subChapterContext,
-          setSubChapterContext,
-          setData,
-          data,
-          setChapterContext,
-          chapterContext,
-          customHistory,
-        }}
-      >
+    <GlobalState path="/chapter:chapterId/part:partId" history={customHistory}>
+      <Router history={customHistory}>
         <CtaAudio />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route
-            exact
-            path="/chapter:chapterId/part:partId"
-            component={Chapter}
-          />
+          <Route exact path="/chapter:chapterId/part:partId">
+            <Chapter />
+          </Route>
           <Route exact path="/end" component={End} />
 
           {/** TO BE REMOVED - FOR TEST */}
@@ -62,13 +47,9 @@ const App = ({ match }) => {
           <Route exact path="/test" component={Test} />
         </Switch>
         {/* <QuickNav /> */}
-        <Footer
-          history={customHistory}
-          path="/chapter:chapterId/part:partId"
-          subChapterContext={subChapterContext}
-        />
-      </NavStore.Provider>
-    </Router>
+        <Footer history={customHistory} path="/chapter:chapterId/part:partId" />
+      </Router>
+    </GlobalState>
   );
 };
 

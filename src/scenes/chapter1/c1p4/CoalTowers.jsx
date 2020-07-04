@@ -14,7 +14,7 @@ import tower from "./img/c1p4_tower.png";
 
 const CoalTowers = ({ partData }) => {
   const [isAnimated, setIsAnimated] = useState(false);
-  console.log(partData);
+  // console.log(partData);
   return (
     <Container className={isAnimated ? "isAnimated" : ""}>
       <Tower filter={isAnimated ? true : false}>

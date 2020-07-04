@@ -21,7 +21,7 @@ const Mineur = ({ partData }) => {
     setDisplay(!display);
   };
 
-  console.log(partData);
+  // console.log(partData);
 
   return (
     <MineurContainer>
