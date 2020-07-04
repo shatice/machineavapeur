@@ -40,7 +40,6 @@ const Chapter = ({ history, match }) => {
   const { setSubChapterContext, data, setChapterContext } = useContext(
     NavStore
   );
-  console.log(data);
 
   const title = chaptersData[chapter].title;
   const subTitle = chaptersData[chapter].data[subChapter].title;

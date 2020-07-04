@@ -54,6 +54,7 @@ const ProgressBar = styled.div`
     getProgressBarWidth(totalElem, currentPart)}%;
   height: 100%;
   background-color: #c09c1c;
+  transition: width 0.3s ease-out;
 `;
 
 const ChevronContainer = styled.div`

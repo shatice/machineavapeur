@@ -34,7 +34,7 @@ const Orange = styled.section`
   height: 100vh;
   background-color: orange;
 `;
-
+export const url = "http://folle-histoire-progres.herokuapp.com/api/chapters";
 const chaptersData = [
   {
     id: "lamachineavapeur",
