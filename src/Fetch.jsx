@@ -21,7 +21,6 @@ const Fetch = () => {
 
   useEffect(() => {
     if (res) setData(res);
-    console.log(res);
   }, [res]);
 
   return <></>;

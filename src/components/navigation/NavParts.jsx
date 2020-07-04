@@ -46,7 +46,6 @@ const ProgressBarContainer = styled.div`
 `;
 
 const getProgressBarWidth = (totalElem, currentPart) => {
-  // console.log(totalElem, currentPart);
   return ((0.5 + currentPart) / totalElem) * 100;
 };
 

@@ -1,5 +1,7 @@
 import { generatePath } from "react-router-dom";
 import chaptersData from "../navDatas";
+
+//actions
 export const INCREMENT_PART = "INCREMENT_PART";
 export const DECREMENT_PART = "DECREMENT_PART";
 export const SET_PART = "SET_PART";
@@ -40,10 +42,10 @@ const incrementPart = (state) => {
 
 const decrementPart = (state) => {
   let chapter = state.chapter;
+  let data = state.data;
   let history = state.history;
   let path = state.path;
   let subChapter = state.subChapter;
-  const subParts = chaptersData[chapter].data;
 
   if (subChapter === 0 && chapter !== 0) {
     history.replace({
@@ -57,12 +59,24 @@ const decrementPart = (state) => {
     history.replace({
       pathname: generatePath(path, {
         chapterId: chapter - 1,
-        partId: chaptersData[chapter - 1].data.length - 1,
+        partId: 3,
+        //chaptersData[chapter - 1].data.length - 1,
       }),
     });
-  } else if (chapter === 0 && subChapter !== 0) {
+  }
+  // else if (subChapter === 0) {
+  //   chapter = chapter - 1;
+  //   subChapter = 3;
+  //   history.replace({
+  //     pathname: generatePath(path, {
+  //       chapterId: 0,
+  //       partId: subChapter - 1,
+  //     }),
+  //   });
+  // }
+  else if (chapter === 0 && subChapter !== 0) {
     chapter = 0;
-    subChapter = subChapter - 1;
+    subChapter = Number(subChapter - 1);
     history.replace({
       pathname: generatePath(path, {
         chapterId: 0,
@@ -82,7 +96,6 @@ const decrementPart = (state) => {
 };
 
 const setPart = (chapterId, subChapterId, state) => {
-  // console.log(chapterId, subChapterId);
   return {
     ...state,
     chapter: chapterId,

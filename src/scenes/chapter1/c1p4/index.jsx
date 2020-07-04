@@ -6,14 +6,14 @@ import styled from "styled-components";
 import CoalTowers from "./CoalTowers";
 import BackgroundImage from "./BackgroundImage";
 import Ecology from "./Ecology";
-import store from "../../../store";
+import context from "../../../store/context";
 
 /***** ASSETS *****/
 import bg from "./img/c1p4_background.jpg";
 
 const Chap1Part4 = () => {
   const [partData, setPartData] = useState([]);
-  const { data, subChapterContext } = useContext(store);
+  const { data, subChapter } = useContext(context);
   useEffect(() => {
     if (data !== undefined) setPartData(data?.parts);
   }, [data]);

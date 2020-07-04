@@ -4,7 +4,6 @@ import chaptersData from "../navDatas";
 import { useParams, useLocation } from "react-router-dom";
 import context from "../store/context";
 import Fetch from "../Fetch";
-import NavStore from "../store";
 
 const Layout = styled.section`
   position: absolute;
@@ -37,10 +36,11 @@ const Chapter = () => {
 
   const { chapterId, partId } = useParams();
   const location = useLocation();
-  console.log(chapter, subChapter);
-  const chapterDatas = chaptersData[chapterId].data;
+
+  const chapterDatas = chaptersData[chapter].data;
+
   useEffect(() => {
-    setPart(chapterId, partId);
+    setPart(Number(chapterId), Number(partId));
   }, [location]);
 
   return (

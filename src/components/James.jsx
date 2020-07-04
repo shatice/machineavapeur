@@ -23,10 +23,6 @@ const James = () => {
     if (data !== undefined) setPartData(data?.parts);
   }, [data]);
 
-  if (partData) {
-    // console.log(partData[0]?.cards);
-  }
-
   const currentRef = ref.current;
 
   useEffect(() => {

@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 import chaptersData from "../../navDatas";
 import UseNavigation from "../../components/navigation/use-navigation";
-import store from "../.././store";
+import context from "../.././store/context";
 import { Link } from "react-router-dom";
 
 const Container = styled.section`
@@ -21,17 +21,14 @@ const Container = styled.section`
 `;
 
 const QuickNav = () => {
-  const { setNextPart } = UseNavigation();
-  const { chapterContext, subChapterContext } = useContext(store);
+  const { chapter, subChapter, incrementPart, decrementPart } = useContext(
+    context
+  );
 
-  const incrementPath =
-    chaptersData[chapterContext].data[subChapterContext + 1].path;
-  const decrementPath =
-    chaptersData[chapterContext].data[subChapterContext + 1].path;
   return (
     <Container>
-      <Link to={incrementPath}>Preview</Link>
-      <Link to={decrementPath}>Next</Link>
+      <div onClick={decrementPart}>Preview</div>
+      <div onClick={incrementPart}>Next</div>
     </Container>
   );
 };

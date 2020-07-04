@@ -7,7 +7,7 @@ import BackgroundImage from "./BackgroundImage";
 import Richard from "./Richard";
 import LittleFrame from "./LittleFrame";
 import Train from "./Train";
-import store from "../../../store";
+import context from "../../../store/context";
 
 /***** ASSETS *****/
 import bg from "./img/c1p3_background.jpg";
@@ -16,7 +16,7 @@ import frameSncf from "./img/c1p3_frame_sncf.png";
 
 const Chap1Part3 = () => {
   const [partData, setPartData] = useState([]);
-  const { data, subChapterContext } = useContext(store);
+  const { data, subChapter } = useContext(context);
 
   useEffect(() => {
     if (data !== undefined) setPartData(data?.parts);

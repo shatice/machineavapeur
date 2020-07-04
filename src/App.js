@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { createBrowserHistory } from "history";
 import "./styles/styles.scss";
@@ -19,7 +19,6 @@ import CtaAudio from "./components/atoms/CtaAudio";
 import Target from "./components/organisms/Target";
 import Infos from "./components/molecules/Infos";
 import Test from "./components/Test";
-import NavStore from "./store";
 import QuickNav from "./components/organisms/QuickNav";
 import GlobalState from "./store/GlobalState";
 
@@ -46,7 +45,7 @@ const App = () => {
           <Route exact path="/card" component={Infos} />
           <Route exact path="/test" component={Test} />
         </Switch>
-        {/* <QuickNav /> */}
+        <QuickNav />
         <Footer history={customHistory} path="/chapter:chapterId/part:partId" />
       </Router>
     </GlobalState>

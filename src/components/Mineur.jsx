@@ -21,8 +21,6 @@ const Mineur = ({ partData }) => {
     setDisplay(!display);
   };
 
-  // console.log(partData);
-
   return (
     <MineurContainer>
       <MineurBody display={display}>
