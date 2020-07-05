@@ -11,6 +11,10 @@ import Chapter2Part1 from "./scenes/chapter2/c2p1";
 import Chapter2Part2 from "./scenes/chapter2/c2p2";
 import Chapter2Part3 from "./scenes/chapter2/c2p3";
 
+// Chapter 3
+import Chapter3Part1 from "./scenes/chapter3/c3p1";
+import Chapter3Part2 from "./scenes/chapter3/c3p2";
+
 const Green = styled.section`
   width: 100vw;
   height: 100vh;
@@ -107,8 +111,8 @@ const chaptersData = [
     chapterPath: "/chapter2/part0",
     apiUrl: "http://folle-histoire-progres.herokuapp.com/api/chapters/3",
     data: [
-      { title: "Partie 1", path: "/chapter2/part1", elem: <Green /> },
-      { title: "Partie 2", path: "/chapter2/part2", elem: <Red /> },
+      { title: "Partie 1", path: "/chapter2/part1", elem: <Chapter3Part1 /> },
+      { title: "Partie 2", path: "/chapter2/part2", elem: <Chapter3Part2 /> },
       { title: "Partie 3", path: "/chapter2/part3", elem: <Blue /> },
       { title: "Partie 4", path: "/chapter2/part4", elem: <Orange /> },
     ],
