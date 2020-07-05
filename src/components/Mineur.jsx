@@ -9,8 +9,7 @@ import Infos from "./molecules/Infos";
 import gsap from "gsap";
 
 const Mineur = ({ partData }) => {
-  console.log(partData);
-  const [display, setDisplay] = useState(true);
+  const [display, setDisplay] = useState(false);
 
   const minorIshover = () => {
     if (display) {
@@ -21,24 +20,18 @@ const Mineur = ({ partData }) => {
 
     setDisplay(!display);
   };
-  console.log(display);
+
   return (
     <MineurContainer>
-      {display && (
-        <MineurBody
-          onMouseEnter={() => setDisplay(true)}
-          onMouseLeave={() => setDisplay(false)}
-        >
-          <Minor src={minor} />
-          <Hat src={hat} />
-        </MineurBody>
-      )}
-
+      <MineurBody display={display}>
+        <Minor src={minor} />
+        <Hat src={hat} />
+      </MineurBody>
       {partData && (
         <Infos
+          setIsAnimated={minorIshover}
           title={partData[1]?.cards?.[0].title}
           content={partData[1]?.cards?.[0].content}
-          isActive={display}
           bottom="8"
           left="103"
           leftCard="-1500"
@@ -61,21 +54,18 @@ const MineurContainer = styled.div`
 const MineurBody = styled.div`
   position: relative;
   display: ${({ display }) => (display ? "block" : "none")};
-  z-index: 100000;
 `;
 
 const Hat = styled.img`
   position: absolute;
   top: -153px;
   left: 375px;
-  z-index: 100000;
 `;
 
 const Minor = styled.img`
   position: absolute;
   top: -125px;
   left: 277px;
-  z-index: 100000;
 `;
 
 export default Mineur;
