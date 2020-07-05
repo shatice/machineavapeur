@@ -49,7 +49,11 @@ const Container = styled.article`
   right: ${({ right }) => right}%;
   left: ${({ left }) => left}%;
   display: flex; 
+<<<<<<< HEAD
   z-index: 99;
+=======
+  z-index: 1;
+>>>>>>> all parts
 `
 
 export default Infos;
