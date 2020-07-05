@@ -11,14 +11,7 @@ import Lanterns from "../../components/Lanterns";
 
 gsap.registerPlugin(ScrollToPlugin);
 
-const Chapter1Page2 = () => {
-  const [partData, setPartData] = useState([]);
-  const { state, subChapter } = useContext(context);
-
-  useEffect(() => {
-    if (state.data !== undefined) setPartData(state.data?.parts);
-  }, [state.data]);
-
+const Chapter1Page2 = ({ partData }) => {
   useEffect(() => {
     document
       .querySelector(".page2__container")

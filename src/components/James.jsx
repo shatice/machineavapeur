@@ -77,8 +77,8 @@ const James = ({ partData }) => {
       {partData && (
         <Infos
           setIsAnimated={jamesHover}
-          title={partData?.cards?.[0].title}
-          content={partData?.cards?.[0].content}
+          title={partData[0]?.cards?.[0].title}
+          content={partData[0]?.cards?.[0].content}
           bottom="-100"
           right="-20"
           rightCard="200"

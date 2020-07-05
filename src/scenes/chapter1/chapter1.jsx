@@ -20,10 +20,10 @@ gsap.registerPlugin(ScrollToPlugin);
 
 const Chapter1 = () => {
   const [partData, setPartData] = useState([]);
-  const { subChapter, data } = useContext(context);
+  const { data } = useContext(context);
   useEffect(() => {
     console.log(data);
-    if (data !== undefined) setPartData(data?.parts?.[0]);
+    if (data !== undefined) setPartData(data?.parts);
   }, [data]);
 
   useEffect(() => {
@@ -70,7 +70,7 @@ const Chapter1 = () => {
           <Paper partData={partData} />
           <James partData={partData} />
         </div>
-        <Chapter1Page2 />
+        <Chapter1Page2 partData={partData} />
       </div>
     </GlobalState>
   );
