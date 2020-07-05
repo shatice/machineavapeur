@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import './style.scss'; 
+import "./style.scss";
 import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
@@ -10,7 +10,7 @@ import Lanterns from "../../../components/Lanterns";
 
 gsap.registerPlugin(ScrollToPlugin);
 
-const Chapter1Page2 = ({ partData }) => {
+const Chapter1Page2 = ({ data }) => {
   useEffect(() => {
     document
       .querySelector(".page2__container")
@@ -45,8 +45,8 @@ const Chapter1Page2 = ({ partData }) => {
     <div>
       <div className="page2__container">
         <img className="minorBg" src={mineurBG} alt="" />
-        <Mineur partData={partData} />
-        <Lanterns partData={partData} />
+        <Mineur partData={data} />
+        <Lanterns partData={data} />
       </div>
     </div>
   );

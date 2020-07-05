@@ -106,7 +106,6 @@ const setPart = (chapterId, subChapterId, state) => {
 };
 
 const setData = (data, state) => {
-  console.log(data);
   return {
     ...state,
     data: data,
