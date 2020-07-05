@@ -1,0 +1,18 @@
+.bgC3P3 {
+    filter: grayscale(1);
+}
+
+.nuclearWaste {
+    position: absolute;
+    width: 100vw;
+    bottom: -33vw;
+    filter: grayscale(1);
+    z-index: 10;
+}
+
+.tv {
+    position: absolute;
+    bottom: 131px;
+    left: 50%;
+    transform: translateX(-50%);
+}

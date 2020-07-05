@@ -8,7 +8,7 @@ import Arm from "../../../components/Arm";
 
 const Chapter3Part2 = () => {
     return (<>
-        <div className="container-c3p2">
+        <div className="chapter-container">
             <img src={bg} alt="" className="bg" />
             <img src={people} alt="" className="people" />
             <Embleme />
