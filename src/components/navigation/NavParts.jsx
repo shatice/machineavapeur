@@ -6,10 +6,8 @@ import styled from "styled-components";
 import Bullet from "../../assets/Bullet.png";
 import ActiveBullet from "../../assets/BulletActif.png";
 
-import UseNavigation from "../navigation/use-navigation";
-import context from "../../store/context";
 import chaptersData from "../../navDatas";
-import NavStore from "../../store";
+import context from "../../store/context";
 
 const Container = styled.ul`
   width: 70%;

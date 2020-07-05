@@ -17,7 +17,7 @@ const Richard = ({ partData }) => {
     <Container className={isAnimated ? "isAnimated" : ""}>
       <img src={frameRichard} alt="" />
       <img src={richard} alt="" className="richard" />
-      <div class="scene">
+      <div className="scene">
         <div className="coin">
           <div className="coin__card">
             <img

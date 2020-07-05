@@ -10,10 +10,6 @@ import End from "./views/End";
 /***** COMPONENTS *****/
 import Footer from "./components/molecules/Footer";
 import CtaAudio from "./components/atoms/CtaAudio";
-import Target from "./components/organisms/Target";
-import Infos from "./components/molecules/Infos";
-// import Test from "./components/Test";
-import QuickNav from "./components/organisms/QuickNav";
 import GlobalState from "./store/GlobalState";
 
 export const customHistory = createBrowserHistory();

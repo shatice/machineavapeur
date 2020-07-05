@@ -1,11 +1,10 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect } from "react";
 
 import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
 import Mineur from "../../components/Mineur";
 import mineurBG from "../../assets/mineurs_descente.jpg";
-import context from "../../store/context";
 
 import Lanterns from "../../components/Lanterns";
 

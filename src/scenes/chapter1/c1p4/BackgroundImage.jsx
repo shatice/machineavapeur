@@ -13,6 +13,7 @@ const BackgroundImage = ({ src, alt, partData }) => {
       {partData && (
         <Infos
           setIsAnimated={setIsAnimated}
+          isActive={isAnimated}
           title={partData[3]?.cards[0].title}
           content={partData[3]?.cards[0].content}
           top="10"

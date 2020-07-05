@@ -20,9 +20,7 @@ const Container = styled.section`
 `;
 
 const QuickNav = () => {
-  const { chapter, subChapter, incrementPart, decrementPart } = useContext(
-    context
-  );
+  const { incrementPart, decrementPart } = useContext(context);
 
   return (
     <Container>

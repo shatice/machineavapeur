@@ -5,7 +5,6 @@ import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 //components
 import Paper from "../../components/Paper";
 import James from "../../components/James";
-import TargetUI from "../../components/organisms/Target";
 import context from "../../store/context";
 
 import Chapter1Page2 from "./chapter1Page2";

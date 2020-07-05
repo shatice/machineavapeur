@@ -13,7 +13,7 @@ import bg from "./img/c1p4_background.jpg";
 
 const Chap1Part4 = () => {
   const [partData, setPartData] = useState([]);
-  const { data, subChapter } = useContext(context);
+  const { data } = useContext(context);
   useEffect(() => {
     if (data !== undefined) setPartData(data?.parts);
   }, [data]);

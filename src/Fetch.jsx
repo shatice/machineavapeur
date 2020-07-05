@@ -5,22 +5,19 @@ import context from "./store/context";
 import { url } from "./navDatas";
 
 const Fetch = () => {
-  const { setData, chapter, data, state } = useContext(context);
+  const { setData, chapter, state } = useContext(context);
 
-  const [{ data: res }, executeFetch] = useAxios({
+  const [{ data: res }] = useAxios({
     url: url + `/${chapter + 1}`,
     method: "GET",
     headers: {
       Accept: "application/json",
     },
   });
-  useEffect(() => {
-    // executeFetch();
-  }, [chapter]);
 
   useEffect(() => {
     if (res) setData(res, state);
-    console.log(data);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [res]);
 
   return <></>;
