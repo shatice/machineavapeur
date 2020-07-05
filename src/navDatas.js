@@ -14,6 +14,7 @@ import Chapter2Part3 from "./scenes/chapter2/c2p3";
 // Chapter 3
 import Chapter3Part1 from "./scenes/chapter3/c3p1";
 import Chapter3Part2 from "./scenes/chapter3/c3p2";
+import Chapter3Part3 from "./scenes/chapter3/c3p3";
 
 const Green = styled.section`
   width: 100vw;
@@ -113,7 +114,7 @@ const chaptersData = [
     data: [
       { title: "Partie 1", path: "/chapter2/part1", elem: <Chapter3Part1 /> },
       { title: "Partie 2", path: "/chapter2/part2", elem: <Chapter3Part2 /> },
-      { title: "Partie 3", path: "/chapter2/part3", elem: <Blue /> },
+      { title: "Partie 3", path: "/chapter2/part3", elem: <Chapter3Part3 /> },
       { title: "Partie 4", path: "/chapter2/part4", elem: <Orange /> },
     ],
     subtitles: [
