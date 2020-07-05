@@ -24,6 +24,8 @@
 
 @import "./scenes/chapter1/chapter1.scss";
 @import "./scenes/chapter1/chapter1page2.scss";
+@import "./scenes/chapter3/c3p2/c3p2.scss";
+@import "./scenes/chapter3/c3p3/c3p3.scss";
 
 body {
   position: relative;
@@ -42,6 +44,17 @@ body {
   h1 {
     font-family: 'notable' !important;
   }
+}
+
+
+.chapter-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.relative {
+  position: relative;
 }
 
 // code {
