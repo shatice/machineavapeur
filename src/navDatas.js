@@ -43,7 +43,74 @@ const Orange = styled.section`
 
 export const url = "http://folle-histoire-progres.herokuapp.com/api/chapters";
 
-const chaptersData = [
+export const chaptersData = [
+  {
+    id: 0,
+    apiUrl: "http://folle-histoire-progres.herokuapp.com/api/chapters/1",
+    data: [
+      {
+        //intro
+        idApi: 0,
+        elem: <Orange />,
+      },
+      {
+        idApi: 1,
+        elem: <Chap1Part1 />,
+      },
+      {
+        idApi: 1,
+        elem: <Chap1Part1 />,
+      },
+      {
+        idApi: 2,
+        elem: <Chap1Part3 />,
+      },
+      {
+        idApi: 3,
+        elem: <Chap1Part4 />,
+      },
+      {
+        //outro
+        idApi: 0,
+        elem: <Orange />,
+      },
+    ],
+  },
+  {
+    id: 1,
+    apiUrl: "http://folle-histoire-progres.herokuapp.com/api/chapters/2",
+    data: [
+      {
+        //intro
+        idApi: 0,
+        elem: <Orange />,
+      },
+      {
+        idApi: 1,
+        elem: <Chapter2Part1 />,
+      },
+      {
+        idApi: 1,
+        elem: <Chapter2Part2 />,
+      },
+      {
+        id: 2,
+        elem: <Chap1Part3 />,
+      },
+      {
+        id: 3,
+        elem: <Chap1Part4 />,
+      },
+      {
+        //outro
+        idApi: 0,
+        elem: <Orange />,
+      },
+    ],
+  },
+];
+
+const chaptersData2 = [
   {
     id: "lamachineavapeur",
     title: "La machine à vapeur",

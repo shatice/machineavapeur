@@ -51,8 +51,8 @@ const CoalTowers = ({ partData }) => {
       {partData && (
         <Infos
           setIsAnimated={setIsAnimated}
-          title={partData[3]?.cards[1].title}
-          content={partData[3]?.cards[1].content}
+          title={partData[2]?.cards[1].title}
+          content={partData[2]?.cards[1].content}
           bottom="30"
           left="10"
           leftCard="200"

@@ -35,11 +35,11 @@ const Chapter = () => {
     chapter,
     subChapter,
     setPart,
+    data,
   } = useContext(context);
 
   const { chapterId, partId } = useParams();
   const location = useLocation();
-
   const chapterDatas = chaptersData[chapter].data;
 
   useEffect(() => {
@@ -76,7 +76,7 @@ const Chapter = () => {
         </button>
       </NavTemp>
       {chapterDatas[subChapter].elem &&
-        React.cloneElement(chapterDatas[subChapter].elem)}
+        React.cloneElement(chapterDatas[subChapter].elem, { data: data })}
       <Fetch url={chaptersData[chapter].apiUrl} />
     </Layout>
   );
