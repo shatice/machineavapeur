@@ -22,7 +22,7 @@ const Chapter1 = () => {
   const { data, subChapter2 } = useContext(store);
 
   useEffect(() => {
-    if (data !== undefined) setPartData(data?.parts);
+    setPartData(data?.parts);
   }, [data]);
 
   const [isCard, setIsCard] = useState(false);

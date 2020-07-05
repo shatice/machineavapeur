@@ -49,6 +49,7 @@ const Container = styled.article`
   right: ${({ right }) => right}%;
   left: ${({ left }) => left}%;
   display: flex; 
+  z-index: 1;
 `
 
 export default Infos;

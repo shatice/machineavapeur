@@ -7,9 +7,10 @@ import Chap1Part3 from "./scenes/chapter1/c1p3";
 import Chap1Part4 from "./scenes/chapter1/c1p4";
 
 // Chapter 2
-import Chapter2Part1 from "./scenes/chapter2/c2p1";
-import Chapter2Part2 from "./scenes/chapter2/c2p2";
-import Chapter2Part3 from "./scenes/chapter2/c2p3";
+import Chapter2Part1 from "./scenes/chapter-aviation/part1";
+import Chapter2Part2 from "./scenes/chapter-aviation/part2";
+import Chapter2Part3 from "./scenes/chapter-aviation/part3";
+import Chapter2Part4 from "./scenes/chapter-aviation/part4";
 
 const Green = styled.section`
   width: 100vw;
@@ -89,7 +90,7 @@ const chaptersData = [
       {
         title: "Partie 4",
         path: "/chapter1/part4",
-        elem: <Orange />,
+        elem: <Chapter2Part4 />,
       },
     ],
     subtitles: [
