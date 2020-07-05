@@ -117,6 +117,9 @@ const NavParts = () => {
         <ProgressBar totalElem={subChapters.length} currentPart={subChapter} />
       </ProgressBarContainer>
       <ChevronContainer>
+        <PartIcon>
+          <Chevron />
+        </PartIcon>
         {subChapters.map((s, i) => {
           return (
             <PartIcon>
