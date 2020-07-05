@@ -42,9 +42,10 @@ const Paper = ({ partData }) => {
       />
       {partData && (
         <Infos
+          style={{ zIndex: 100000 }}
           setIsAnimated={paperHover}
-          title={partData[0]?.cards[2].title}
-          content={partData[0]?.cards[2].content}
+          title={partData?.cards?.[2].title}
+          content={partData?.cards?.[2].content}
           bottom="50"
           left="0"
           leftCard="-600"

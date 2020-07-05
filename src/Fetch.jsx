@@ -5,22 +5,22 @@ import context from "./store/context";
 import { url } from "./navDatas";
 
 const Fetch = () => {
-  const { setData, chapter } = useContext(context);
+  const { setData, chapter, data, state } = useContext(context);
 
   const [{ data: res }, executeFetch] = useAxios({
-    url: url + `/${Number(chapter + 1)}`,
+    url: url + `/${chapter + 1}`,
     method: "GET",
     headers: {
       Accept: "application/json",
     },
-    manual: true,
   });
   useEffect(() => {
-    executeFetch();
+    // executeFetch();
   }, [chapter]);
 
   useEffect(() => {
-    if (res) setData(res);
+    if (res) setData(res, state);
+    console.log(data);
   }, [res]);
 
   return <></>;

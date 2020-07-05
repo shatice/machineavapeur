@@ -13,11 +13,11 @@ gsap.registerPlugin(ScrollToPlugin);
 
 const Chapter1Page2 = () => {
   const [partData, setPartData] = useState([]);
-  const { data, subChapter } = useContext(context);
+  const { state, subChapter } = useContext(context);
 
   useEffect(() => {
-    if (data !== undefined) setPartData(data?.parts);
-  }, [data]);
+    if (state.data !== undefined) setPartData(state.data?.parts);
+  }, [state.data]);
 
   useEffect(() => {
     document

@@ -13,6 +13,7 @@ import Chapter1Page2 from "./chapter1Page2";
 //assets
 import portrait from "../../assets/portrait.png";
 import bg from "../../assets/bgChapter1.jpg";
+import GlobalState from "../../store/GlobalState";
 
 //plugins
 gsap.registerPlugin(ScrollToPlugin);
@@ -21,7 +22,8 @@ const Chapter1 = () => {
   const [partData, setPartData] = useState([]);
   const { subChapter, data } = useContext(context);
   useEffect(() => {
-    if (data !== undefined) setPartData(data?.parts);
+    console.log(data);
+    if (data !== undefined) setPartData(data?.parts?.[0]);
   }, [data]);
 
   useEffect(() => {
@@ -60,15 +62,17 @@ const Chapter1 = () => {
 
   const title = "Industrialisation";
   return (
-    <div>
-      <div className="container">
-        <img className="bg" src={bg} alt="" />
-        <img className="portrait" src={portrait} alt="" />
-        <Paper partData={partData} />
-        <James partData={partData} />
+    <GlobalState>
+      <div>
+        <div className="container">
+          <img className="bg" src={bg} alt="" />
+          <img className="portrait" src={portrait} alt="" />
+          <Paper partData={partData} />
+          <James partData={partData} />
+        </div>
+        <Chapter1Page2 />
       </div>
-      <Chapter1Page2 />
-    </div>
+    </GlobalState>
   );
 };
 
