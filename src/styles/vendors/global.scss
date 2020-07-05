@@ -1,0 +1,29 @@
+body {
+  position: relative;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'din_bold';
+  color: $primary-text-color;
+  background-color: $primary-bg-color;
+  
+  h1 {
+    font-family: 'notable';
+  }
+
+  h3 {
+    font-family: 'din_bold_condensed';
+    font-size: .875rem;
+  }
+
+}
+
+.chapter-container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.relative {
+  position: relative;
+}

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import "../../../styles/styles.scss";
+// import "../../../styles/styles.scss";
 import styled from "styled-components";
 
 /***** COMPONENTS *****/
