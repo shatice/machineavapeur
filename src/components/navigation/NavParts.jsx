@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -19,7 +19,6 @@ const Container = styled.ul`
   justify-content: space-evenly;
   flex-direction: column;
   align-self: flex-start;
-  /* transform: translateY(300%); */
   transition: transform 0.3s ease-out;
   transform: translateY(0);
   width: 90%;
@@ -145,18 +144,3 @@ const NavParts = () => {
 };
 
 export default NavParts;
-
-{
-  /* <ProgressBarChevronContainer>
-          {subChapters.map(({ path, title }) => {
-            return (
-              <SubChapterContainer>
-                <Chevron />
-                <li>
-                  <Link to={path}>{title}</Link>
-                </li>
-              </SubChapterContainer>
-            );
-          })}
-        </ProgressBarChevronContainer> */
-}

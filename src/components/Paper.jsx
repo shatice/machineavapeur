@@ -1,8 +1,7 @@
-import React, { useRef, useEffect, useState, useContext } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import styled from "styled-components";
 
 import paper from "../assets/paper.png";
-import store from "../store";
 
 import { gsap } from "gsap";
 import Infos from "./molecules/Infos";

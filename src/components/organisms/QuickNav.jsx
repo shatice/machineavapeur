@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
-import PropTypes from "prop-types";
 
 import chaptersData from "../../navDatas";
 import UseNavigation from "../../components/navigation/use-navigation";

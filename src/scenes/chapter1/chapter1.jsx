@@ -58,7 +58,7 @@ const Chapter1 = () => {
     gsap.to(".portrait", { rotate: 360, opacity: 0, duration: 1, delay: 2 });
   };
 
-  const title = "Industrialisation";
+  // const title = "Industrialisation";
   return (
     <div>
       <div className="container">
