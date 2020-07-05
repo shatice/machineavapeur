@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 import hat from "../assets/mineur_chapeau.png";

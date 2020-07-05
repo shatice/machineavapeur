@@ -1,15 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
-
-/***** COMPONENTS *****/
-import Infos from "../../../components/molecules/Infos";
 
 /***** ASSETS *****/
 import water from "./img/c1p4_water.jpg";
 import rocks from "./img/c1p4_rocks.png";
 
 const Ecology = ({ partData }) => {
-  const [isAnimated, setIsAnimated] = useState(false);
 
   return (
     <Container>

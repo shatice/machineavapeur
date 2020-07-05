@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -18,7 +18,6 @@ const Container = styled.ul`
   justify-content: space-evenly;
   flex-direction: column;
   align-self: flex-start;
-  /* transform: translateY(300%); */
   transition: transform 0.3s ease-out;
   transform: translateY(0);
   width: 90%;
@@ -106,10 +105,10 @@ const Chevron = styled.div`
 `;
 
 const NavParts = ({ history }) => {
-  const { chapter, subChapter } = UseNavigation();
+  const { chapter } = UseNavigation();
   const [displayText, setDisplayText] = useState();
   const { subChapterContext } = useContext(NavStore);
-  const progress = 50;
+  // const progress = 50;
   const subChapters = chaptersData[chapter].data;
 
   return (
@@ -150,18 +149,3 @@ const NavParts = ({ history }) => {
 };
 
 export default NavParts;
-
-{
-  /* <ProgressBarChevronContainer>
-          {subChapters.map(({ path, title }) => {
-            return (
-              <SubChapterContainer>
-                <Chevron />
-                <li>
-                  <Link to={path}>{title}</Link>
-                </li>
-              </SubChapterContainer>
-            );
-          })}
-        </ProgressBarChevronContainer> */
-}

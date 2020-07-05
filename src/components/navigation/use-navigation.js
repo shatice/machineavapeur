@@ -10,7 +10,7 @@ const UseNavigation = (history, match) => {
   const [path, setPath] = useState("");
   const [chapter, setChapter] = useState(0);
   const [isChapterList, setIsChapterList] = useState(false);
-  const [progress, setProgress] = useState(0);
+  const [progress] = useState(0);
   const [selectedChapter, setSelectedChapter] = useState({
     label: "La machine a vapeur & le charbon1",
     value: 0,

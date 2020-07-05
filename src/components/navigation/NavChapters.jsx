@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { chaptersList } from "../../constant";
-// import UseNavigation from "./use-navigation";
 
 import Title from "./Title";
 import ChaptersList from "./ChaptersList";

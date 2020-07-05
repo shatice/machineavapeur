@@ -37,7 +37,7 @@ const Chapter = ({ history, match }) => {
 
   const location = useLocation();
   const { chapterId, partId } = useParams();
-  const { setSubChapterContext, data, setChapterContext } = useContext(
+  const { setSubChapterContext, setChapterContext } = useContext(
     NavStore
   );
 

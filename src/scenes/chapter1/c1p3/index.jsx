@@ -16,7 +16,7 @@ import frameSncf from "./img/c1p3_frame_sncf.png";
 
 const Chap1Part3 = () => {
   const [partData, setPartData] = useState([]);
-  const { data, subChapterContext } = useContext(store);
+  const { data } = useContext(store);
 
   useEffect(() => {
     if (data !== undefined) setPartData(data?.parts);
