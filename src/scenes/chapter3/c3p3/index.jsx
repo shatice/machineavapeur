@@ -22,7 +22,7 @@ const Chapter3Part3 = () => {
         setTvAnim({
             bgAnim: gsap.to(".bgC3P3", { filter: "grayscale(0)", duration: 0.4, paused: true }),
             natureAnim: gsap.to('.nature', { filter: "grayscale(0)", y: -40, delay: 1, paused: true }),
-            tvAnim: gsap.to('.tvContainer', { y: -200, x: -100, scale: 1.1, paused: true })
+            tvAnim: gsap.to('.tvContainer', { y: -300, x: -150, scale: 1.4, paused: true })
         })
     }, [])
 
