@@ -30,8 +30,8 @@ const Mineur = ({ partData }) => {
       {partData && (
         <Infos
           setIsAnimated={minorIshover}
-          title={partData[1]?.cards[1].title}
-          content={partData[2]?.cards[1].content}
+          title={partData[1]?.cards?.[0].title}
+          content={partData[1]?.cards?.[0].content}
           bottom="8"
           left="103"
           leftCard="-1500"

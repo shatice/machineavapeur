@@ -52,14 +52,10 @@ const incrementPart = (state) => {
 };
 
 const decrementPart = (state) => {
-  let chapter = state.chapter;
-  let data = state.data;
-  let history = state.history;
-  let path = state.path;
-  let subChapter = state.subChapter;
+  const { chapter, data, history, path, subChapter } = state;
 
+  console.log(data.parts[chapter].cards);
   if (subChapter === 0 && chapter !== 0) {
-    
     chapter = chapter - 1;
     subChapter = state.data.parts[chapter].cards.length;
     let datas = {
@@ -94,6 +90,16 @@ const decrementPart = (state) => {
 };
 
 const setPart = (chapterId, subChapterId, state) => {
+  let chapter = chapterId;
+  const { history, path } = state;
+  let subChapter = subChapterId;
+  let datas = {
+    chapter,
+    subChapter,
+    path,
+    history,
+  };
+  changeUrl(datas);
   return {
     ...state,
     chapter: chapterId,
@@ -102,6 +108,8 @@ const setPart = (chapterId, subChapterId, state) => {
 };
 
 const setData = (data, state) => {
+  // const { data } = state;
+  console.log(data);
   return {
     ...state,
     data: data,

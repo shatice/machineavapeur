@@ -60,12 +60,13 @@ const GlobalState = ({ children, history, path }) => {
         chapter: state.chapter,
         subChapter: state.subChapter,
         setData: setData,
-        data: data,
+        data: state.data,
         incrementPart: incrementPart,
         decrementPart: decrementPart,
         setPart: setPart,
         history: history,
         path: path,
+        state: state,
       }}
     >
       {children}

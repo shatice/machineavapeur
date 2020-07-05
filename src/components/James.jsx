@@ -10,18 +10,11 @@ import arm from "../assets/jamesWatt_arm_cropped.png";
 import Infos from "./molecules/Infos";
 import context from "../store/context";
 
-const James = () => {
+const James = ({ partData }) => {
   /* eslint-disable */
   let ref = useRef([]);
   const [jamesIsHover, setJamesIsHover] = useState(false);
   const [jamesAnims, setJamesAnims] = useState({});
-  const [partData, setPartData] = useState([]);
-
-  const { data, subChapter } = useContext(context);
-
-  useEffect(() => {
-    if (data !== undefined) setPartData(data?.parts);
-  }, [data]);
 
   const currentRef = ref.current;
 
@@ -47,7 +40,6 @@ const James = () => {
       }),
     });
   }, []);
-
   const jamesHover = () => {
     if (jamesIsHover) {
       for (const key in jamesAnims) {
@@ -60,8 +52,7 @@ const James = () => {
     }
     setJamesIsHover(!jamesIsHover);
   };
-  const content =
-    "Ingénieur écossais, il fait breveter en 1769 la chambre de condensation séparée pour la machine à vapeur et crée une entreprise à Soho, en Angleterre, pour produire sa machine à vapeur améliorée. C’est la source d’énergie principale de la révolution industrielle naissante, dont elle a considérablement accru la capacité de production. En 1800, environ 500 de ses machines à vapeur sont en service.";
+
   return (
     <JamesContainer>
       <JamesBody
@@ -86,8 +77,8 @@ const James = () => {
       {partData && (
         <Infos
           setIsAnimated={jamesHover}
-          title={partData[0]?.cards[0].title}
-          content={partData[0]?.cards[0].content}
+          title={partData[0]?.cards?.[0].title}
+          content={partData[0]?.cards?.[0].content}
           bottom="-100"
           right="-20"
           rightCard="200"

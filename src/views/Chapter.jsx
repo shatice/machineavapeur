@@ -15,14 +15,17 @@ const Layout = styled.section`
 `;
 
 const NavTemp = styled.section`
+  width: 100%;
   position: absolute;
   left: 0;
-  top: 0;
+  bottom: 80px;
   font-size: 12px;
   color: black;
   z-index: 30;
+  display: flex;
+  justify-content: space-between;
+  padding: 3px;
   background-color: white;
-  padding: 10px;
 `;
 
 const Chapter = () => {
