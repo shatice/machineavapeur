@@ -105,12 +105,17 @@ const Chevron = styled.div`
 
 const NavParts = () => {
   const [displayText, setDisplayText] = useState(false);
-  const { chapter, data, subChapter, setPart, history, path } = useContext(
-    context
-  );
-  const subChapters = data?.parts?.[chapter]?.cards;
+  const {
+    chapter: chapterValue,
+    data,
+    subChapter,
+    setPart,
+    history,
+    path,
+  } = useContext(context);
+  const subChapters = data?.parts?.[chapterValue]?.cards;
 
-  const changeUrl = (subChapterVal) => {
+  const changeUrl = (chapter, subChapterVal) => {
     history.replace({
       pathname: generatePath(path, {
         chapterId: Number(chapter),
@@ -119,7 +124,7 @@ const NavParts = () => {
     });
     setPart(chapter, subChapterVal);
   };
-
+  console.log(subChapters?.length);
   return (
     <Container
       onMouseEnter={() => setDisplayText(true)}
@@ -155,12 +160,14 @@ const NavParts = () => {
       {!displayText && <TextContainer></TextContainer>}
       {displayText && (
         <TextContainer>
-          <li onClick={() => changeUrl(0)}>Intro</li>
+          <li onClick={() => changeUrl(chapterValue, 0)}>Intro</li>
           {subChapters &&
             subChapters.map(({ title }, i) => {
               return <li onClick={() => changeUrl(i + 1)}>{title}</li>;
             })}
-          <li onClick={() => changeUrl(subChapters.length + 1)}>Outro</li>
+          <li onClick={() => changeUrl(chapterValue, subChapters.length + 2)}>
+            Outro
+          </li>
         </TextContainer>
       )}
     </Container>
