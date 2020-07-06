@@ -17,8 +17,8 @@ const Ecology = ({ partData }) => {
       {partData && (
         <Infos
           setIsAnimated={setIsAnimated}
-          title={partData[2]?.cards[2].title}
-          content={partData[2]?.cards[2].content}
+          title={partData[3]?.cards[2].title}
+          content={partData[3]?.cards[2].content}
           bottom="30"
           left="10"
           topCard="150"

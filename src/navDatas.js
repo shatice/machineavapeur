@@ -98,15 +98,19 @@ export const chaptersData = [
       },
       {
         idApi: 1,
+        elem: <Chapter2Part1 />,
+      },
+      {
+        idApi: 1,
         elem: <Chapter2Part2 />,
       },
       {
-        id: 2,
-        elem: <Chap1Part3 />,
+        id: 3,
+        elem: <Chapter2Part2 />,
       },
       {
         id: 3,
-        elem: <Chap1Part4 />,
+        elem: <Chapter2Part2 />,
       },
       {
         //outro
@@ -130,15 +134,15 @@ export const chaptersData = [
       },
       {
         idApi: 1,
-        elem: <Chapter2Part2 />,
+        elem: <Chapter2Part1 />,
       },
       {
         id: 2,
-        elem: <Chap1Part3 />,
+        elem: <Chapter2Part1 />,
       },
       {
         id: 3,
-        elem: <Chap1Part4 />,
+        elem: <Chapter2Part1 />,
       },
       {
         //outro
