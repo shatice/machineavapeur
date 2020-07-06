@@ -2,10 +2,10 @@ import React, { useEffect, useContext } from "react";
 import useAxios from "axios-hooks";
 
 import context from "./store/context";
-import { url } from "./navDatas";
+import { url, urlChapters } from "./navDatas";
 
 const Fetch = () => {
-  const { setData, chapter, state } = useContext(context);
+  const { setData, chapter, state, setChapters } = useContext(context);
 
   const [{ data: res }] = useAxios({
     url: url + `/${chapter + 1}`,
@@ -14,11 +14,29 @@ const Fetch = () => {
       Accept: "application/json",
     },
   });
+  const [{ data: resChapters }, executeFetchChapters] = useAxios({
+    url: urlChapters,
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+    },
+    manual: true,
+  });
 
   useEffect(() => {
+    /* eslint-disable */
+    executeFetchChapters();
+  }, []);
+
+  useEffect(() => {
+    /* eslint-disable */
     if (res) setData(res, state);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [res]);
+
+  useEffect(() => {
+    /* eslint-disable */
+    if (resChapters) setChapters(resChapters, state);
+  }, [resChapters]);
 
   return <></>;
 };

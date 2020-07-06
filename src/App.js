@@ -1,14 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { createBrowserHistory } from "history";
-import "./styles/styles.scss";
 
 import Home from "./views/Home";
 import Chapter from "./views/Chapter";
 import End from "./views/End";
 
 /***** COMPONENTS *****/
-import Footer from "./components/molecules/Footer";
 import CtaAudio from "./components/atoms/CtaAudio";
 import GlobalState from "./store/GlobalState";
 
@@ -26,7 +24,6 @@ const App = () => {
           </Route>
           <Route exact path="/end" component={End} />
         </Switch>
-        <Footer history={customHistory} path="/chapter:chapterId/part:partId" />
       </Router>
     </GlobalState>
   );

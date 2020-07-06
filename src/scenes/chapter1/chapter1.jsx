@@ -5,26 +5,27 @@ import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 //components
 import Paper from "../../components/Paper";
 import James from "../../components/James";
-import context from "../../store/context";
+import TargetUI from "../../components/organisms/Target";
+import store from "../../store";
 
 import Chapter1Page2 from "./chapter1Page2";
 
 //assets
 import portrait from "../../assets/portrait.png";
 import bg from "../../assets/bgChapter1.jpg";
-import GlobalState from "../../store/GlobalState";
 
 //plugins
 gsap.registerPlugin(ScrollToPlugin);
 
 const Chapter1 = () => {
   const [partData, setPartData] = useState([]);
-  const { data } = useContext(context);
+  const { data, subChapter2 } = useContext(store);
+
   useEffect(() => {
-    console.log(data);
-    if (data !== undefined) setPartData(data?.parts);
+    setPartData(data?.parts);
   }, [data]);
 
+  const [isCard, setIsCard] = useState(false);
   useEffect(() => {
     window.scrollTo(0, 0);
     document.querySelector(".container").addEventListener("wheel", (e) => {
@@ -59,19 +60,17 @@ const Chapter1 = () => {
     gsap.to(".portrait", { rotate: 360, opacity: 0, duration: 1, delay: 2 });
   };
 
-  // const title = "Industrialisation";
+  const title = "Industrialisation";
   return (
-    <GlobalState>
-      <div>
-        <div className="container">
-          <img className="bg" src={bg} alt="" />
-          <img className="portrait" src={portrait} alt="" />
-          <Paper partData={partData} />
-          <James partData={partData} />
-        </div>
-        <Chapter1Page2 partData={partData} />
+    <div>
+      <div className="container">
+        <img className="bg" src={bg} alt="" />
+        <img className="portrait" src={portrait} alt="" />
+        <Paper partData={partData} />
+        <James partData={partData} />
       </div>
-    </GlobalState>
+      <Chapter1Page2 />
+    </div>
   );
 };
 

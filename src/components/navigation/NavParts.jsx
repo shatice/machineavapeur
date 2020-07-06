@@ -1,12 +1,11 @@
 import React, { useState, useContext } from "react";
-import { Link } from "react-router-dom";
+import { generatePath } from "react-router-dom";
 import styled from "styled-components";
 
 //assets
 import Bullet from "../../assets/Bullet.png";
 import ActiveBullet from "../../assets/BulletActif.png";
 
-import chaptersData from "../../navDatas";
 import context from "../../store/context";
 
 const Container = styled.ul`
@@ -43,6 +42,8 @@ const ProgressBarContainer = styled.div`
 `;
 
 const getProgressBarWidth = (totalElem, currentPart) => {
+  // console.log(((0.5 + currentPart) / totalElem) * 100);
+  // console.log(((0.5 + currentPart) / totalElem) * 50);
   return ((0.5 + currentPart) / totalElem) * 100;
 };
 
@@ -77,14 +78,14 @@ const PartIcon = styled.div`
   }
 `;
 
-const StyledLink = styled(Link)`
-  text-align: center;
-  flex-grow: 1;
-  flex-shrink: 1;
-  flex-basis: 20px;
-  padding-left: 15px;
-  padding-right: 15px;
-`;
+// const StyledLink = styled(Link)`
+//   text-align: center;
+//   flex-grow: 1;
+//   flex-shrink: 1;
+//   flex-basis: 20px;
+//   padding-left: 15px;
+//   padding-right: 15px;
+// `;
 
 const getChevron = (isActive) => {
   if (isActive) {
@@ -103,9 +104,21 @@ const Chevron = styled.div`
 `;
 
 const NavParts = () => {
-  const [displayText, setDisplayText] = useState();
-  const { subChapter, chapter } = useContext(context);
-  const subChapters = chaptersData[chapter].data;
+  const [displayText, setDisplayText] = useState(false);
+  const { chapter, data, subChapter, setPart, history, path } = useContext(
+    context
+  );
+  const subChapters = data?.parts?.[chapter]?.cards;
+
+  const changeUrl = (subChapterVal) => {
+    history.replace({
+      pathname: generatePath(path, {
+        chapterId: Number(chapter),
+        partId: Number(subChapterVal),
+      }),
+    });
+    setPart(chapter, subChapterVal);
+  };
 
   return (
     <Container
@@ -114,27 +127,40 @@ const NavParts = () => {
       className="labelsList"
     >
       <ProgressBarContainer>
-        <ProgressBar totalElem={subChapters.length} currentPart={subChapter} />
+        <ProgressBar totalElem={subChapters?.length} currentPart={subChapter} />
       </ProgressBarContainer>
       <ChevronContainer>
-        {subChapters.map((s, i) => {
-          return (
-            <PartIcon>
-              <Chevron isActive={i <= subChapter} />
-            </PartIcon>
-          );
-        })}
+        <PartIcon>
+          <Chevron />
+        </PartIcon>
+        {subChapters &&
+          subChapters.map((s, i) => {
+            return (
+              <>
+                {i === 1 ? (
+                  <PartIcon>
+                    <Chevron isActive={i <= subChapter} />
+                  </PartIcon>
+                ) : null}
+                <PartIcon>
+                  <Chevron isActive={i <= subChapter} />
+                </PartIcon>
+              </>
+            );
+          })}
+        <PartIcon>
+          <Chevron />
+        </PartIcon>
       </ChevronContainer>
       {!displayText && <TextContainer></TextContainer>}
       {displayText && (
         <TextContainer>
-          {subChapters.map(({ path, title }) => {
-            return (
-              <StyledLink key={path} to={path}>
-                {title}
-              </StyledLink>
-            );
-          })}
+          <li onClick={() => changeUrl(0)}>Intro</li>
+          {subChapters &&
+            subChapters.map(({ title }, i) => {
+              return <li onClick={() => changeUrl(i + 1)}>{title}</li>;
+            })}
+          <li onClick={() => changeUrl(subChapters.length + 1)}>Outro</li>
         </TextContainer>
       )}
     </Container>

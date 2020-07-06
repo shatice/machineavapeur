@@ -5,9 +5,11 @@ export default React.createContext({
   chapter: 0,
   data: {},
   test: {},
+  chapters: [],
 
   incrementPart: () => {},
   decrementPart: () => {},
   setPart: () => {},
   setData: () => {},
+  setChapters: () => {},
 });

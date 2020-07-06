@@ -7,14 +7,14 @@ import NavChapters from "../navigation/NavChapters";
 import NavParts from "../navigation/NavParts";
 import Logo from "../atoms/Logo";
 
-const Footer = ({ subChapterContext }) => {
+const Footer = () => {
   return (
     <Container>
       <Link to="/">
         <Logo />
       </Link>
       <NavChapters />
-      <NavParts subChapterContext={subChapterContext} />
+      <NavParts />
     </Container>
   );
 };
