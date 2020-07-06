@@ -12,7 +12,6 @@ const Layout = styled.section`
   top: 0;
   height: 100vh;
   width: 100%;
-  font-size: 52px;
 `;
 
 const NavTemp = styled.section`
