@@ -6,8 +6,8 @@ import Posters from "./Posters";
 import Infos from "../../../components/molecules/Infos";
 
 /***** ASSETS *****/
-import frameOrange from "./img/c1p3_frame_orange.png";
-import train1 from "./img/c1p3_train1.png";
+import frameOrange from "../../../assets/img/chap_1/part_3/c1p3_frame_orange.png";
+import train1 from "../../../assets/img/chap_1/part_3/c1p3_train1.png";
 
 const Train = ({ partData }) => {
   const [isAnimated, setIsAnimated] = useState(false);

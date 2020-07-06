@@ -10,9 +10,9 @@ import Train from "./Train";
 import context from "../../../store/context";
 
 /***** ASSETS *****/
-import bg from "./img/c1p3_background.jpg";
-import frameBordeaux from "./img/c1p3_frame_bordeaux.png";
-import frameSncf from "./img/c1p3_frame_sncf.png";
+import bg from "../../../assets/img/chap_1/part_3/c1p3_background.jpg";
+import frameBordeaux from "../../../assets/img/chap_1/part_3/c1p3_frame_bordeaux.png";
+import frameSncf from "../../../assets/img/chap_1/part_3/c1p3_frame_sncf.png";
 
 const Chap1Part3 = () => {
   const [partData, setPartData] = useState([]);

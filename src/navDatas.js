@@ -2,9 +2,10 @@ import React from "react";
 import styled from "styled-components";
 
 // Chapter 1
-import Chap1Part1 from "./scenes/chapter1/chapter1";
-import Chap1Part3 from "./scenes/chapter1/c1p3";
-import Chap1Part4 from "./scenes/chapter1/c1p4";
+import Chap1Part1 from "./scenes/chapter1/part1";
+import Chap1Part2 from "./scenes/chapter1/part2";
+import Chap1Part3 from "./scenes/chapter1/part3";
+import Chap1Part4 from "./scenes/chapter1/part4";
 
 // Chapter 2
 import Chapter2Part1 from "./scenes/chapter2/c2p1";
@@ -57,7 +58,7 @@ const chaptersData = [
       {
         title: "Du charbon et des mines",
         path: "/chapter0/part1",
-        elem: <Red />,
+        elem: <Chap1Part2 />,
       },
       {
         title: "A fond le train",

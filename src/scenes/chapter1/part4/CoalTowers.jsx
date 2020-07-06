@@ -6,11 +6,11 @@ import "./style.scss";
 import Infos from "../../../components/molecules/Infos";
 
 /***** ASSETS *****/
-import smoke1 from "./img/c1p4_smoke1.png";
-import smoke2 from "./img/c1p4_smoke2.png";
-import smoke3 from "./img/c1p4_smoke3.png";
-import smoke4 from "./img/c1p4_smoke4.png";
-import tower from "./img/c1p4_tower.png";
+import smoke1 from "../../../assets/img/chap_1/part_4/c1p4_smoke1.png";
+import smoke2 from "../../../assets/img/chap_1/part_4/c1p4_smoke2.png";
+import smoke3 from "../../../assets/img/chap_1/part_4/c1p4_smoke3.png";
+import smoke4 from "../../../assets/img/chap_1/part_4/c1p4_smoke4.png";
+import tower from "../../../assets/img/chap_1/part_4/c1p4_tower.png";
 
 const CoalTowers = ({ partData }) => {
   const [isAnimated, setIsAnimated] = useState(false);
