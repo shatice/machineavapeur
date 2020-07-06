@@ -22,13 +22,11 @@ const Arm = () => {
 
         if (armIsHover) {
             for (const key in anims) {
-                eval(`anims.${key}.reverse()`);
+                anims[key].reverse();
             }
         } else {
             for (const key in anims) {
-                eval(`anims.${key}.play()`);
-                console.log(key);
-
+                anims[key].play();
             }
         }
         setArmIsHover(!armIsHover);

@@ -42,11 +42,11 @@ const James = ({ partData }) => {
   const jamesHover = () => {
     if (jamesIsHover) {
       for (const key in jamesAnims) {
-        eval(`jamesAnims.${key}.reverse()`);
+        jamesAnims[key].reverse();
       }
     } else {
       for (const key in jamesAnims) {
-        eval(`jamesAnims.${key}.play()`);
+        jamesAnims[key].play();
       }
     }
     setJamesIsHover(!jamesIsHover);
