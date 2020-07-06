@@ -92,7 +92,7 @@ export const chaptersData = [
   },
   {
     id: 2,
-    apiUrl: "http://folle-histoire-progres.herokuapp.com/api/chapters/2",
+    apiUrl: "http://folle-histoire-progres.herokuapp.com/api/chapters/3",
     data: [
       {
         //intro

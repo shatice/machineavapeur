@@ -163,7 +163,7 @@ const NavParts = () => {
           <li onClick={() => changeUrl(chapterValue, 0)}>Intro</li>
           {subChapters &&
             subChapters.map(({ title }, i) => {
-              return <li onClick={() => changeUrl(i + 1)}>{title}</li>;
+              return <li onClick={() => changeUrl(i)}>{title}</li>;
             })}
           <li onClick={() => changeUrl(chapterValue, subChapters.length + 2)}>
             Outro
