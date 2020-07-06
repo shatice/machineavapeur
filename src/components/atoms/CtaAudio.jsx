@@ -1,7 +1,7 @@
 import React, { } from "react";
 import styled from "styled-components";
 
-import ctaAduio from '../../assets/svg/cta_audio.svg';
+import ctaAduio from '../../assets/img/svg/cta_audio.svg';
 
 const CtaAudio = () => {
   return (

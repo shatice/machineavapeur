@@ -6,10 +6,10 @@ import "./style.scss";
 import Infos from "../../../components/molecules/Infos";
 
 /***** ASSETS *****/
-import frameRichard from "./img/c1p3_frame_richard.png";
-import richard from "./img/c1p3_richard.png";
-import coinQueen from "./img/c1p3_coin_queen.png";
-import coinWagon from "./img/c1p3_coin_wagon.png";
+import frameRichard from "../../../assets/img/chap_1/part_3/c1p3_frame_richard.png";
+import richard from "../../../assets/img/chap_1/part_3/c1p3_richard.png";
+import coinQueen from "../../../assets/img/chap_1/part_3/c1p3_coin_queen.png";
+import coinWagon from "../../../assets/img/chap_1/part_3/c1p3_coin_wagon.png";
 
 const Richard = ({ partData }) => {
   const [isAnimated, setIsAnimated] = useState(false);

@@ -1,7 +1,7 @@
 import React, { } from "react";
 import styled from "styled-components";
 
-import logo from '../../assets/logo/logo.svg';
+import logo from '../../assets/img/logo/logo.svg';
 
 const Logo = () => {
   return (

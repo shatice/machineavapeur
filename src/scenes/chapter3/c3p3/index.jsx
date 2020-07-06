@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import './c3p3.scss';
 import bg from "../../../assets/bgC3P3.jpg";
 import nuclearWaste from "../../../assets/nuclear_waste.png";
 import tv from "../../../assets/tv.png";
@@ -38,11 +38,11 @@ const Chapter3Part3 = () => {
     const TvHover = () => {
         if (tvIsHover) {
             for (const key in tvAnim) {
-                eval(`tvAnim.${key}.reverse()`);
+                tvAnim[key].reverse()
             }
         } else {
             for (const key in tvAnim) {
-                eval(`tvAnim.${key}.play()`);
+                tvAnim[key].play();
             }
         }
         setTvIsHover(!tvIsHover);

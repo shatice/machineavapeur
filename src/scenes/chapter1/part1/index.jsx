@@ -1,18 +1,19 @@
 import React, { useEffect, useState, useContext } from "react";
+import './style.scss'; 
 import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
 //components
-import Paper from "../../components/Paper";
-import James from "../../components/James";
-import context from "../../store/context";
+import Paper from "../../../components/Paper";
+import James from "../../../components/James";
+import context from "../../../store/context";
 
-import Chapter1Page2 from "./chapter1Page2";
+import Chapter1Page2 from "../part2";
 
 //assets
-import portrait from "../../assets/portrait.png";
-import bg from "../../assets/bgChapter1.jpg";
-import GlobalState from "../../store/GlobalState";
+import portrait from "../../../assets/portrait.png";
+import bg from "../../../assets/bgChapter1.jpg";
+import GlobalState from "../../../store/GlobalState";
 
 //plugins
 gsap.registerPlugin(ScrollToPlugin);
