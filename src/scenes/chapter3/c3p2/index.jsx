@@ -26,7 +26,7 @@ const Chapter3Part2 = () => {
             cloud2: gsap.to(".cloud2", { y: "-50", scale: 1, duration: 2, delay: 0.5, paused: true })
         });
 
-        document.onmousemove = function (e) {
+        currentRef["container"].onmousemove = function (e) {
             let marie = currentRef["marie"].getBoundingClientRect();
             document.body.style.setProperty('--x', (e.clientX) + 'px');
             document.body.style.setProperty('--y', (e.clientY) + 'px');
@@ -49,7 +49,9 @@ const Chapter3Part2 = () => {
 
 
     return (
-        <div className="chapter-container">
+        <div className="chapter-container" ref={(element) => {
+            currentRef["container"] = element;
+        }}>
 
             {marieIsHover && (
                 <div className="cursor"></div>
