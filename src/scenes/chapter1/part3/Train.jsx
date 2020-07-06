@@ -7,17 +7,13 @@ import Infos from "../../../components/molecules/Infos";
 
 /***** ASSETS *****/
 import frameOrange from "../../../assets/img/chap_1/part_3/c1p3_frame_orange.png";
-import train1 from "../../../assets/img/chap_1/part_3/c1p3_train1.png";
 
 const Train = ({ partData }) => {
   const [isAnimated, setIsAnimated] = useState(false);
   return (
-    <Container className={isAnimated ? "isAnimated" : ""}>
+    <Container className={isAnimated ? "isAnimated hasNet" : "hasNet"}>
       <li>
-        <img src={frameOrange} alt="" />
-      </li>
-      <li>
-        <img src={train1} alt="" />
+        <img src={frameOrange} alt="frame-orange"/>
       </li>
       <Posters />
       {partData && (
@@ -41,16 +37,12 @@ const Container = styled.ul`
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
-  transform: rotate(-10deg);
-
-  &.isAnimated {
-    img {
-      filter: grayscale(0);
-    }
-  }
+  animation: enterIn .5s ease-out;
+  position: relative; 
 
   img {
     filter: grayscale(1);
+    transform: rotate(-10deg);
   }
 
   li,
@@ -63,8 +55,17 @@ const Container = styled.ul`
     }
   }
 
-  .infos {
-    transform: rotate(10deg);
+  &.isAnimated {
+    ul li {
+
+      &:nth-child(2) {
+        animation: moving 0.5s alternate infinite linear;
+      }
+      
+      img {
+        filter: grayscale(0);
+      }
+    }
   }
 `;
 

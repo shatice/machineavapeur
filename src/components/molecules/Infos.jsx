@@ -50,6 +50,8 @@ const Container = styled.article`
   left: ${({ left }) => left}%;
   display: flex; 
   z-index: 99;
+  opacity: 0; 
+  animation: fadeIn .5s .6s ease-out forwards;
 `
 
 export default Infos;
