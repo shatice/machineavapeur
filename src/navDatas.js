@@ -1,6 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
+import Intro from "./scenes/Intro";
+import Outro from "./scenes/Outro";
+
 // Chapter 1
 import Chap1Part1 from "./scenes/chapter1/part1";
 import Chap1Part2 from "./scenes/chapter1/part2";
@@ -42,6 +45,8 @@ const Orange = styled.section`
 `;
 
 export const url = "http://folle-histoire-progres.herokuapp.com/api/chapters";
+export const urlChapters =
+  "http://folle-histoire-progres.herokuapp.com/api/chapters";
 
 export const chaptersData = [
   {
@@ -51,7 +56,9 @@ export const chaptersData = [
       {
         //intro
         idApi: 0,
-        elem: <Orange />,
+        title: "",
+        path: "/chapter0/part0",
+        elem: <Intro />,
       },
       {
         idApi: 1,
@@ -72,7 +79,7 @@ export const chaptersData = [
       {
         //outro
         idApi: 0,
-        elem: <Orange />,
+        elem: <Outro />,
       },
     ],
   },
@@ -83,7 +90,7 @@ export const chaptersData = [
       {
         //intro
         idApi: 0,
-        elem: <Orange />,
+        elem: <Intro />,
       },
       {
         idApi: 1,
@@ -104,13 +111,45 @@ export const chaptersData = [
       {
         //outro
         idApi: 0,
-        elem: <Orange />,
+        elem: <Outro />,
+      },
+    ],
+  },
+  {
+    id: 2,
+    apiUrl: "http://folle-histoire-progres.herokuapp.com/api/chapters/2",
+    data: [
+      {
+        //intro
+        idApi: 0,
+        elem: <Intro />,
+      },
+      {
+        idApi: 1,
+        elem: <Chapter2Part1 />,
+      },
+      {
+        idApi: 1,
+        elem: <Chapter2Part2 />,
+      },
+      {
+        id: 2,
+        elem: <Chap1Part3 />,
+      },
+      {
+        id: 3,
+        elem: <Chap1Part4 />,
+      },
+      {
+        //outro
+        idApi: 0,
+        elem: <Outro />,
       },
     ],
   },
 ];
 
-const chaptersData2 = [
+export const chaptersDataTitles = [
   {
     id: "lamachineavapeur",
     title: "La machine à vapeur",

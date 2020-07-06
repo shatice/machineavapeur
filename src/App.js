@@ -25,7 +25,6 @@ const App = () => {
           </Route>
           <Route exact path="/end" component={End} />
         </Switch>
-        <Footer history={customHistory} path="/chapter:chapterId/part:partId" />
       </Router>
     </GlobalState>
   );

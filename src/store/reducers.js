@@ -6,6 +6,7 @@ export const INCREMENT_PART = "INCREMENT_PART";
 export const DECREMENT_PART = "DECREMENT_PART";
 export const SET_PART = "SET_PART";
 export const SET_DATA = "SET_DATA";
+export const SET_CHAPTERS = "SET_CHAPTERS";
 
 const changeUrl = (datas) => {
   datas.history.replace({
@@ -53,7 +54,6 @@ const incrementPart = (state) => {
 const decrementPart = (state) => {
   let { chapter, data, history, path, subChapter } = state;
 
-  console.log(data.parts[chapter].cards);
   if (subChapter === 0 && chapter !== 0) {
     chapter = chapter - 1;
     subChapter = state.data.parts[chapter].cards.length;
@@ -112,6 +112,15 @@ const setData = (data, state) => {
   };
 };
 
+const setChapters = (chapters, state) => {
+  console.log(chapters);
+
+  return {
+    ...state,
+    chapters: chapters,
+  };
+};
+
 export const reducer = (state, action) => {
   switch (action.type) {
     case INCREMENT_PART:
@@ -122,6 +131,8 @@ export const reducer = (state, action) => {
       return setPart(action.chapterId, action.subChapterId, state);
     case SET_DATA:
       return setData(action.data, state);
+    case SET_CHAPTERS:
+      return setChapters(action.chapters, state);
     default:
       return state;
   }
