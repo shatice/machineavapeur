@@ -16,9 +16,9 @@ import Chapter2Part3 from "./scenes/chapter-aviation/part3";
 import Chapter2Part4 from "./scenes/chapter-aviation/part4";
 
 // Chapter 3
-// import Chapter3Part1 from "./scenes/chapter3/c3p1";
-// import Chapter3Part2 from "./scenes/chapter3/c3p2";
-// import Chapter3Part3 from "./scenes/chapter3/c3p3";
+import Chapter3Part1 from "./scenes/chapter3/c3p1";
+import Chapter3Part2 from "./scenes/chapter3/c3p2";
+import Chapter3Part3 from "./scenes/chapter3/c3p3";
 
 export const url = "http://folle-histoire-progres.herokuapp.com/api/chapters";
 export const urlChapters =
@@ -96,19 +96,19 @@ export const chaptersData = [
       },
       {
         idApi: 1,
-        elem: <Chapter2Part1 />,
+        elem: <Chapter3Part1 />,
       },
       {
         idApi: 1,
-        elem: <Chapter2Part3 />,
+        elem: <Chapter3Part2 />,
       },
       {
         idApi: 2,
-        elem: <Chapter2Part2 />,
+        elem: <Chapter3Part3 />,
       },
       {
         idApi: 3,
-        elem: <Chapter2Part1 />,
+        elem: <Chapter3Part1 />,
       },
       {
         //outro
