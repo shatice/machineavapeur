@@ -56,7 +56,7 @@ const decrementPart = (state) => {
 
   if (subChapter === 0 && chapter !== 0) {
     chapter = chapter - 1;
-    subChapter = state.data.parts[chapter].cards.length;
+    subChapter = state.data.parts[chapter].cards.length + 2;
     let datas = {
       chapter,
       subChapter,
