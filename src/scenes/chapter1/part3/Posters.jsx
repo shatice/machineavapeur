@@ -3,11 +3,7 @@ import styled from "styled-components";
 
 /***** ASSETS *****/
 import trainPoster1 from "../../../assets/img/chap_1/part_3/c1p3_train_poster1.png";
-import trainPoster2 from "../../../assets/img/chap_1/part_3/c1p3_train_poster2.png";
-import trainPoster3 from "../../../assets/img/chap_1/part_3/c1p3_train_poster3.png";
-import trainPoster4 from "../../../assets/img/chap_1/part_3/c1p3_train_poster4.png";
-import trainPoster5 from "../../../assets/img/chap_1/part_3/c1p3_train_poster5.png";
-import trainPoster6 from "../../../assets/img/chap_1/part_3/c1p3_train_poster6.png";
+import trainPoster2 from "../../../assets/img/chap_1/part_3/c1p3_train1.png";
 
 const Posters = () => {
 
@@ -19,23 +15,7 @@ const Posters = () => {
     {
       src: trainPoster2, 
       alt: "poster-de-train2"
-    },
-    {
-      src: trainPoster3,
-      alt: "poster-de-train3" 
-    },
-    {
-      src: trainPoster4, 
-      alt: "poster-de-train4"
-    },
-    {
-      src: trainPoster5, 
-      alt: "poster-de-train5"
-    },
-    {
-      src: trainPoster6, 
-      alt: "poster-de-train6"
-    },
+    }
   ]; 
 
   const listPosters = trainPosters.map(( el ) =>
@@ -63,8 +43,8 @@ const Container = styled.ul `
     grid-column: 1; 
     grid-row: 1; 
 
-    img {
-      width: 100%; 
+    &:nth-child(2) {
+      z-index: 2; 
     }
   } 
 `

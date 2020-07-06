@@ -1,29 +1,3 @@
-<<<<<<< HEAD
-=======
-import React from "react";
-import styled from "styled-components";
-
-const Green = styled.section`
-  width: 100vw;
-  height: 100vh;
-  background-color: green;
-`;
-const Red = styled.section`
-  width: 100vw;
-  height: 100vh;
-  background-color: red;
-`;
-const Blue = styled.section`
-  width: 100vw;
-  height: 100vh;
-  background-color: blue;
-`;
-const Orange = styled.section`
-  width: 100vw;
-  height: 100vh;
-  background-color: orange;
-`;
->>>>>>> all parts
 export const chaptersList = {
   chapters: [
     {
