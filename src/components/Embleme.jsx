@@ -7,37 +7,37 @@ import Infos from "./molecules/Infos";
 import gsap from "gsap";
 
 const Embleme = () => {
-    const [emblemAnims, setEmblemAnims] = useState();
-    const [emblemIsHover, setEmblemIsHover] = useState(false);
+	const [emblemAnims, setEmblemAnims] = useState();
+	const [emblemIsHover, setEmblemIsHover] = useState(false);
 
-    useEffect(()=> {
-        setEmblemAnims(gsap.to("#emblem", {rotate: 360, scale: 1, paused: true}))
-    }, [])
+	useEffect(() => {
+		setEmblemAnims(gsap.to("#emblem", { rotate: 360, scale: 1, paused: true }))
+	}, [])
 
-    const EmblemHover = () => {
-        if (emblemIsHover) {
-            emblemAnims.reverse();
-        } else {
-            emblemAnims.play();
-        }
-        setEmblemIsHover(!emblemIsHover);
-    };
+	const EmblemHover = () => {
+		if (emblemIsHover) {
+			emblemAnims.reverse();
+		} else {
+			emblemAnims.play();
+		}
+		setEmblemIsHover(!emblemIsHover);
+	};
 
 
-    return (
-        <EmblemContainer>
-            <Emblem src={emblemImg} id="emblem"/>
-            <Infos
-                setIsAnimated={EmblemHover}
-                title={"Embleme"}
-                content="EMBLEME EMBLEME"
-                bottom="-14"
-                right="-20"
-                rightCard="-1720"
-                bottomCard="333"
-            />
-        </EmblemContainer>
-    );
+	return (
+		<EmblemContainer>
+			<Emblem src={emblemImg} id="emblem" />
+			<Infos
+				setIsAnimated={EmblemHover}
+				title={"Embleme"}
+				content="EMBLEME EMBLEME"
+				bottom="-14"
+				right="-20"
+				rightCard="-1720"
+				bottomCard="333"
+			/>
+		</EmblemContainer>
+	);
 };
 
 export default Embleme;
