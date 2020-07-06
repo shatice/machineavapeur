@@ -9,7 +9,10 @@ const BackgroundImage = ({ src, alt, partData }) => {
 
   return (
     <div>
-      <Image src={src} alt={alt} filter="true" />
+      <Image 
+      src={src} 
+      alt={alt} 
+      filter={isAnimated ? true : false} />
       {partData && (
         <Infos
           setIsAnimated={setIsAnimated}
@@ -34,11 +37,7 @@ const Image = styled.img`
   top: 0;
   left: 0;
   object-fit: cover;
-  filter: ${({ filter }) => (filter ? "grayscale(1)" : "grayscale(0)")};
-
-  &:hover {
-    filter: grayscale(0);
-  }
+  filter: ${({ filter }) => (filter ? "grayscale(0)" : "grayscale(1)")};
 `;
 
 export default BackgroundImage;

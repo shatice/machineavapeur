@@ -1,30 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
-
-/***** COMPONENTS *****/
-import Infos from "../../../components/molecules/Infos";
 
 /***** ASSETS *****/
 import nature from "../../../assets/img/chap_1/part_4/c1p4_nature.png";
 
 const Ecology = ({ partData }) => {
-  const [isAnimated, setIsAnimated] = useState(false);
-
   return (
-    <Container className={isAnimated ? "isAnimated" : ""}>
+    <Container className="nature">
       <img src={nature} alt="nature" />
-
-      {partData && (
-        <Infos
-          setIsAnimated={setIsAnimated}
-          title={partData[3]?.cards[2].title}
-          content={partData[3]?.cards[2].content}
-          bottom="30"
-          left="10"
-          topCard="150"
-          leftCard="-250"
-        />
-      )}
     </Container>
   );
 };
@@ -35,14 +18,10 @@ const Container = styled.div`
   height: auto;
   grid-column: 1;
   grid-row: 1;
+  filter: grayscale(1);
 
   img {
     width: 100%;
-    filter: grayscale(1);
-  }
-
-  &.isAnimated img {
-    filter: grayscale(0);
   }
 `;
 

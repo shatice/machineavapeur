@@ -27,6 +27,7 @@ const Container = styled.article`
   background: linear-gradient(3deg, rgba(31,31,33,0.3071603641456583) 0%, rgba(31,31,33,0.7161239495798319) 34%, rgba(31,31,33,1) 100%);
   box-shadow: 1px 2px 10px black;
   line-height: 1.5;
+  animation: fadeIn .5s ease-out;
 
   p {
     font-size: .875rem;
@@ -37,6 +38,7 @@ const Title = styled.h4`
   margin-bottom: 1rem; 
   font-size: .75rem;
   text-transform: uppercase;
+  z-index: 101;  
 `;
 
 export default Card;
