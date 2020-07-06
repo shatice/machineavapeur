@@ -8,11 +8,13 @@ import {
   DECREMENT_PART,
   SET_PART,
   SET_DATA,
+  SET_CHAPTERS,
 } from "./reducers";
 
 const GlobalState = ({ children, history, path }) => {
   const subChapter = 0;
   const chapter = 0;
+  const chapters = [];
   const data = {};
 
   const [state, dispatch] = useReducer(reducer, {
@@ -21,6 +23,7 @@ const GlobalState = ({ children, history, path }) => {
     chapter,
     history,
     path,
+    chapters,
   });
 
   const incrementPart = (state) => {
@@ -54,12 +57,21 @@ const GlobalState = ({ children, history, path }) => {
     });
   };
 
+  const setChapters = (chapters, state) => {
+    dispatch({
+      type: SET_CHAPTERS,
+      chapters: chapters,
+    });
+  };
+
   return (
     <Context.Provider
       value={{
         chapter: state.chapter,
         subChapter: state.subChapter,
         setData: setData,
+        chapters: state.chapters,
+        setChapters: setChapters,
         data: state.data,
         incrementPart: incrementPart,
         decrementPart: decrementPart,

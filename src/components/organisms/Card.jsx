@@ -38,7 +38,6 @@ const Title = styled.h4`
   margin-bottom: 1rem; 
   font-size: .75rem;
   text-transform: uppercase;
-  z-index: 101;  
 `;
 
 export default Card;

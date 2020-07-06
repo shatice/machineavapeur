@@ -12,10 +12,11 @@ import Infos from "./molecules/Infos";
 const James = ({ partData }) => {
   /* eslint-disable */
   let ref = useRef([]);
+  const currentRef = ref.current;
+  
   const [jamesIsHover, setJamesIsHover] = useState(false);
   const [jamesAnims, setJamesAnims] = useState({});
 
-  const currentRef = ref.current;
 
   useEffect(() => {
     setJamesAnims({
@@ -42,11 +43,11 @@ const James = ({ partData }) => {
   const jamesHover = () => {
     if (jamesIsHover) {
       for (const key in jamesAnims) {
-        eval(`jamesAnims.${key}.reverse()`);
+        jamesAnims[key].reverse();
       }
     } else {
       for (const key in jamesAnims) {
-        eval(`jamesAnims.${key}.play()`);
+        jamesAnims[key].play();
       }
     }
     setJamesIsHover(!jamesIsHover);

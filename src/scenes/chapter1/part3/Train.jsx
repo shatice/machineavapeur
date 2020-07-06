@@ -21,10 +21,10 @@ const Train = ({ partData }) => {
           setIsAnimated={setIsAnimated}
           title={partData[2]?.cards[1].title}
           content={partData[2]?.cards[1].content}
-          bottom="9"
-          left="80"
-          leftCard="-700"
-          bottomCard="50"
+          bottom="5"
+          left="90"
+          leftCard="-800"
+          bottomCard="400"
         />
       )}
     </Container>

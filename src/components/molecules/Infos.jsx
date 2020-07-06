@@ -49,9 +49,7 @@ const Container = styled.article`
   right: ${({ right }) => right}%;
   left: ${({ left }) => left}%;
   display: flex; 
-  z-index: 99;
-  opacity: 0; 
-  animation: fadeIn .5s .6s ease-out forwards;
+  z-index: 100; 
 `
 
 export default Infos;

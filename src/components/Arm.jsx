@@ -8,49 +8,47 @@ import Infos from "./molecules/Infos";
 import gsap from "gsap";
 
 const Arm = () => {
-    const [anims, setAnims] = useState({});
-    const [armIsHover, setArmIsHover] = useState(false);
+	const [anims, setAnims] = useState({});
+	const [armIsHover, setArmIsHover] = useState(false);
 
-    useEffect(() => {
-        setAnims({
-            armAnim: gsap.to("#arm", { rotate: 10, filter: "grayscale(0)", transformOrigin: "80% 20%", paused: true }),
-            atomicAnim: gsap.to("#atomic", { y: "-45vw", paused: true })
-        })
-    }, [])
+	useEffect(() => {
+		setAnims({
+			armAnim: gsap.to("#arm", { rotate: 10, filter: "grayscale(0)", transformOrigin: "80% 20%", paused: true }),
+			atomicAnim: gsap.to("#atomic", { y: "-45vw", paused: true })
+		})
+	}, [])
 
-    const ArmisHover = () => {
+	const ArmisHover = () => {
 
-        if (armIsHover) {
-            for (const key in anims) {
-                eval(`anims.${key}.reverse()`);
-            }
-        } else {
-            for (const key in anims) {
-                eval(`anims.${key}.play()`);
-                console.log(key);
-
-            }
-        }
-        setArmIsHover(!armIsHover);
-    };
+		if (armIsHover) {
+			for (const key in anims) {
+				anims[key].reverse();
+			}
+		} else {
+			for (const key in anims) {
+				anims[key].play();
+			}
+		}
+		setArmIsHover(!armIsHover);
+	};
 
 
-    return (<>
-        <AtomicIMG src={atomicImg} id="atomic" />
-        <ArmContainer>
-            <ArmIMG src={armImg} id="arm" />
-            <Infos
-                setIsAnimated={ArmisHover}
-                title={"ARM"}
-                content="ARM ARM"
-                bottom="-60"
-                right="-160"
-                rightCard="-1720"
-                bottomCard="-75"
-            />
-        </ArmContainer>
-    </>
-    );
+	return (<>
+		<AtomicIMG src={atomicImg} id="atomic" />
+		<ArmContainer>
+			<ArmIMG src={armImg} id="arm" />
+			<Infos
+				setIsAnimated={ArmisHover}
+				title={"ARM"}
+				content="ARM ARM"
+				bottom="-60"
+				right="-160"
+				rightCard="-1720"
+				bottomCard="-75"
+			/>
+		</ArmContainer>
+	</>
+	);
 };
 
 export default Arm;
