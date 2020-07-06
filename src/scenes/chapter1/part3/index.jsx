@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-// import "../../../styles/styles.scss";
+import "../../../styles/styles.scss";
 import styled from "styled-components";
 
 /***** COMPONENTS *****/
@@ -22,16 +22,24 @@ const Chap1Part3 = ({ data }) => {
 
   return (
     <Container>
-      <BackgroundImage src={bg} alt="" />
-      <Richard partData={partData} />
-      <LittleFrame src={frameBordeaux} alt="" rotate="10" />
-      <LittleFrame src={frameSncf} alt="" />
-      <Train partData={partData} />
+      <BackgroundImage src={bg} alt=""/>
+      <Richard partData={partData} topBfr="-100"/>
+      <LittleFrame 
+      src={frameBordeaux} 
+      alt="" 
+      rotate="-15"
+      leftBfr="40"/>
+      <LittleFrame 
+      src={frameSncf} 
+      alt="" 
+      rotate="2"
+      leftBfr="45"/>
+      <Train partData={partData}/>
     </Container>
   );
 };
 
-const Container = styled.section`
+const Container = styled.ul`
   overflow: hidden;
   width: 100vw;
   height: 100vh;

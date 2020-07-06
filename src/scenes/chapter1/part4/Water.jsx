@@ -8,7 +8,7 @@ import rocks from "../../../assets/img/chap_1/part_4/c1p4_rocks.png";
 const Ecology = ({ partData }) => {
 
   return (
-    <Container>
+    <Container className="water">
       <div filter="true">
         <img className="rocks" src={rocks} alt="ocean" />
         <img src={water} alt="ocean" />
@@ -27,16 +27,7 @@ const Container = styled.div`
   height: auto;
   grid-column: 1;
   grid-row: 1;
-  filter: ${({ filter }) => (filter ? "grayscale(1)" : "grayscale(0)")};
-
-  &:hover {
-    transform: translateY(-30%);
-    filter: grayscale(0);
-
-    .rocks {
-      transform: translateX(0);
-    }
-  }
+  filter: grayscale(1); 
 
   .rocks {
     position: absolute;

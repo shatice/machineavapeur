@@ -7,7 +7,35 @@
     transform: translateY(-500px) translateX(10px) scale(2);
   }
   100% {
-    transform: translateY(30px) translateX(30px) scale(2);
+    transform: translateY(40px) translateX(50px) scale(2);
     width: 10%;
   }
+}
+
+@keyframes enterIn {
+  from {
+    transform: translateY(-100%);
+  } to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes moving {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-4px)
+  }
+}
+
+.hasNet::before {
+  position: absolute; 
+  content: ""; 
+  display: block; 
+  width: 1px; 
+  height: 200%; 
+  background-color: #766D6D;  
+  top: -200%;
+  left: 50%; 
 }
