@@ -1,9 +1,8 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 import Title from "./Title";
 import ChaptersList from "./ChaptersList";
-import context from "../../store/context";
 
 const NavChapters = () => {
 

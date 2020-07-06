@@ -25,7 +25,6 @@ const Chapter1 = () => {
   const currentRef = ref.current;
 
   useEffect(() => {
-    console.log(data);
     if (data !== undefined) setPartData(data?.parts);
   }, [data]);
 

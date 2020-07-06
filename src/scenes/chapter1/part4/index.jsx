@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 // import "../../../styles/styles.scss";
 import styled from "styled-components";
 
@@ -9,13 +9,12 @@ import Ecology from "./Ecology";
 
 /***** ASSETS *****/
 import bg from "../../../assets/img/chap_1/part_4/c1p4_background.jpg";
-import context from "../../../store/context";
 
 const Chap1Part4 = ({ data }) => {
   const [partData, setPartData] = useState([]);
+
   useEffect(() => {
     if (data !== undefined) setPartData(data?.parts);
-    console.log(data);
   }, [data]);
 
   return (

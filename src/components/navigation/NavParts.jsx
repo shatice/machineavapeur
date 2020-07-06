@@ -1,12 +1,11 @@
 import React, { useState, useContext } from "react";
-import { Link, generatePath } from "react-router-dom";
+import { generatePath } from "react-router-dom";
 import styled from "styled-components";
 
 //assets
 import Bullet from "../../assets/Bullet.png";
 import ActiveBullet from "../../assets/BulletActif.png";
 
-import chaptersData from "../../navDatas";
 import context from "../../store/context";
 
 const Container = styled.ul`
@@ -79,14 +78,14 @@ const PartIcon = styled.div`
   }
 `;
 
-const StyledLink = styled(Link)`
-  text-align: center;
-  flex-grow: 1;
-  flex-shrink: 1;
-  flex-basis: 20px;
-  padding-left: 15px;
-  padding-right: 15px;
-`;
+// const StyledLink = styled(Link)`
+//   text-align: center;
+//   flex-grow: 1;
+//   flex-shrink: 1;
+//   flex-basis: 20px;
+//   padding-left: 15px;
+//   padding-right: 15px;
+// `;
 
 const getChevron = (isActive) => {
   if (isActive) {

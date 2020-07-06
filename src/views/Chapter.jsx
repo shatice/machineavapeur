@@ -5,7 +5,6 @@ import { useParams, useLocation } from "react-router-dom";
 import context from "../store/context";
 import Fetch from "../Fetch";
 import Footer from "../components/molecules/Footer";
-import Chapter2Part4 from "../scenes/chapter-aviation/part4";
 
 const Layout = styled.section`
   position: absolute;
@@ -38,7 +37,6 @@ const Chapter = () => {
     subChapter,
     setPart,
     data,
-    chapters,
   } = useContext(context);
 
   const { chapterId, partId } = useParams();

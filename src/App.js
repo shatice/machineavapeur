@@ -7,7 +7,6 @@ import Chapter from "./views/Chapter";
 import End from "./views/End";
 
 /***** COMPONENTS *****/
-import Footer from "./components/molecules/Footer";
 import CtaAudio from "./components/atoms/CtaAudio";
 import GlobalState from "./store/GlobalState";
 

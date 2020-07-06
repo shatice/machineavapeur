@@ -5,11 +5,9 @@ import context from "./store/context";
 import { url, urlChapters } from "./navDatas";
 
 const Fetch = () => {
-  const { setData, chapter, data, state, setChapters, chapters } = useContext(
-    context
-  );
+  const { setData, chapter, state, setChapters } = useContext(context);
 
-  const [{ data: res }, executeFetch] = useAxios({
+  const [{ data: res }] = useAxios({
     url: url + `/${chapter + 1}`,
     method: "GET",
     headers: {
@@ -26,14 +24,17 @@ const Fetch = () => {
   });
 
   useEffect(() => {
+    /* eslint-disable */
     executeFetchChapters();
   }, []);
 
   useEffect(() => {
+    /* eslint-disable */
     if (res) setData(res, state);
   }, [res]);
 
   useEffect(() => {
+    /* eslint-disable */
     if (resChapters) setChapters(resChapters, state);
   }, [resChapters]);
 

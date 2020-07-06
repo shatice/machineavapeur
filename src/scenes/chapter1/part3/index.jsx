@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState } from "react";
 // import "../../../styles/styles.scss";
 import styled from "styled-components";
 
@@ -7,7 +7,6 @@ import BackgroundImage from "./BackgroundImage";
 import Richard from "./Richard";
 import LittleFrame from "./LittleFrame";
 import Train from "./Train";
-import context from "../../../store/context";
 
 /***** ASSETS *****/
 import bg from "../../../assets/img/chap_1/part_3/c1p3_background.jpg";

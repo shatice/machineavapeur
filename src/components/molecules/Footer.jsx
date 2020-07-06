@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
@@ -6,10 +6,8 @@ import { Link } from "react-router-dom";
 import NavChapters from "../navigation/NavChapters";
 import NavParts from "../navigation/NavParts";
 import Logo from "../atoms/Logo";
-import context from "../../store/context";
 
-const Footer = ({ subChapterContext }) => {
-  const { subChapter, chapter } = useContext(context);
+const Footer = () => {
   return (
     <Container>
       <Link to="/">

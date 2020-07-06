@@ -1,12 +1,11 @@
 import React from "react";
-import styled from "styled-components";
 
 import Intro from "./scenes/Intro";
 import Outro from "./scenes/Outro";
 
 // Chapter 1
 import Chapter1Part1 from "./scenes/chapter1/part1";
-import Chapter1Part2 from "./scenes/chapter1/part2";
+import Chapter1Part2 from "./scenes/chapter1/part1";
 import Chapter1Part3 from "./scenes/chapter1/part3";
 import Chapter1Part4 from "./scenes/chapter1/part4";
 
@@ -17,33 +16,9 @@ import Chapter2Part3 from "./scenes/chapter-aviation/part3";
 import Chapter2Part4 from "./scenes/chapter-aviation/part4";
 
 // Chapter 3
-import Chapter3Part1 from "./scenes/chapter3/c3p1";
-import Chapter3Part2 from "./scenes/chapter3/c3p2";
-import Chapter3Part3 from "./scenes/chapter3/c3p3";
-
-const Green = styled.section`
-  width: 100vw;
-  height: 100vh;
-  background-color: green;
-`;
-
-const Red = styled.section`
-  width: 100vw;
-  height: 100vh;
-  background-color: red;
-`;
-
-const Blue = styled.section`
-  width: 100vw;
-  height: 100vh;
-  background-color: blue;
-`;
-
-const Orange = styled.section`
-  width: 100vw;
-  height: 100vh;
-  background-color: orange;
-`;
+// import Chapter3Part1 from "./scenes/chapter3/c3p1";
+// import Chapter3Part2 from "./scenes/chapter3/c3p2";
+// import Chapter3Part3 from "./scenes/chapter3/c3p3";
 
 export const url = "http://folle-histoire-progres.herokuapp.com/api/chapters";
 export const urlChapters =
@@ -65,7 +40,7 @@ export const chaptersData = [
       },
       {
         idApi: 1,
-        elem: <Chapter1Part1 />,
+        elem: <Chapter1Part2 />,
       },
       {
         idApi: 2,

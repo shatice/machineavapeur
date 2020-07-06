@@ -1,11 +1,10 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 
 import context from "../../store/context";
 
 const ChaptersList = ({ isList, setIsList }) => {
-  const { chapter, data, chapters, setPart } = useContext(context);
+  const { chapter, chapters, setPart } = useContext(context);
 
   const listeChapitres = chapters.map((el, i) => (
     <li>
@@ -26,7 +25,6 @@ const ChaptersList = ({ isList, setIsList }) => {
 };
 
 const Container = styled.ul`
-  /* transform: translateX(-100%);  */
   position: fixed;
   bottom: 102px;
   left: 0;

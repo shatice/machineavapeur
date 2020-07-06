@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
-import PropTypes from "prop-types";
 import context from "../store/context";
 
 const Bg = styled.section`
@@ -9,7 +8,7 @@ const Bg = styled.section`
 `;
 
 const Outro = () => {
-  const { data, chapter } = useContext(context);
+  const { data} = useContext(context);
   const { outro } = data;
   return <Bg>{outro}</Bg>;
 };

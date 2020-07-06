@@ -52,7 +52,7 @@ const incrementPart = (state) => {
 };
 
 const decrementPart = (state) => {
-  let { chapter, data, history, path, subChapter } = state;
+  let { chapter, history, path, subChapter } = state;
 
   if (subChapter === 0 && chapter !== 0) {
     chapter = chapter - 1;
