@@ -5,6 +5,7 @@ import { useParams, useLocation } from "react-router-dom";
 import context from "../store/context";
 import Fetch from "../Fetch";
 import Footer from "../components/molecules/Footer";
+import Chapter2Part4 from "../scenes/chapter-aviation/part4";
 
 const Layout = styled.section`
   position: absolute;
@@ -80,8 +81,8 @@ const Chapter = () => {
         React.cloneElement(chaptersData[chapter]?.data[subChapter]?.elem, {
           data: data,
         })}
+      {/* <Chapter2Part4 /> */}
       <Footer />
-
       <Fetch url={chaptersData[chapter].apiUrl} />
     </Layout>
   );

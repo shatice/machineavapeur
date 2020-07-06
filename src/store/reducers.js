@@ -113,8 +113,6 @@ const setData = (data, state) => {
 };
 
 const setChapters = (chapters, state) => {
-  console.log(chapters);
-
   return {
     ...state,
     chapters: chapters,

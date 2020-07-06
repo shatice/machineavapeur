@@ -1,10 +1,9 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 // components
 import TargetUI from "../../../components/organisms/Target";
 import Card from "../../../components/molecules/Infos";
-import context from "../../../store/context";
 
 const Bg = styled.section`
   width: 100vw;
@@ -17,7 +16,6 @@ const Chapter2Part1 = () => {
   const [ispostalPlaneCard, setIspostalPlaneCard] = useState(false);
   const [isarmyPlaneCard, setIsarmyPlaneCard] = useState(false);
   const [isbrothersCard, setIsbrothersCard] = useState(false);
-  const { chapter, subChapter } = useContext(context);
   const height = window.innerHeight;
   const width = window.innerWidth;
 
@@ -83,9 +81,7 @@ const Chapter2Part1 = () => {
           left={width - 600}
         />
       )}
-      <div>
-        Chapitre {chapter + 1} Partie {subChapter + 1}
-      </div>
+      <div>Chapitre 1 Partie 1</div>
     </Bg>
   );
 };
