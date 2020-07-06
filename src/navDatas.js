@@ -10,10 +10,10 @@ import Chapter1Part3 from "./scenes/chapter1/part3";
 import Chapter1Part4 from "./scenes/chapter1/part4";
 
 // Chapter 2
-import Chapter2Part1 from "./scenes/chapter-aviation/part1";
-import Chapter2Part2 from "./scenes/chapter-aviation/part2";
-import Chapter2Part3 from "./scenes/chapter-aviation/part3";
-import Chapter2Part4 from "./scenes/chapter-aviation/part4";
+import Chapter2Part1 from "./scenes/chapter2/part1";
+import Chapter2Part2 from "./scenes/chapter2/part2";
+import Chapter2Part3 from "./scenes/chapter2/part3";
+import Chapter2Part4 from "./scenes/chapter2/part4";
 
 // Chapter 3
 import Chapter3Part1 from "./scenes/chapter3/c3p1";
@@ -73,6 +73,10 @@ export const chaptersData = [
       {
         idApi: 1,
         elem: <Chapter2Part2 />,
+      },
+      {
+        idApi: 1,
+        elem: <Chapter2Part3 />,
       },
       {
         idApi: 1,
