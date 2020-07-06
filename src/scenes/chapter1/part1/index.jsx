@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState, useContext, useRef } from "react";
 import './style.scss'; 
 import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
@@ -21,6 +21,9 @@ gsap.registerPlugin(ScrollToPlugin);
 const Chapter1 = () => {
   const [partData, setPartData] = useState([]);
   const { data } = useContext(context);
+  let ref = useRef([]);
+  const currentRef = ref.current;
+
   useEffect(() => {
     console.log(data);
     if (data !== undefined) setPartData(data?.parts);
@@ -28,20 +31,12 @@ const Chapter1 = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.querySelector(".container").addEventListener("wheel", (e) => {
-      const delta = Math.sign(e.deltaY);
-      if (delta === 1) portraitAnim();
-    });
-  }, []);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
     document.querySelector("body").style.overflow = "hidden";
-    document.querySelector(".container").addEventListener("wheel", (e) => {
+    currentRef["container"].addEventListener("wheel", (e) => {
       const delta = Math.sign(e.deltaY);
       if (delta === 1) portraitAnim();
     });
-  }, []);
+  });
 
   const portraitAnim = () => {
     gsap.to(".portrait", {
@@ -64,7 +59,9 @@ const Chapter1 = () => {
   return (
     <GlobalState>
       <div>
-        <div className="container">
+        <div className="container" ref={(element) => {
+          currentRef["container"] = element;
+        }}>
           <img className="bg" src={bg} alt="" />
           <img className="portrait" src={portrait} alt="" />
           <Paper partData={partData} />

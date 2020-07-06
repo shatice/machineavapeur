@@ -11,9 +11,10 @@ import Chapter1Part3 from "./scenes/chapter1/part3";
 import Chapter1Part4 from "./scenes/chapter1/part4";
 
 // Chapter 2
-import Chapter2Part1 from "./scenes/chapter2/c2p1";
-import Chapter2Part2 from "./scenes/chapter2/c2p2";
-import Chapter2Part3 from "./scenes/chapter2/c2p3";
+import Chapter2Part1 from "./scenes/chapter-aviation/part1";
+import Chapter2Part2 from "./scenes/chapter-aviation/part2";
+import Chapter2Part3 from "./scenes/chapter-aviation/part3";
+import Chapter2Part4 from "./scenes/chapter-aviation/part4";
 
 // Chapter 3
 import Chapter3Part1 from "./scenes/chapter3/c3p1";
@@ -100,7 +101,7 @@ export const chaptersData = [
       },
       {
         idApi: 1,
-        elem: <Chapter2Part3 />,
+        elem: <Chapter2Part4 />,
       },
       {
         //outro
@@ -177,7 +178,6 @@ export const chaptersData = [
 //     title: "L'aviation",
 //     chapterPath: "/chapter1/part0",
 //     apiUrl: "http://folle-histoire-progres.herokuapp.com/api/chapters/2",
-
 //     data: [
 //       {
 //         title: "Partie 1",

@@ -17,7 +17,6 @@ const Card = ({ title, content, topCard, bottomCard, rightCard, leftCard }) => {
 
 const Container = styled.article`
   position: absolute; 
-  position: absolute;
   top: ${({ topCard }) => topCard}%;
   bottom: ${({ bottomCard }) => bottomCard}%;
   right: ${({ rightCard }) => rightCard}%;

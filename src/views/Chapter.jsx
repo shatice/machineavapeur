@@ -81,7 +81,6 @@ const Chapter = () => {
         React.cloneElement(chaptersData[chapter]?.data[subChapter]?.elem, {
           data: data,
         })}
-      {/* <Chapter2Part4 /> */}
       <Footer />
       <Fetch url={chaptersData[chapter].apiUrl} />
     </Layout>
