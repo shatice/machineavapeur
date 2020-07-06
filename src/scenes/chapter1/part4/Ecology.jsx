@@ -7,7 +7,7 @@ import Nature from "./Nature";
 
 const Ecology = ({ partData }) => {
   return (
-    <Container>
+  <Container>
       <Nature partData={partData} />
       <Water partData={partData} />
     </Container>

@@ -14,9 +14,8 @@ import bg from "../../../assets/img/chap_1/part_3/c1p3_background.jpg";
 import frameBordeaux from "../../../assets/img/chap_1/part_3/c1p3_frame_bordeaux.png";
 import frameSncf from "../../../assets/img/chap_1/part_3/c1p3_frame_sncf.png";
 
-const Chap1Part3 = () => {
+const Chap1Part3 = ({ data }) => {
   const [partData, setPartData] = useState([]);
-  const { data } = useContext(context);
 
   useEffect(() => {
     if (data !== undefined) setPartData(data?.parts);

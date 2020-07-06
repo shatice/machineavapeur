@@ -4,6 +4,7 @@ import chaptersData from "../navDatas";
 import { useParams, useLocation } from "react-router-dom";
 import context from "../store/context";
 import Fetch from "../Fetch";
+import Footer from "../components/molecules/Footer";
 
 const Layout = styled.section`
   position: absolute;
@@ -35,12 +36,12 @@ const Chapter = () => {
     chapter,
     subChapter,
     setPart,
+    data,
+    chapters,
   } = useContext(context);
 
   const { chapterId, partId } = useParams();
   const location = useLocation();
-
-  const chapterDatas = chaptersData[chapter].data;
 
   useEffect(() => {
     setPart(Number(chapterId), Number(partId));
@@ -75,8 +76,12 @@ const Chapter = () => {
           NEXT PART
         </button>
       </NavTemp>
-      {chapterDatas[subChapter].elem &&
-        React.cloneElement(chapterDatas[subChapter].elem)}
+      {chaptersData[chapter]?.data[subChapter]?.elem &&
+        React.cloneElement(chaptersData[chapter]?.data[subChapter]?.elem, {
+          data: data,
+        })}
+      <Footer />
+
       <Fetch url={chaptersData[chapter].apiUrl} />
     </Layout>
   );

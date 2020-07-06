@@ -35,7 +35,6 @@ const Container = styled.div`
   height: auto;
   grid-column: 1;
   grid-row: 1;
-
   img {
     width: 100%;
     filter: grayscale(1);

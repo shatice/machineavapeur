@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import styled from "styled-components";
 
 import Title from "./Title";
 import ChaptersList from "./ChaptersList";
+import context from "../../store/context";
 
 const NavChapters = () => {
+
   const [isList, setIsList] = useState(false);
 
   return (

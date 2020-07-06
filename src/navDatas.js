@@ -1,6 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
+import Intro from "./scenes/Intro";
+import Outro from "./scenes/Outro";
+
 // Chapter 1
 import Chap1Part1 from "./scenes/chapter1/part1";
 import Chap1Part2 from "./scenes/chapter1/part2";
@@ -43,8 +46,115 @@ const Orange = styled.section`
 `;
 
 export const url = "http://folle-histoire-progres.herokuapp.com/api/chapters";
+export const urlChapters =
+  "http://folle-histoire-progres.herokuapp.com/api/chapters";
 
-const chaptersData = [
+export const chaptersData = [
+  {
+    id: 0,
+    apiUrl: "http://folle-histoire-progres.herokuapp.com/api/chapters/1",
+    data: [
+      {
+        //intro
+        idApi: 0,
+        title: "",
+        path: "/chapter0/part0",
+        elem: <Intro />,
+      },
+      {
+        idApi: 1,
+        elem: <Chap1Part1 />,
+      },
+      {
+        idApi: 1,
+        elem: <Chap1Part1 />,
+      },
+      {
+        idApi: 2,
+        elem: <Chap1Part3 />,
+      },
+      {
+        idApi: 3,
+        elem: <Chap1Part4 />,
+      },
+      {
+        //outro
+        idApi: 0,
+        elem: <Outro />,
+      },
+    ],
+  },
+  {
+    id: 1,
+    apiUrl: "http://folle-histoire-progres.herokuapp.com/api/chapters/2",
+    data: [
+      {
+        //intro
+        idApi: 0,
+        elem: <Intro />,
+      },
+      {
+        idApi: 1,
+        elem: <Chapter2Part1 />,
+      },
+      {
+        idApi: 1,
+        elem: <Chapter2Part1 />,
+      },
+      {
+        idApi: 1,
+        elem: <Chapter2Part2 />,
+      },
+      {
+        id: 3,
+        elem: <Chapter2Part2 />,
+      },
+      {
+        id: 3,
+        elem: <Chapter2Part2 />,
+      },
+      {
+        //outro
+        idApi: 0,
+        elem: <Outro />,
+      },
+    ],
+  },
+  {
+    id: 2,
+    apiUrl: "http://folle-histoire-progres.herokuapp.com/api/chapters/2",
+    data: [
+      {
+        //intro
+        idApi: 0,
+        elem: <Intro />,
+      },
+      {
+        idApi: 1,
+        elem: <Chapter2Part1 />,
+      },
+      {
+        idApi: 1,
+        elem: <Chapter2Part1 />,
+      },
+      {
+        id: 2,
+        elem: <Chapter2Part1 />,
+      },
+      {
+        id: 3,
+        elem: <Chapter2Part1 />,
+      },
+      {
+        //outro
+        idApi: 0,
+        elem: <Outro />,
+      },
+    ],
+  },
+];
+
+export const chaptersDataTitles = [
   {
     id: "lamachineavapeur",
     title: "La machine à vapeur",

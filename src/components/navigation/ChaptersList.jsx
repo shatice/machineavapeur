@@ -1,21 +1,25 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
-import chaptersData from "../../navDatas";
+
 import context from "../../store/context";
 
 const ChaptersList = ({ isList, setIsList }) => {
-  const { chapter } = useContext(context);
-  const listeChapitres = chaptersData.map((el, i) => (
-    <Link to={el.chapterPath}>
+  const { chapter, data, chapters, setPart } = useContext(context);
+
+  const listeChapitres = chapters.map((el, i) => (
+    <li>
       <ChapterElem
         isActive={chapter === i}
-        onClick={() => setIsList(!isList)}
+        onClick={() => {
+          setIsList(!isList);
+          setPart(el.id - 1, 0);
+        }}
         key={el.id}
       >
         {el.title}
       </ChapterElem>
-    </Link>
+    </li>
   ));
 
   return <Container>{listeChapitres}</Container>;
