@@ -12,10 +12,11 @@ import Infos from "./molecules/Infos";
 const James = ({ partData }) => {
   /* eslint-disable */
   let ref = useRef([]);
+  const currentRef = ref.current;
+  
   const [jamesIsHover, setJamesIsHover] = useState(false);
   const [jamesAnims, setJamesAnims] = useState({});
 
-  const currentRef = ref.current;
 
   useEffect(() => {
     setJamesAnims({
