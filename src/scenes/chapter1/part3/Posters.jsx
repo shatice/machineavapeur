@@ -2,12 +2,12 @@ import React, { } from "react";
 import styled from "styled-components";
 
 /***** ASSETS *****/
-import trainPoster1 from "./img/c1p3_train_poster1.png";
-import trainPoster2 from "./img/c1p3_train_poster2.png";
-import trainPoster3 from "./img/c1p3_train_poster3.png";
-import trainPoster4 from "./img/c1p3_train_poster4.png";
-import trainPoster5 from "./img/c1p3_train_poster5.png";
-import trainPoster6 from "./img/c1p3_train_poster6.png";
+import trainPoster1 from "../../../assets/img/chap_1/part_3/c1p3_train_poster1.png";
+import trainPoster2 from "../../../assets/img/chap_1/part_3/c1p3_train_poster2.png";
+import trainPoster3 from "../../../assets/img/chap_1/part_3/c1p3_train_poster3.png";
+import trainPoster4 from "../../../assets/img/chap_1/part_3/c1p3_train_poster4.png";
+import trainPoster5 from "../../../assets/img/chap_1/part_3/c1p3_train_poster5.png";
+import trainPoster6 from "../../../assets/img/chap_1/part_3/c1p3_train_poster6.png";
 
 const Posters = () => {
 

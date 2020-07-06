@@ -1,5 +1,5 @@
 import React from "react";
-
+import './c3p2.scss'; 
 import bg from "../../../assets/radio_bg.jpg";
 import people from "../../../assets/manhattan_project_people.png"
 

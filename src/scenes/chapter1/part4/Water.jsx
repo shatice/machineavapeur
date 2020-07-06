@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 /***** ASSETS *****/
-import water from "./img/c1p4_water.jpg";
-import rocks from "./img/c1p4_rocks.png";
+import water from "../../../assets/img/chap_1/part_4/c1p4_water.jpg";
+import rocks from "../../../assets/img/chap_1/part_4/c1p4_rocks.png";
 
 const Ecology = ({ partData }) => {
 

@@ -9,7 +9,7 @@ import Ecology from "./Ecology";
 import context from "../../../store/context";
 
 /***** ASSETS *****/
-import bg from "./img/c1p4_background.jpg";
+import bg from "../../../assets/img/chap_1/part_4/c1p4_background.jpg";
 
 const Chap1Part4 = () => {
   const [partData, setPartData] = useState([]);

@@ -5,7 +5,7 @@ import styled from "styled-components";
 import Infos from "../../../components/molecules/Infos";
 
 /***** ASSETS *****/
-import nature from "./img/c1p4_nature.png";
+import nature from "../../../assets/img/chap_1/part_4/c1p4_nature.png";
 
 const Ecology = ({ partData }) => {
   const [isAnimated, setIsAnimated] = useState(false);

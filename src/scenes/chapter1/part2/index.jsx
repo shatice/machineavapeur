@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
-
+import './style.scss'; 
 import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
-import Mineur from "../../components/Mineur";
-import mineurBG from "../../assets/mineurs_descente.jpg";
+import Mineur from "../../../components/Mineur";
+import mineurBG from "../../../assets/mineurs_descente.jpg";
 
-import Lanterns from "../../components/Lanterns";
+import Lanterns from "../../../components/Lanterns";
 
 gsap.registerPlugin(ScrollToPlugin);
 

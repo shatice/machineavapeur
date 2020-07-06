@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import './c3p3.scss'; 
 import bg from "../../../assets/bgC3P3.jpg";
 import nuclearWaste from "../../../assets/nuclear_waste.png";
 import tv from "../../../assets/tv.png";
