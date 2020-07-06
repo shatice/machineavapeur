@@ -19,6 +19,7 @@ import Chapter2Part4 from "./scenes/chapter2/part4";
 import Chapter3Part1 from "./scenes/chapter3/c3p1";
 import Chapter3Part2 from "./scenes/chapter3/c3p2";
 import Chapter3Part3 from "./scenes/chapter3/c3p3";
+import Chapter3Part4 from "./scenes/chapter3/c3p4";
 
 export const url = "http://folle-histoire-progres.herokuapp.com/api/chapters";
 export const urlChapters =
@@ -112,7 +113,7 @@ export const chaptersData = [
       },
       {
         idApi: 3,
-        elem: <Chapter3Part1 />,
+        elem: <Chapter3Part4 />,
       },
       {
         //outro
