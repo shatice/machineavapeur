@@ -16,14 +16,18 @@ const Chapter3Part3 = () => {
     const [nuclearIsHover, setNuclearIsHover] = useState(false);
     const [tvAnim, setTvAnim] = useState({});
     const [tvIsHover, setTvIsHover] = useState(false);
+    const [bgAnim, setBgAnim] = useState();
+    const [bgIsHover, setBgIsHover] = useState(false);
+
+
 
     useEffect(() => {
         setNuclearAnim(gsap.to(".nuclearWaste", { y: "-60vh", filter: "grayscale(0)", paused: true }))
         setTvAnim({
-            bgAnim: gsap.to(".bgC3P3", { filter: "grayscale(0)", duration: 0.4, paused: true }),
             natureAnim: gsap.to('.nature', { filter: "grayscale(0)", y: -40, delay: 1, paused: true }),
             tvAnim: gsap.to('.tvContainer', { y: -300, x: -150, scale: 1.4, paused: true })
         })
+        setBgAnim(gsap.to(".bgC3P3", { filter: "grayscale(0)", duration: 0.4, paused: true }))
     }, [])
 
     const NuclearHover = () => {
@@ -33,6 +37,15 @@ const Chapter3Part3 = () => {
             nuclearAnim.play();
         }
         setNuclearIsHover(!nuclearIsHover);
+    };
+
+    const BgHover = () => {
+        if (bgIsHover) {
+            bgAnim.reverse();
+        } else {
+            bgAnim.play();
+        }
+        setBgIsHover(!bgIsHover);
     };
 
     const TvHover = () => {
@@ -63,8 +76,8 @@ const Chapter3Part3 = () => {
                 setIsAnimated={NuclearHover}
                 title={"NUCLEAR WASTE"}
                 content="NUCLEAR WASTE NUCLEAR WASTE"
-                bottom="60"
-                left="10"
+                bottom="20"
+                left="80"
                 rightCard="-500"
                 bottomCard="-150"
             />
@@ -76,6 +89,15 @@ const Chapter3Part3 = () => {
                 left="61"
                 rightCard="700"
                 bottomCard="200"
+            />
+            <Infos
+                setIsAnimated={BgHover}
+                title={"NUCLEAR BOMB"}
+                content="NUCLEAR BOMB NUCLEAR BOMB"
+                bottom="60"
+                left="20"
+                rightCard="-400"
+                bottomCard="-150"
             />
         </div>
     </>
