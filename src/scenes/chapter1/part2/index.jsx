@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import './style.scss'; 
+import React, { useEffect, useRef } from "react";
+import './style.scss';
 import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
@@ -11,10 +11,11 @@ import Lanterns from "../../../components/Lanterns";
 gsap.registerPlugin(ScrollToPlugin);
 
 const Chapter1Page2 = ({ partData }) => {
+  let ref = useRef([]);
+  const currentRef = ref.current;
+
   useEffect(() => {
-    document
-      .querySelector(".page2__container")
-      .addEventListener("wheel", (e) => {
+    currentRef['container'].addEventListener("wheel", (e) => {
         const delta = Math.sign(e.deltaY);
         if (delta === -1) {
           gsap.to(".portrait", { rotate: 20, opacity: 1, duration: 1 });
@@ -39,11 +40,13 @@ const Chapter1Page2 = ({ partData }) => {
           });
         }
       });
-  }, []);
+  });
 
   return (
     <div>
-      <div className="page2__container">
+      <div className="page2__container" ref={(element) => {
+        currentRef["container"] = element;
+      }}>
         <img className="minorBg" src={mineurBG} alt="" />
         <Mineur partData={partData} />
         <Lanterns partData={partData} />
