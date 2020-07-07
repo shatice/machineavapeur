@@ -44,7 +44,7 @@ const Chapter3Part2 = () => {
 	};
 
 	return (
-		<div className="chapter-container c3p2" ref={(element) => {
+		<div className="chapter-container" ref={(element) => {
 			currentRef["container"] = element;
 		}}>
 

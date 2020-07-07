@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext, useRef } from "react";
-import './style.scss'; 
+import "./style.scss";
 import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
@@ -18,15 +18,9 @@ import GlobalState from "../../../store/GlobalState";
 //plugins
 gsap.registerPlugin(ScrollToPlugin);
 
-const Chapter1 = () => {
-  const [partData, setPartData] = useState([]);
-  const { data } = useContext(context);
+const Chapter1 = ({ data: { parts } = {} }) => {
   let ref = useRef([]);
   const currentRef = ref.current;
-
-  useEffect(() => {
-    if (data !== undefined) setPartData(data?.parts);
-  }, [data]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -58,15 +52,18 @@ const Chapter1 = () => {
   return (
     <GlobalState>
       <div>
-        <div className="container" ref={(element) => {
-          currentRef["container"] = element;
-        }}>
+        <div
+          className="container"
+          ref={(element) => {
+            currentRef["container"] = element;
+          }}
+        >
           <img className="bg" src={bg} alt="" />
           <img className="portrait" src={portrait} alt="" />
-          <Paper partData={partData} />
-          <James partData={partData} />
+          <Paper partData={parts} />
+          <James partData={parts} />
         </div>
-        <Chapter1Page2 partData={partData} />
+        <Chapter1Page2 partData={parts} />
       </div>
     </GlobalState>
   );

@@ -16,24 +16,31 @@ const ConcordeContainer = styled.div`
   }
 `;
 
-const Concorde = () => {
-  const [ hovered, setHovered ] = useState(0)
-  const isHovered = function(bool) {
-    setHovered(bool)
-  }
+const Concorde = ({ partData }) => {
+  const [hovered, setHovered] = useState(0);
+  const isHovered = function (bool) {
+    setHovered(bool);
+  };
 
   return (
     <ConcordeContainer>
-      <Infos
-        setIsAnimated={isHovered}
-        title="Le moteur à réaction"
-        content="Lorem ipsum dolor"
-        top="13"
-        left="40"
-        leftCard="-400"
-        bottomCard="200"
+      {partData && (
+        <Infos
+          setIsAnimated={isHovered}
+          title={partData[1]?.cards[0].title}
+          content={partData[1]?.cards[0].content}
+          top="13"
+          left="40"
+          leftCard="-400"
+          bottomCard="200"
+        />
+      )}
+
+      <img
+        className={hovered ? "animate" : null}
+        src="../assets/img/chap_2/part_2/desk.png"
+        alt=""
       />
-      <img className={hovered ? "animate" : null} src="../assets/img/chap_2/part_2/desk.png" alt=""/>
     </ConcordeContainer>
   );
 };

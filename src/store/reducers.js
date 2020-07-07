@@ -18,15 +18,13 @@ const changeUrl = (datas) => {
 };
 
 const incrementPart = (state) => {
-  let chapter = state.chapter;
-  let history = state.history;
-  let path = state.path;
-  let subChapter = state.subChapter;
+  let { chapter, history, path, subChapter } = state;
   const subParts = chaptersData[chapter].data;
 
   if (subChapter >= subParts.length - 1) {
     chapter = chapter + 1;
     subChapter = 0;
+
     let datas = {
       chapter,
       subChapter,
@@ -36,6 +34,7 @@ const incrementPart = (state) => {
     changeUrl(datas);
   } else {
     subChapter = subChapter + 1;
+
     let datas = {
       chapter,
       subChapter,
@@ -64,8 +63,8 @@ const decrementPart = (state) => {
       history,
     };
     changeUrl(datas);
-  } else if (chapter === 0 && subChapter === 0) {
-    chapter = 0;
+  } else if (chapter <= 1 && subChapter === 0) {
+    chapter = 1;
     subChapter = 0;
     let datas = {
       chapter,

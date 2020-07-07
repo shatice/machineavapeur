@@ -13,28 +13,14 @@ import bg from "../../../assets/img/chap_1/part_3/c1p3_background.jpg";
 import frameBordeaux from "../../../assets/img/chap_1/part_3/c1p3_frame_bordeaux.png";
 import frameSncf from "../../../assets/img/chap_1/part_3/c1p3_frame_sncf.png";
 
-const Chap1Part3 = ({ data }) => {
-  const [partData, setPartData] = useState([]);
-
-  useEffect(() => {
-    if (data !== undefined) setPartData(data?.parts);
-  }, [data]);
-
+const Chap1Part3 = ({ data: { parts } }) => {
   return (
     <Container>
-      <BackgroundImage src={bg} alt=""/>
-      <Richard partData={partData} topBfr="-100"/>
-      <LittleFrame 
-      src={frameBordeaux} 
-      alt="" 
-      rotate="-15"
-      leftBfr="40"/>
-      <LittleFrame 
-      src={frameSncf} 
-      alt="" 
-      rotate="2"
-      leftBfr="45"/>
-      <Train partData={partData}/>
+      <BackgroundImage src={bg} alt="" />
+      <Richard partData={parts} topBfr="-100" />
+      <LittleFrame src={frameBordeaux} alt="" rotate="-15" leftBfr="40" />
+      <LittleFrame src={frameSncf} alt="" rotate="2" leftBfr="45" />
+      <Train partData={parts} />
     </Container>
   );
 };

@@ -113,7 +113,7 @@ const NavParts = () => {
     history,
     path,
   } = useContext(context);
-  const subChapters = data?.parts?.[chapterValue]?.cards;
+  const subChapters = data?.parts;
 
   const changeUrl = (chapter, subChapterVal) => {
     history.replace({
@@ -158,7 +158,7 @@ const NavParts = () => {
         </PartIcon>
       </ChevronContainer>
       {!displayText && <TextContainer></TextContainer>}
-      {displayText && (
+      {displayText && data && (
         <TextContainer>
           <li onClick={() => changeUrl(chapterValue, 0)}>Intro</li>
           {subChapters &&
@@ -169,7 +169,7 @@ const NavParts = () => {
                 </li>
               );
             })}
-          <li onClick={() => changeUrl(chapterValue, subChapters.length + 2)}>
+          <li onClick={() => changeUrl(chapterValue, subChapters.length + 1)}>
             Outro
           </li>
         </TextContainer>

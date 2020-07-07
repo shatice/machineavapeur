@@ -10,7 +10,6 @@ const Lanterns = ({ partData }) => {
   const lanternIsHover = () => {
     setDisplay(!display);
   };
-  console.log(partData);
 
   return (
     <LanternContainer>
@@ -23,12 +22,12 @@ const Lanterns = ({ partData }) => {
       {partData && (
         <Infos
           setIsAnimated={lanternIsHover}
-          title={partData[1]?.cards?.[1].title}
-          content={partData[1]?.cards?.[1].content}
+          title={partData[1]?.cards[1]?.title}
+          content={partData[1]?.cards[1]?.content}
           bottom="30"
           left="10"
           leftCard="-1000"
-          bottomCard="-600"
+          bottomCard="-400"
         />
       )}
     </LanternContainer>

@@ -2,9 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Infos from "../../../components/molecules/Infos";
 
-const OceanContainer = styled.div`
-
-`;
+const OceanContainer = styled.div``;
 
 const AnimationContainer = styled.div`
   position: absolute;
@@ -26,27 +24,38 @@ const AnimationContainer = styled.div`
   }
 `;
 
-const Ocean = ({ isActive }) => {
-  const [ hovered, setHovered ] = useState(0)
-  const isHovered = function(bool) {
-    setHovered(bool)
-    isActive(bool)
-  }
+const Ocean = ({ isActive, partData }) => {
+  const [hovered, setHovered] = useState(0);
+  const isHovered = function (bool) {
+    setHovered(bool);
+    isActive(bool);
+  };
 
   return (
     <OceanContainer>
-      <Infos
-        setIsAnimated={isHovered}
-        title="Acidification des Océans"
-        content="Lorem ipsum dolor"
-        top="40"
-        left="14"
-        leftCard="400"
-        bottomCard="200"
-      />
+      {partData && (
+        <Infos
+          setIsAnimated={isHovered}
+          title={partData[2]?.cards[2].title}
+          content={partData[2]?.cards[2].content}
+          top="40"
+          left="14"
+          leftCard="400"
+          bottomCard="200"
+        />
+      )}
+
       <AnimationContainer>
-        <img className={hovered ? "animate" : null} src="../assets/img/chap_2/part_3/wave.png" alt=""/>
-        <img className={hovered ? "animate" : null} src="../assets/img/chap_2/part_3/wave.png" alt=""/>
+        <img
+          className={hovered ? "animate" : null}
+          src="../assets/img/chap_2/part_3/wave.png"
+          alt=""
+        />
+        <img
+          className={hovered ? "animate" : null}
+          src="../assets/img/chap_2/part_3/wave.png"
+          alt=""
+        />
       </AnimationContainer>
     </OceanContainer>
   );

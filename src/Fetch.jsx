@@ -7,12 +7,13 @@ import { url, urlChapters } from "./navDatas";
 const Fetch = () => {
   const { setData, chapter, state, setChapters } = useContext(context);
 
-  const [{ data: res }] = useAxios({
-    url: url + `/${chapter + 1}`,
+  const [{ data: res }, executeFetchData] = useAxios({
+    url: url + `/${chapter}`,
     method: "GET",
     headers: {
       Accept: "application/json",
     },
+    manual: true,
   });
   const [{ data: resChapters }, executeFetchChapters] = useAxios({
     url: urlChapters,
@@ -25,9 +26,8 @@ const Fetch = () => {
 
   useEffect(() => {
     /* eslint-disable */
-    executeFetchChapters().then(() => {
-      executeFetchChapters({ requestPolicy: "network-only" });
-    });
+    executeFetchChapters({ requestPolicy: "network-only" });
+    executeFetchData({ requestPolicy: "network-only" });
   }, []);
 
   useEffect(() => {
