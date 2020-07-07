@@ -2,11 +2,6 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 import context from "../store/context";
 
-const Bg = styled.section`
-  width: 100vw;
-  height: 100vh;
-`;
-
 const Outro = () => {
   const { data, chapter, incrementPart } = useContext(context);
   const { outro } = data;

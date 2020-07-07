@@ -113,7 +113,7 @@ const NavParts = () => {
     history,
     path,
   } = useContext(context);
-  const subChapters = data?.parts?.[chapterValue]?.cards;
+  const subChapters = data?.parts;
 
   const changeUrl = (chapter, subChapterVal) => {
     history.replace({
