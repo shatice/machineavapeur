@@ -3,8 +3,6 @@ import styled from "styled-components";
 
 import Sound from "../../../components/atoms/Sound";
 
-import sncfSound from "../../../assets/sounds/c1p3_sncf_sound.mp3"
-
 const LittleFrame = ({ src, alt, rotate, leftBfr, topBfr, urlSound }) => {
   return (
     <Container className="hasNet" rotate={rotate} topBfr={topBfr} leftBfr={leftBfr}>

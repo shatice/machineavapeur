@@ -9,6 +9,7 @@ import Infos from "./molecules/Infos";
 import gsap from "gsap";
 
 const Mineur = ({ partData }) => {
+  console.log(partData);
   const [display, setDisplay] = useState(false);
 
   const minorIshover = () => {
@@ -30,11 +31,11 @@ const Mineur = ({ partData }) => {
       {partData && (
         <Infos
           setIsAnimated={minorIshover}
-          title={partData[1]?.cards?.[0].title}
-          content={partData[1]?.cards?.[0].content}
+          title={partData[1]?.cards[0]?.title}
+          content={partData[1]?.cards[0]?.content}
           bottom="8"
           left="103"
-          leftCard="-1500"
+          leftCard="50"
           bottomCard="-100"
         />
       )}

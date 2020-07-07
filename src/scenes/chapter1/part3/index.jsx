@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "../../../styles/styles.scss";
 import styled from "styled-components";
 
@@ -13,19 +13,13 @@ import frameBordeaux from "../../../assets/img/chap_1/part_3/c1p3_frame_bordeaux
 import frameSncf from "../../../assets/img/chap_1/part_3/c1p3_frame_sncf.png";
 import sncfSound from "../../../assets/sounds/c1p3_sncf_sound.mp3"; 
 
-const Chap1Part3 = ({ data }) => {
-  const [partData, setPartData] = useState([]);
-
-  useEffect(() => {
-    if (data !== undefined) setPartData(data?.parts);
-  }, [data]);
-
+const Chap1Part3 = ({ data: { parts } }) => {
   return (
     <Container>
-      <RichardFrame partData={partData} topBfr="-100"/>
+      <RichardFrame partData={parts} topBfr="-100" />
       <LittleFrame src={frameBordeaux} alt="Frame Bordeaux Train France" rotate="-15" leftBfr="40"/>
       <LittleFrame src={frameSncf} alt="Frame SNCF France" rotate="2" leftBfr="45" urlSound={sncfSound}/>
-      <TrainFrame partData={partData}/>
+      <TrainFrame partData={parts} />
     </Container>
   );
 };

@@ -4,17 +4,17 @@ import context from "../store/context";
 
 const Intro = () => {
   const { data } = useContext(context);
-
+  const { intro, title } = data;
   return (
     <Container>
-      <h1>{data.title}</h1>
-      <p>{data.intro}</p>
+      <h1>{title}</h1>
+      <p>{intro}</p>
       <aside>Scroller pour découvrir</aside>
     </Container>
   );
 };
 
-const Container = styled.section `
+const Container = styled.section`
   position: relative;
   width: 100%;
   height: 100%;
@@ -42,11 +42,11 @@ const Container = styled.section `
   }
 
   aside {
-    margin-top: 4rem; 
-    font-size: .875rem; 
-    text-transform: uppercase; 
-    opacity: .5; 
+    margin-top: 4rem;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    opacity: 0.5;
   }
-`
+`;
 
 export default Intro;

@@ -9,10 +9,10 @@ const ChaptersList = ({ isList, setIsList }) => {
   const listeChapitres = chapters.map((el, i) => (
     <li>
       <ChapterElem
-        isActive={chapter === i}
+        isActive={chapter === i + 1}
         onClick={() => {
           setIsList(!isList);
-          setPart(el.id - 1, 0);
+          setPart(el.id, 0);
         }}
         key={el.id}
       >
