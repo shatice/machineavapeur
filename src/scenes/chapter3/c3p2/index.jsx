@@ -32,7 +32,7 @@ const Chapter3Part2 = () => {
             document.body.style.setProperty('--y', (e.clientY) + 'px');
             (e.clientX >= marie.left && e.clientX < marie.right -20) ? setMarieIsHover(true) : setMarieIsHover(false);
         }
-    }, [])
+    }, [currentRef])
 
     const ExpHover = () => {
         if (expIsHover) {
