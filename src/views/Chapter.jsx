@@ -47,6 +47,7 @@ const Chapter = () => {
     setPart(Number(chapterId), Number(partId));
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
+    console.log(chapter);
   }, [location, chapterId, partId]);
 
   useEffect(() => {

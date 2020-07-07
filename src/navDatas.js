@@ -16,10 +16,10 @@ import Chapter2Part3 from "./scenes/chapter2/part3";
 import Chapter2Part4 from "./scenes/chapter2/part4";
 
 // Chapter 3
-import Chapter3Part1 from "./scenes/chapter3/c3p1";
-import Chapter3Part2 from "./scenes/chapter3/c3p2";
-import Chapter3Part3 from "./scenes/chapter3/c3p3";
-import Chapter3Part4 from "./scenes/chapter3/c3p4";
+import Chapter3Part1 from "./scenes/chapter3/part1";
+import Chapter3Part2 from "./scenes/chapter3/part2";
+import Chapter3Part3 from "./scenes/chapter3/part3";
+import Chapter3Part4 from "./scenes/chapter3/part3";
 
 export const url = "http://folle-histoire-progres.herokuapp.com/api/chapters";
 export const urlChapters =
