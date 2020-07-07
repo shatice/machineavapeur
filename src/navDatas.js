@@ -5,7 +5,7 @@ import Outro from "./scenes/Outro";
 
 // Chapter 1
 import Chapter1Part1 from "./scenes/chapter1/part1";
-import Chapter1Part2 from "./scenes/chapter1/part1";
+import Chapter1Part2 from "./scenes/chapter1/part2";
 import Chapter1Part3 from "./scenes/chapter1/part3";
 import Chapter1Part4 from "./scenes/chapter1/part4";
 
@@ -32,28 +32,29 @@ export const chaptersData = [
     data: [
       {
         //intro
-        idApi: 0,
+        uuid: "chapter0-subChapter0",
         elem: <Intro />,
       },
       {
-        idApi: 1,
+        uuid: "chapter0-subChapter1",
         elem: <Chapter1Part1 />,
       },
       {
-        idApi: 1,
+        uuid: "chapter0-subChapter2",
         elem: <Chapter1Part2 />,
       },
       {
-        idApi: 2,
+        uuid: "chapter0-subChapter3",
         elem: <Chapter1Part3 />,
       },
       {
+        uuid: "chapter0-subChapter4",
         idApi: 2,
         elem: <Chapter1Part4 />,
       },
       {
         //outro
-        idApi: 0,
+        uuid: "chapter0-subChapter5",
         elem: <Outro />,
       },
     ],
@@ -64,28 +65,28 @@ export const chaptersData = [
     data: [
       {
         //intro
-        idApi: 0,
+        uuid: "chapter1-subChapter0",
         elem: <Intro />,
       },
       {
-        idApi: 1,
+        uuid: "chapter1-subChapter1",
         elem: <Chapter2Part1 />,
       },
       {
-        idApi: 1,
+        uuid: "chapter1-subChapter2",
         elem: <Chapter2Part2 />,
       },
       {
-        idApi: 1,
+        uuid: "chapter1-subChapter3",
         elem: <Chapter2Part3 />,
       },
       {
-        idApi: 1,
+        uuid: "chapter1-subChapter4",
         elem: <Chapter2Part4 />,
       },
       {
         //outro
-        idApi: 0,
+        uuid: "chapter1-subChapter5",
         elem: <Outro />,
       },
     ],
@@ -96,28 +97,29 @@ export const chaptersData = [
     data: [
       {
         //intro
-        idApi: 0,
+        uuid: "chapter2-subChapter0",
+
         elem: <Intro />,
       },
       {
-        idApi: 1,
+        uuid: "chapter2-subChapter1",
         elem: <Chapter3Part1 />,
       },
       {
-        idApi: 1,
+        uuid: "chapter2-subChapter2",
         elem: <Chapter3Part2 />,
       },
       {
-        idApi: 2,
+        uuid: "chapter2-subChapter3",
         elem: <Chapter3Part3 />,
       },
       {
-        idApi: 3,
+        uuid: "chapter2-subChapter4",
         elem: <Chapter3Part4 />,
       },
       {
         //outro
-        idApi: 0,
+        uuid: "chapter1-subChapter5",
         elem: <Outro />,
       },
     ],

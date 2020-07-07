@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from "react";
+import React, { useEffect, useContext, useState } from "react";
 import styled from "styled-components";
 import chaptersData from "../navDatas";
 import { useParams, useLocation } from "react-router-dom";
@@ -39,13 +39,23 @@ const Chapter = () => {
   } = useContext(context);
 
   const { chapterId, partId } = useParams();
+  const [uuid, setUuid] = useState("");
+  const [elem, setElem] = useState("");
   const location = useLocation();
 
   useEffect(() => {
     setPart(Number(chapterId), Number(partId));
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location, chapterId, partId]);
 
+  useEffect(() => {
+    const uuid = `chapter${chapter}-subChapter${subChapter}`;
+    setElem(
+      chaptersData[chapter]?.data?.filter((data) => data.uuid === uuid)?.[0]
+        ?.elem
+    );
+  }, [subChapter, chapter, data]);
   return (
     <Layout>
       <NavTemp>
@@ -74,10 +84,11 @@ const Chapter = () => {
           NEXT PART
         </button>
       </NavTemp>
-      {chaptersData[chapter]?.data[subChapter]?.elem &&
-        React.cloneElement(chaptersData[chapter]?.data[subChapter]?.elem, {
+      {elem &&
+        React.cloneElement(elem, {
           data: data,
         })}
+
       <Footer />
       <Fetch url={chaptersData[chapter].apiUrl} />
     </Layout>

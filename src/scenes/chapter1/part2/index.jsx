@@ -4,9 +4,9 @@ import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
 import Mineur from "../../../components/Mineur";
-import mineurBG from "../../../assets/mineurs_descente.jpg";
-
 import Lanterns from "../../../components/Lanterns";
+
+import mineurBG from "../../../assets/mineurs_descente.jpg";
 
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -51,7 +51,7 @@ const Chapter1Page2 = ({ data }) => {
         }}
       >
         <img className="minorBg" src={mineurBG} alt="" />
-        <Mineur partData={data} />
+        <Mineur partData={data}   />
         <Lanterns partData={data} />
       </div>
     </div>
