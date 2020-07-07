@@ -7,18 +7,16 @@ import Jetliner from "./Jetliner";
 const Bg = styled.section`
   width: 100vw;
   height: 100vh;
-  background-image: url('../assets/img/chap_2/part_2/background.jpg');
+  background-image: url("../assets/img/chap_2/part_2/background.jpg");
   background-size: cover;
 `;
 
-const Chapter2Part2 = () => {
-
-
+const Chapter2Part2 = ({ data: { parts } = {} }) => {
   return (
     <Bg>
-      <Concorde/>
-      <Desk/>
-      <Jetliner/>
+      <Concorde partData={parts} />
+      <Desk partData={parts} />
+      <Jetliner partData={parts} />
     </Bg>
   );
 };

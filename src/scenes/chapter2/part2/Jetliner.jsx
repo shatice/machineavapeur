@@ -17,24 +17,31 @@ const JetlinerContainer = styled.div`
   }
 `;
 
-const Jetliner = () => {
-  const [ hovered, setHovered ] = useState(0)
-  const isHovered = function(bool) {
-    setHovered(bool)
-  }
+const Jetliner = ({ partData }) => {
+  const [hovered, setHovered] = useState(0);
+  const isHovered = function (bool) {
+    setHovered(bool);
+  };
 
   return (
     <JetlinerContainer>
-      <Infos
-        setIsAnimated={isHovered}
-        title="L'avion de ligne"
-        content="Lorem ipsum dolor"
-        bottom="0"
-        left="0"
-        rightCard="100"
-        topCard="100"
+      {partData && (
+        <Infos
+          setIsAnimated={isHovered}
+          title={partData[1]?.cards[1].title}
+          content={partData[1]?.cards[1].content}
+          bottom="0"
+          left="0"
+          rightCard="100"
+          topCard="100"
+        />
+      )}
+
+      <img
+        className={hovered ? "animate" : null}
+        src="../assets/img/chap_2/part_2/jetliner.png"
+        alt=""
       />
-      <img className={hovered ? "animate" : null} src="../assets/img/chap_2/part_2/jetliner.png" alt=""/>
     </JetlinerContainer>
   );
 };

@@ -57,7 +57,7 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
-  animation: enterIn .5s ease-out;
+  animation: enterIn 0.5s ease-out;
 
   img {
     filter: grayscale(1);

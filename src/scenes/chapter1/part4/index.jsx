@@ -10,18 +10,12 @@ import Ecology from "./Ecology";
 /***** ASSETS *****/
 import bg from "../../../assets/img/chap_1/part_4/c1p4_background.jpg";
 
-const Chap1Part4 = ({ data }) => {
-  const [partData, setPartData] = useState([]);
-
-  useEffect(() => {
-    if (data !== undefined) setPartData(data?.parts);
-  }, [data]);
-
+const Chap1Part4 = ({ data: { parts } = {} }) => {
   return (
     <Container>
-      <BackgroundImage partData={partData} src={bg} alt="nuages" />
-      <CoalTowers partData={partData} />
-      <Ecology partData={partData} />
+      <BackgroundImage partData={parts} src={bg} alt="nuages" />
+      <CoalTowers partData={parts} />
+      <Ecology partData={parts} />
     </Container>
   );
 };
