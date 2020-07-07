@@ -19,7 +19,10 @@ const Chap1Part4 = ({ data }) => {
 
   return (
     <Container>
-      <BackgroundImage partData={partData} src={bg} alt="nuages" />
+      <BackgroundImage 
+      partData={partData} 
+      src={bg} 
+      alt="nuages" />
       <CoalTowers partData={partData} />
       <Ecology partData={partData} />
     </Container>
@@ -27,9 +30,8 @@ const Chap1Part4 = ({ data }) => {
 };
 
 const Container = styled.section`
-  overflow: hidden;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   padding: 0 10% 0 15%;
   display: flex;
   flex-direction: row;

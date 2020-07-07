@@ -2,19 +2,13 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 import context from "../store/context";
 
-const Bg = styled.section`
-  width: 100vw;
-  height: 100vh;
-`;
-
 const Outro = () => {
   const { data} = useContext(context);
-  const { outro } = data;
 
   return (
     <Container>
       <p>{data.outro}</p>
-      <a>Continuer</a>
+      <p>Continuer</p>
     </Container>
   );
 };

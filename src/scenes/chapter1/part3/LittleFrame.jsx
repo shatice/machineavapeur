@@ -1,44 +1,20 @@
-import React, { useState } from "react";
-import styled, { keyframes }from "styled-components";
+import React from "react";
+import styled from "styled-components";
 
-const LittleFrame = ({
-  src, 
-  alt, 
-  rotate, 
-  rotateBfr, 
-  leftBfr, 
-  topBfr
-}) => {
-  const [isAnimated] = useState(false);
+const LittleFrame = ({ src, alt, rotate, leftBfr, topBfr }) => {
   return (
-    <Image 
-    rotate= { rotate }
-    topBfr= { topBfr }
-    leftBfr= { leftBfr }
-    className={isAnimated ? "isAnimated hasNet" : "hasNet"}>
-      <img 
-      src={ src }
-      alt={ alt }
-      />
-    </Image>
+    <Container className="hasNet" rotate={rotate} topBfr={topBfr} leftBfr={leftBfr}>
+      <img src={ src } alt={ alt } />
+    </Container>
   ); 
 }
 
-const enterIn = keyframes`
-  0% {
-    transform: translateY(-100%);
-  } 100% {
-    transform: translateY(0);
-  }
-`
-
-const Image = styled.div `
+const Container = styled.div `
   width: auto;
   height: 20%; 
   object-fit: contain;
   filter: grayscale(1);
-  animation: ${enterIn} .5s ease-out; 
-  transition: rotate .6s .6s ease-out; 
+  animation: enterIn .5s ease-out; 
 
   img {
     width: auto; 
