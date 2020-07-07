@@ -1,15 +1,24 @@
 import React from "react";
 import styled from "styled-components";
 
-const LittleFrame = ({ src, alt, rotate, leftBfr, topBfr }) => {
+import Sound from "../../../components/atoms/Sound";
+
+import sncfSound from "../../../assets/sounds/c1p3_sncf_sound.mp3"
+
+const LittleFrame = ({ src, alt, rotate, leftBfr, topBfr, urlSound }) => {
   return (
     <Container className="hasNet" rotate={rotate} topBfr={topBfr} leftBfr={leftBfr}>
       <img src={ src } alt={ alt } />
+      {urlSound && (
+        <Sound urlSound={urlSound}/>
+      )}
     </Container>
   ); 
 }
 
 const Container = styled.div `
+  cursor: pointer; 
+  position: relative; 
   width: auto;
   height: 20%; 
   object-fit: contain;

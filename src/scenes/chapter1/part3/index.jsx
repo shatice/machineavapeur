@@ -11,6 +11,7 @@ import TrainFrame from "./TrainFrame";
 import bg from "../../../assets/img/chap_1/part_3/c1p3_background.jpg";
 import frameBordeaux from "../../../assets/img/chap_1/part_3/c1p3_frame_bordeaux.png";
 import frameSncf from "../../../assets/img/chap_1/part_3/c1p3_frame_sncf.png";
+import sncfSound from "../../../assets/sounds/c1p3_sncf_sound.mp3"; 
 
 const Chap1Part3 = ({ data }) => {
   const [partData, setPartData] = useState([]);
@@ -23,7 +24,7 @@ const Chap1Part3 = ({ data }) => {
     <Container>
       <RichardFrame partData={partData} topBfr="-100"/>
       <LittleFrame src={frameBordeaux} alt="Frame Bordeaux Train France" rotate="-15" leftBfr="40"/>
-      <LittleFrame src={frameSncf} alt="Frame SNCF France" rotate="2" leftBfr="45"/>
+      <LittleFrame src={frameSncf} alt="Frame SNCF France" rotate="2" leftBfr="45" urlSound={sncfSound}/>
       <TrainFrame partData={partData}/>
     </Container>
   );
