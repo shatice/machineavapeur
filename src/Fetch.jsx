@@ -25,7 +25,9 @@ const Fetch = () => {
 
   useEffect(() => {
     /* eslint-disable */
-    executeFetchChapters();
+    executeFetchChapters().then(() => {
+      executeFetchChapters({ requestPolicy: "network-only" });
+    });
   }, []);
 
   useEffect(() => {

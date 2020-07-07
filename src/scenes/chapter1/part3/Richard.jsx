@@ -13,8 +13,9 @@ import coinWagon from "../../../assets/img/chap_1/part_3/c1p3_coin_wagon.png";
 
 const Richard = ({ partData }) => {
   const [isAnimated, setIsAnimated] = useState(false);
+
   return (
-    <Container className={isAnimated ? "isAnimated" : ""}>
+    <Container className={isAnimated ? "isAnimated hasNet" : "hasNet"}>
       <img src={frameRichard} alt="" />
       <img src={richard} alt="" className="richard" />
       <div className="scene">
@@ -22,12 +23,12 @@ const Richard = ({ partData }) => {
           <div className="coin__card">
             <img
               src={coinQueen}
-              alt=""
+              alt="coin-queen"
               className="coin__side coin__side--queen"
             />
             <img
               src={coinWagon}
-              alt=""
+              alt="coin-wagon"
               className="coin__side coin__side--wagon"
             />
           </div>
@@ -50,20 +51,17 @@ const Richard = ({ partData }) => {
 };
 
 const Container = styled.div`
+  position: relative;
   width: 35%;
   height: fit-content;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
-  position: relative;
-  transform: rotate(5deg);
+  animation: enterIn .5s ease-out;
 
   img {
     filter: grayscale(1);
-  }
-
-  .infos {
-    transform: rotate(-5deg);
+    transform: rotate(5deg);
   }
 
   &.isAnimated {
@@ -74,14 +72,14 @@ const Container = styled.div`
     }
 
     .coin__card {
-      transform: rotateY(180deg);
       width: 70px;
       height: 70px;
+      transform: rotateY(180deg);
     }
 
     .richard {
-      transition: all 0.5s linear;
       transform: scale(3);
+      transition: all 0.5s linear;
     }
 
     .coin {
@@ -127,9 +125,6 @@ const Container = styled.div`
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
-  }
-
-  .coin__side--queen {
   }
 
   .coin__side--wagon {
