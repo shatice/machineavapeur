@@ -30,20 +30,29 @@ const Bg = styled.section`
   }
 `;
 
+const Chapter2Part3 = ({ data: { parts } = {} }) => {
+  console.log(parts);
 
-const Chapter2Part3 = () => {
-  const [ hovered, setHovered ] = useState(0)
-  const isHovered = function(bool) {
-    setHovered(bool)
-  }
+  const [hovered, setHovered] = useState(0);
+  const isHovered = function (bool) {
+    setHovered(bool);
+  };
 
   return (
     <Bg>
-      <Ocean isActive={isHovered}/>
-      <Clouds isActive={isHovered}/>
-      <img className="airport" src="../assets/img/chap_2/part_3/airport.png" alt=""/>
-      <img className={hovered ? "animate background" : "background"} src="../assets/img/chap_2/part_3/background.jpg" alt=""/>
-      <Man/>
+      <Ocean partData={parts} isActive={isHovered} />
+      <Clouds partData={parts} isActive={isHovered} />
+      <img
+        className="airport"
+        src="../assets/img/chap_2/part_3/airport.png"
+        alt=""
+      />
+      <img
+        className={hovered ? "animate background" : "background"}
+        src="../assets/img/chap_2/part_3/background.jpg"
+        alt=""
+      />
+      <Man partData={parts} />
     </Bg>
   );
 };

@@ -17,26 +17,31 @@ const ParachuteContainer = styled.div`
   }
 `;
 
-const Parachute = () => {
-  const [ hovered, setHovered ] = useState(0)
-  const isHovered = function(bool) {
-    setHovered(bool)
-  }
-
-  console.log(hovered)
+const Parachute = ({ partData }) => {
+  const [hovered, setHovered] = useState(0);
+  const isHovered = function (bool) {
+    setHovered(bool);
+  };
 
   return (
     <ParachuteContainer>
-      <Infos
-        setIsAnimated={isHovered}
-        title="Armée de l'air"
-        content="Lorem ipsum dolor"
-        top="25"
-        left="25"
-        rightCard="250"
-        topCard="500"
+      {partData && (
+        <Infos
+          setIsAnimated={isHovered}
+          title={partData[0].cards[2].title}
+          content={partData[0].cards[2].content}
+          top="25"
+          left="25"
+          rightCard="250"
+          topCard="500"
+        />
+      )}
+
+      <img
+        className={hovered ? "moveParachute" : null}
+        src="../assets/img/chap_2/part_1/parachute.png"
+        alt="parachuteur"
       />
-      <img className={hovered ? "moveParachute" : null} src="../assets/img/chap_2/part_1/parachute.png" alt="parachuteur"/>
     </ParachuteContainer>
   );
 };
