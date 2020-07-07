@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from "react";
+import React, { useEffect, useContext, useState } from "react";
 import styled from "styled-components";
 import chaptersData from "../navDatas";
 import { useParams, useLocation } from "react-router-dom";
@@ -12,7 +12,6 @@ const Layout = styled.section`
   top: 0;
   height: 100vh;
   width: 100%;
-  font-size: 52px;
 `;
 
 const NavTemp = styled.section`
@@ -28,6 +27,19 @@ const NavTemp = styled.section`
   padding: 3px;
   background-color: white;
 `;
+const ChapterElem = styled.section`
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 22px;
+  color: black;
+  z-index: 30;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: white;
+`;
 
 const Chapter = () => {
   const {
@@ -40,15 +52,27 @@ const Chapter = () => {
   } = useContext(context);
 
   const { chapterId, partId } = useParams();
+  // const [uuid, setUuid] = useState("");
+  const [elem, setElem] = useState("");
   const location = useLocation();
 
   useEffect(() => {
     setPart(Number(chapterId), Number(partId));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    /* eslint-disable */
   }, [location, chapterId, partId]);
+
+  useEffect(() => {
+    const uuid = `chapter${chapter}-subChapter${subChapter}`;
+    setElem(
+      chaptersData[chapter]?.data?.filter((data) => data.uuid === uuid)?.[0]
+        ?.elem
+    );
+  }, [subChapter, chapter, data]);
 
   return (
     <Layout>
+      {data && <ChapterElem>{data?.title}</ChapterElem>}
+
       <NavTemp>
         <button
           style={{ zIndex: 1000 }}
@@ -75,10 +99,20 @@ const Chapter = () => {
           NEXT PART
         </button>
       </NavTemp>
-      {chaptersData[chapter]?.data[subChapter]?.elem &&
-        React.cloneElement(chaptersData[chapter]?.data[subChapter]?.elem, {
+      {elem &&
+        React.cloneElement(elem, {
           data: data,
         })}
+      <div style={{ zIndex: -1 }}>
+        {chaptersData[chapter]?.data[subChapter + 1]?.elem &&
+          React.cloneElement(
+            chaptersData[chapter]?.data[subChapter + 1]?.elem,
+            {
+              data: data,
+            }
+          )}
+      </div>
+
       <Footer />
       <Fetch url={chaptersData[chapter].apiUrl} />
     </Layout>

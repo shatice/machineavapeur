@@ -11,11 +11,15 @@ body {
     font-family: 'notable';
   }
 
+  h4 {
+    font-family: 'din_bold';
+    // background-color: rgba(0, 0, 0, 0.267);
+  }
+
   h3 {
     font-family: 'din_bold_condensed';
     font-size: .875rem;
   }
-
 }
 
 .chapter-container {

@@ -5,7 +5,7 @@ import Outro from "./scenes/Outro";
 
 // Chapter 1
 import Chapter1Part1 from "./scenes/chapter1/part1";
-import Chapter1Part2 from "./scenes/chapter1/part1";
+import Chapter1Part2 from "./scenes/chapter1/part2";
 import Chapter1Part3 from "./scenes/chapter1/part3";
 import Chapter1Part4 from "./scenes/chapter1/part4";
 
@@ -16,44 +16,45 @@ import Chapter2Part3 from "./scenes/chapter2/part3";
 import Chapter2Part4 from "./scenes/chapter2/part4";
 
 // Chapter 3
-import Chapter3Part1 from "./scenes/chapter3/c3p1";
-import Chapter3Part2 from "./scenes/chapter3/c3p2";
-import Chapter3Part3 from "./scenes/chapter3/c3p3";
-import Chapter3Part4 from "./scenes/chapter3/c3p4";
+import Chapter3Part1 from "./scenes/chapter3/part1";
+import Chapter3Part2 from "./scenes/chapter3/part2";
+import Chapter3Part3 from "./scenes/chapter3/part3";
+import Chapter3Part4 from "./scenes/chapter3/part3";
 
 export const url = "http://folle-histoire-progres.herokuapp.com/api/chapters";
 export const urlChapters =
   "http://folle-histoire-progres.herokuapp.com/api/chapters";
 
 export const chaptersData = [
+  {},
   {
     id: 0,
     apiUrl: "http://folle-histoire-progres.herokuapp.com/api/chapters/1",
     data: [
       {
         //intro
-        idApi: 0,
+        uuid: "chapter1-subChapter0",
         elem: <Intro />,
       },
       {
-        idApi: 1,
+        uuid: "chapter1-subChapter1",
         elem: <Chapter1Part1 />,
       },
       {
-        idApi: 1,
+        uuid: "chapter1-subChapter2",
         elem: <Chapter1Part2 />,
       },
       {
-        idApi: 2,
+        uuid: "chapter1-subChapter3",
         elem: <Chapter1Part3 />,
       },
       {
-        idApi: 2,
+        uuid: "chapter1-subChapter4",
         elem: <Chapter1Part4 />,
       },
       {
         //outro
-        idApi: 0,
+        uuid: "chapter1-subChapter5",
         elem: <Outro />,
       },
     ],
@@ -64,60 +65,61 @@ export const chaptersData = [
     data: [
       {
         //intro
-        idApi: 0,
+        uuid: "chapter2-subChapter0",
         elem: <Intro />,
       },
       {
-        idApi: 1,
+        uuid: "chapter2-subChapter1",
         elem: <Chapter2Part1 />,
       },
       {
-        idApi: 1,
+        uuid: "chapter2-subChapter2",
         elem: <Chapter2Part2 />,
       },
       {
-        idApi: 1,
+        uuid: "chapter2-subChapter3",
         elem: <Chapter2Part3 />,
       },
       {
-        idApi: 1,
+        uuid: "chapter2-subChapter4",
         elem: <Chapter2Part4 />,
       },
       {
         //outro
-        idApi: 0,
+        uuid: "chapter2-subChapter5",
         elem: <Outro />,
       },
     ],
   },
   {
     id: 2,
-    apiUrl: "http://folle-histoire-progres.herokuapp.com/api/chapters/2",
+    apiUrl: "http://folle-histoire-progres.herokuapp.com/api/chapters/3",
     data: [
       {
         //intro
-        idApi: 0,
+        uuid: "chapter3-subChapter0",
+
         elem: <Intro />,
       },
       {
-        idApi: 1,
+        uuid: "chapter3-subChapter1",
         elem: <Chapter3Part1 />,
       },
       {
-        idApi: 1,
+        uuid: "chapter3-subChapter2",
         elem: <Chapter3Part2 />,
       },
       {
-        idApi: 2,
+        uuid: "chapter3-subChapter3",
         elem: <Chapter3Part3 />,
       },
       {
-        idApi: 3,
+        uuid: "chapter3-subChapter4",
         elem: <Chapter3Part4 />,
       },
       {
         //outro
-        idApi: 0,
+        uuid: "chapter3-subChapter5",
         elem: <Outro />,
       },
     ],

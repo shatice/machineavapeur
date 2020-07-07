@@ -1,13 +1,18 @@
-@keyframes flipping {
-  0% {
-    transform: translateY(0) translateX(0);
-    width: 5%; 
+@keyframes enterIn {
+  from {
+    transform: translateY(-100%);
+  } to {
+    transform: translateY(0);
   }
-  50% {
-    transform: translateY(-500px) translateX(10px) scale(2);
-  }
-  100% {
-    transform: translateY(30px) translateX(30px) scale(2);
-    width: 10%;
-  }
+}
+
+.hasNet::before {
+  position: absolute; 
+  content: ""; 
+  display: block; 
+  width: 1px; 
+  height: 200%; 
+  background-color: #766D6D;  
+  top: -200%;
+  left: 50%; 
 }

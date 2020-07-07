@@ -42,7 +42,7 @@ const AnimationContainer = styled.div`
   }
 `;
 
-const Flowers = () => {
+const Flowers = ({ partData }) => {
   const [hovered, setHovered] = useState(0);
   const isHovered = function (bool) {
     setHovered(bool);
@@ -50,15 +50,18 @@ const Flowers = () => {
 
   return (
     <FlowersContainer>
-      <Infos
-        setIsAnimated={isHovered}
-        title="Accords de 2016"
-        content="Lorem ipsum dolor"
-        top="48"
-        left="20"
-        rightCard="-300"
-        bottomCard="500"
-      />
+      {partData && (
+        <Infos
+          setIsAnimated={isHovered}
+          title={partData[3]?.cards[0].title}
+          content={partData[3]?.cards[0].content}
+          top="48"
+          left="20"
+          rightCard="-300"
+          bottomCard="500"
+        />
+      )}
+
       <AnimationContainer className={hovered ? "animate" : "mainPlane"}>
         <img
           className="greenFlower inverted"

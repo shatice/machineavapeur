@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 const TargetUI = ({ title, isActive, onMouseEnter, onMouseLeave }) => {
   return (
@@ -14,6 +14,14 @@ const TargetUI = ({ title, isActive, onMouseEnter, onMouseLeave }) => {
   );
 };
 
+const lighting = keyframes `
+  from {
+    background-color: rgba(0,0,0,0.4); 
+  } to {
+    background-color: rgba(0, 0, 0, 0.267);
+  }
+`
+
 const Container = styled.div`
   width: fit-content; 
   display: flex;
@@ -27,26 +35,28 @@ const OuterTarget = styled.div`
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: ${({ isActive }) => (isActive ? "rgba(0,0,0,0.4)" : "transparent")};
+  background-color: ${({ isActive }) => (isActive ? "rgba(0,0,0,0.4)" : "rgba(0,0,0,0.4)")};
   transition: background-color 0.2s ease-out;
+  animation: ${lighting} .5s alternate infinite ease-out;
+  filter: blur(.5px); 
 `;
 
 const InnerTarget = styled.div`
-  width: 13px;
-  height: 13px;
-  margin-top: calc(20px - ( 13px / 2 ) );
-  margin-left: calc(20px - ( 13px / 2 ) );
-  background-color: ${({ isActive }) => (isActive ? "transparent" : "#C09C1C")};
+  width: 14px;
+  height: 14px;
+  margin-top: calc(20px - ( 14px / 2 ) );
+  margin-left: calc(20px - ( 14px / 2 ) );
+  background-color: ${({ isActive }) => (isActive ? "transparent" : "white")};
   box-shadow: ${({ isActive }) => (isActive ? "none" : "1px 2px 5px black")};
   transform: ${({ isActive }) => (isActive ? "scale(2)" : "scale(1)")}; 
   border-radius: 50%;
   transition: all 0.2s ease-out;
 `;
 
-const Text = styled.h3`
+const Text = styled.h4`
   max-width: 113px; 
   margin-top: 1rem; 
-  font-size: .875rem; 
+  font-size: .75rem; 
   text-transform: uppercase; 
   text-align: center;
   color: ${({ isActive }) => (isActive ? "transparent" : "white")};

@@ -13,7 +13,7 @@ import {
 
 const GlobalState = ({ children, history, path }) => {
   const subChapter = 0;
-  const chapter = 0;
+  const chapter = 1;
   const chapters = [];
   const data = {};
 
