@@ -48,7 +48,6 @@ const Chapter = () => {
     setPart(Number(chapterId), Number(partId));
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    console.log(chapter);
   }, [location, chapterId, partId]);
 
   useEffect(() => {
@@ -63,22 +62,17 @@ const Chapter = () => {
     const handleScroll = (e) => {
       let wheelData = e.wheelDelta;
       if (wheelData < 0) {
-        if (wheelData % 40 === 0) {
+        if ((wheelData + 400) % 100 === 0) {
+          console.log("increment");
           incrementPart();
-          wheelData = null;
-          setTimeout(() => {
-            console.log("increment");
-          }, 200);
         }
       } else {
-        if (wheelData % 40 === 0) {
+        if ((wheelData + 400) % 100 === 0) {
+          console.log("decrement");
           decrementPart();
-          wheelData = null;
-          setTimeout(() => {
-            console.log("decrement");
-          }, 200);
         }
       }
+      wheelData = 0;
     };
     window.addEventListener("wheel", handleScroll);
     return () => {
