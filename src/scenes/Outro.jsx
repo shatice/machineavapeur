@@ -8,7 +8,7 @@ const Outro = () => {
   return (
     <Container>
       <p>{data.outro}</p>
-      <a>Continuer</a>
+      {/* <a>Continuer</a> */}
     </Container>
   );
 };
