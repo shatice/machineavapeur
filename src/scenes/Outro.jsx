@@ -9,7 +9,6 @@ const Outro = () => {
   return (
     <Container>
       <h1>Outro</h1>
-      <br />
       <p>{outro}</p>
       {chapter !== 2 && <div onClick={incrementPart}>Continuer</div>}
     </Container>

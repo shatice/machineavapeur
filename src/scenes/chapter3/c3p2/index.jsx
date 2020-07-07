@@ -21,10 +21,21 @@ const Chapter3Part2 = () => {
 
 	useEffect(() => {
 
+<<<<<<< HEAD
+        currentRef["container"].onmousemove = function (e) {
+            let marie = currentRef["marie"].getBoundingClientRect();
+            document.body.style.setProperty('--x', (e.clientX) + 'px');
+            document.body.style.setProperty('--y', (e.clientY) + 'px');
+            (e.clientX >= marie.left && e.clientX < marie.right -20) ? setMarieIsHover(true) : setMarieIsHover(false);
+        }
+        /* eslint-disable */
+    }, [])
+=======
 		var tl = gsap.timeline({ paused: true });
 		tl.to(".cloud", { y: "-50", scale: 1, duration: 0.5 });
 		tl.to(".cloud2", { y: "-50", scale: 1, duration: 1 }, 0.25)
 		setExpAnim(tl);
+>>>>>>> 0c14dae4b0b253432b8f71febd411b7a7fb3a300
 
 		currentRef["container"].onmousemove = function (e) {
 			let marie = currentRef["marie"].getBoundingClientRect();

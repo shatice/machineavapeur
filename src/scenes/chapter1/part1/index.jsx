@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import "./style.scss";
 import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
@@ -6,7 +6,6 @@ import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 //components
 import Paper from "../../../components/Paper";
 import James from "../../../components/James";
-import context from "../../../store/context";
 
 import Chapter1Page2 from "../part2";
 

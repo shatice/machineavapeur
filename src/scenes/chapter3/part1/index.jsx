@@ -45,6 +45,7 @@ const Chapter3Part2 = ({ data: { parts } = {} }) => {
         ? setMarieIsHover(true)
         : setMarieIsHover(false);
     };
+    /* eslint-disable */
   }, []);
 
   const ExpHover = () => {

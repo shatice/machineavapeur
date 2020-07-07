@@ -39,15 +39,13 @@ const Chapter = () => {
   } = useContext(context);
 
   const { chapterId, partId } = useParams();
-  const [uuid, setUuid] = useState("");
+  // const [uuid, setUuid] = useState("");
   const [elem, setElem] = useState("");
   const location = useLocation();
 
   useEffect(() => {
     setPart(Number(chapterId), Number(partId));
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    console.log(chapter);
+    /* eslint-disable */
   }, [location, chapterId, partId]);
 
   useEffect(() => {
