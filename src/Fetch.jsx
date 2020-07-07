@@ -8,7 +8,7 @@ const Fetch = () => {
   const { setData, chapter, state, setChapters } = useContext(context);
 
   const [{ data: res }, executeFetchData] = useAxios({
-    url: url + `/${chapter + 1}`,
+    url: url + `/${chapter}`,
     method: "GET",
     headers: {
       Accept: "application/json",

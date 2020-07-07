@@ -64,8 +64,8 @@ const decrementPart = (state) => {
       history,
     };
     changeUrl(datas);
-  } else if (chapter === 0 && subChapter === 0) {
-    chapter = 0;
+  } else if (chapter <= 1 && subChapter === 0) {
+    chapter = 1;
     subChapter = 0;
     let datas = {
       chapter,
