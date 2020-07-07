@@ -27,6 +27,19 @@ const NavTemp = styled.section`
   padding: 3px;
   background-color: white;
 `;
+const ChapterElem = styled.section`
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 22px;
+  color: black;
+  z-index: 30;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: white;
+`;
 
 const Chapter = () => {
   const {
@@ -55,8 +68,11 @@ const Chapter = () => {
         ?.elem
     );
   }, [subChapter, chapter, data]);
+
   return (
     <Layout>
+      {data && <ChapterElem>{data?.title}</ChapterElem>}
+
       <NavTemp>
         <button
           style={{ zIndex: 1000 }}
@@ -87,6 +103,15 @@ const Chapter = () => {
         React.cloneElement(elem, {
           data: data,
         })}
+      <div style={{ zIndex: -1 }}>
+        {chaptersData[chapter]?.data[subChapter + 1]?.elem &&
+          React.cloneElement(
+            chaptersData[chapter]?.data[subChapter + 1]?.elem,
+            {
+              data: data,
+            }
+          )}
+      </div>
 
       <Footer />
       <Fetch url={chaptersData[chapter].apiUrl} />

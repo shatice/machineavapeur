@@ -78,7 +78,6 @@ const Chapter3Part4 = ({ data: { parts } = {} }) => {
     }
     setTvIsHover(!tvIsHover);
   };
-
   return (
     <>
       <div className="chapter-container">
@@ -95,8 +94,8 @@ const Chapter3Part4 = ({ data: { parts } = {} }) => {
           <>
             <Infos
               setIsAnimated={BgHover}
-              title={parts[3]?.cards[0].title}
-              content={parts[2]?.cards[0].content}
+              title={parts[3]?.cards[2].title}
+              content={parts[2]?.cards[2].content}
               bottom="60"
               left="20"
               rightCard="-400"
@@ -104,8 +103,8 @@ const Chapter3Part4 = ({ data: { parts } = {} }) => {
             />
             <Infos
               setIsAnimated={TvHover}
-              title={parts[3]?.cards[2].title}
-              content={parts[3]?.cards[2].content}
+              title={parts[3]?.cards[0].title}
+              content={parts[3]?.cards[0].content}
               bottom="53"
               left="61"
               rightCard="700"
