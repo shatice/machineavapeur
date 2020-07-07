@@ -41,6 +41,7 @@ const Chapter = () => {
   const { chapterId, partId } = useParams();
   const [uuid, setUuid] = useState("");
   const [elem, setElem] = useState("");
+  const [isScrollable, setIsScrollable] = useState(true);
   const location = useLocation();
 
   useEffect(() => {
@@ -57,6 +58,33 @@ const Chapter = () => {
         ?.elem
     );
   }, [subChapter, chapter, data]);
+
+  useEffect(() => {
+    const handleScroll = (e) => {
+      let wheelData = e.wheelDelta;
+      if (wheelData < 0) {
+        if (wheelData % 40 === 0) {
+          incrementPart();
+          wheelData = null;
+          setTimeout(() => {
+            console.log("increment");
+          }, 200);
+        }
+      } else {
+        if (wheelData % 40 === 0) {
+          decrementPart();
+          wheelData = null;
+          setTimeout(() => {
+            console.log("decrement");
+          }, 200);
+        }
+      }
+    };
+    window.addEventListener("wheel", handleScroll);
+    return () => {
+      window.removeEventListener("wheel", handleScroll);
+    };
+  });
   return (
     <Layout>
       <NavTemp>
