@@ -4,14 +4,11 @@ body {
 	overflow: hidden;
 }
 
-
-.chapter-container.c3p2{
-	img {
-			position: absolute;
-	}
-}
-.experience__container {
+.experience__container, .cloud, .cloud2, .experience, .marie {
 	position: absolute;
+}
+
+.experience__container {
 	right:0;
 	top: 100px;
 }
