@@ -8,33 +8,6 @@ import Clouds from "./Clouds";
 import bg from '../../../assets/img/chap_2/part_3/background.jpg'; 
 import airport from '../../../assets/img/chap_2/part_3/airport.png'; 
 
-
-const Bg = styled.section`
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-
-  .airport {
-    z-index: 1;
-    transform: translateY(-10vh);
-    margin-top: -220px;
-    filter: grayscale(1);
-  }
-
-  .background {
-    position: absolute;
-    top: 4vh;
-    left: 10vw;
-    z-index: -1;
-    filter: grayscale(1);
-    transition: all 0.5s ease-in-out;
-  }
-
-  .animate {
-    filter: grayscale(0);
-  }
-`;
-
 const Chapter2Part3 = ({ data: { parts } = {} }) => {
   console.log(parts);
 
@@ -61,5 +34,31 @@ const Chapter2Part3 = ({ data: { parts } = {} }) => {
     </Bg>
   );
 };
+
+const Bg = styled.section`
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+
+  .airport {
+    z-index: 1;
+    transform: translateY(-10vh);
+    margin-top: -220px;
+    filter: grayscale(1);
+  }
+
+  .background {
+    position: absolute;
+    top: 4vh;
+    left: 10vw;
+    z-index: -1;
+    filter: grayscale(1);
+    transition: all 0.5s ease-in-out;
+  }
+
+  .animate {
+    filter: grayscale(0);
+  }
+`;
 
 export default Chapter2Part3;

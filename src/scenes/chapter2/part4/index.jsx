@@ -6,15 +6,6 @@ import Flower from "./Flower";
 /***** ASSETS *****/
 import bg from '../../../assets/img/chap_2/part_4/background.jpg';
 
-const Bg = styled.section`
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  background-image: url("${bg}");
-  background-size: cover;
-  overflow: hidden;
-`;
-
 const Chapter2Part4 = ({ data: { parts } = {} }) => {
   return (
     <Bg>
@@ -23,5 +14,14 @@ const Chapter2Part4 = ({ data: { parts } = {} }) => {
     </Bg>
   );
 };
+
+const Bg = styled.section`
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("${bg}");
+  background-size: cover;
+  overflow: hidden;
+`;
 
 export default Chapter2Part4;

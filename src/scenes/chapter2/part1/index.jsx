@@ -7,13 +7,6 @@ import WrightBrothers from "./WrightBorthers";
 /***** ASSETS *****/
 import bg from '../../../assets/img/chap_2/part_1/background.jpg';
 
-const Bg = styled.section`
-  width: 100vw;
-  height: 100vh;
-  background-image: url('${bg}');
-  background-size: cover;
-`;
-
 const Chapter2Part1 = ({ data: { parts } = {} }) => {
   return (
     <Bg>
@@ -23,5 +16,12 @@ const Chapter2Part1 = ({ data: { parts } = {} }) => {
     </Bg>
   );
 };
+
+const Bg = styled.section`
+  width: 100%;
+  height: 100%;
+  background-image: url('${bg}');
+  background-size: cover;
+`;
 
 export default Chapter2Part1;

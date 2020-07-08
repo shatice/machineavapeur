@@ -15,38 +15,6 @@ for (let i = 0; i < getRandomNumber(6, 12); i++) {
   planesData.push({ x: X, y: Y, width: width, delay: delay });
 }
 
-const PlanesContainer = styled.div`
-  position: absolute;
-  height: 100vh;
-  width: 100vw;
-  top: 0vh;
-  left: 0vw;
-  z-index: 1;
-
-  .mainPlane {
-    transition: transform 2s ease-in-out, filter 0.5s ease-in-out;
-    width: 500px;
-    margin-top: 30vh;
-    filter: grayscale(1);
-  }
-
-  .animate {
-    transform: translateX(100vw) translateY(-100vh);
-    filter: grayscale(0);
-  }
-`;
-
-const Plane = styled.div`
-  position: absolute;
-  background-image: url("${supersonicPlane}");
-  left: ${({ data }) => data.x - 100}vw;
-  top: ${({ data }) => data.y + 100}vh;
-  transition: all 2s ease-in-out ${({ data }) => data.delay / 100}s;
-  img {
-    width: ${({ data }) => data.width}px;
-  }
-`;
-
 function getRandomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
@@ -94,5 +62,37 @@ const Planes = ({ partData }) => {
     </PlanesContainer>
   );
 };
+
+const PlanesContainer = styled.div`
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  top: 0vh;
+  left: 0vw;
+  z-index: 1;
+
+  .mainPlane {
+    transition: transform 2s ease-in-out, filter 0.5s ease-in-out;
+    width: 500px;
+    margin-top: 30vh;
+    filter: grayscale(1);
+  }
+
+  .animate {
+    transform: translateX(100vw) translateY(-100vh);
+    filter: grayscale(0);
+  }
+`;
+
+const Plane = styled.div`
+  position: absolute;
+  background-image: url("${supersonicPlane}");
+  left: ${({ data }) => data.x - 100}vw;
+  top: ${({ data }) => data.y + 100}vh;
+  transition: all 2s ease-in-out ${({ data }) => data.delay / 100}s;
+  img {
+    width: ${({ data }) => data.width}px;
+  }
+`;
 
 export default Planes;

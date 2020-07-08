@@ -5,28 +5,6 @@ import Infos from "../../../components/molecules/Infos";
 /***** ASSETS *****/
 import wave from '../../../assets/img/chap_2/part_3/wave.png'; 
 
-const OceanContainer = styled.div``;
-
-const AnimationContainer = styled.div`
-  position: absolute;
-  top: 15vh;
-  left: -45vw;
-
-  img {
-    position: absolute;
-    transform: scale(0);
-    transition: all 1.5s ease-out;
-  }
-
-  img:first-child {
-    margin-left: 25vw;
-  }
-
-  .animate {
-    transform: scale(0.9) translateX(40vw);
-  }
-`;
-
 const Ocean = ({ isActive, partData }) => {
   const [hovered, setHovered] = useState(0);
   const isHovered = function (bool) {
@@ -63,5 +41,27 @@ const Ocean = ({ isActive, partData }) => {
     </OceanContainer>
   );
 };
+
+const OceanContainer = styled.div``;
+
+const AnimationContainer = styled.div`
+  position: absolute;
+  top: 15vh;
+  left: -45vw;
+
+  img {
+    position: absolute;
+    transform: scale(0);
+    transition: all 1.5s ease-out;
+  }
+
+  img:first-child {
+    margin-left: 25vw;
+  }
+
+  .animate {
+    transform: scale(0.9) translateX(40vw);
+  }
+`;
 
 export default Ocean;
