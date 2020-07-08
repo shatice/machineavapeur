@@ -4,6 +4,11 @@ import Ocean from "./Ocean";
 import Man from "./Man";
 import Clouds from "./Clouds";
 
+/***** ASSETS *****/
+import bg from '../../../assets/img/chap_2/part_3/background.jpg'; 
+import airport from '../../../assets/img/chap_2/part_3/airport.png'; 
+
+
 const Bg = styled.section`
   width: 100vw;
   height: 100vh;
@@ -44,13 +49,13 @@ const Chapter2Part3 = ({ data: { parts } = {} }) => {
       <Clouds partData={parts} isActive={isHovered} />
       <img
         className="airport"
-        src="../assets/img/chap_2/part_3/airport.png"
-        alt=""
+        src={airport}
+        alt="Aéroport"
       />
       <img
         className={hovered ? "animate background" : "background"}
-        src="../assets/img/chap_2/part_3/background.jpg"
-        alt=""
+        src={bg}
+        alt="Collines"
       />
       <Man partData={parts} />
     </Bg>

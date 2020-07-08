@@ -2,7 +2,11 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Infos from "../../../components/molecules/Infos";
 
+/***** ASSETS *****/
+import supersonicPlane from '../../../assets/img/chap_2/part_4/supersonic_plane.png'; 
+
 let planesData = [];
+
 for (let i = 0; i < getRandomNumber(6, 12); i++) {
   let X = getRandomNumber(0, 100);
   let Y = getRandomNumber(0, 100);
@@ -34,7 +38,7 @@ const PlanesContainer = styled.div`
 
 const Plane = styled.div`
   position: absolute;
-  background-image: url("../assets/img/chap_2/part_4/supersonic_plane.png");
+  background-image: url("${supersonicPlane}");
   left: ${({ data }) => data.x - 100}vw;
   top: ${({ data }) => data.y + 100}vh;
   transition: all 2s ease-in-out ${({ data }) => data.delay / 100}s;
@@ -58,7 +62,7 @@ const Planes = ({ partData }) => {
     for (let i = 0; i < planesData.length; i++) {
       planes.push(
         <Plane data={planesData[i]} className={hovered ? "animate" : null}>
-          <img src="../assets/img/chap_2/part_4/supersonic_plane.png" alt="" />
+          <img src={supersonicPlane} alt="Avion Supersonique" />
         </Plane>
       );
     }
@@ -81,8 +85,8 @@ const Planes = ({ partData }) => {
 
       <img
         className={hovered ? "mainPlane animate" : "mainPlane"}
-        src="../assets/img/chap_2/part_4/supersonic_plane.png"
-        alt=""
+        src={supersonicPlane}
+        alt="Avion Supersonique"
       />
       {renderPlanes().map((c) => {
         return c;

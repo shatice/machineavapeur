@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Infos from "../../../components/molecules/Infos";
 
+/***** ASSETS *****/
+import wave from '../../../assets/img/chap_2/part_3/wave.png'; 
+
 const OceanContainer = styled.div``;
 
 const AnimationContainer = styled.div`
@@ -48,13 +51,13 @@ const Ocean = ({ isActive, partData }) => {
       <AnimationContainer>
         <img
           className={hovered ? "animate" : null}
-          src="../assets/img/chap_2/part_3/wave.png"
-          alt=""
+          src={wave}
+          alt="Vague de Kanawaga"
         />
         <img
           className={hovered ? "animate" : null}
-          src="../assets/img/chap_2/part_3/wave.png"
-          alt=""
+          src={wave}
+          alt="Vague de Kanawaga"
         />
       </AnimationContainer>
     </OceanContainer>

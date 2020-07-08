@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Infos from "../../../components/molecules/Infos";
 
+/***** ASSETS *****/
+import man from '../../../assets/img/chap_2/part_3/airport_man.png'; 
+
 const ManContainer = styled.div`
   position: absolute;
   top: 0;
@@ -62,18 +65,18 @@ const Man = ({ partData }) => {
       <AnimationContainer>
         <img
           className={hovered ? "animate" : null}
-          src="../assets/img/chap_2/part_3/airport_man.png"
-          alt=""
+          src={man}
+          alt="Homme assis"
         />
         <img
           className={hovered ? "animate" : null}
-          src="../assets/img/chap_2/part_3/airport_man.png"
-          alt=""
+          src={man}
+          alt="Homme assis"
         />
         <img
           className={hovered ? "animate" : null}
-          src="../assets/img/chap_2/part_3/airport_man.png"
-          alt=""
+          src={man}
+          alt="Homme assis"
         />
       </AnimationContainer>
     </ManContainer>

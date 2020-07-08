@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Infos from "../../../components/molecules/Infos";
 
+/***** ASSETS *****/
+import flowerGreen from '../../../assets/img/chap_2/part_4/flower_green.png';
+import flowerYellow from '../../../assets/img/chap_2/part_4/flower_yellow.png';
+
 const FlowersContainer = styled.div`
   position: absolute;
   bottom: -20px;
@@ -65,18 +69,18 @@ const Flowers = ({ partData }) => {
       <AnimationContainer className={hovered ? "animate" : "mainPlane"}>
         <img
           className="greenFlower inverted"
-          src="../assets/img/chap_2/part_4/flower_green.png"
-          alt=""
+          src={flowerGreen}
+          alt="Fleurs de Pavot"
         />
         <img
           className="yellowFlower"
-          src="../assets/img/chap_2/part_4/flower_yellow.png"
-          alt=""
+          src={flowerYellow}
+          alt="Fleur de Tournesol"
         />
         <img
           className="greenFlower"
-          src="../assets/img/chap_2/part_4/flower_green.png"
-          alt=""
+          src={flowerGreen}
+          alt="Fleurs de Pavot"
         />
       </AnimationContainer>
     </FlowersContainer>

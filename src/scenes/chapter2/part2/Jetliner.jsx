@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Infos from "../../../components/molecules/Infos";
 
+/***** ASSETS *****/
+import jetliner from '../../../assets/img/chap_2/part_2/jetliner.png';
+
 const JetlinerContainer = styled.div`
   position: absolute;
   top: 10vh;
@@ -39,8 +42,8 @@ const Jetliner = ({ partData }) => {
 
       <img
         className={hovered ? "animate" : null}
-        src="../assets/img/chap_2/part_2/jetliner.png"
-        alt=""
+        src={jetliner}
+        alt="Avion de ligne"
       />
     </JetlinerContainer>
   );

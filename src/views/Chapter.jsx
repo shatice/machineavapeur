@@ -128,7 +128,7 @@ const Chapter = () => {
           data: data,
         })}
 
-      {!isAuth && <Auth />}
+      {/* {!isAuth && <Auth />} */}
 
       <Footer />
       <Fetch url={chaptersData[chapter].apiUrl} />

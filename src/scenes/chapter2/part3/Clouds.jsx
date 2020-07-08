@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Infos from "../../../components/molecules/Infos";
 
+/***** ASSETS *****/
+import clouds from '../../../assets/img/chap_2/part_3/clouds.jpg'; 
+
 const CloudsContainer = styled.div`
   position: absolute;
   top: -10vh;
@@ -38,8 +41,8 @@ const Clouds = ({ isActive, partData }) => {
 
       <img
         className={hovered ? "animate" : null}
-        src="../assets/img/chap_2/part_3/clouds.jpg"
-        alt=""
+        src={clouds}
+        alt="Nuages"
       />
     </CloudsContainer>
   );

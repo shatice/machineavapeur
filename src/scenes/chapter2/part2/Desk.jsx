@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Infos from "../../../components/molecules/Infos";
 
+/***** ASSETS *****/
+import desk from '../../../assets/img/chap_2/part_2/desk.png';
+
 const ConcordeContainer = styled.div`
   position: absolute;
   bottom: 0;
@@ -38,8 +41,8 @@ const Concorde = ({ partData }) => {
 
       <img
         className={hovered ? "animate" : null}
-        src="../assets/img/chap_2/part_2/desk.png"
-        alt=""
+        src={desk}
+        alt="Bureau Aviateur"
       />
     </ConcordeContainer>
   );

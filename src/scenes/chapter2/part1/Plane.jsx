@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Infos from "../../../components/molecules/Infos";
 
+/***** ASSETS *****/
+import box from '../../../assets/img/chap_2/part_1/box.png';
+import plane from '../../../assets/img/chap_2/part_1/plane.png';
+
 const PlaneContainer = styled.div`
   position: absolute;
   top: 20vh;
@@ -53,13 +57,13 @@ const Plane = ({ partData }) => {
       <AnimationContainer className={hovered ? "movePlane" : null}>
         <img
           className="plane"
-          src="../assets/img/chap_2/part_1/plane.png"
-          alt="avion postal"
+          src={plane}
+          alt="Avion Postal"
         />
         <img
           className="box"
-          src="../assets/img/chap_2/part_1/box.png"
-          alt="colis"
+          src={box}
+          alt="Boîte colis"
         />
       </AnimationContainer>
     </PlaneContainer>

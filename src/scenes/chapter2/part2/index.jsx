@@ -4,10 +4,13 @@ import Concorde from "./Concorde";
 import Desk from "./Desk";
 import Jetliner from "./Jetliner";
 
+/***** ASSETS *****/
+import bg from '../../../assets/img/chap_2/part_2/background.jpg';
+
 const Bg = styled.section`
   width: 100vw;
   height: 100vh;
-  background-image: url("../assets/img/chap_2/part_2/background.jpg");
+  background-image: url("${bg}");
   background-size: cover;
 `;
 

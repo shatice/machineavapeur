@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Infos from "../../../components/molecules/Infos";
 
+/***** ASSETS *****/
+import parachute from '../../../assets/img/chap_2/part_1/parachute.png';
+
 const ParachuteContainer = styled.div`
   position: absolute;
   top: 7vh;
@@ -39,7 +42,7 @@ const Parachute = ({ partData }) => {
 
       <img
         className={hovered ? "moveParachute" : null}
-        src="../assets/img/chap_2/part_1/parachute.png"
+        src={parachute}
         alt="parachuteur"
       />
     </ParachuteContainer>
