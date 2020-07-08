@@ -21,6 +21,7 @@ const Bulb = () => {
 			{ transformOrigin: "50% 0%", rotate: -20, duration: 2, immediateRender: false })
 		setBulbAnims(tl);
 		setFramebAnim(gsap.to(currentRef["Frame"], { filter: "grayscale(0)", paused: true }))
+		/* eslint-disable */
 	}, []);
 
 	const FrameHover = () => {

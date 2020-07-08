@@ -21,6 +21,7 @@ const Bomb = () => {
 		tl.to(currentRef["Frame"], { backgroundColor: "#78F54F", duration: 0.3 });
 		tl.to(currentRef["Bomb"], { filter: "grayscale(0)", opacity: 1, duration: 0.5 })
 		setBombAnims(tl);
+		/* eslint-disable */
 	}, []);
 
 	const FrameHover = () => {

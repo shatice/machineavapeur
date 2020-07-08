@@ -55,8 +55,8 @@ const Chapter = () => {
 
   const { chapterId, partId } = useParams();
   const [elem, setElem] = useState("");
-  const [isScrollable, setIsScrollable] = useState(true);
-  const [wheelData, setWheelData] = useState(0);
+  // const [isScrollable, setIsScrollable] = useState(true);
+  // const [wheelData, setWheelData] = useState(0);
   const location = useLocation();
 
   useEffect(() => {
@@ -97,6 +97,7 @@ const Chapter = () => {
     return () => {
       window.removeEventListener("wheel", handleScroll);
     };
+    /* eslint-disable */
   }, []);
   return (
     <Layout>
@@ -128,7 +129,7 @@ const Chapter = () => {
           data: data,
         })}
 
-      {/* {!isAuth && <Auth />} */}
+      {!isAuth && <Auth />}
 
       <Footer />
       <Fetch url={chaptersData[chapter].apiUrl} />
