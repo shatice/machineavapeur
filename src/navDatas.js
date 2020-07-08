@@ -21,15 +21,15 @@ import Chapter3Part2 from "./scenes/chapter3/part2";
 import Chapter3Part3 from "./scenes/chapter3/part3";
 import Chapter3Part4 from "./scenes/chapter3/part3";
 
-export const url = "http://folle-histoire-progres.herokuapp.com/api/chapters";
+export const url = "https://folle-histoire-progres.herokuapp.com/api/chapters";
 export const urlChapters =
-  "http://folle-histoire-progres.herokuapp.com/api/chapters";
+  "https://folle-histoire-progres.herokuapp.com/api/chapters";
 
 export const chaptersData = [
   {},
   {
     id: 0,
-    apiUrl: "http://folle-histoire-progres.herokuapp.com/api/chapters/1",
+    apiUrl: "https://folle-histoire-progres.herokuapp.com/api/chapters/1",
     data: [
       {
         //intro
@@ -45,12 +45,12 @@ export const chaptersData = [
         elem: <Chapter1Part2 />,
       },
       {
-        uuid: "chapter1-subChapter3",
-        elem: <Chapter1Part3 />,
-      },
-      {
         uuid: "chapter1-subChapter4",
         elem: <Chapter1Part4 />,
+      },
+      {
+        uuid: "chapter1-subChapter3",
+        elem: <Chapter1Part3 />,
       },
       {
         //outro
@@ -61,7 +61,7 @@ export const chaptersData = [
   },
   {
     id: 1,
-    apiUrl: "http://folle-histoire-progres.herokuapp.com/api/chapters/2",
+    apiUrl: "https://folle-histoire-progres.herokuapp.com/api/chapters/2",
     data: [
       {
         //intro
@@ -93,7 +93,7 @@ export const chaptersData = [
   },
   {
     id: 2,
-    apiUrl: "http://folle-histoire-progres.herokuapp.com/api/chapters/3",
+    apiUrl: "https://folle-histoire-progres.herokuapp.com/api/chapters/3",
     data: [
       {
         //intro

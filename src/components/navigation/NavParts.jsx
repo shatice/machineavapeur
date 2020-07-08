@@ -42,9 +42,7 @@ const ProgressBarContainer = styled.div`
 `;
 
 const getProgressBarWidth = (totalElem, currentPart) => {
-  // console.log(((0.5 + currentPart) / totalElem) * 100);
-  // console.log(((0.5 + currentPart) / totalElem) * 50);
-  return ((0.5 + currentPart) / totalElem) * 100;
+  return ((1 + currentPart) / (totalElem + 2)) * 100;
 };
 
 const ProgressBar = styled.div`
@@ -144,11 +142,11 @@ const NavParts = () => {
               <>
                 {i === 1 ? (
                   <PartIcon>
-                    <Chevron isActive={i <= subChapter} />
+                    <Chevron isActive={i + 1 <= subChapter} />
                   </PartIcon>
                 ) : null}
                 <PartIcon>
-                  <Chevron isActive={i <= subChapter} />
+                  <Chevron isActive={i + 1 <= subChapter} />
                 </PartIcon>
               </>
             );

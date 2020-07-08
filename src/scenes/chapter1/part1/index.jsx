@@ -63,7 +63,6 @@ const Chapter1 = ({ data: { parts } = {} }) => {
           <Paper partData={parts} />
           <James partData={parts} />
         </div>
-        <Chapter1Page2 partData={parts} />
       </div>
     </GlobalState>
   );

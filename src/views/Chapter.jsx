@@ -42,6 +42,7 @@ const Chapter = () => {
   const [uuid, setUuid] = useState("");
   const [elem, setElem] = useState("");
   const [isScrollable, setIsScrollable] = useState(true);
+  const [wheelData, setWheelData] = useState(0);
   const location = useLocation();
 
   useEffect(() => {
@@ -58,27 +59,40 @@ const Chapter = () => {
     );
   }, [subChapter, chapter, data]);
 
-  useEffect(() => {
-    const handleScroll = (e) => {
-      let wheelData = e.wheelDelta;
-      if (wheelData < 0) {
-        if ((wheelData + 400) % 100 === 0) {
-          console.log("increment");
-          incrementPart();
-        }
-      } else {
-        if ((wheelData + 400) % 100 === 0) {
-          console.log("decrement");
-          decrementPart();
-        }
-      }
-      wheelData = 0;
-    };
-    window.addEventListener("wheel", handleScroll);
-    return () => {
-      window.removeEventListener("wheel", handleScroll);
-    };
-  });
+  // const handleScroll = (e) => {
+  //   console.log(e.wheelDelta);
+  //   if (isScrollable) {
+  //     if (e.wheelDelta > 100) {
+  //       if (e.wheelDelta % 2 === 0) {
+  //         console.log(e.wheelDelta);
+  //         decrementPart();
+  //       }
+  //     } else {
+  //       if (e.wheelDelta % 2 === 0) {
+  //         incrementPart();
+  //       }
+  //     }
+  //   }
+
+  //   setWheelData(null);
+  //   setIsScrollable(false);
+
+  //   setTimeout(() => {
+  //     setIsScrollable(true);
+  //     setWheelData(0);
+  //   }, 2000);
+
+  // };
+
+  // useEffect(() => {
+  //   if (!isScrollable && wheelData === null) {
+  //     return () => {
+  //       window.removeEventListener("wheel", handleScroll);
+  //     };
+  //   } else {
+  //     window.addEventListener("wheel", handleScroll);
+  //   }
+  // }, [isScrollable]);
   return (
     <Layout>
       <NavTemp>
@@ -92,10 +106,6 @@ const Chapter = () => {
         >
           LAST PART
         </button>
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          {/* {title && title}
-          {subTitle && subTitle} */}
-        </div>
         <button
           style={{ zIndex: 1000 }}
           onClick={() => {

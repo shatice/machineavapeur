@@ -15,7 +15,7 @@ const Chap1Part4 = ({ data: { parts } = {} }) => {
     <Container>
       <BackgroundImage partData={parts} src={bg} alt="nuages" />
       <CoalTowers partData={parts} />
-      <Ecology partData={parts} />
+    <Ecology partData={parts} />
     </Container>
   );
 };
