@@ -42,9 +42,7 @@ const ProgressBarContainer = styled.div`
 `;
 
 const getProgressBarWidth = (totalElem, currentPart) => {
-  // console.log(((0.5 + currentPart) / totalElem) * 100);
-  // console.log(((0.5 + currentPart) / totalElem) * 50);
-  return ((0.5 + currentPart) / totalElem) * 100;
+  return ((1 + currentPart) / (totalElem + 2)) * 100;
 };
 
 const ProgressBar = styled.div`
@@ -66,7 +64,7 @@ const TextContainer = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: flex-end;
-  min-height: 15px;
+  min-height: 30px;
   margin-top: 10px;
 `;
 
@@ -77,15 +75,6 @@ const PartIcon = styled.div`
     opacity: 0;
   }
 `;
-
-// const StyledLink = styled(Link)`
-//   text-align: center;
-//   flex-grow: 1;
-//   flex-shrink: 1;
-//   flex-basis: 20px;
-//   padding-left: 15px;
-//   padding-right: 15px;
-// `;
 
 const getChevron = (isActive) => {
   if (isActive) {
@@ -144,11 +133,11 @@ const NavParts = () => {
               <>
                 {i === 1 ? (
                   <PartIcon>
-                    <Chevron isActive={i <= subChapter} />
+                    <Chevron isActive={i + 1 <= subChapter} />
                   </PartIcon>
                 ) : null}
                 <PartIcon>
-                  <Chevron isActive={i <= subChapter} />
+                  <Chevron isActive={i + 1 <= subChapter} />
                 </PartIcon>
               </>
             );

@@ -27,7 +27,7 @@ const NavTemp = styled.section`
   padding: 3px;
   background-color: white;
 `;
-const ChapterElem = styled.section`
+const NavChapter = styled.section`
   position: absolute;
   left: 0;
   top: 0;
@@ -54,11 +54,14 @@ const Chapter = () => {
   const { chapterId, partId } = useParams();
   // const [uuid, setUuid] = useState("");
   const [elem, setElem] = useState("");
+  const [isScrollable, setIsScrollable] = useState(true);
+  const [wheelData, setWheelData] = useState(0);
   const location = useLocation();
 
   useEffect(() => {
     setPart(Number(chapterId), Number(partId));
-    /* eslint-disable */
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location, chapterId, partId]);
 
   useEffect(() => {
@@ -69,10 +72,43 @@ const Chapter = () => {
     );
   }, [subChapter, chapter, data]);
 
+  // const handleScroll = (e) => {
+  //   console.log(e.wheelDelta);
+  //   if (isScrollable) {
+  //     if (e.wheelDelta > 100) {
+  //       if (e.wheelDelta % 2 === 0) {
+  //         console.log(e.wheelDelta);
+  //         decrementPart();
+  //       }
+  //     } else {
+  //       if (e.wheelDelta % 2 === 0) {
+  //         incrementPart();
+  //       }
+  //     }
+  //   }
+
+  //   setWheelData(null);
+  //   setIsScrollable(false);
+
+  //   setTimeout(() => {
+  //     setIsScrollable(true);
+  //     setWheelData(0);
+  //   }, 2000);
+
+  // };
+
+  // useEffect(() => {
+  //   if (!isScrollable && wheelData === null) {
+  //     return () => {
+  //       window.removeEventListener("wheel", handleScroll);
+  //     };
+  //   } else {
+  //     window.addEventListener("wheel", handleScroll);
+  //   }
+  // }, [isScrollable]);
   return (
     <Layout>
-      {data && <ChapterElem>{data?.title}</ChapterElem>}
-
+      <NavChapter>{data?.title}</NavChapter>
       <NavTemp>
         <button
           style={{ zIndex: 1000 }}
@@ -84,10 +120,6 @@ const Chapter = () => {
         >
           LAST PART
         </button>
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          {/* {title && title}
-          {subTitle && subTitle} */}
-        </div>
         <button
           style={{ zIndex: 1000 }}
           onClick={() => {
