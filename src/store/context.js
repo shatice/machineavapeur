@@ -6,10 +6,12 @@ export default React.createContext({
   data: {},
   test: {},
   chapters: [],
+  isAuth: false,
 
   incrementPart: () => {},
   decrementPart: () => {},
   setPart: () => {},
   setData: () => {},
   setChapters: () => {},
+  setAuth: () => {},
 });

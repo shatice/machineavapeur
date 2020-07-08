@@ -5,6 +5,7 @@ import { useParams, useLocation } from "react-router-dom";
 import context from "../store/context";
 import Fetch from "../Fetch";
 import Footer from "../components/molecules/Footer";
+import Auth from "./Auth";
 
 const Layout = styled.section`
   position: absolute;
@@ -49,6 +50,7 @@ const Chapter = () => {
     subChapter,
     setPart,
     data,
+    isAuth,
   } = useContext(context);
 
   const { chapterId, partId } = useParams();
@@ -144,6 +146,7 @@ const Chapter = () => {
             }
           )}
       </div> */}
+      {!isAuth && <Auth />}
 
       <Footer />
       <Fetch url={chaptersData[chapter].apiUrl} />
