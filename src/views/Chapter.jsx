@@ -97,6 +97,7 @@ const Chapter = () => {
     return () => {
       window.removeEventListener("wheel", handleScroll);
     };
+    /* eslint-disable */
   }, []);
   return (
     <Layout>
