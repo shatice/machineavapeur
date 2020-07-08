@@ -54,7 +54,6 @@ const Chapter = () => {
   } = useContext(context);
 
   const { chapterId, partId } = useParams();
-  // const [uuid, setUuid] = useState("");
   const [elem, setElem] = useState("");
   const [isScrollable, setIsScrollable] = useState(true);
   const [wheelData, setWheelData] = useState(0);
@@ -128,16 +127,8 @@ const Chapter = () => {
         React.cloneElement(elem, {
           data: data,
         })}
-      {/* <div style={{ zIndex: -1 }}>
-        {chaptersData[chapter]?.data[subChapter + 1]?.elem &&
-          React.cloneElement(
-            chaptersData[chapter]?.data[subChapter + 1]?.elem,
-            {
-              data: data,
-            }
-          )}
-      </div> */}
-      {/* {!isAuth && <Auth />} */}
+
+      {!isAuth && <Auth />}
 
       <Footer />
       <Fetch url={chaptersData[chapter].apiUrl} />
