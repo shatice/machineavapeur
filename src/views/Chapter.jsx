@@ -74,40 +74,31 @@ const Chapter = () => {
     );
   }, [subChapter, chapter, data]);
 
-  // const handleScroll = (e) => {
-  //   console.log(e.wheelDelta);
-  //   if (isScrollable) {
-  //     if (e.wheelDelta > 100) {
-  //       if (e.wheelDelta % 2 === 0) {
-  //         console.log(e.wheelDelta);
-  //         decrementPart();
-  //       }
-  //     } else {
-  //       if (e.wheelDelta % 2 === 0) {
-  //         incrementPart();
-  //       }
-  //     }
-  //   }
+  let counter = 0;
+  const handleScroll = (e) => {
+    const delta = Math.sign(e.deltaY);
 
-  //   setWheelData(null);
-  //   setIsScrollable(false);
+    if (delta === 1) {
+      counter++;
+    } else {
+      counter--;
+    }
 
-  //   setTimeout(() => {
-  //     setIsScrollable(true);
-  //     setWheelData(0);
-  //   }, 2000);
+    if (counter > 50) {
+      incrementPart();
+      counter = 0;
+    } else if (counter < -50) {
+      decrementPart();
+      counter = 0;
+    }
+  };
 
-  // };
-
-  // useEffect(() => {
-  //   if (!isScrollable && wheelData === null) {
-  //     return () => {
-  //       window.removeEventListener("wheel", handleScroll);
-  //     };
-  //   } else {
-  //     window.addEventListener("wheel", handleScroll);
-  //   }
-  // }, [isScrollable]);
+  useEffect(() => {
+    window.addEventListener("wheel", handleScroll);
+    return () => {
+      window.removeEventListener("wheel", handleScroll);
+    };
+  }, []);
   return (
     <Layout>
       <NavChapter>{data?.title}</NavChapter>
@@ -146,7 +137,7 @@ const Chapter = () => {
             }
           )}
       </div> */}
-      {!isAuth && <Auth />}
+      {/* {!isAuth && <Auth />} */}
 
       <Footer />
       <Fetch url={chaptersData[chapter].apiUrl} />
