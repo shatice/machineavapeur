@@ -54,8 +54,8 @@ const Chapter = () => {
   const { chapterId, partId } = useParams();
   // const [uuid, setUuid] = useState("");
   const [elem, setElem] = useState("");
-  const [isScrollable, setIsScrollable] = useState(true);
-  const [wheelData, setWheelData] = useState(0);
+  // const [isScrollable, setIsScrollable] = useState(true);
+  // const [wheelData, setWheelData] = useState(0);
   const location = useLocation();
 
   useEffect(() => {

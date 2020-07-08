@@ -7,8 +7,6 @@ import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import Paper from "../../../components/Paper";
 import James from "../../../components/James";
 
-import Chapter1Page2 from "../part2";
-
 //assets
 import portrait from "../../../assets/portrait.png";
 import bg from "../../../assets/bgChapter1.jpg";
