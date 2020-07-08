@@ -22,7 +22,6 @@ const Container = styled.article`
   right: ${({ rightCard }) => rightCard}%;
   left: ${({ leftCard }) => leftCard}%;
   width: 35vw; 
-  /* margin-left: 2rem;  */
   padding: 2rem; 
   background: linear-gradient(3deg, rgba(31,31,33,0.3071603641456583) 0%, rgba(31,31,33,0.7161239495798319) 34%, rgba(31,31,33,1) 100%);
   box-shadow: 1px 2px 10px black;
