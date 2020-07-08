@@ -12,7 +12,6 @@ const Fetch = () => {
     method: "GET",
     headers: {
       Accept: "application/json",
-      "Access-Control-Allow-Origin": "*",
     },
     manual: true,
   });
@@ -21,7 +20,6 @@ const Fetch = () => {
     method: "GET",
     headers: {
       Accept: "application/json",
-      "Access-Control-Allow-Origin": "*",
     },
     manual: true,
   });
