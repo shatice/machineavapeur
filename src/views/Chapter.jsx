@@ -135,7 +135,7 @@ const Chapter = () => {
         React.cloneElement(elem, {
           data: data,
         })}
-      <div style={{ zIndex: -1 }}>
+      {/* <div style={{ zIndex: -1 }}>
         {chaptersData[chapter]?.data[subChapter + 1]?.elem &&
           React.cloneElement(
             chaptersData[chapter]?.data[subChapter + 1]?.elem,
@@ -143,7 +143,7 @@ const Chapter = () => {
               data: data,
             }
           )}
-      </div>
+      </div> */}
 
       <Footer />
       <Fetch url={chaptersData[chapter].apiUrl} />

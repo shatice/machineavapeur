@@ -131,20 +131,27 @@ const NavParts = () => {
           subChapters.map((s, i) => {
             return (
               <>
-                {i === 1 ? (
+                {i === 0 ? (
                   <PartIcon>
-                    <Chevron isActive={i + 1 <= subChapter} />
+                    <Chevron isActive={i >= 0} />
                   </PartIcon>
                 ) : null}
                 <PartIcon>
-                  <Chevron isActive={i + 1 <= subChapter} />
+                  <Chevron isActive={i < subChapter} />
                 </PartIcon>
+                {i === subChapters[chapterValue]?.cards.length + 1 ? (
+                  <PartIcon>
+                    <Chevron
+                    // isActive={
+                    //   subChapter ===
+                    //   subChapters[chapterValue]?.cards.length - 1
+                    // }
+                    />
+                  </PartIcon>
+                ) : null}
               </>
             );
           })}
-        <PartIcon>
-          <Chevron />
-        </PartIcon>
       </ChevronContainer>
       {!displayText && <TextContainer></TextContainer>}
       {displayText && data && (
