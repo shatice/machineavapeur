@@ -53,6 +53,6 @@ body {
 	bottom:0; 
 	background:
 	radial-gradient(farthest-side ,green 95%,transparent 100%)
-		calc(var(--x) - 3em) calc(var(--y) - 3em)/6em 6em  fixed no-repeat;
+		calc(var(--x) - 6em) calc(var(--y) - 6em)/12em 12em  fixed no-repeat;
 	mix-blend-mode:difference;
 }

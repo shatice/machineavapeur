@@ -37,6 +37,10 @@ const Chapter3Part1 = ({ data: { parts } = {} }) => {
     /* eslint-disable */
   }, []);
 
+  useEffect(()=> {
+    marieIsHover ? currentRef["container"].style.cursor = "none" : currentRef["container"].style.cursor = "inherit";
+  },[marieIsHover])
+
   const ExpHover = () => {
     if (expIsHover) {
 			expAnim.reverse()
