@@ -6,7 +6,7 @@ import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import Mineur from "../../../components/Mineur";
 import Lanterns from "../../../components/Lanterns";
 
-import mineurBG from "../../../assets/mineurs_descente.jpg";
+import mineurBG from "../../../assets/img/chap_1/part_2/mineurs_descente.jpg";
 
 gsap.registerPlugin(ScrollToPlugin);
 

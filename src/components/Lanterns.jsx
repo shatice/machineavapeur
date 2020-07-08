@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-import lantern from "../assets/lantern.png";
+import lantern from "../assets/img/chap_1/part_2/lantern.png";
 
 import Infos from "./molecules/Infos";
 const Lanterns = ({ partData }) => {

@@ -10,8 +10,8 @@ import James from "../../../components/James";
 import Chapter1Page2 from "../part2";
 
 //assets
-import portrait from "../../../assets/portrait.png";
-import bg from "../../../assets/bgChapter1.jpg";
+import portrait from "../../../assets/img/chap_1/part_1/portrait.png";
+import bg from "../../../assets/img/chap_1/part_1/bgChapter1.jpg";
 import GlobalState from "../../../store/GlobalState";
 
 //plugins

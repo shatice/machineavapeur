@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
-import emblemImg from "../assets/manhattan_project_emblem.png";
+import emblemImg from "../assets/img/chap_3/part_2/manhattan_project_emblem.png";
 import Infos from "./molecules/Infos";
 
 import gsap from "gsap";
