@@ -7,6 +7,7 @@ export const DECREMENT_PART = "DECREMENT_PART";
 export const SET_PART = "SET_PART";
 export const SET_DATA = "SET_DATA";
 export const SET_CHAPTERS = "SET_CHAPTERS";
+export const SET_AUTH = "SET_AUTH";
 
 const changeUrl = (datas) => {
   datas.history.replace({
@@ -118,6 +119,14 @@ const setChapters = (chapters, state) => {
   };
 };
 
+const setAuth = (isAuth, state) => {
+  console.log(isAuth);
+  return {
+    ...state,
+    isAuth: isAuth,
+  };
+};
+
 export const reducer = (state, action) => {
   switch (action.type) {
     case INCREMENT_PART:
@@ -130,6 +139,8 @@ export const reducer = (state, action) => {
       return setData(action.data, state);
     case SET_CHAPTERS:
       return setChapters(action.chapters, state);
+    case SET_AUTH:
+      return setAuth(action.isAuth, state);
     default:
       return state;
   }
