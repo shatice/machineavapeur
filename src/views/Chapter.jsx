@@ -5,6 +5,7 @@ import { useParams, useLocation } from "react-router-dom";
 import context from "../store/context";
 import Fetch from "../Fetch";
 import Footer from "../components/molecules/Footer";
+import Auth from "./Auth";
 
 const Layout = styled.section`
   position: absolute;
@@ -49,10 +50,10 @@ const Chapter = () => {
     subChapter,
     setPart,
     data,
+    isAuth,
   } = useContext(context);
 
   const { chapterId, partId } = useParams();
-  // const [uuid, setUuid] = useState("");
   const [elem, setElem] = useState("");
   // const [isScrollable, setIsScrollable] = useState(true);
   // const [wheelData, setWheelData] = useState(0);
@@ -72,40 +73,31 @@ const Chapter = () => {
     );
   }, [subChapter, chapter, data]);
 
-  // const handleScroll = (e) => {
-  //   console.log(e.wheelDelta);
-  //   if (isScrollable) {
-  //     if (e.wheelDelta > 100) {
-  //       if (e.wheelDelta % 2 === 0) {
-  //         console.log(e.wheelDelta);
-  //         decrementPart();
-  //       }
-  //     } else {
-  //       if (e.wheelDelta % 2 === 0) {
-  //         incrementPart();
-  //       }
-  //     }
-  //   }
+  let counter = 0;
+  const handleScroll = (e) => {
+    const delta = Math.sign(e.deltaY);
 
-  //   setWheelData(null);
-  //   setIsScrollable(false);
+    if (delta === 1) {
+      counter++;
+    } else {
+      counter--;
+    }
 
-  //   setTimeout(() => {
-  //     setIsScrollable(true);
-  //     setWheelData(0);
-  //   }, 2000);
+    if (counter > 50) {
+      incrementPart();
+      counter = 0;
+    } else if (counter < -50) {
+      decrementPart();
+      counter = 0;
+    }
+  };
 
-  // };
-
-  // useEffect(() => {
-  //   if (!isScrollable && wheelData === null) {
-  //     return () => {
-  //       window.removeEventListener("wheel", handleScroll);
-  //     };
-  //   } else {
-  //     window.addEventListener("wheel", handleScroll);
-  //   }
-  // }, [isScrollable]);
+  useEffect(() => {
+    window.addEventListener("wheel", handleScroll);
+    return () => {
+      window.removeEventListener("wheel", handleScroll);
+    };
+  }, []);
   return (
     <Layout>
       <NavChapter>{data?.title}</NavChapter>
@@ -135,15 +127,8 @@ const Chapter = () => {
         React.cloneElement(elem, {
           data: data,
         })}
-      {/* <div style={{ zIndex: -1 }}>
-        {chaptersData[chapter]?.data[subChapter + 1]?.elem &&
-          React.cloneElement(
-            chaptersData[chapter]?.data[subChapter + 1]?.elem,
-            {
-              data: data,
-            }
-          )}
-      </div> */}
+
+      {!isAuth && <Auth />}
 
       <Footer />
       <Fetch url={chaptersData[chapter].apiUrl} />

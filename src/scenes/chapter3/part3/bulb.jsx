@@ -1,8 +1,8 @@
 import React, { useRef, useState, useEffect } from "react";
 import styled from "styled-components";
 
-import bulbBg from "../../../assets/bulbBg.jpg"
-import bulb from "../../../assets/bulb.png"
+import bulbBg from "../../../assets/img/chap_3/part_3/bulbBg.jpg"
+import bulb from "../../../assets/img/chap_3/part_3/bulb.png"
 
 import gsap from "gsap";
 

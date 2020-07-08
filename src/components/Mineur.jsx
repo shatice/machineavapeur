@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-import hat from "../assets/mineur_chapeau.png";
-import minor from "../assets/mineur.png";
+import hat from "../assets/img/chap_1/part_2/mineur_chapeau.png";
+import minor from "../assets/img/chap_1/part_2/mineur.png";
 
 import Infos from "./molecules/Infos";
 

@@ -1,51 +1,31 @@
 import React, { useEffect, useRef } from "react";
 import "./style.scss";
 import { gsap } from "gsap";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
 //components
 import Paper from "../../../components/Paper";
 import James from "../../../components/James";
 
 //assets
-import portrait from "../../../assets/portrait.png";
-import bg from "../../../assets/bgChapter1.jpg";
+import portrait from "../../../assets/img/chap_1/part_1/portrait.png";
+import bg from "../../../assets/img/chap_1/part_1/bgChapter1.jpg";
 import GlobalState from "../../../store/GlobalState";
 
-//plugins
-gsap.registerPlugin(ScrollToPlugin);
-
-const Chapter1 = ({ data: { parts } = {} }) => {
+const Chapter1Part1 = ({ data: { parts } = {} }) => {
   let ref = useRef([]);
   const currentRef = ref.current;
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-    document.querySelector("body").style.overflow = "hidden";
+    var tl = gsap.timeline({ paused: true });
+    tl.to(".portrait", { filter: "grayscale(0)", rotate: 20, duration: 0.5, ease: "bounce" });
+    tl.to(".portrait", { y: "100vh" })
+
     currentRef["container"].addEventListener("wheel", (e) => {
       const delta = Math.sign(e.deltaY);
-      if (delta === 1) portraitAnim();
+      delta === 1 ? tl.play() : tl.reverse();
     });
   });
 
-  const portraitAnim = () => {
-    gsap.to(".portrait", {
-      filter: "grayscale(0)",
-      rotate: 20,
-      duration: 0.5,
-      ease: "bounce",
-    });
-    gsap.to(window, {
-      delay: 0.8,
-      duration: 1,
-      scrollTo: ".page2__container",
-      ease: "none",
-    });
-    gsap.to(".portrait", { duration: 1, delay: 1, yPercent: 130, ease: "exp" });
-    gsap.to(".portrait", { rotate: 360, opacity: 0, duration: 1, delay: 2 });
-  };
-
-  // const title = "Industrialisation";
   return (
     <GlobalState>
       <div>
@@ -65,4 +45,4 @@ const Chapter1 = ({ data: { parts } = {} }) => {
   );
 };
 
-export default Chapter1;
+export default Chapter1Part1;

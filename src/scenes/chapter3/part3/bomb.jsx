@@ -1,8 +1,8 @@
 import React, { useRef, useState, useEffect } from "react";
 import styled from "styled-components";
 
-import bomb from "../../../assets/bomb.png"
-import bomb2 from "../../../assets/bomb2.png"
+import bomb from "../../../assets/img/chap_3/part_3/bomb.png"
+import bomb2 from "../../../assets/img/chap_3/part_3/bomb2.png"
 
 import gsap from "gsap";
 

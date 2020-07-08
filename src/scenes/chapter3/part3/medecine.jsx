@@ -1,13 +1,13 @@
 import React, { useRef, useState, useEffect } from "react";
 import styled from "styled-components";
 
-import medecineBg from "../../../assets/medecineBg.jpg";
-import bottle from "../../../assets/bottle__medecine.png";
-import cross from "../../../assets/cross__medecine.png";
+import medecineBg from "../../../assets/img/chap_3/part_3/medecineBg.jpg";
+import bottle from "../../../assets/img/chap_3/part_3/bottle__medecine.png";
+import cross from "../../../assets/img/chap_3/part_3/cross__medecine.png";
 
 import gsap from "gsap";
 
-const Bulb = () => {
+const Medecine = () => {
 	const [medecineAnims, setMedecineAnims] = useState({});
 	const [medecineHover, setMedecineHover] = useState(false);
 
@@ -52,7 +52,7 @@ const Bulb = () => {
 	);
 };
 
-export default Bulb;
+export default Medecine;
 
 const Frame = styled.div`
 		position:relative;

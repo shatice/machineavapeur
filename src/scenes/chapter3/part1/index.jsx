@@ -1,18 +1,18 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./part1.scss";
 
-import cloud from "../../../assets/cloud.png";
-import cloud2 from "../../../assets/cloud2.png";
-import wallpaper from "../../../assets/wallpaper.jpg";
-import experience from "../../../assets/experience.png";
+import cloud from "../../../assets/img/chap_3/part_1/cloud.png";
+import cloud2 from "../../../assets/img/chap_3/part_1/cloud2.png";
+import wallpaper from "../../../assets/img/chap_3/part_1/wallpaper.jpg";
+import experience from "../../../assets/img/chap_3/part_1/experience.png";
 
-import marie from "../../../assets/marie.svg";
+import marie from "../../../assets/img/chap_3/part_1/marie.svg";
 
 import Infos from "../../../components/molecules/Infos";
 
 import gsap from "gsap";
 
-const Chapter3Part2 = ({ data: { parts } = {} }) => {
+const Chapter3Part1 = ({ data: { parts } = {} }) => {
   let ref = useRef([]);
   const currentRef = ref.current;
 
@@ -21,21 +21,10 @@ const Chapter3Part2 = ({ data: { parts } = {} }) => {
   const [marieIsHover, setMarieIsHover] = useState(false);
 
   useEffect(() => {
-    setExpAnim({
-      cloud: gsap.to(".cloud", {
-        y: "-50",
-        scale: 1,
-        duration: 1,
-        paused: true,
-      }),
-      cloud2: gsap.to(".cloud2", {
-        y: "-50",
-        scale: 1,
-        duration: 2,
-        delay: 0.5,
-        paused: true,
-      }),
-    });
+    var tl = gsap.timeline({ paused: true });
+		tl.to(".cloud", { y: "-50", scale: 1, duration: 0.5 });
+		tl.to(".cloud2", { y: "-50", scale: 1, duration: 1 }, 0.25)
+		setExpAnim(tl);
 
     currentRef["container"].onmousemove = function (e) {
       let marie = currentRef["marie"].getBoundingClientRect();
@@ -50,17 +39,13 @@ const Chapter3Part2 = ({ data: { parts } = {} }) => {
 
   const ExpHover = () => {
     if (expIsHover) {
-      for (const key in expAnim) {
-        expAnim[key].time(0).paused(true);
-      }
-    } else {
-      for (const key in expAnim) {
-        expAnim[key].play();
-      }
-    }
-    setExpIsHover(!expIsHover);
+			expAnim.reverse()
+		} else {
+			expAnim.play()
+		}
+		setExpIsHover(!expIsHover);
   };
-  console.log(parts);
+  
   return (
     <div
       className="chapter-container"
@@ -114,4 +99,4 @@ const Chapter3Part2 = ({ data: { parts } = {} }) => {
   );
 };
 
-export default Chapter3Part2;
+export default Chapter3Part1;
