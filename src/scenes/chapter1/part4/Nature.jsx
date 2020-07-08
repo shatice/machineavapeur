@@ -7,7 +7,7 @@ import nature from "../../../assets/img/chap_1/part_4/c1p4_nature.png";
 const Ecology = ({ partData }) => {
   return (
     <Container className="nature">
-      <img src={nature} alt="nature" />
+      <img src={nature} alt="Nature" />
     </Container>
   );
 };

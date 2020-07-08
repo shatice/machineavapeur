@@ -13,7 +13,7 @@ const Chapter1Part2 = ({ data: { parts } = {} }) => {
       <div
         className="page2__container"
       >
-        <img className="minorBg" src={mineurBG} alt="" />
+        <img className="minorBg" src={mineurBG} alt="Mineurs" />
         <Mineur partData={parts} />
         <Lanterns partData={parts} />
       </div>

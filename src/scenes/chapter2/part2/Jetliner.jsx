@@ -43,7 +43,7 @@ const Jetliner = ({ partData }) => {
       <img
         className={hovered ? "animate" : null}
         src={jetliner}
-        alt="Avion de ligne"
+        alt="Avion de Ligne"
       />
     </JetlinerContainer>
   );

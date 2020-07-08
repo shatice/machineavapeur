@@ -63,7 +63,7 @@ const Plane = ({ partData }) => {
         <img
           className="box"
           src={box}
-          alt="Boîte colis"
+          alt="Colis"
         />
       </AnimationContainer>
     </PlaneContainer>

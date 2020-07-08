@@ -76,17 +76,17 @@ const WrightBrother = ({ partData }) => {
         <img
           className="brothers"
           src={wrightBrothers}
-          alt="Les frères Wright"
+          alt="Les Frères Wright"
         />
         <img
           className="apple1 apple"
           src={apple}
-          alt="Pomme"
+          alt="Pomme Verte"
         />
         <img
           className="apple2 apple"
           src={apple}
-          alt="Pomme"
+          alt="Pomme Verte"
         />
       </AnimationContainer>
     </WrightBrothersContainer>

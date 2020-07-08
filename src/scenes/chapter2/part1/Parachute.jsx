@@ -43,7 +43,7 @@ const Parachute = ({ partData }) => {
       <img
         className={hovered ? "moveParachute" : null}
         src={parachute}
-        alt="parachuteur"
+        alt="Parachuteur"
       />
     </ParachuteContainer>
   );
