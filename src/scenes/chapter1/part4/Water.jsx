@@ -29,6 +29,10 @@ const Container = styled.div`
   grid-row: 1;
   filter: grayscale(1); 
 
+  img {
+    width: 100%; 
+  }
+
   .rocks {
     position: absolute;
     width: 80%;
