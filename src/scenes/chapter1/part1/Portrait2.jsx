@@ -1,10 +1,10 @@
 import React, { useRef, useEffect, useState } from "react";
 import styled from "styled-components";
 
-import portrait from "../assets/img/chap_1/part_1/portrait2.png"
+import portrait from "../../../assets/img/chap_1/part_1/portrait2.png"
 
 import { gsap } from "gsap";
-import Infos from "./molecules/Infos";
+import Infos from "../../../components/molecules/Infos";
 
 
 

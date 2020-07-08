@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.scss";
-import Mineur from "../../../components/Mineur";
-import Lanterns from "../../../components/Lanterns";
+import Mineur from "./Mineur";
+import Lanterns from "./Lanterns";
 
 import mineurBG from "../../../assets/img/chap_1/part_2/mineurs_descente.jpg";
 

@@ -3,9 +3,9 @@ import "./style.scss";
 import { gsap } from "gsap";
 
 //components
-import Paper from "../../../components/Paper";
-import James from "../../../components/James";
-import Portrait2 from "../../../components/Portrait2";
+import Paper from "./Paper";
+import James from "./James";
+import Portrait2 from "./Portrait2";
 
 //assets
 import portrait from "../../../assets/img/chap_1/part_1/portrait.png";
