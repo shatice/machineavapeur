@@ -64,7 +64,7 @@ const TextContainer = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: flex-end;
-  min-height: 15px;
+  min-height: 30px;
   margin-top: 10px;
 `;
 
@@ -75,15 +75,6 @@ const PartIcon = styled.div`
     opacity: 0;
   }
 `;
-
-// const StyledLink = styled(Link)`
-//   text-align: center;
-//   flex-grow: 1;
-//   flex-shrink: 1;
-//   flex-basis: 20px;
-//   padding-left: 15px;
-//   padding-right: 15px;
-// `;
 
 const getChevron = (isActive) => {
   if (isActive) {

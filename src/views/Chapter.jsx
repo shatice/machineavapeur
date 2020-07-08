@@ -27,6 +27,19 @@ const NavTemp = styled.section`
   padding: 3px;
   background-color: white;
 `;
+const NavChapter = styled.section`
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 22px;
+  color: black;
+  z-index: 30;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: white;
+`;
 
 const Chapter = () => {
   const {
@@ -95,6 +108,7 @@ const Chapter = () => {
   // }, [isScrollable]);
   return (
     <Layout>
+      <NavChapter>{data?.title}</NavChapter>
       <NavTemp>
         <button
           style={{ zIndex: 1000 }}
