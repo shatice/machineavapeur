@@ -36,19 +36,12 @@ const Container = styled.ul`
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: #282928; 
   opacity: 0.9;
   height: 100%;
   display:flex;
   flex-direction: column;
   justify-content: center;
-  /* linear-gradient(
-    3deg,
-    rgba(31, 31, 33, 0.31) 20%,
-    rgba(31, 31, 33, 0.7) 70%,
-    rgba(31, 31, 33, 1) 100% */
-
-  )
+  background: linear-gradient(3deg, rgba(23,23,24,0.9738270308123249) 0%, rgba(14,14,14,0.9962359943977591) 52%, rgba(0,0,0,1) 100%);
 `;
 
 const ClosingCross = styled.a`
@@ -78,6 +71,7 @@ const ClosingCross = styled.a`
 `;
 
 const ChapterElem = styled.li`
+  animation: fadeIn .5s ease-out forwards; 
   font-weight: bold;
   text-transform: uppercase;
   text-align: center;
