@@ -26,7 +26,7 @@ const Lanterns = ({ partData }) => {
           content={partData[1]?.cards[1]?.content}
           top="20"
           left="-50"
-          leftCard="-740"
+          leftCard="-1740"
           bottomCard="-50"
         />
       )}
