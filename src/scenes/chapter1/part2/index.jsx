@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.scss";
-import Mineur from "../../../components/Mineur";
-import Lanterns from "../../../components/Lanterns";
+import Mineur from "./Mineur";
+import Lanterns from "./Lanterns";
 
 import mineurBG from "../../../assets/img/chap_1/part_2/mineurs_descente.jpg";
 
@@ -13,7 +13,7 @@ const Chapter1Part2 = ({ data: { parts } = {} }) => {
       <div
         className="page2__container"
       >
-        <img className="minorBg" src={mineurBG} alt="" />
+        <img className="minorBg" src={mineurBG} alt="Mineurs" />
         <Mineur partData={parts} />
         <Lanterns partData={parts} />
       </div>

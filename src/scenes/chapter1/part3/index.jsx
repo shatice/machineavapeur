@@ -17,8 +17,8 @@ const Chap1Part3 = ({ data: { parts } }) => {
   return (
     <Container>
       <RichardFrame partData={parts} topBfr="-100" />
-      <LittleFrame src={frameBordeaux} alt="Frame Bordeaux Train France" rotate="-15" leftBfr="40"/>
-      <LittleFrame src={frameSncf} alt="Frame SNCF France" rotate="2" leftBfr="45" urlSound={sncfSound}/>
+      <LittleFrame src={frameBordeaux} alt="Tableau de Train à Bordeaux en France" rotate="-15" leftBfr="40"/>
+      <LittleFrame src={frameSncf} alt="Tableau du Logo de la Sncf" rotate="2" leftBfr="45" urlSound={sncfSound}/>
       <TrainFrame partData={parts} />
     </Container>
   );

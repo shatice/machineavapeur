@@ -9,7 +9,6 @@ const Home = () => {
   return (
     <Container>
       <h1>La folle histoire du progres</h1>
-      {/* <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2> */}
       <p>
         Aujourd’hui, le réchauffement climatique et la mise en danger de
         certains écosystèmes sont des réalités écologiques. Dans la mise en

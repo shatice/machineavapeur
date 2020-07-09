@@ -24,9 +24,9 @@ const Medecine = () => {
     tl.to(currentRef["Cross"], { x: -170 }, 0.5);
     tl.to(currentRef["Cross"], { y: 10 }, 1);
 
-    setMedecineAnims(tl);
-    /* eslint-disable */
-  }, []);
+		setMedecineAnims(tl)
+		/* eslint-disable */
+	}, []);
 
   const FrameHover = () => {
     if (medecineHover) {

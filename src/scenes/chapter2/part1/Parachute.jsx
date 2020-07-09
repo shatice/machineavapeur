@@ -2,20 +2,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Infos from "../../../components/molecules/Infos";
 
-const ParachuteContainer = styled.div`
-  position: absolute;
-  top: 7vh;
-  left: 50vw;
-  img {
-    filter: grayscale(1);
-    transition: filter 0.3s ease-in-out, transform 2.5s ease-in-out;
-    transform: translateX(0) translateY(0);
-  }
-  .moveParachute {
-    filter: grayscale(0);
-    transform: translateX(-3vw) translateY(25vw);
-  }
-`;
+/***** ASSETS *****/
+import parachute from '../../../assets/img/chap_2/part_1/parachute.png';
 
 const Parachute = ({ partData }) => {
   const [hovered, setHovered] = useState(0);
@@ -39,11 +27,28 @@ const Parachute = ({ partData }) => {
 
       <img
         className={hovered ? "moveParachute" : null}
-        src="../assets/img/chap_2/part_1/parachute.png"
-        alt="parachuteur"
+        src={parachute}
+        alt="Parachuteur"
       />
     </ParachuteContainer>
   );
 };
+
+const ParachuteContainer = styled.div`
+  position: absolute;
+  top: 7vh;
+  left: 50vw;
+
+  img {
+    filter: grayscale(1);
+    transition: filter 0.3s ease-in-out, transform 2.5s ease-in-out;
+    transform: translateX(0) translateY(0);
+  }
+  
+  .moveParachute {
+    filter: grayscale(0);
+    transform: translateX(-3vw) translateY(25vw);
+  }
+`;
 
 export default Parachute;

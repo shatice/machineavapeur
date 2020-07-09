@@ -4,12 +4,8 @@ import Plane from "./Plane";
 import Parachute from "./Parachute";
 import WrightBrothers from "./WrightBorthers";
 
-const Bg = styled.section`
-  width: 100vw;
-  height: 100vh;
-  background-image: url("../assets/img/chap_2/part_1/background.jpg");
-  background-size: cover;
-`;
+/***** ASSETS *****/
+import bg from '../../../assets/img/chap_2/part_1/background.jpg';
 
 const Chapter2Part1 = ({ data: { parts } = {} }) => {
   return (
@@ -20,5 +16,12 @@ const Chapter2Part1 = ({ data: { parts } = {} }) => {
     </Bg>
   );
 };
+
+const Bg = styled.section`
+  width: 100%;
+  height: 100%;
+  background-image: url('${bg}');
+  background-size: cover;
+`;
 
 export default Chapter2Part1;

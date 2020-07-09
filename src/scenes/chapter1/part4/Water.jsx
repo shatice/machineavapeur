@@ -10,8 +10,8 @@ const Ecology = ({ partData }) => {
   return (
     <Container className="water">
       <div filter="true">
-        <img className="rocks" src={rocks} alt="ocean" />
-        <img src={water} alt="ocean" />
+        <img className="rocks" src={rocks} alt="Rochers" />
+        <img src={water} alt="Océan" />
       </div>
     </Container>
   );
@@ -28,6 +28,10 @@ const Container = styled.div`
   grid-column: 1;
   grid-row: 1;
   filter: grayscale(1); 
+
+  img {
+    width: 100%; 
+  }
 
   .rocks {
     position: absolute;

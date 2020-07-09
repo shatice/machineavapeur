@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
-import armImg from "../assets/img/chap_3/part_2/manhattan_project_arm.png";
-import atomicImg from "../assets/img/chap_3/part_2/atomic.jpg";
-import Infos from "./molecules/Infos";
+import armImg from "../../../assets/img/chap_3/part_2/manhattan_project_arm.png";
+import atomicImg from "../../../assets/img/chap_3/part_2/atomic.jpg";
+import Infos from "../../../components/molecules/Infos";
 
 import gsap from "gsap";
 

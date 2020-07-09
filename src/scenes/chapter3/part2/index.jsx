@@ -3,15 +3,15 @@ import "./part2.scss";
 import bg from "../../../assets/img/chap_3/part_2/radio_bg.jpg";
 import people from "../../../assets/img/chap_3/part_2/manhattan_project_people.png";
 
-import Embleme from "../../../components/Embleme";
-import Arm from "../../../components/Arm";
+import Embleme from "./Embleme";
+import Arm from "./Arm";
 
 const Chapter3Part2 = ({ data: { parts } = {} }) => {
   return (
     <>
       <div className="chapter-container">
-        <img src={bg} alt="" className="bg" />
-        <img src={people} alt="" className="people" />
+        <img src={bg} alt="Explosion Nucléaire" className="bg" />
+        <img src={people} alt="Scientifiques du Manhattan Project" className="people" />
         <Embleme partData={parts} />
         <Arm partData={parts} />
       </div>

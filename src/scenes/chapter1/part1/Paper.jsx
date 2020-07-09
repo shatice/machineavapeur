@@ -1,10 +1,10 @@
 import React, { useRef, useEffect, useState } from "react";
 import styled from "styled-components";
 
-import paper from "../assets/img/chap_1/part_1/paper.png";
+import paper from "../../../assets/img/chap_1/part_1/paper.png";
 
 import { gsap } from "gsap";
-import Infos from "./molecules/Infos";
+import Infos from "../../../components/molecules/Infos";
 
 const Paper = ({ partData }) => {
   let ref = useRef([]);

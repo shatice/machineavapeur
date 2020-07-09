@@ -3,11 +3,11 @@ import styled from "styled-components";
 
 import gsap from "gsap";
 
-import head from "../assets/img/chap_1/part_1/jamesWatt_head_cropped.png";
-import body from "../assets/img/chap_1/part_1/jamesWatt_body_cropped.png";
-import arm from "../assets/img/chap_1/part_1/jamesWatt_arm_cropped.png";
+import head from "../../../assets/img/chap_1/part_1/jamesWatt_head_cropped.png";
+import body from "../../../assets/img/chap_1/part_1/jamesWatt_body_cropped.png";
+import arm from "../../../assets/img/chap_1/part_1/jamesWatt_arm_cropped.png";
 
-import Infos from "./molecules/Infos";
+import Infos from "../../../components/molecules/Infos";
 
 const James = ({ partData }) => {
   /* eslint-disable */

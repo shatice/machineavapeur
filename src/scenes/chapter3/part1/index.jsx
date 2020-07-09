@@ -37,6 +37,10 @@ const Chapter3Part1 = ({ data: { parts } = {} }) => {
     /* eslint-disable */
   }, []);
 
+  useEffect(()=> {
+    marieIsHover ? currentRef["container"].style.cursor = "none" : currentRef["container"].style.cursor = "inherit";
+  },[marieIsHover])
+
   const ExpHover = () => {
     if (expIsHover) {
 			expAnim.reverse()
@@ -54,12 +58,12 @@ const Chapter3Part1 = ({ data: { parts } = {} }) => {
       }}
     >
       {marieIsHover && <div className="cursor"></div>}
-      <img src={wallpaper} alt="" className="bg" />
+      <img src={wallpaper} alt="Papier Peint Fleuri" className="bg" />
       <div className="experience__container">
         <div className="relative">
-          <img src={experience} alt="" className="experience" />
-          <img src={cloud} alt="" className="cloud" />
-          <img src={cloud2} alt="" className="cloud2" />
+          <img src={experience} alt="Pierre et Marie Curie, Henri Becquerel" className="experience" />
+          <img src={cloud} alt="Nuage" className="cloud" />
+          <img src={cloud2} alt="Nuage" className="cloud2" />
         </div>
       </div>
       {parts && (

@@ -7,7 +7,7 @@ import train1 from "../../../assets/img/chap_1/part_3/c1p3_train1.png";
 const Train = ({ className }) => {
   return (
     <Container className={className}>
-      <img src={train1} alt="Old Canadian Train"/>
+      <img src={train1} alt="Vieux Train Canadien"/>
     </Container>
   );
 };

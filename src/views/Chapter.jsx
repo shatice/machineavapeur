@@ -7,41 +7,6 @@ import Fetch from "../Fetch";
 import Footer from "../components/molecules/Footer";
 import Auth from "./Auth";
 
-const Layout = styled.section`
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100vh;
-  width: 100%;
-`;
-
-const NavTemp = styled.section`
-  width: 100%;
-  position: absolute;
-  left: 0;
-  bottom: 80px;
-  font-size: 12px;
-  color: black;
-  z-index: 30;
-  display: flex;
-  justify-content: space-between;
-  padding: 3px;
-  background-color: white;
-`;
-const NavChapter = styled.section`
-  position: absolute;
-  left: 0;
-  top: 0;
-  font-size: 22px;
-  color: black;
-  z-index: 30;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  background-color: white;
-`;
-
 const Chapter = () => {
   const {
     incrementPart,
@@ -136,5 +101,40 @@ const Chapter = () => {
     </Layout>
   );
 };
+
+const Layout = styled.section`
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+`;
+
+const NavTemp = styled.section`
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 80px;
+  font-size: 12px;
+  color: black;
+  z-index: 30;
+  display: flex;
+  justify-content: space-between;
+  padding: 3px;
+  background-color: white;
+`;
+const NavChapter = styled.section`
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 22px;
+  color: black;
+  z-index: 30;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: white;
+`;
 
 export default Chapter;

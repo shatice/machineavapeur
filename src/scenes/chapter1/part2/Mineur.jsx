@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-import hat from "../assets/img/chap_1/part_2/mineur_chapeau.png";
-import minor from "../assets/img/chap_1/part_2/mineur.png";
+import hat from "../../../assets/img/chap_1/part_2/mineur_chapeau.png";
+import minor from "../../../assets/img/chap_1/part_2/mineur.png";
 
-import Infos from "./molecules/Infos";
+import Infos from "../../../components/molecules/Infos";
 
 import gsap from "gsap";
 

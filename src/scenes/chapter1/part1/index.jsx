@@ -3,8 +3,9 @@ import "./style.scss";
 import { gsap } from "gsap";
 
 //components
-import Paper from "../../../components/Paper";
-import James from "../../../components/James";
+import Paper from "./Paper";
+import James from "./James";
+import Portrait2 from "./Portrait2";
 
 //assets
 import portrait from "../../../assets/img/chap_1/part_1/portrait.png";
@@ -35,10 +36,11 @@ const Chapter1Part1 = ({ data: { parts } = {} }) => {
             currentRef["container"] = element;
           }}
         >
-          <img className="bg" src={bg} alt="" />
-          <img className="portrait" src={portrait} alt="" />
+          <img className="bg" src={bg} alt="Tableau Peinture" />
+          <img className="portrait" src={portrait} alt="Médaillon Anglais" />
           <Paper partData={parts} />
           <James partData={parts} />
+          <Portrait2 partData={parts} />
         </div>
       </div>
     </GlobalState>

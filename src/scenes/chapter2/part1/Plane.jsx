@@ -2,6 +2,46 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Infos from "../../../components/molecules/Infos";
 
+/***** ASSETS *****/
+import box from '../../../assets/img/chap_2/part_1/box.png';
+import plane from '../../../assets/img/chap_2/part_1/plane.png';
+
+const Plane = ({ partData }) => {
+  const [hovered, setHovered] = useState(0);
+  const isHovered = function (bool) {
+    setHovered(bool);
+  };
+
+  return (
+    <PlaneContainer>
+      {partData && (
+        <Infos
+          setIsAnimated={isHovered}
+          title={partData[0].cards[1].title}
+          content={partData[0].cards[1].content}
+          top="0"
+          left="25"
+          leftCard="100"
+          topCard="500"
+        />
+      )}
+
+      <AnimationContainer className={hovered ? "movePlane" : null}>
+        <img
+          className="plane"
+          src={plane}
+          alt="Avion Postal"
+        />
+        <img
+          className="box"
+          src={box}
+          alt="Colis"
+        />
+      </AnimationContainer>
+    </PlaneContainer>
+  );
+};
+
 const PlaneContainer = styled.div`
   position: absolute;
   top: 20vh;
@@ -29,41 +69,5 @@ const AnimationContainer = styled.div`
     transition: transform 2s ease-in-out 0.5s, opacity 0.3s ease;
   }
 `;
-
-const Plane = ({ partData }) => {
-  const [hovered, setHovered] = useState(0);
-  const isHovered = function (bool) {
-    setHovered(bool);
-  };
-
-  return (
-    <PlaneContainer>
-      {partData && (
-        <Infos
-          setIsAnimated={isHovered}
-          title={partData[0].cards[1].title}
-          content={partData[0].cards[1].content}
-          top="0"
-          left="25"
-          leftCard="100"
-          topCard="500"
-        />
-      )}
-
-      <AnimationContainer className={hovered ? "movePlane" : null}>
-        <img
-          className="plane"
-          src="../assets/img/chap_2/part_1/plane.png"
-          alt="avion postal"
-        />
-        <img
-          className="box"
-          src="../assets/img/chap_2/part_1/box.png"
-          alt="colis"
-        />
-      </AnimationContainer>
-    </PlaneContainer>
-  );
-};
 
 export default Plane;

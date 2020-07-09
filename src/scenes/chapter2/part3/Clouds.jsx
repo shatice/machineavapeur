@@ -2,18 +2,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Infos from "../../../components/molecules/Infos";
 
-const CloudsContainer = styled.div`
-  position: absolute;
-  top: -10vh;
-  left: 0vw;
-  img {
-    opacity: 0;
-    transition: all 0.5s ease-in-out;
-  }
-  .animate {
-    opacity: 0.7;
-  }
-`;
+/***** ASSETS *****/
+import clouds from '../../../assets/img/chap_2/part_3/clouds.jpg'; 
 
 const Clouds = ({ isActive, partData }) => {
   const [hovered, setHovered] = useState(0);
@@ -38,11 +28,24 @@ const Clouds = ({ isActive, partData }) => {
 
       <img
         className={hovered ? "animate" : null}
-        src="../assets/img/chap_2/part_3/clouds.jpg"
-        alt=""
+        src={clouds}
+        alt="Nuages"
       />
     </CloudsContainer>
   );
 };
+
+const CloudsContainer = styled.div`
+  position: absolute;
+  top: -10vh;
+  left: 0vw;
+  img {
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+  }
+  .animate {
+    opacity: 0.7;
+  }
+`;
 
 export default Clouds;
