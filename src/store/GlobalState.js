@@ -9,13 +9,15 @@ import {
   SET_PART,
   SET_DATA,
   SET_CHAPTERS,
+  SET_AUTH,
 } from "./reducers";
 
 const GlobalState = ({ children, history, path }) => {
   const subChapter = 0;
-  const chapter = 0;
+  const chapter = 1;
   const chapters = [];
   const data = {};
+  const isAuth = false;
 
   const [state, dispatch] = useReducer(reducer, {
     subChapter,
@@ -24,6 +26,7 @@ const GlobalState = ({ children, history, path }) => {
     history,
     path,
     chapters,
+    isAuth,
   });
 
   const incrementPart = (state) => {
@@ -64,6 +67,13 @@ const GlobalState = ({ children, history, path }) => {
     });
   };
 
+  const setAuth = (isAuth, state) => {
+    dispatch({
+      type: SET_AUTH,
+      isAuth: isAuth,
+    });
+  };
+
   return (
     <Context.Provider
       value={{
@@ -73,6 +83,8 @@ const GlobalState = ({ children, history, path }) => {
         chapters: state.chapters,
         setChapters: setChapters,
         data: state.data,
+        isAuth: state.isAuth,
+        setAuth: setAuth,
         incrementPart: incrementPart,
         decrementPart: decrementPart,
         setPart: setPart,

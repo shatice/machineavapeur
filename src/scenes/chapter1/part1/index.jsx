@@ -1,75 +1,50 @@
-import React, { useEffect, useState, useContext, useRef } from "react";
-import './style.scss'; 
+import React, { useEffect, useRef } from "react";
+import "./style.scss";
 import { gsap } from "gsap";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
 //components
-import Paper from "../../../components/Paper";
-import James from "../../../components/James";
-import context from "../../../store/context";
-
-import Chapter1Page2 from "../part2";
+import Paper from "./Paper";
+import James from "./James";
+import Portrait2 from "./Portrait2";
 
 //assets
-import portrait from "../../../assets/portrait.png";
-import bg from "../../../assets/bgChapter1.jpg";
+import portrait from "../../../assets/img/chap_1/part_1/portrait.png";
+import bg from "../../../assets/img/chap_1/part_1/bgChapter1.jpg";
 import GlobalState from "../../../store/GlobalState";
 
-//plugins
-gsap.registerPlugin(ScrollToPlugin);
-
-const Chapter1 = () => {
-  const [partData, setPartData] = useState([]);
-  const { data } = useContext(context);
+const Chapter1Part1 = ({ data: { parts } = {} }) => {
   let ref = useRef([]);
   const currentRef = ref.current;
 
   useEffect(() => {
-    if (data !== undefined) setPartData(data?.parts);
-  }, [data]);
+    var tl = gsap.timeline({ paused: true });
+    tl.to(".portrait", { filter: "grayscale(0)", rotate: 20, duration: 0.5, ease: "bounce" });
+    tl.to(".portrait", { y: "100vh" })
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    document.querySelector("body").style.overflow = "hidden";
     currentRef["container"].addEventListener("wheel", (e) => {
       const delta = Math.sign(e.deltaY);
-      if (delta === 1) portraitAnim();
+      delta === 1 ? tl.play() : tl.reverse();
     });
   });
 
-  const portraitAnim = () => {
-    gsap.to(".portrait", {
-      filter: "grayscale(0)",
-      rotate: 20,
-      duration: 0.5,
-      ease: "bounce",
-    });
-    gsap.to(window, {
-      delay: 0.8,
-      duration: 1,
-      scrollTo: ".page2__container",
-      ease: "none",
-    });
-    gsap.to(".portrait", { duration: 1, delay: 1, yPercent: 130, ease: "exp" });
-    gsap.to(".portrait", { rotate: 360, opacity: 0, duration: 1, delay: 2 });
-  };
-
-  // const title = "Industrialisation";
   return (
     <GlobalState>
       <div>
-        <div className="container" ref={(element) => {
-          currentRef["container"] = element;
-        }}>
-          <img className="bg" src={bg} alt="" />
-          <img className="portrait" src={portrait} alt="" />
-          <Paper partData={partData} />
-          <James partData={partData} />
+        <div
+          className="container"
+          ref={(element) => {
+            currentRef["container"] = element;
+          }}
+        >
+          <img className="bg" src={bg} alt="Tableau Peinture" />
+          <img className="portrait" src={portrait} alt="Médaillon Anglais" />
+          <Paper partData={parts} />
+          <James partData={parts} />
+          <Portrait2 partData={parts} />
         </div>
-        <Chapter1Page2 partData={partData} />
       </div>
     </GlobalState>
   );
 };
 
-export default Chapter1;
+export default Chapter1Part1;

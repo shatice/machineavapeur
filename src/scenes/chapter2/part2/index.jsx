@@ -4,23 +4,24 @@ import Concorde from "./Concorde";
 import Desk from "./Desk";
 import Jetliner from "./Jetliner";
 
-const Bg = styled.section`
-  width: 100vw;
-  height: 100vh;
-  background-image: url('../assets/img/chap_2/part_2/background.jpg');
-  background-size: cover;
-`;
+/***** ASSETS *****/
+import bg from '../../../assets/img/chap_2/part_2/background.jpg';
 
-const Chapter2Part2 = () => {
-
-
+const Chapter2Part2 = ({ data: { parts } = {} }) => {
   return (
     <Bg>
-      <Concorde/>
-      <Desk/>
-      <Jetliner/>
+      <Concorde partData={parts} />
+      <Desk partData={parts} />
+      <Jetliner partData={parts} />
     </Bg>
   );
 };
+
+const Bg = styled.section`
+  width: 100%;
+  height: 100%;
+  background-image: url("${bg}");
+  background-size: cover;
+`;
 
 export default Chapter2Part2;

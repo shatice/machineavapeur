@@ -9,16 +9,13 @@ const BackgroundImage = ({ src, alt, partData }) => {
 
   return (
     <div>
-      <Image 
-      src={src} 
-      alt={alt} 
-      filter={isAnimated ? true : false} />
+      <Image src={src} alt={alt} filter={isAnimated ? true : false} />
       {partData && (
         <Infos
           setIsAnimated={setIsAnimated}
           isActive={isAnimated}
-          title={partData[3]?.cards[0].title}
-          content={partData[3]?.cards[0].content}
+          title={partData[3]?.cards[1].title}
+          content={partData[3]?.cards[1].content}
           top="10"
           left="35"
           bottomCard="-400"

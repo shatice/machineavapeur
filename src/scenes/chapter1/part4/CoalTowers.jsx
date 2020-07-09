@@ -20,39 +20,39 @@ const CoalTowers = ({ partData }) => {
       <Tower filter={isAnimated ? true : false}>
         <ul>
           <li>
-            <img src={smoke3} alt="fumee" />
+            <img src={smoke3} alt="Fumée" />
           </li>
           <li>
-            <img src={smoke2} alt="fumee" />
+            <img src={smoke2} alt="Fumée" />
           </li>
           <li>
-            <img src={smoke1} alt="fumee" />
+            <img src={smoke1} alt="Fumée" />
           </li>
         </ul>
-        <img src={tower} alt="tour-usine-charbon" />
+        <img src={tower} alt="Tour d'Usine à Charbon" />
       </Tower>
       <Tower filter={isAnimated ? true : false}>
         <ul>
           <li>
-            <img src={smoke4} alt="fumee" />
+            <img src={smoke4} alt="Fumée" />
           </li>
           <li>
-            <img src={smoke3} alt="fumee" />
+            <img src={smoke3} alt="Fumée" />
           </li>
           <li>
-            <img src={smoke2} alt="fumee" />
+            <img src={smoke2} alt="Fumée" />
           </li>
           <li>
-            <img src={smoke1} alt="fumee" />
+            <img src={smoke1} alt="Fumée" />
           </li>
         </ul>
-        <img src={tower} alt="tour-usine-charbon" />
+        <img src={tower} alt="Tour d'Usine à Charbon" />
       </Tower>
       {partData && (
         <Infos
           setIsAnimated={setIsAnimated}
-          title={partData[3]?.cards[1].title}
-          content={partData[3]?.cards[1].content}
+          title={partData[3]?.cards[0].title}
+          content={partData[3]?.cards[0].content}
           bottom="30"
           left="10"
           leftCard="-250"

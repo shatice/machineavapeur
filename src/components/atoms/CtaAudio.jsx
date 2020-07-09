@@ -8,7 +8,7 @@ const CtaAudio = () => {
     <AudioUI >
       <img 
       src={ ctaAduio } 
-      alt=""/>
+      alt="Icone Audio"/>
     </AudioUI>
   );
 };

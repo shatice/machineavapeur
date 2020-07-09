@@ -2,6 +2,50 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Infos from "../../../components/molecules/Infos";
 
+/***** ASSETS *****/
+import man from '../../../assets/img/chap_2/part_3/airport_man.png'; 
+
+const Man = ({ partData }) => {
+  const [hovered, setHovered] = useState(0);
+  const isHovered = function (bool) {
+    setHovered(bool);
+  };
+
+  return (
+    <ManContainer>
+      {partData && (
+        <Infos
+          setIsAnimated={isHovered}
+          title={partData[2]?.cards[1].title}
+          content={partData[2]?.cards[1].content}
+          bottom="15"
+          left="25"
+          leftCard="400"
+          bottomCard="200"
+        />
+      )}
+
+      <AnimationContainer>
+        <img
+          className={hovered ? "animate" : null}
+          src={man}
+          alt="Homme assis"
+        />
+        <img
+          className={hovered ? "animate" : null}
+          src={man}
+          alt="Homme assis"
+        />
+        <img
+          className={hovered ? "animate" : null}
+          src={man}
+          alt="Homme assis"
+        />
+      </AnimationContainer>
+    </ManContainer>
+  );
+};
+
 const ManContainer = styled.div`
   position: absolute;
   top: 0;
@@ -13,7 +57,7 @@ const ManContainer = styled.div`
 
 const AnimationContainer = styled.div`
   img {
-    position:absolute;
+    position: absolute;
     transform: scale(1.07);
     opacity: 0;
     transition: all 0.4s ease-in-out;
@@ -38,31 +82,5 @@ const AnimationContainer = styled.div`
     transition-delay: 0.6s;
   }
 `;
-
-const Man = () => {
-  const [ hovered, setHovered ] = useState(0)
-  const isHovered = function(bool) {
-    setHovered(bool)
-  }
-
-  return (
-    <ManContainer>
-      <Infos
-        setIsAnimated={isHovered}
-        title="Impact Individuel"
-        content="Lorem ipsum dolor"
-        bottom="15"
-        left="25"
-        leftCard="400"
-        bottomCard="200"
-      />
-      <AnimationContainer>
-        <img className={hovered ? "animate" : null} src="../assets/img/chap_2/part_3/airport_man.png" alt=""/>
-        <img className={hovered ? "animate" : null} src="../assets/img/chap_2/part_3/airport_man.png" alt=""/>
-        <img className={hovered ? "animate" : null} src="../assets/img/chap_2/part_3/airport_man.png" alt=""/>
-      </AnimationContainer>
-    </ManContainer>
-  );
-};
 
 export default Man;

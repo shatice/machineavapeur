@@ -2,6 +2,53 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Infos from "../../../components/molecules/Infos";
 
+/***** ASSETS *****/
+import apple from '../../../assets/img/chap_2/part_1/apple.png'; 
+import wrightBrothers from '../../../assets/img/chap_2/part_1/wright_brothers.png'; 
+
+const WrightBrother = ({ partData }) => {
+  const [hovered, setHovered] = useState(0);
+  const isHovered = function (bool) {
+    setHovered(bool);
+  };
+
+  console.log(hovered);
+
+  return (
+    <WrightBrothersContainer>
+      {partData && (
+        <Infos
+          setIsAnimated={isHovered}
+          title={partData[0]?.cards[0].title}
+          content={partData[0]?.cards[0].content}
+          bottom="30"
+          right="35"
+          rightCard="500"
+          bottomCard="100"
+        />
+      )}
+
+      <AnimationContainer className={hovered ? "animate" : null}>
+        <img
+          className="brothers"
+          src={wrightBrothers}
+          alt="Les Frères Wright"
+        />
+        <img
+          className="apple1 apple"
+          src={apple}
+          alt="Pomme Verte"
+        />
+        <img
+          className="apple2 apple"
+          src={apple}
+          alt="Pomme Verte"
+        />
+      </AnimationContainer>
+    </WrightBrothersContainer>
+  );
+};
+
 const WrightBrothersContainer = styled.div`
   position: absolute;
   bottom: 0;
@@ -33,7 +80,8 @@ const AnimationContainer = styled.div`
     position: absolute;
     transform: rotate(0);
     filter: grayscale(1);
-    transition: filter 0.3s ease-in-out, transform 0.5s ease-in 0.4s, opacity 0.5s ease-in-out 0.4s;
+    transition: filter 0.3s ease-in-out, transform 0.5s ease-in 0.4s,
+      opacity 0.5s ease-in-out 0.4s;
   }
   .apple1 {
     top: 30%;
@@ -43,34 +91,6 @@ const AnimationContainer = styled.div`
     top: 6%;
     right: 6%;
   }
-`
-
-const WrightBrother = () => {
-  const [ hovered, setHovered ] = useState(0)
-  const isHovered = function(bool) {
-    setHovered(bool)
-  }
-
-  console.log(hovered)
-
-  return (
-    <WrightBrothersContainer>
-      <Infos
-        setIsAnimated={isHovered}
-        title="Les frères Wright"
-        content="Lorem ipsum dolor"
-        bottom="30"
-        right="35"
-        rightCard="500"
-        bottomCard="100"
-      />
-      <AnimationContainer className={hovered ? "animate" : null}>
-        <img className="brothers" src="../assets/img/chap_2/part_1/wright_brothers.png" alt="Les frères Wright"/>
-        <img className="apple1 apple" src="../assets/img/chap_2/part_1/apple.png" alt="pomme"/>
-        <img className="apple2 apple" src="../assets/img/chap_2/part_1/apple.png" alt="pomme"/>
-      </AnimationContainer>
-    </WrightBrothersContainer>
-  );
-};
+`;
 
 export default WrightBrother;
