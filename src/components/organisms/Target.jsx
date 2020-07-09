@@ -28,7 +28,8 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  align-self: flex-start; 
+  align-self: flex-start;
+  z-index: 100;
 `;
 
 const OuterTarget = styled.div`
