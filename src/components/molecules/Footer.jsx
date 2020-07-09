@@ -26,7 +26,7 @@ const Container = styled.footer`
   bottom: 0;
   width: 100%;
   height: fit-content;
-  padding: 1rem;
+  padding: 0.6rem;
   padding-right: 10rem;
   display: flex;
   align-items: center;

@@ -109,12 +109,11 @@ const appear = keyframes`
 const Container = styled.ul`
   position: relative;
   width: 80%;
-  height: 48px;
+  height: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   transition: height 0.2s ease-out; 
-
   &:hover {
     height: 80px;
   }
@@ -122,8 +121,9 @@ const Container = styled.ul`
 
 const ProgressBarContainer = styled.div`
   width: 100%;
-  height: 1px;
+  height: 2px;
   background-color: #cacaca;
+  border-radius: 20%;
 `;
 
 const ProgressBar = styled.div`
@@ -132,6 +132,7 @@ const ProgressBar = styled.div`
   height: 100%;
   background-color: #c09c1c;
   transition: width 0.3s ease-out;
+  border-radius: 50%;
 `;
 
 const ChevronContainer = styled.div`

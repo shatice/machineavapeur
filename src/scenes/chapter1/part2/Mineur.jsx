@@ -57,8 +57,8 @@ const Mineur = ({ partData }) => {
           content={partData[1]?.cards[0]?.content}
           bottom="20"
           left="-9"
-          leftCard="-1240"
-          bottomCard="140"
+          leftCard="-1540"
+          bottomCard="30"
         />
       )}
     </MineurContainer>
