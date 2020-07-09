@@ -54,7 +54,7 @@ const InnerTarget = styled.div`
 `;
 
 const Text = styled.h4`
-  max-width: 113px; 
+  max-width: 200px; 
   margin-top: 1rem; 
   font-size: .75rem; 
   text-transform: uppercase; 

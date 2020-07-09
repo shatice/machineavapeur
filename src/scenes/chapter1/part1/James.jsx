@@ -79,9 +79,9 @@ const James = ({ partData }) => {
           setIsAnimated={jamesHover}
           title={partData[0]?.cards?.[0].title}
           content={partData[0]?.cards?.[0].content}
-          bottom="-100"
-          right="-20"
-          rightCard="200"
+          bottom="-150"
+          right="-50"
+          rightCard="300"
           bottomCard="100"
         />
       )}
@@ -93,10 +93,10 @@ export default James;
 
 const JamesContainer = styled.div`
   position: absolute;
-  right: 446px;
-  bottom: 710px;
-  width: 400px;
-  height: 400px;
+  right: 400px;
+  bottom: 750px;
+  width: 25vw;
+  height: 300px; 
 `;
 
 const JamesBody = styled.div`
