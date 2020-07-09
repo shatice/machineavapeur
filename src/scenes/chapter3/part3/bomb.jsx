@@ -4,9 +4,11 @@ import styled from "styled-components";
 import bomb from "../../../assets/img/chap_3/part_3/bomb.png";
 import bomb2 from "../../../assets/img/chap_3/part_3/bomb2.png";
 
+import Infos from "../../../components/molecules/Infos";
+
 import gsap from "gsap";
 
-const Bomb = () => {
+const Bomb = ({ partData }) => {
 	const [bombAnims, setBombAnims] = useState({});
 	const [bombIsHover, setBombIsHover] = useState(false);
 
@@ -21,7 +23,7 @@ const Bomb = () => {
 		tl.to(currentRef["Frame"], { backgroundColor: "#78F54F", duration: 0.3 });
 		tl.to(currentRef["Bomb"], { filter: "grayscale(0)", opacity: 1, duration: 0.5 })
 		setBombAnims(tl);
-		/* eslint-disable */
+	/* eslint-disable */
 	}, []);
 
 	const FrameHover = () => {
@@ -36,13 +38,25 @@ const Bomb = () => {
 	return (
 		<Frame ref={(element) => {
 			currentRef["Frame"] = element;
-		}} onMouseEnter={FrameHover} onMouseLeave={FrameHover}>
+		}}>
 			<Bomb1 src={bomb} ref={(element) => {
 				currentRef["Bomb"] = element;
 			}} />
 			<Bomb2 src={bomb2} ref={(element) => {
 				currentRef["Bomb2"] = element;
 			}} />
+
+			{true && (
+				<Infos
+					setIsAnimated={FrameHover}
+					title={"title"}
+					content={"content"}
+					bottom="105"
+					right="44"
+					rightCard="-1610"
+					bottomCard="0"
+				/>
+			)}
 		</Frame>
 	);
 };

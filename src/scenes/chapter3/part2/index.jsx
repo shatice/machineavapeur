@@ -12,8 +12,8 @@ const Chapter3Part2 = ({ data: { parts } = {} }) => {
       <div className="chapter-container">
         <img src={bg} alt="Explosion Nucléaire" className="bg" />
         <img src={people} alt="Scientifiques du Manhattan Project" className="people" />
-        <Embleme partData={parts} />
         <Arm partData={parts} />
+        <Embleme partData={parts} />
       </div>
     </>
   );

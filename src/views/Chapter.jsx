@@ -5,7 +5,7 @@ import { useParams, useLocation } from "react-router-dom";
 import context from "../store/context";
 import Fetch from "../Fetch";
 import Footer from "../components/molecules/Footer";
-import Auth from "./Auth";
+
 
 const Chapter = () => {
   const {
@@ -15,12 +15,25 @@ const Chapter = () => {
     subChapter,
     setPart,
     data,
-    isAuth,
   } = useContext(context);
 
   const { chapterId, partId } = useParams();
   const [elem, setElem] = useState("");
   const location = useLocation();
+
+  const renderButtonIncrement = () => {
+    if (subChapter === data?.parts?.length + 1 && chapter === 3) {
+      return "";
+    } else if (subChapter === data?.parts?.length + 1 && chapter !== 3)
+      return "Chapitre suivante";
+    else return "Partie suivante";
+  };
+  const renderButtonDecrement = () => {
+    if (subChapter === 0 && chapter === 1) {
+      return "";
+    } else if (subChapter === 0 && chapter !== 1) return "Chapitre précédent";
+    else return "Partie précédent";
+  };
 
   useEffect(() => {
     setPart(Number(chapterId), Number(partId));
@@ -72,7 +85,7 @@ const Chapter = () => {
     <Layout>
       <NavChapter>{data?.title}</NavChapter>
       <NavTemp>
-        <button
+        <NavDecrement
           style={{ zIndex: 1000 }}
           onClick={() => {
             if (chapter === 0 && subChapter === 0) {
@@ -80,9 +93,9 @@ const Chapter = () => {
             } else decrementPart();
           }}
         >
-          LAST PART
-        </button>
-        <button
+          {renderButtonDecrement()}
+        </NavDecrement>
+        <NavIncrement
           style={{ zIndex: 1000 }}
           onClick={() => {
             if (chapter === 2 && subChapter === 3) {
@@ -90,18 +103,15 @@ const Chapter = () => {
             } else incrementPart();
           }}
         >
-          NEXT PART
-        </button>
+          {renderButtonIncrement()}
+        </NavIncrement>
       </NavTemp>
       {elem &&
-        React.cloneElement(elem, {
-          data: data,
-        })}
-
-      {!isAuth && <Auth />}
-
+      React.cloneElement(elem, {
+        data: data,
+      })}
       <Footer />
-      <Fetch url={chaptersData[chapter].apiUrl} />
+      <Fetch />
     </Layout>
   );
 };
@@ -116,9 +126,10 @@ const Layout = styled.section`
 
 const NavTemp = styled.section`
   width: 100%;
+  height: 40px;
   position: absolute;
   left: 0;
-  bottom: 80px;
+  bottom: 120px;
   font-size: 12px;
   color: black;
   z-index: 30;
@@ -127,18 +138,39 @@ const NavTemp = styled.section`
   padding: 3px;
   background-color: white;
 `;
+
+const NavDecrement = styled.div`
+  padding-left: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  :hover {
+    cursor: pointer;
+  }
+`;
+const NavIncrement = styled.div`
+  padding-right: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  :hover {
+    cursor: pointer;
+  }
+`;
 const NavChapter = styled.section`
   position: absolute;
-  left: 0;
-  top: 0;
-  font-size: 22px;
-  color: black;
+  left: 1rem;
+  top: 1rem;
+  font-size: 18px;
+  color: white;
   z-index: 30;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 10px;
-  background-color: white;
+  font-family: 'din_bold';
+  text-shadow: -2px -2px 15px #000000;
+  text-transform: uppercase;
 `;
 
 export default Chapter;

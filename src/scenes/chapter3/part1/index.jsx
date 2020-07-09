@@ -73,21 +73,20 @@ const Chapter3Part1 = ({ data: { parts } = {} }) => {
           content="NUCLEAR WASTE NUCLEAR WASTE"
           bottom="20"
           left="80"
-          rightCard="-500"
-          bottomCard="-150"
+          rightCard="70"
+          bottomCard="448"
         />
       )}
       {/* a revoir pour marie curie (bon appel api mais mauvais placement et meca !)*/}
       {parts && (
         <Infos
-          // onMouseEnter={(props) => props.setIsAnimated(true)}
-          // onMouseLeave={() => setMarieIsHover(false)}
+          setIsAnimated = {()=>{}}
           title={parts[0]?.cards[1].title}
           content={parts[0]?.cards[1].content}
           bottom="40"
           left="15"
-          rightCard="10"
-          bottomCard="50"
+          rightCard="-1000"
+          bottomCard="270"
         />
       )}
 
