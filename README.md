@@ -4,7 +4,6 @@
 
 - Site en ligne : https://lafollehistoireduprogres.netlify.app/
 (Accès privé, mot de passe : hetic)
-<br>
 - API en ligne : http://folle-histoire-progres.herokuapp.com/api/chapters
 
 Un web-documentaire de :
