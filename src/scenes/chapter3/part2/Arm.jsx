@@ -19,7 +19,7 @@ const Arm = ({ partData }) => {
         transformOrigin: "80% 20%",
         paused: true,
       }),
-      atomicAnim: gsap.to("#atomic", { y: "-45vw", paused: true }),
+      atomicAnim: gsap.to("#atomic", { y: "-60vw", paused: true }),
     });
   }, []);
 
@@ -46,10 +46,10 @@ const Arm = ({ partData }) => {
             setIsAnimated={ArmisHover}
             title={partData[1]?.cards[1].title}
             content={partData[1]?.cards[1].content}
-            bottom="-60"
-            right="-160"
-            rightCard="-1720"
-            bottomCard="-75"
+            bottom="-45"
+            right="-120"
+            rightCard="118"
+            bottomCard="166"
           />
         )}
       </ArmContainer>
@@ -67,16 +67,16 @@ const ArmContainer = styled.div`
 
 const ArmIMG = styled.img`
   position: absolute;
-  top: 294px;
-  right: -873px;
+  top: 270px;
+  right: -634px;
   filter: grayscale(1);
   z-index: 2;
 `;
 
 const AtomicIMG = styled.img`
   position: absolute;
-  width: 50vw;
+  width: 70vw;
   left: 50%;
   transform: translate(-50%);
-  bottom: -40vw;
+  bottom: -60vw;
 `;
