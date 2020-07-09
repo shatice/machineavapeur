@@ -99,17 +99,17 @@ const Chapter3Part4 = ({ data: { parts } = {} }) => {
               content={parts[2]?.cards[2].content}
               bottom="60"
               left="20"
-              rightCard="-400"
-              bottomCard="-150"
+              rightCard="-30"
+              bottomCard="-409"
             />
             <Infos
               setIsAnimated={TvHover}
               title={parts[3]?.cards[0].title}
               content={parts[3]?.cards[0].content}
-              bottom="53"
-              left="61"
-              rightCard="700"
-              bottomCard="200"
+              bottom="43"
+              left="58"
+              rightCard="300"
+              bottomCard="10"
             />
             <Infos
               setIsAnimated={NuclearHover}
@@ -117,8 +117,8 @@ const Chapter3Part4 = ({ data: { parts } = {} }) => {
               content={parts[2]?.cards[1].content}
               bottom="20"
               left="80"
-              rightCard="-500"
-              bottomCard="-150"
+              rightCard="461"
+              bottomCard="1"
             />
           </>
         )}

@@ -9,12 +9,12 @@ const TitleUI = styled.h2`
   position: relative;
   width: 100px;
   margin: 0 2rem;
-  font-size: 0.875rem;
+  font-size: 1rem;
   z-index: 1001;
   font-weight: bold;
   text-transform: uppercase;
   text-align: center;
-
+  font-family:'din_bold_condensed';
   &::after {
     content: "";
     display: block;

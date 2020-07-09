@@ -5,9 +5,11 @@ import medecineBg from "../../../assets/img/chap_3/part_3/medecineBg.jpg";
 import bottle from "../../../assets/img/chap_3/part_3/bottle__medecine.png";
 import cross from "../../../assets/img/chap_3/part_3/cross__medecine.png";
 
+import Infos from "../../../components/molecules/Infos";
+
 import gsap from "gsap";
 
-const Medecine = () => {
+const Medecine = ({ partData }) => {
   const [medecineAnims, setMedecineAnims] = useState({});
   const [medecineHover, setMedecineHover] = useState(false);
 
@@ -24,9 +26,9 @@ const Medecine = () => {
     tl.to(currentRef["Cross"], { x: -170 }, 0.5);
     tl.to(currentRef["Cross"], { y: 10 }, 1);
 
-		setMedecineAnims(tl)
-		/* eslint-disable */
-	}, []);
+    setMedecineAnims(tl)
+  /* eslint-disable */
+  }, []);
 
   const FrameHover = () => {
     if (medecineHover) {
@@ -39,8 +41,6 @@ const Medecine = () => {
 
   return (
     <Frame
-      onMouseEnter={FrameHover}
-      onMouseLeave={FrameHover}
       ref={(element) => {
         currentRef["Frame"] = element;
       }}
@@ -58,6 +58,18 @@ const Medecine = () => {
           currentRef["Cross"] = element;
         }}
       />
+
+      {partData && (
+        <Infos
+          setIsAnimated={FrameHover}
+          title={partData[2]?.cards[1].title}
+          content={partData[2]?.cards[1].content}
+          bottom="105"
+          right="28"
+          rightCard="-164"
+          bottomCard="-126"
+        />
+      )}
     </Frame>
   );
 };
