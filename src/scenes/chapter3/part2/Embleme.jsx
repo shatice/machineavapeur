@@ -11,7 +11,7 @@ const Embleme = ({ partData }) => {
   const [emblemIsHover, setEmblemIsHover] = useState(false);
 
   useEffect(() => {
-    setEmblemAnims(gsap.to("#emblem", { rotate: 360, scale: 1, paused: true }));
+    setEmblemAnims(gsap.to("#emblem", { rotate: 360, scale: 0.8, paused: true }));
   }, []);
 
   const EmblemHover = () => {
@@ -33,10 +33,10 @@ const Embleme = ({ partData }) => {
           setIsAnimated={EmblemHover}
           title={partData[1]?.cards[0].title}
           content={partData[1]?.cards[0].content}
-          bottom="-14"
-          right="-20"
-          rightCard="-1720"
-          bottomCard="333"
+          bottom="-2"
+          right="32"
+          rightCard="-410"
+          bottomCard="-90"
         />
       )}
     </EmblemContainer>
@@ -55,6 +55,6 @@ const EmblemContainer = styled.div`
 const Emblem = styled.img`
   position: absolute;
   transform: scale(0.08);
-  top: 48px;
-  left: 177px;
+  top: 10px;
+  left: -63px;
 `;
