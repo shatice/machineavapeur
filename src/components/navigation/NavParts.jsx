@@ -34,7 +34,7 @@ const NavParts = () => {
     });
     setPart(chapter, subChapterVal);
   };
-  console.log(subChapters && subChapters[chapterValue]?.cards.length + 3);
+  
   return (
     <Container
       onMouseEnter={() => setDisplayText(true)}

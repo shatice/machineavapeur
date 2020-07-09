@@ -8,8 +8,7 @@ const Intro = ( ) => {
   const { data, chapter } = useContext(context);
   const { intro, title } = data;
   const video = chaptersData[chapter].videoUrl;
-
-  console.log(data); 
+  
   return (
     <Container>
       <video autoPlay="autoplay" loop="loop">
