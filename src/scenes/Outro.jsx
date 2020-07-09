@@ -8,7 +8,7 @@ const Outro = () => {
 
   return (
     <Container>
-      <h1>Outro</h1>
+      <h1>Conclusion</h1>
       <p>{outro}</p>
       {chapter !== 2 && <div onClick={incrementPart}>Continuer</div>}
     </Container>
@@ -25,11 +25,24 @@ const Container = styled.section`
   align-items: center;
   animation: fadeIn 2s ease-out;
 
+
+  h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+
   p {
-    margin: 0 auto 2rem;
-    max-width: 50%;
+    max-width: 55%;
     text-align: center;
     line-height: 1.5;
+    font-size: 0.875rem;
+  }
+
+  h1,
+  p {
+    margin: 0 auto 2rem;
   }
 
   a {
