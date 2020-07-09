@@ -4,6 +4,8 @@ import styled from "styled-components";
 import bulbBg from "../../../assets/img/chap_3/part_3/bulbBg.jpg";
 import bulb from "../../../assets/img/chap_3/part_3/bulb.png";
 
+import Infos from "../../../components/molecules/Infos";
+
 import gsap from "gsap";
 
 const Bulb = () => {
@@ -20,8 +22,7 @@ const Bulb = () => {
 			{ rotate: 20, duration: 2 },
 			{ transformOrigin: "50% 0%", rotate: -20, duration: 2, immediateRender: false })
 		setBulbAnims(tl);
-		setFramebAnim(gsap.to(currentRef["Frame"], { filter: "grayscale(0)", paused: true }))
-		/* eslint-disable */
+		setFramebAnim(gsap.to(currentRef["Frame"], { filter: "grayscale(0)", paused: true }));
 	}, []);
 
 	const FrameHover = () => {
@@ -36,13 +37,25 @@ const Bulb = () => {
 	}
 
 	return (
-		<Frame onMouseEnter={FrameHover} onMouseLeave={FrameHover} ref={(element) => {
+		<Frame ref={(element) => {
 			currentRef["Frame"] = element;
 		}}>
 			<BulbBG src={bulbBg} />
 			<BulbIMG src={bulb} ref={(element) => {
 				currentRef["Bulb"] = element;
 			}} />
+
+			{true && (
+				<Infos
+					setIsAnimated={FrameHover}
+					title={"title"}
+					content={"content"}
+					bottom="105"
+					right="44"
+					rightCard="460"
+					bottomCard="102"
+				/>
+			)}
 		</Frame>
 	);
 };
