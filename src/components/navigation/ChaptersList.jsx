@@ -24,17 +24,22 @@ const ChaptersList = ({ isList, setIsList }) => {
   return <Container>{listeChapitres}</Container>;
 };
 
+
 const Container = styled.ul`
   position: fixed;
-  bottom: 102px;
+  bottom: 0;
   left: 0;
-  width: 272px;
-  padding: 3rem 2rem;
-  background: linear-gradient(
+  height: 100%;
+  width: 100%;
+  padding: 8rem 2rem;
+  background-color: #282928; 
+  opacity: 0.9;
+  /* linear-gradient(
     3deg,
-    rgba(31, 31, 33, 0.31) 0%,
-    rgba(31, 31, 33, 0.7) 49%,
-    rgba(31, 31, 33, 1) 100%
+    rgba(31, 31, 33, 0.31) 20%,
+    rgba(31, 31, 33, 0.7) 70%,
+    rgba(31, 31, 33, 1) 100% */
+
   );
 
   li {
@@ -43,15 +48,21 @@ const Container = styled.ul`
 const ChapterElem = styled.li`
   font-weight: bold;
   text-transform: uppercase;
-  text-align: left;
-  padding: 1rem 0;
-  padding-left: 1.4rem;
-  ${({ isActive }) =>
+  text-align: center;
+  font-family: 'notable';
+  margin: 0 auto;
+  font-size: 3rem;
+  padding-top: 3.5rem;
+  color: white;
+  &:hover {
+    color: #c09c1c;
+  }
+  ${'' /* ${({ isActive }) =>
     isActive &&
     css`
       border-left: 1px solid #c09c1c;
-      border-left-height: 30px;
-    `}
+      border-left-height: 20px;
+    `} */}
 `;
 // const ChapterElem = styled.li`
 //   display: flex;
