@@ -21,9 +21,9 @@ import Chapter3Part2 from "./scenes/chapter3/part2";
 import Chapter3Part3 from "./scenes/chapter3/part3";
 import Chapter3Part4 from "./scenes/chapter3/part4";
 
-export const url = "https://folle-histoire-progres.herokuapp.com/api/chapters";
+export const url = "http://folle-histoire-progres.herokuapp.com/api/chapters";
 export const urlChapters =
-  "https://folle-histoire-progres.herokuapp.com/api/chapters";
+  "http://folle-histoire-progres.herokuapp.com/api/chapters";
 
 export const chaptersData = [
   {},
