@@ -80,8 +80,7 @@ const Chapter3Part1 = ({ data: { parts } = {} }) => {
       {/* a revoir pour marie curie (bon appel api mais mauvais placement et meca !)*/}
       {parts && (
         <Infos
-          // onMouseEnter={(props) => props.setIsAnimated(true)}
-          // onMouseLeave={() => setMarieIsHover(false)}
+          setIsAnimated = {()=>{}}
           title={parts[0]?.cards[1].title}
           content={parts[0]?.cards[1].content}
           bottom="40"
