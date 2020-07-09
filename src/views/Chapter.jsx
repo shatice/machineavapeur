@@ -7,6 +7,7 @@ import Fetch from "../Fetch";
 import Footer from "../components/molecules/Footer";
 // import Auth from "./Auth";
 
+
 const Chapter = () => {
   const {
     incrementPart,
@@ -160,16 +161,18 @@ const NavIncrement = styled.div`
 `;
 const NavChapter = styled.section`
   position: absolute;
-  left: 0;
-  top: 0;
-  font-size: 22px;
-  color: black;
+  left: 1rem;
+  top: 1rem;
+  font-size: 18px;
+  color: white;
   z-index: 30;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 10px;
-  background-color: white;
+  font-family: 'din_bold';
+  text-shadow: -2px -2px 15px #000000;
+  text-transform: uppercase;
 `;
 
 export default Chapter;
