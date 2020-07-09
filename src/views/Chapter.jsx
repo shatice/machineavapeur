@@ -138,7 +138,7 @@ const NavTemp = styled.section`
   display: flex;
   justify-content: space-between;
   padding: 3px;
-  background-color: white;
+  ${'' /* background-color: white; */}
 `;
 
 const NavDecrement = styled.div`
@@ -150,6 +150,7 @@ const NavDecrement = styled.div`
     cursor: pointer;
   }
 `;
+
 const NavIncrement = styled.div`
   padding-right: 16px;
   display: flex;
@@ -159,6 +160,7 @@ const NavIncrement = styled.div`
     cursor: pointer;
   }
 `;
+
 const NavChapter = styled.section`
   position: absolute;
   left: 1rem;
