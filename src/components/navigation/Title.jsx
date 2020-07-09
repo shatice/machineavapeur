@@ -7,7 +7,7 @@ const Title = ({ text, onClick }) => {
 
 const TitleUI = styled.h2`
   position: relative;
-  width: 100px;
+  width: fit-content;
   margin: 0 2rem;
   font-size: 1rem;
   z-index: 1001;
@@ -15,6 +15,7 @@ const TitleUI = styled.h2`
   text-transform: uppercase;
   text-align: center;
   font-family:'din_bold_condensed';
+
   &::after {
     content: "";
     display: block;

@@ -10,7 +10,7 @@ import Logo from "../atoms/Logo";
 const Footer = () => {
   return (
     <Container>
-      <Link to="/">
+      <Link to="/" className="logoLink">
         <Logo />
       </Link>
       <NavChapters />
@@ -38,6 +38,11 @@ const Container = styled.footer`
     rgba(31, 31, 33, 1) 100%
   );
   z-index: 100;
+
+  .logoLink {
+    z-index: 2; 
+  }
+
 `;
 
 export default Footer;
