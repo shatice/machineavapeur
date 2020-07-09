@@ -23,7 +23,7 @@ const Ecology = ({ partData }) => {
           bottom="30"
           left="10"
           topCard="-250"
-          leftCard="-460"
+          leftCard="-260"
         />
       )}
     </Container>
