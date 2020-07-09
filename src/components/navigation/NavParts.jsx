@@ -34,7 +34,7 @@ const NavParts = () => {
     });
     setPart(chapter, subChapterVal);
   };
-  
+
   return (
     <Container
       onMouseEnter={() => setDisplayText(true)}
@@ -148,7 +148,7 @@ const Chevron = styled.div`
   background-color: ${({ isActive }) => getChevron(isActive)};
   border: 1px solid white;
   border-radius: 50%;
-
+  display:none;
   &:first-child {
     opacity: 0;
   }

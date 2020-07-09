@@ -34,8 +34,8 @@ const Chapter3Part4 = ({ data: { parts } = {} }) => {
         paused: true,
       }),
       tvAnim: gsap.to(".tvContainer", {
-        y: -300,
-        x: -150,
+        y: -250,
+        x: -170,
         scale: 1.4,
         paused: true,
       }),
@@ -99,8 +99,8 @@ const Chapter3Part4 = ({ data: { parts } = {} }) => {
               content={parts[2]?.cards[2].content}
               bottom="60"
               left="20"
-              rightCard="-30"
-              bottomCard="-409"
+              rightCard="-900"
+              bottomCard="-609"
             />
             <Infos
               setIsAnimated={TvHover}
@@ -108,8 +108,8 @@ const Chapter3Part4 = ({ data: { parts } = {} }) => {
               content={parts[3]?.cards[0].content}
               bottom="43"
               left="58"
-              rightCard="300"
-              bottomCard="10"
+              rightCard="-920"
+              bottomCard="400"
             />
             <Infos
               setIsAnimated={NuclearHover}

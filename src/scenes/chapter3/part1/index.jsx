@@ -73,8 +73,8 @@ const Chapter3Part1 = ({ data: { parts } = {} }) => {
           content={parts[0]?.cards[0].content}
           bottom="20"
           left="80"
-          rightCard="70"
-          bottomCard="448"
+          rightCard="900"
+          bottomCard="-48"
         />
       )}
       {/* a revoir pour marie curie (bon appel api mais mauvais placement et meca !)*/}

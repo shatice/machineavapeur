@@ -23,7 +23,7 @@ const Bulb = ({ partData }) => {
 			{ transformOrigin: "50% 0%", rotate: -20, duration: 2, immediateRender: false })
 		setBulbAnims(tl);
 		setFramebAnim(gsap.to(currentRef["Frame"], { filter: "grayscale(0)", paused: true }));
-	/* eslint-disable */
+		/* eslint-disable */
 	}, []);
 
 	const FrameHover = () => {
@@ -53,8 +53,8 @@ const Bulb = ({ partData }) => {
 					content={partData[2]?.cards[2].content}
 					bottom="105"
 					right="54"
-					rightCard="100"
-					bottomCard="-50"
+					rightCard="900"
+					bottomCard="-900"
 				/>
 			)}
 		</Frame>

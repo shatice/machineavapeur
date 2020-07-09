@@ -107,9 +107,9 @@ const Chapter = () => {
         </NavIncrement>
       </NavTemp>
       {elem &&
-      React.cloneElement(elem, {
-        data: data,
-      })}
+        React.cloneElement(elem, {
+          data: data,
+        })}
       <Footer />
       <Fetch />
     </Layout>
@@ -132,7 +132,7 @@ const NavTemp = styled.section`
   bottom: 120px;
   font-size: 14px;
   color: white;
-  z-index: 30;
+  z-index: 1;
   display: flex;
   justify-content: space-between;
   text-transform: uppercase;
