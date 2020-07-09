@@ -7,42 +7,6 @@ import Fetch from "../Fetch";
 import Footer from "../components/molecules/Footer";
 import Auth from "./Auth";
 
-const Layout = styled.section`
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100vh;
-  width: 100%;
-`;
-
-const NavTemp = styled.section`
-  width: 100%;
-  position: absolute;
-  left: 0;
-  bottom: 80px;
-  font-size: 12px;
-  color: black;
-  z-index: 30;
-  display: flex;
-  justify-content: space-between;
-  padding: 3px;
-  background-color: white;
-`;
-const NavChapter = styled.section`
-  position: absolute;
-  left: 1rem;
-  top: 1rem;
-  font-size: 18px;
-  color: white;
-  z-index: 30;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  font-family: 'din_bold';
-  text-shadow: -2px -2px 15px #000000;
-  text-transform: uppercase;
-`;
 
 const Chapter = () => {
   const {
@@ -57,13 +21,10 @@ const Chapter = () => {
 
   const { chapterId, partId } = useParams();
   const [elem, setElem] = useState("");
-  const [isScrollable, setIsScrollable] = useState(true);
-  const [wheelData, setWheelData] = useState(0);
   const location = useLocation();
 
   useEffect(() => {
     setPart(Number(chapterId), Number(partId));
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location, chapterId, partId]);
 
@@ -99,7 +60,15 @@ const Chapter = () => {
     return () => {
       window.removeEventListener("wheel", handleScroll);
     };
+    /* eslint-disable */
   }, []);
+
+  useEffect(() => {
+    if (chaptersData[chapter].data[subChapter + 1]) {
+      React.lazy(chaptersData[chapter].data[subChapter + 1].elem);
+    }
+  }, [chapter, subChapter]);
+
   return (
     <Layout>
       <NavChapter>{data?.title}</NavChapter>
@@ -137,5 +106,42 @@ const Chapter = () => {
     </Layout>
   );
 };
+
+const Layout = styled.section`
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+`;
+
+const NavTemp = styled.section`
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 80px;
+  font-size: 12px;
+  color: black;
+  z-index: 30;
+  display: flex;
+  justify-content: space-between;
+  padding: 3px;
+  background-color: white;
+`;
+const NavChapter = styled.section`
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  font-size: 18px;
+  color: white;
+  z-index: 30;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  font-family: 'din_bold';
+  text-shadow: -2px -2px 15px #000000;
+  text-transform: uppercase;
+`;
 
 export default Chapter;

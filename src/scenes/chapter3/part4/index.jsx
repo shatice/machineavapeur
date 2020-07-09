@@ -82,12 +82,12 @@ const Chapter3Part4 = ({ data: { parts } = {} }) => {
   return (
     <>
       <div className="chapter-container">
-        <img src={bg} alt="" className="bg bgC3P3" />
-        <img src={nuclearWaste} alt="" className="nuclearWaste" />
+        <img src={bg} alt="Explosion Nucléaire" className="bg bgC3P3" />
+        <img src={nuclearWaste} alt="Déchets Nucléaires" className="nuclearWaste" />
         <div className="tvContainer">
           <div className="relative">
-            <img src={nature} alt="" className="nature" />
-            <img src={tv} alt="" className="tv" />
+            <img src={nature} alt="Jungle Verte" className="nature" />
+            <img src={tv} alt="Ancienne Télévision" className="tv" />
           </div>
         </div>
 

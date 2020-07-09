@@ -2,27 +2,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Infos from "../../../components/molecules/Infos";
 
-const OceanContainer = styled.div``;
-
-const AnimationContainer = styled.div`
-  position: absolute;
-  top: 15vh;
-  left: -45vw;
-
-  img {
-    position: absolute;
-    transform: scale(0);
-    transition: all 1.5s ease-out;
-  }
-
-  img:first-child {
-    margin-left: 25vw;
-  }
-
-  .animate {
-    transform: scale(0.9) translateX(40vw);
-  }
-`;
+/***** ASSETS *****/
+import wave from '../../../assets/img/chap_2/part_3/wave.png'; 
 
 const Ocean = ({ isActive, partData }) => {
   const [hovered, setHovered] = useState(0);
@@ -48,17 +29,39 @@ const Ocean = ({ isActive, partData }) => {
       <AnimationContainer>
         <img
           className={hovered ? "animate" : null}
-          src="../assets/img/chap_2/part_3/wave.png"
-          alt=""
+          src={wave}
+          alt="Vague de Kanawaga"
         />
         <img
           className={hovered ? "animate" : null}
-          src="../assets/img/chap_2/part_3/wave.png"
-          alt=""
+          src={wave}
+          alt="Vague de Kanawaga"
         />
       </AnimationContainer>
     </OceanContainer>
   );
 };
+
+const OceanContainer = styled.div``;
+
+const AnimationContainer = styled.div`
+  position: absolute;
+  top: 15vh;
+  left: -45vw;
+
+  img {
+    position: absolute;
+    transform: scale(0);
+    transition: all 1.5s ease-out;
+  }
+
+  img:first-child {
+    margin-left: 25vw;
+  }
+
+  .animate {
+    transform: scale(0.9) translateX(40vw);
+  }
+`;
 
 export default Ocean;

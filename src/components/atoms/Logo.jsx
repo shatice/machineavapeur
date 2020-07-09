@@ -7,7 +7,7 @@ const Logo = () => {
   return (
     <LogoUI 
     src={ logo }
-    alt="logo"/>
+    alt="Logo"/>
   );
 };
 const LogoUI = styled.img `

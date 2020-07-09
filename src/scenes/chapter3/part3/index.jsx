@@ -10,7 +10,7 @@ import bg from "../../../assets/img/chap_3/part_3/bgC3P3.jpg";
 const Chapter3Part3 = () => {
 	return (<>
 		<div className="chapter-container">
-			<img src={bg} alt="" className="bg" />
+			<img src={bg} alt="Poster d'une Bombe Nucléaire" className="bg" />
 			<FrameContainer>
 				<Bomb />
 				<Medecine />

@@ -13,7 +13,7 @@ import bg from "../../../assets/img/chap_1/part_4/c1p4_background.jpg";
 const Chap1Part4 = ({ data: { parts } = {} }) => {
   return (
     <Container>
-      <BackgroundImage partData={parts} src={bg} alt="nuages" />
+      <BackgroundImage partData={parts} src={bg} alt="Nuages" />
       <CoalTowers partData={parts} />
     <Ecology partData={parts} />
     </Container>

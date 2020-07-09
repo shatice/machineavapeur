@@ -2,20 +2,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Infos from "../../../components/molecules/Infos";
 
-const JetlinerContainer = styled.div`
-  position: absolute;
-  top: 10vh;
-  right: 10vw;
-  img {
-    filter: grayscale(1);
-    width: 15vw;
-    transition: all 1.5s ease-in-out, filter 0.3s ease-in-out;
-  }
-  .animate {
-    filter: grayscale(0);
-    transform: translateX(-20vw) translateY(-5vh) scale(1.3);
-  }
-`;
+/***** ASSETS *****/
+import jetliner from '../../../assets/img/chap_2/part_2/jetliner.png';
 
 const Jetliner = ({ partData }) => {
   const [hovered, setHovered] = useState(0);
@@ -39,11 +27,26 @@ const Jetliner = ({ partData }) => {
 
       <img
         className={hovered ? "animate" : null}
-        src="../assets/img/chap_2/part_2/jetliner.png"
-        alt=""
+        src={jetliner}
+        alt="Avion de Ligne"
       />
     </JetlinerContainer>
   );
 };
+
+const JetlinerContainer = styled.div`
+  position: absolute;
+  top: 10vh;
+  right: 10vw;
+  img {
+    filter: grayscale(1);
+    width: 15vw;
+    transition: all 1.5s ease-in-out, filter 0.3s ease-in-out;
+  }
+  .animate {
+    filter: grayscale(0);
+    transform: translateX(-20vw) translateY(-5vh) scale(1.3);
+  }
+`;
 
 export default Jetliner;

@@ -14,12 +14,12 @@ const Richard = ({ className }) => {
         <div className="coin__card">
           <img
             src={coinQueen}
-            alt="English Coin"
+            alt="Pièce Anglaise"
             className="coin__side coin__side--queen"
           />
           <img
             src={coinWagon}
-            alt="English Coin"
+            alt="Pièce Anglaise"
             className="coin__side coin__side--wagon"
           />
         </div>

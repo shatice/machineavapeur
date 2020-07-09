@@ -15,10 +15,10 @@ const TrainFrame = ({ partData }) => {
   return (
     <Container className={isAnimated ? "isAnimated hasNet" : "hasNet"}>
       <li>
-        <img src={frameOrange} alt="Orange Frame"/>
+        <img src={frameOrange} alt="Cadre Orange"/>
       </li>
       <li>
-        <img src={trainPoster1} alt="Old Canadian Train Poster"/>
+        <img src={trainPoster1} alt="Vieux Poster d'un Train Canadien"/>
       </li>
       <Train className={isAnimated ? "isAnimated" : ""}/>
       {partData && (

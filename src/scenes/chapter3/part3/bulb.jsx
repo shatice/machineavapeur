@@ -1,8 +1,8 @@
 import React, { useRef, useState, useEffect } from "react";
 import styled from "styled-components";
 
-import bulbBg from "../../../assets/img/chap_3/part_3/bulbBg.jpg"
-import bulb from "../../../assets/img/chap_3/part_3/bulb.png"
+import bulbBg from "../../../assets/img/chap_3/part_3/bulbBg.jpg";
+import bulb from "../../../assets/img/chap_3/part_3/bulb.png";
 
 import gsap from "gsap";
 
@@ -21,6 +21,7 @@ const Bulb = () => {
 			{ transformOrigin: "50% 0%", rotate: -20, duration: 2, immediateRender: false })
 		setBulbAnims(tl);
 		setFramebAnim(gsap.to(currentRef["Frame"], { filter: "grayscale(0)", paused: true }))
+		/* eslint-disable */
 	}, []);
 
 	const FrameHover = () => {
@@ -49,14 +50,13 @@ const Bulb = () => {
 export default Bulb;
 
 const Frame = styled.div`
-		position:relative;
-		filter: grayscale(1);
+  position: relative;
+  filter: grayscale(1);
 `;
-const BulbBG = styled.img`
-`;
+const BulbBG = styled.img``;
 const BulbIMG = styled.img`
-		position: absolute;
-		top:-480px;
-		left:50%;
-		transform: translateX(-50%);
+  position: absolute;
+  top: -480px;
+  left: 50%;
+  transform: translateX(-50%);
 `;

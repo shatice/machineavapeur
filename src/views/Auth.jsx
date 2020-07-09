@@ -1,6 +1,34 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import styled from "styled-components";
 import context from "../store/context";
+import { password } from "../constant";
+
+const Auth = () => {
+  const [passwordValue, setPasswordValue] = useState("");
+  const { setAuth, isAuth, state } = useContext(context);
+
+  const login = (e) => {
+    e.preventDefault();
+    if (passwordValue === password) {
+      console.log(password);
+      setAuth(!isAuth, state);
+    }
+  };
+
+  return (
+    <AuthContainer>
+      <form onSubmit={login}>
+        <Input
+          type="password"
+          value={passwordValue}
+          placeholder="Entrer le mot de passe"
+          onChange={(e) => setPasswordValue(e.target.value)}
+        />
+        <button onClick={login}>Login</button>
+      </form>
+    </AuthContainer>
+  );
+};
 
 const AuthContainer = styled.section`
   position: absolute;
@@ -24,31 +52,7 @@ const AuthContainer = styled.section`
     color: black;
   }
 `;
+
 const Input = styled.input``;
 
-const Auth = () => {
-  const [passwordValue, setPasswordValue] = useState("");
-  const { setAuth, isAuth, state } = useContext(context);
-
-  const login = (e) => {
-    e.preventDefault();
-    if (passwordValue === "hetic") {
-      setAuth(!isAuth, state);
-    }
-  };
-
-  return (
-    <AuthContainer>
-      <form onSubmit={login}>
-        <Input
-          type="password"
-          value={passwordValue}
-          placeholder="Entrer le mot de passe"
-          onChange={(e) => setPasswordValue(e.target.value)}
-        />
-        <button onClick={login}>Login</button>
-      </form>
-    </AuthContainer>
-  );
-};
 export default Auth;

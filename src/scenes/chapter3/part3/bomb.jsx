@@ -1,8 +1,8 @@
 import React, { useRef, useState, useEffect } from "react";
 import styled from "styled-components";
 
-import bomb from "../../../assets/img/chap_3/part_3/bomb.png"
-import bomb2 from "../../../assets/img/chap_3/part_3/bomb2.png"
+import bomb from "../../../assets/img/chap_3/part_3/bomb.png";
+import bomb2 from "../../../assets/img/chap_3/part_3/bomb2.png";
 
 import gsap from "gsap";
 
@@ -21,6 +21,7 @@ const Bomb = () => {
 		tl.to(currentRef["Frame"], { backgroundColor: "#78F54F", duration: 0.3 });
 		tl.to(currentRef["Bomb"], { filter: "grayscale(0)", opacity: 1, duration: 0.5 })
 		setBombAnims(tl);
+		/* eslint-disable */
 	}, []);
 
 	const FrameHover = () => {
@@ -48,13 +49,13 @@ const Bomb = () => {
 
 export default Bomb;
 const Frame = styled.div`
-    position:relative;
+  position: relative;
 `;
 const Bomb1 = styled.img`
-    filter: grayscale(1);
+  filter: grayscale(1);
 `;
 const Bomb2 = styled.img`
-    position: absolute;
-    top:-75vh;
-    left: 0;
+  position: absolute;
+  top: -75vh;
+  left: 0;
 `;

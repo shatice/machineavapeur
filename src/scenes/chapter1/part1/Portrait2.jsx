@@ -21,6 +21,7 @@ const Portrait2 = ({ partData }) => {
 		var filter = gsap.to(currentRef["Portrait"], { filter: "grayscale(0)", duration: 0, paused: true });
 
 		setPortraitAnim({ rotate: tl, filter: filter });
+		/* eslint-disable */
 	}, []);
 
 

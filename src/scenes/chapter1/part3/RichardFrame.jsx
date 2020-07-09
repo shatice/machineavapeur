@@ -15,7 +15,7 @@ const Richard = ({ partData }) => {
 
   return (
     <Container className={isAnimated ? "isAnimated hasNet" : "hasNet"}>
-      <img src={frameRichard} alt="Golden Frame" />
+      <img src={frameRichard} alt="Cadre doré" />
       <Test className={isAnimated ? "isAnimated" : ""}/>
       <Coins className={isAnimated ? "isAnimated" : ""}/>
       {partData && (
