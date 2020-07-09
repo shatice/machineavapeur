@@ -29,7 +29,6 @@ export const chaptersData = [
   {},
   {
     id: 0,
-    apiUrl: "https://folle-histoire-progres.herokuapp.com/api/chapters/1",
     data: [
       {
         //intro
@@ -61,7 +60,6 @@ export const chaptersData = [
   },
   {
     id: 1,
-    apiUrl: "https://folle-histoire-progres.herokuapp.com/api/chapters/2",
     data: [
       {
         //intro
@@ -93,7 +91,6 @@ export const chaptersData = [
   },
   {
     id: 2,
-    apiUrl: "https://folle-histoire-progres.herokuapp.com/api/chapters/3",
     data: [
       {
         //intro

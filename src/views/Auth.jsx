@@ -10,7 +10,6 @@ const Auth = () => {
   const login = (e) => {
     e.preventDefault();
     if (passwordValue === password) {
-      console.log(password);
       setAuth(!isAuth, state);
     }
   };

@@ -95,7 +95,7 @@ const Chapter = () => {
         })}
 
       <Footer />
-      <Fetch url={chaptersData[chapter].apiUrl} />
+      <Fetch />
     </Layout>
   );
 };
