@@ -31,9 +31,9 @@ const Embleme = ({ partData }) => {
           setIsAnimated={EmblemHover}
           title={partData[1]?.cards[0].title}
           content={partData[1]?.cards[0].content}
-          bottom="-23"
+          bottom="-6"
           right="32"
-          rightCard="-410"
+          rightCard="-1610"
           bottomCard="-90"
         />
       )}
