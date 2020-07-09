@@ -71,7 +71,7 @@ const Chapter = () => {
   return (
     <Layout>
       <NavChapter>{data?.title}</NavChapter>
-      {/* <NavTemp>
+      <NavTemp>
         <button
           style={{ zIndex: 1000 }}
           onClick={() => {
@@ -92,7 +92,7 @@ const Chapter = () => {
         >
           NEXT PART
         </button>
-      </NavTemp> */}
+      </NavTemp>
       {elem &&
         React.cloneElement(elem, {
           data: data,
