@@ -7,20 +7,20 @@ import { url, urlChapters } from "./navDatas";
 const Fetch = () => {
   const { setData, chapter, state, setChapters, isAuth } = useContext(context);
 
+  const headers = {
+    Accept: "application/json",
+  };
+
   const [{ data: res }, executeFetchData] = useAxios({
     url: url + `/${chapter}`,
     method: "GET",
-    headers: {
-      Accept: "application/json",
-    },
+    headers: headers,
     manual: true,
   });
   const [{ data: resChapters }, executeFetchChapters] = useAxios({
     url: urlChapters,
     method: "GET",
-    headers: {
-      Accept: "application/json", 
-    },
+    headers: headers,
     manual: true,
   });
 
