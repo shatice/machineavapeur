@@ -7,10 +7,9 @@ const Auth = () => {
   const [passwordValue, setPasswordValue] = useState("");
   const { setAuth, isAuth, state } = useContext(context);
 
-  const login = (e) => {
-    e.preventDefault();
+  const login = () => {
     if (passwordValue === password) {
-      setAuth(!isAuth, state);
+      window.localStorage.setItem("isProtected", false);
     }
   };
 

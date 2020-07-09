@@ -97,9 +97,6 @@ const Chapter = () => {
         React.cloneElement(elem, {
           data: data,
         })}
-
-      {!isAuth && <Auth />}
-
       <Footer />
       <Fetch />
     </Layout>
