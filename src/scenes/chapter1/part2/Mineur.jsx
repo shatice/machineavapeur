@@ -17,15 +17,15 @@ const Mineur = ({ partData }) => {
 
   useEffect(() => {
     var tl = gsap.timeline({ paused: true });
-    tl.fromTo(".minorBg", { filter: "brightness(1)", duration: 0.3 }, { filter: "brightness(1.6)", duration: 0.3 });
+    tl.fromTo(".minorBg", { filter: "brightness(1)", duration: 0.3 }, { filter: "brightness(2)", duration: 0.3 });
 
     var hat = gsap.timeline({ paused: true });
     tl.to(currentRef["Hat"], { rotation: 20, immediateRender: false, repeat: -1, yoyo: true, ease: "bounce" })
     tl.to(currentRef["Minor"], { opacity: 1, duration: 0 }, 0)
-    tl.to(currentRef["Minor"], { scale: 1.1 }, 0)
+    tl.to(currentRef["Minor"], { scale: 1.6 }, 0)
 
     setAnim({ bg: tl, hat: hat });
-  /* eslint-disable */
+    /* eslint-disable */
   }, []);
 
   const minorIshover = () => {
@@ -57,7 +57,7 @@ const Mineur = ({ partData }) => {
           content={partData[1]?.cards[0]?.content}
           bottom="20"
           left="-9"
-          leftCard="-340"
+          leftCard="-1240"
           bottomCard="140"
         />
       )}
@@ -69,7 +69,7 @@ const MineurContainer = styled.div`
   position: absolute;
   top: 267px;
   left: 1111px;
-  transform: scale(1.4);
+  ${'' /* transform: scale(1.4); */}
   width: 300px;
   height: 300px;
 `;

@@ -3,8 +3,8 @@ import styled from "styled-components";
 import Infos from "../../../components/molecules/Infos";
 
 /***** ASSETS *****/
-import apple from '../../../assets/img/chap_2/part_1/apple.png'; 
-import wrightBrothers from '../../../assets/img/chap_2/part_1/wright_brothers.png'; 
+import apple from '../../../assets/img/chap_2/part_1/apple.png';
+import wrightBrothers from '../../../assets/img/chap_2/part_1/wright_brothers.png';
 
 const WrightBrother = ({ partData }) => {
   const [hovered, setHovered] = useState(0);
@@ -21,7 +21,7 @@ const WrightBrother = ({ partData }) => {
           content={partData[0]?.cards[0].content}
           bottom="30"
           right="35"
-          rightCard="500"
+          rightCard="800"
           bottomCard="100"
         />
       )}

@@ -22,9 +22,9 @@ const Chapter3Part1 = ({ data: { parts } = {} }) => {
 
   useEffect(() => {
     var tl = gsap.timeline({ paused: true });
-		tl.to(".cloud", { y: "-50", scale: 1, duration: 0.5 });
-		tl.to(".cloud2", { y: "-50", scale: 1, duration: 1 }, 0.25)
-		setExpAnim(tl);
+    tl.to(".cloud", { y: "-50", scale: 1, duration: 0.5 });
+    tl.to(".cloud2", { y: "-50", scale: 1, duration: 1 }, 0.25)
+    setExpAnim(tl);
 
     currentRef["container"].onmousemove = function (e) {
       let marie = currentRef["marie"].getBoundingClientRect();
@@ -37,19 +37,19 @@ const Chapter3Part1 = ({ data: { parts } = {} }) => {
     /* eslint-disable */
   }, []);
 
-  useEffect(()=> {
+  useEffect(() => {
     marieIsHover ? currentRef["container"].style.cursor = "none" : currentRef["container"].style.cursor = "inherit";
-  },[marieIsHover])
+  }, [marieIsHover])
 
   const ExpHover = () => {
     if (expIsHover) {
-			expAnim.reverse()
-		} else {
-			expAnim.play()
-		}
-		setExpIsHover(!expIsHover);
+      expAnim.reverse()
+    } else {
+      expAnim.play()
+    }
+    setExpIsHover(!expIsHover);
   };
-  
+
   return (
     <div
       className="chapter-container"
@@ -80,12 +80,12 @@ const Chapter3Part1 = ({ data: { parts } = {} }) => {
       {/* a revoir pour marie curie (bon appel api mais mauvais placement et meca !)*/}
       {parts && (
         <Infos
-          setIsAnimated = {()=>{}}
+          setIsAnimated={() => { }}
           title={parts[0]?.cards[1].title}
           content={parts[0]?.cards[1].content}
           bottom="40"
           left="15"
-          rightCard="-1000"
+          rightCard="-2000"
           bottomCard="270"
         />
       )}

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Infos from "../../../components/molecules/Infos";
 
 /***** ASSETS *****/
-import man from '../../../assets/img/chap_2/part_3/airport_man.png'; 
+import man from '../../../assets/img/chap_2/part_3/airport_man.png';
 
 const Man = ({ partData }) => {
   const [hovered, setHovered] = useState(0);
@@ -20,7 +20,7 @@ const Man = ({ partData }) => {
           content={partData[2]?.cards[1].content}
           bottom="15"
           left="25"
-          leftCard="400"
+          leftCard="900"
           bottomCard="200"
         />
       )}

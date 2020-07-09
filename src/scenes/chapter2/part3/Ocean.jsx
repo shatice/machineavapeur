@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Infos from "../../../components/molecules/Infos";
 
 /***** ASSETS *****/
-import wave from '../../../assets/img/chap_2/part_3/wave.png'; 
+import wave from '../../../assets/img/chap_2/part_3/wave.png';
 
 const Ocean = ({ isActive, partData }) => {
   const [hovered, setHovered] = useState(0);
@@ -21,8 +21,8 @@ const Ocean = ({ isActive, partData }) => {
           content={partData[2]?.cards[2].content}
           top="40"
           left="14"
-          leftCard="400"
-          bottomCard="200"
+          leftCard="1200"
+          bottomCard="-100"
         />
       )}
 

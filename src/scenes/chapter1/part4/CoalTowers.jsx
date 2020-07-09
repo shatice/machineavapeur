@@ -55,7 +55,7 @@ const CoalTowers = ({ partData }) => {
           content={partData[3]?.cards[0].content}
           bottom="30"
           left="10"
-          leftCard="-250"
+          leftCard="750"
           topCard="-400"
         />
       )}
