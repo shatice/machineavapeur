@@ -45,12 +45,12 @@ const Portrait2 = ({ partData }) => {
 			<Infos
 				style={{ zIndex: 100000 }}
 				setIsAnimated={portraitHover}
-				title={partData[0]?.cards?.[2].title}
-				content={partData[0]?.cards?.[2].content}
+				title={partData[0]?.cards?.[1].title}
+				content={partData[0]?.cards?.[1].content}
 				bottom="50"
-				left="0"
-				leftCard="100"
-				bottomCard="-300"
+				left="10"
+				rightCard="-400"
+				bottomCard="100"
 			/>
 		)}
 	</>
@@ -60,8 +60,8 @@ const Portrait2 = ({ partData }) => {
 const PortraitIMG = styled.img`
 	filter: grayscale(1);
 	position: absolute;
-	top: 200px;
-	left: 200px;
+	top: 15%;
+	left: 4%;
 	transform: scale(1.3);
 `;
 
