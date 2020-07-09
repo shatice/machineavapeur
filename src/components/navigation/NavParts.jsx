@@ -74,7 +74,7 @@ const NavParts = () => {
       {!displayText && <TextContainer></TextContainer>}
       {displayText && data && (
         <TextContainer>
-          <li onClick={() => changeUrl(chapterValue, 0)}>Intro</li>
+          <li onClick={() => changeUrl(chapterValue, 0)}>Introduction</li>
           {subChapters &&
             subChapters.map(({ title }, i) => {
               return (
@@ -90,7 +90,7 @@ const NavParts = () => {
             key={"outro"}
             onClick={() => changeUrl(chapterValue, subChapters.length + 1)}
           >
-            Outro
+            Conclusion
           </li>
         </TextContainer>
       )}
@@ -108,12 +108,12 @@ const appear = keyframes`
 
 const Container = styled.ul`
   position: relative;
-  width: 90%;
+  width: 80%;
   height: 48px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  transition: height 0.2s ease-out;
+  transition: height 0.2s ease-out; 
 
   &:hover {
     height: 80px;

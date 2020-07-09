@@ -10,7 +10,7 @@ const NavChapters = () => {
 
   return (
     <ChapterListContainer>
-      <Title onClick={() => setIsList(!isList)} text="Tous les chapitres" />
+      <Title onClick={() => setIsList(!isList)} text="Les Chapitres" />
       {isList && <ChaptersList isList={isList} setIsList={setIsList} />}
     </ChapterListContainer>
   );
@@ -21,6 +21,7 @@ const ChapterListContainer = styled.button`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  margin: 0 2rem; 
 `;
 
 export default NavChapters;

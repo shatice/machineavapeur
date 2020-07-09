@@ -74,7 +74,7 @@ const Chapter = () => {
     };
     /* eslint-disable */
   }, []);
-
+  
   useEffect(() => {
     if (chaptersData[chapter].data[subChapter + 1]) {
       React.lazy(chaptersData[chapter].data[subChapter + 1].elem);
