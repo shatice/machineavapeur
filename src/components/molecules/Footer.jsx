@@ -19,6 +19,7 @@ const Footer = () => {
   );
 };
 
+
 const Container = styled.footer`
   position: fixed;
   transition: height 0.2s ease-out;
