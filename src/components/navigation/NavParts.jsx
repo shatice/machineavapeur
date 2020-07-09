@@ -34,6 +34,7 @@ const NavParts = () => {
     });
     setPart(chapter, subChapterVal);
   };
+  console.log(subChapters && subChapters[chapterValue]?.cards.length + 3);
   return (
     <Container
       onMouseEnter={() => setDisplayText(true)}
@@ -41,21 +42,27 @@ const NavParts = () => {
       className="labelsList"
     >
       <ChevronContainer>
-        <Chevron>
-        </Chevron>
+        <Chevron></Chevron>
         {subChapters &&
           subChapters.map((s, i) => {
             return (
               <>
                 {i === 0 ? (
-                  <Chevron isActive={i >= 0} key={subChapter + i + "intro"}>
-                  </Chevron>
+                  <Chevron
+                    isActive={i >= 0}
+                    key={subChapter + i + "intro"}
+                  ></Chevron>
                 ) : null}
-                <Chevron isActive={i < subChapter} key={subChapter + i}>
-                </Chevron>
+                <Chevron
+                  isActive={i < subChapter}
+                  key={subChapter + i}
+                ></Chevron>
                 {i === subChapters[chapterValue]?.cards.length + 1 ? (
-                  <Chevron>
-                  </Chevron>
+                  <Chevron
+                    isActive={
+                      subChapter === subChapters[chapterValue]?.cards.length + 1
+                    }
+                  />
                 ) : null}
               </>
             );
@@ -97,30 +104,31 @@ const appear = keyframes`
   } to {
     opacity: .7; 
   }
-`
+`;
 
 const Container = styled.ul`
   position: relative;
   width: 90%;
   height: 48px;
   display: flex;
-  flex-direction: column; 
-  justify-content: center; 
-  transition: height .2s ease-out; 
+  flex-direction: column;
+  justify-content: center;
+  transition: height 0.2s ease-out;
 
   &:hover {
-    height: 80px; 
+    height: 80px;
   }
 `;
 
 const ProgressBarContainer = styled.div`
   width: 100%;
   height: 1px;
-  background-color: #CACACA;
+  background-color: #cacaca;
 `;
 
 const ProgressBar = styled.div`
-  width: ${({ currentPart, totalElem }) => getProgressBarWidth(totalElem, currentPart)}%;
+  width: ${({ currentPart, totalElem }) =>
+    getProgressBarWidth(totalElem, currentPart)}%;
   height: 100%;
   background-color: #c09c1c;
   transition: width 0.3s ease-out;
@@ -128,19 +136,19 @@ const ProgressBar = styled.div`
 
 const ChevronContainer = styled.div`
   width: 100%;
-  margin-bottom: 1rem; 
+  margin-bottom: 1rem;
   display: flex;
-  height: fit-content; 
+  height: fit-content;
   justify-content: space-between;
 `;
 
-const Chevron = styled.div` 
+const Chevron = styled.div`
   width: 5px;
   height: 5px;
   background-color: ${({ isActive }) => getChevron(isActive)};
-  border: 1px solid white; 
-  border-radius: 50%; 
-  
+  border: 1px solid white;
+  border-radius: 50%;
+
   &:first-child {
     opacity: 0;
   }
@@ -151,11 +159,11 @@ const TextContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: .5rem; 
+  margin-top: 0.5rem;
 
   li {
-    opacity: .7; 
-    cursor: pointer; 
+    opacity: 0.7;
+    cursor: pointer;
     width: 100%;
     padding: .5rem 1rem 0; 
     font-size: 1rem;
@@ -164,7 +172,7 @@ const TextContainer = styled.div`
     animation: ${appear} .8s ease-out; 
     font-family: 'din_bold_condensed';
     &:hover {
-      opacity: 1; 
+      opacity: 1;
     }
   }
 `;

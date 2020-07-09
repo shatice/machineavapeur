@@ -23,6 +23,20 @@ const Chapter = () => {
   const [elem, setElem] = useState("");
   const location = useLocation();
 
+  const renderButtonIncrement = () => {
+    if (subChapter === data?.parts?.length + 1 && chapter === 3) {
+      return "";
+    } else if (subChapter === data?.parts?.length + 1 && chapter !== 3)
+      return "Chapitre suivante";
+    else return "Partie suivante";
+  };
+  const renderButtonDecrement = () => {
+    if (subChapter === 0 && chapter === 1) {
+      return "";
+    } else if (subChapter === 0 && chapter !== 1) return "Chapitre précédent";
+    else return "Partie précédent";
+  };
+
   useEffect(() => {
     setPart(Number(chapterId), Number(partId));
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -72,8 +86,8 @@ const Chapter = () => {
   return (
     <Layout>
       <NavChapter>{data?.title}</NavChapter>
-      {/* <NavTemp>
-        <button
+      <NavTemp>
+        <NavDecrement
           style={{ zIndex: 1000 }}
           onClick={() => {
             if (chapter === 0 && subChapter === 0) {
@@ -81,9 +95,9 @@ const Chapter = () => {
             } else decrementPart();
           }}
         >
-          LAST PART
-        </button>
-        <button
+          {renderButtonDecrement()}
+        </NavDecrement>
+        <NavIncrement
           style={{ zIndex: 1000 }}
           onClick={() => {
             if (chapter === 2 && subChapter === 3) {
@@ -91,18 +105,15 @@ const Chapter = () => {
             } else incrementPart();
           }}
         >
-          NEXT PART
-        </button>
-      </NavTemp> */}
+          {renderButtonIncrement()}
+        </NavIncrement>
+      </NavTemp>
       {elem &&
         React.cloneElement(elem, {
           data: data,
         })}
-
-      {/* {!isAuth && <Auth />} */}
-
       <Footer />
-      <Fetch url={chaptersData[chapter].apiUrl} />
+      <Fetch />
     </Layout>
   );
 };
@@ -117,9 +128,10 @@ const Layout = styled.section`
 
 const NavTemp = styled.section`
   width: 100%;
+  height: 40px;
   position: absolute;
   left: 0;
-  bottom: 80px;
+  bottom: 120px;
   font-size: 12px;
   color: black;
   z-index: 30;
@@ -127,6 +139,25 @@ const NavTemp = styled.section`
   justify-content: space-between;
   padding: 3px;
   background-color: white;
+`;
+
+const NavDecrement = styled.div`
+  padding-left: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  :hover {
+    cursor: pointer;
+  }
+`;
+const NavIncrement = styled.div`
+  padding-right: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  :hover {
+    cursor: pointer;
+  }
 `;
 const NavChapter = styled.section`
   position: absolute;
