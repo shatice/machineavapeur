@@ -1,13 +1,19 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { Link } from "react-router-dom";
 
 /***** COMPONENTS *****/
 import Logo from "../components/atoms/Logo";
 
+/***** ASSETS *****/
+import introVideo from "../assets/videos/intro.mp4"; 
+
 const Home = () => {
   return (
     <Container>
+      <video autoPlay="autoplay" loop="loop" muted>
+        <source src={introVideo} type="video/mp4"/>
+      </video>
       <h1>La folle histoire du progres</h1>
       <p>
         Aujourd’hui, le réchauffement climatique et la mise en danger de
@@ -23,6 +29,14 @@ const Home = () => {
   );
 };
 
+const bgAppear = keyframes `
+  from {
+    background-color: rgba(0, 0, 0, 1);
+  } to {
+    background-color: rgba(0, 0, 0, .4);
+  }
+`
+
 const Container = styled.section`
   position: relative;
   width: 100%;
@@ -31,7 +45,17 @@ const Container = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  animation: fadeIn 2s ease-out;
+  animation: ${bgAppear} 2s ease-out forwards; 
+
+  video {
+    z-index: -10; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover;  
+  }
 
   h1 {
     font-size: 4rem;

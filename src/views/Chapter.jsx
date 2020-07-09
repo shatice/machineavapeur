@@ -5,7 +5,7 @@ import { useParams, useLocation } from "react-router-dom";
 import context from "../store/context";
 import Fetch from "../Fetch";
 import Footer from "../components/molecules/Footer";
-// import Auth from "./Auth";
+import Auth from "./Auth";
 
 const Chapter = () => {
   const {
@@ -15,7 +15,7 @@ const Chapter = () => {
     subChapter,
     setPart,
     data,
-    // isAuth,
+    isAuth,
   } = useContext(context);
 
   const { chapterId, partId } = useParams();
@@ -98,7 +98,7 @@ const Chapter = () => {
           data: data,
         })}
 
-      {/* {!isAuth && <Auth />} */}
+      {!isAuth && <Auth />}
 
       <Footer />
       <Fetch url={chaptersData[chapter].apiUrl} />

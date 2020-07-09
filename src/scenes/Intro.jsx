@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import styled, { keyframes } from "styled-components";
 import context from "../store/context";
 
-import steamengine from "../assets/videos/steamengine.mp4"; 
+import steamengineVideo from "../assets/videos/steamengine.mp4"; 
 
 const Intro = () => {
   const { data } = useContext(context);
@@ -12,7 +12,7 @@ const Intro = () => {
   return (
     <Container>
       <video autoPlay="autoplay" loop="loop">
-        <source src={steamengine} type="video/mp4"/>
+        <source src={steamengineVideo} type="video/mp4"/>
       </video>
       <h1>{title}</h1>
       <p>{intro}</p>
@@ -27,7 +27,6 @@ const bgAppear = keyframes `
     background-color: rgba(0, 0, 0, .4);
   }
 `
-
 const Container = styled.section`
   position: relative;
   width: 100%;
