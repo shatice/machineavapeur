@@ -70,7 +70,7 @@ const Chapter3Part1 = ({ data: { parts } = {} }) => {
         <Infos
           setIsAnimated={ExpHover}
           title={parts[0]?.cards[0].title}
-          content="NUCLEAR WASTE NUCLEAR WASTE"
+          content={parts[0]?.cards[0].content}
           bottom="20"
           left="80"
           rightCard="70"

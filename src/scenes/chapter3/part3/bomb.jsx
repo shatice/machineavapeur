@@ -46,15 +46,15 @@ const Bomb = ({ partData }) => {
 				currentRef["Bomb2"] = element;
 			}} />
 
-			{true && (
+			{partData && (
 				<Infos
 					setIsAnimated={FrameHover}
-					title={"title"}
-					content={"content"}
+					title={partData[2]?.cards[0].title}
+					content={partData[2]?.cards[0].content}
 					bottom="105"
 					right="44"
-					rightCard="-1610"
-					bottomCard="0"
+					rightCard="-560"
+					bottomCard="-220"
 				/>
 			)}
 		</Frame>

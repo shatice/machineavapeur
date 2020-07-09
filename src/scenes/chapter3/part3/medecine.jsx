@@ -9,7 +9,7 @@ import Infos from "../../../components/molecules/Infos";
 
 import gsap from "gsap";
 
-const Medecine = () => {
+const Medecine = ({ partData }) => {
   const [medecineAnims, setMedecineAnims] = useState({});
   const [medecineHover, setMedecineHover] = useState(false);
 
@@ -59,15 +59,15 @@ const Medecine = () => {
         }}
       />
 
-      {true && (
+      {partData && (
         <Infos
           setIsAnimated={FrameHover}
-          title={"title"}
-          content={"content"}
+          title={partData[2]?.cards[1].title}
+          content={partData[2]?.cards[1].content}
           bottom="105"
-          right="44"
-          rightCard="460"
-          bottomCard="-40"
+          right="28"
+          rightCard="-164"
+          bottomCard="-126"
         />
       )}
     </Frame>
