@@ -3,7 +3,11 @@ import styled from "styled-components";
 import context from "../store/context";
 
 const Outro = () => {
-  const { data, chapter, incrementPart } = useContext(context);
+  const { 
+    data, 
+    // chapter, 
+    // incrementPart 
+  } = useContext(context);
   const { outro } = data;
 
   return (
