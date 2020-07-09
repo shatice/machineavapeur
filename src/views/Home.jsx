@@ -35,23 +35,28 @@ const Container = styled.section`
   animation: fadeIn 2s ease-out;
 
   h1 {
-    font-size: 4rem;
+    font-size: 3rem;
     text-transform: uppercase;
-    max-width: 800px;
+    max-width: 600px;
     text-align: center;
   }
 
   p {
-    /* font-size: 0.875rem; */
-    max-width: 45%;
+    font-size: 0.875rem;
+    max-width: 60%;
     text-align: center;
     line-height: 1.5;
+    /* font-family: 'din_bold_condensed' */
   }
 
-  h1,
-  p {
+  h1 {
     margin: 0 auto 2rem;
   }
+
+  img {
+    margin-top: 4rem;
+  }
+
 
   a {
     font-size: 0.875rem;

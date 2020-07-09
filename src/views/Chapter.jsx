@@ -30,16 +30,18 @@ const NavTemp = styled.section`
 `;
 const NavChapter = styled.section`
   position: absolute;
-  left: 0;
-  top: 0;
-  font-size: 22px;
-  color: black;
+  left: 1rem;
+  top: 1rem;
+  font-size: 18px;
+  color: white;
   z-index: 30;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 10px;
-  background-color: white;
+  font-family: 'din_bold';
+  text-shadow: -2px -2px 15px #000000;
+  text-transform: uppercase;
 `;
 
 const Chapter = () => {
@@ -128,7 +130,7 @@ const Chapter = () => {
           data: data,
         })}
 
-      {!isAuth && <Auth />}
+      {/* {!isAuth && <Auth />} */}
 
       <Footer />
       <Fetch url={chaptersData[chapter].apiUrl} />

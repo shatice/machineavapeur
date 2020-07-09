@@ -25,15 +25,16 @@ const Container = styled.section`
   animation: fadeIn 2s ease-out;
 
   h1 {
-    font-size: 3.5rem;
+    font-size: 3rem;
     text-transform: uppercase;
     text-align: center;
   }
 
   p {
-    max-width: 45%;
+    max-width: 55%;
     text-align: center;
     line-height: 1.5;
+    font-size: 0.875rem;
   }
 
   h1,
