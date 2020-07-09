@@ -99,8 +99,8 @@ const Chapter3Part4 = ({ data: { parts } = {} }) => {
               content={parts[2]?.cards[2].content}
               bottom="60"
               left="20"
-              rightCard="-30"
-              bottomCard="-409"
+              rightCard="-900"
+              bottomCard="-609"
             />
             <Infos
               setIsAnimated={TvHover}
