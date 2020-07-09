@@ -23,8 +23,6 @@ const Embleme = ({ partData }) => {
     setEmblemIsHover(!emblemIsHover);
   };
 
-  console.log(partData);
-
   return (
     <EmblemContainer>
       <Emblem src={emblemImg} id="emblem" />

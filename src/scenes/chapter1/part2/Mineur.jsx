@@ -9,7 +9,6 @@ import Infos from "../../../components/molecules/Infos";
 import gsap from "gsap";
 
 const Mineur = ({ partData }) => {
-  console.log(partData);
   const [display, setDisplay] = useState(false);
 
   const minorIshover = () => {

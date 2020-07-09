@@ -9,7 +9,6 @@ import bg from '../../../assets/img/chap_2/part_3/background.jpg';
 import airport from '../../../assets/img/chap_2/part_3/airport.png'; 
 
 const Chapter2Part3 = ({ data: { parts } = {} }) => {
-  console.log(parts);
 
   const [hovered, setHovered] = useState(0);
   const isHovered = function (bool) {

@@ -120,7 +120,6 @@ const setChapters = (chapters, state) => {
 };
 
 const setAuth = (isAuth, state) => {
-  console.log(isAuth);
   return {
     ...state,
     isAuth: isAuth,
