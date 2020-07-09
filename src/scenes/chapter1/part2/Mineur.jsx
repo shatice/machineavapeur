@@ -23,6 +23,7 @@ const Mineur = ({ partData }) => {
     tl.to(currentRef["Hat"], { rotation: 20, immediateRender: false, repeat: -1, yoyo: true, ease:"bounce" })
 
     setAnim({ bg: tl, hat: hat });
+  /* eslint-disable */
   }, []);
 
 

@@ -5,7 +5,6 @@ import { useParams, useLocation } from "react-router-dom";
 import context from "../store/context";
 import Fetch from "../Fetch";
 import Footer from "../components/molecules/Footer";
-// import Auth from "./Auth";
 
 
 const Chapter = () => {
@@ -16,7 +15,6 @@ const Chapter = () => {
     subChapter,
     setPart,
     data,
-    // isAuth,
   } = useContext(context);
 
   const { chapterId, partId } = useParams();
@@ -109,9 +107,9 @@ const Chapter = () => {
         </NavIncrement>
       </NavTemp>
       {elem &&
-        React.cloneElement(elem, {
-          data: data,
-        })}
+      React.cloneElement(elem, {
+        data: data,
+      })}
       <Footer />
       <Fetch />
     </Layout>
