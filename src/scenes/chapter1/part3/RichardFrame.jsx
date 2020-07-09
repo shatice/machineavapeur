@@ -16,17 +16,17 @@ const Richard = ({ partData }) => {
   return (
     <Container className={isAnimated ? "isAnimated hasNet" : "hasNet"}>
       <img src={frameRichard} alt="Cadre doré" />
-      <Test className={isAnimated ? "isAnimated" : ""}/>
-      <Coins className={isAnimated ? "isAnimated" : ""}/>
+      <Test className={isAnimated ? "isAnimated" : ""} />
+      <Coins className={isAnimated ? "isAnimated" : ""} />
       {partData && (
         <Infos
-        setIsAnimated={setIsAnimated}
-        title={partData[2]?.cards[0].title}
-        content={partData[2]?.cards[0].content}
-        top="15"
-        left="55"
-        leftCard="100"
-        bottomCard="20"
+          setIsAnimated={setIsAnimated}
+          title={partData[2]?.cards[0].title}
+          content={partData[2]?.cards[0].content}
+          top="15"
+          left="55"
+          leftCard="100"
+          bottomCard="-200"
         />
       )}
     </Container>

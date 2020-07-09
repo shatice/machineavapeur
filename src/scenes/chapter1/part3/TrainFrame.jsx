@@ -15,12 +15,12 @@ const TrainFrame = ({ partData }) => {
   return (
     <Container className={isAnimated ? "isAnimated hasNet" : "hasNet"}>
       <li>
-        <img src={frameOrange} alt="Cadre Orange"/>
+        <img src={frameOrange} alt="Cadre Orange" />
       </li>
       <li>
-        <img src={trainPoster1} alt="Vieux Poster d'un Train Canadien"/>
+        <img src={trainPoster1} alt="Vieux Poster d'un Train Canadien" />
       </li>
-      <Train className={isAnimated ? "isAnimated" : ""}/>
+      <Train className={isAnimated ? "isAnimated" : ""} />
       {partData && (
         <Infos
           setIsAnimated={setIsAnimated}
@@ -28,8 +28,8 @@ const TrainFrame = ({ partData }) => {
           content={partData[2]?.cards[1].content}
           bottom="5"
           left="90"
-          leftCard="-800"
-          bottomCard="400"
+          leftCard="-2200"
+          bottomCard="100"
         />
       )}
     </Container>

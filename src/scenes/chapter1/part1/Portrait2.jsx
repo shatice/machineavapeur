@@ -49,7 +49,7 @@ const Portrait2 = ({ partData }) => {
 				content={partData[0]?.cards?.[1].content}
 				bottom="60"
 				left="10"
-				rightCard="-400"
+				rightCard="-1700"
 				bottomCard="100"
 			/>
 		)}

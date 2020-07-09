@@ -18,7 +18,7 @@ const BackgroundImage = ({ src, alt, partData }) => {
           content={partData[3]?.cards[1].content}
           top="10"
           left="35"
-          bottomCard="-400"
+          bottomCard="-700"
           leftCard="-200"
         />
       )}

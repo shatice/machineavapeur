@@ -20,7 +20,7 @@ const Concorde = ({ partData }) => {
           content={partData[1]?.cards[0].content}
           top="13"
           left="40"
-          leftCard="-400"
+          leftCard="-900"
           bottomCard="200"
         />
       )}
