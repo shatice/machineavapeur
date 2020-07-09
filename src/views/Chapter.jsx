@@ -5,7 +5,7 @@ import { useParams, useLocation } from "react-router-dom";
 import context from "../store/context";
 import Fetch from "../Fetch";
 import Footer from "../components/molecules/Footer";
-// import Auth from "./Auth";
+import Auth from "./Auth";
 
 const Chapter = () => {
   const {
@@ -15,18 +15,15 @@ const Chapter = () => {
     subChapter,
     setPart,
     data,
-    // isAuth,
+    isAuth,
   } = useContext(context);
 
   const { chapterId, partId } = useParams();
   const [elem, setElem] = useState("");
-  // const [isScrollable, setIsScrollable] = useState(true);
-  // const [wheelData, setWheelData] = useState(0);
   const location = useLocation();
 
   useEffect(() => {
     setPart(Number(chapterId), Number(partId));
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location, chapterId, partId]);
 
@@ -64,6 +61,13 @@ const Chapter = () => {
     };
     /* eslint-disable */
   }, []);
+
+  useEffect(() => {
+    if (chaptersData[chapter].data[subChapter + 1]) {
+      React.lazy(chaptersData[chapter].data[subChapter + 1].elem);
+    }
+  }, [chapter, subChapter]);
+
   return (
     <Layout>
       <NavChapter>{data?.title}</NavChapter>
@@ -93,6 +97,8 @@ const Chapter = () => {
         React.cloneElement(elem, {
           data: data,
         })}
+
+      {!isAuth && <Auth />}
 
       <Footer />
       <Fetch />
