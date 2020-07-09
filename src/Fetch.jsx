@@ -19,7 +19,7 @@ const Fetch = () => {
     url: urlChapters,
     method: "GET",
     headers: {
-      Accept: "application/json",
+      Accept: "application/json", 
     },
     manual: true,
   });
