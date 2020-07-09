@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 
 import hat from "../../../assets/img/chap_1/part_2/mineur_chapeau.png";
@@ -9,14 +9,30 @@ import Infos from "../../../components/molecules/Infos";
 import gsap from "gsap";
 
 const Mineur = ({ partData }) => {
-  console.log(partData);
   const [display, setDisplay] = useState(false);
+  const [anim, setAnim] = useState({});
+
+  let ref = useRef([]);
+  const currentRef = ref.current;
+
+  useEffect(() => {
+    var tl = gsap.timeline({ paused: true });
+    tl.fromTo(".minorBg", { filter: "brightness(1)" }, { filter: "brightness(1.6)" });
+
+    var hat = gsap.timeline({ paused: true });
+    tl.to(currentRef["Hat"], { rotation: 20, immediateRender: false, repeat: -1, yoyo: true, ease:"bounce" })
+
+    setAnim({ bg: tl, hat: hat });
+  }, []);
+
 
   const minorIshover = () => {
     if (display) {
-      gsap.to(".minorBg", { filter: "brightness(1)" });
+      anim.bg.reverse();
+      anim.hat.pause();
     } else {
-      gsap.to(".minorBg", { filter: "brightness(1.6)" });
+      anim.bg.play();
+      anim.hat.play()
     }
 
     setDisplay(!display);
@@ -26,17 +42,19 @@ const Mineur = ({ partData }) => {
     <MineurContainer>
       <MineurBody display={display}>
         <Minor src={minor} />
-        <Hat src={hat} />
+        <Hat src={hat} ref={(element) => {
+          currentRef["Hat"] = element;
+        }} />
       </MineurBody>
       {partData && (
         <Infos
           setIsAnimated={minorIshover}
           title={partData[1]?.cards[0]?.title}
           content={partData[1]?.cards[0]?.content}
-          bottom="8"
-          left="103"
-          leftCard="50"
-          bottomCard="-100"
+          bottom="20"
+          left="-9"
+          leftCard="-340"
+          bottomCard="140"
         />
       )}
     </MineurContainer>
@@ -55,18 +73,19 @@ const MineurContainer = styled.div`
 const MineurBody = styled.div`
   position: relative;
   display: ${({ display }) => (display ? "block" : "none")};
+  transform: scale(0.8);
 `;
 
 const Hat = styled.img`
   position: absolute;
-  top: -153px;
-  left: 375px;
+  top: -181px;
+  left: 80px;
 `;
 
 const Minor = styled.img`
   position: absolute;
-  top: -125px;
-  left: 277px;
+  top: -150px;
+  left: -20px;
 `;
 
 export default Mineur;

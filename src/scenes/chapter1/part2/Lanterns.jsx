@@ -15,19 +15,19 @@ const Lanterns = ({ partData }) => {
     <LanternContainer>
       <LanternsWrapper display={display}>
         <Lantern src={lantern} top={284} left={-364} />
-        <Lantern src={lantern} top={270} left={-162} />
-        <Lantern src={lantern} top={205} left={-98} />
-        <Lantern src={lantern} top={210} left={9} />
+        <Lantern src={lantern} top={268} left={-211} />
+        <Lantern src={lantern} top={204} left={-165} />
+        <Lantern src={lantern} top={215} left={-78} />
       </LanternsWrapper>
       {partData && (
         <Infos
           setIsAnimated={lanternIsHover}
           title={partData[1]?.cards[1]?.title}
           content={partData[1]?.cards[1]?.content}
-          bottom="30"
-          left="10"
-          leftCard="-1000"
-          bottomCard="-400"
+          top="20"
+          left="-50"
+          leftCard="-740"
+          bottomCard="-50"
         />
       )}
     </LanternContainer>
@@ -36,13 +36,13 @@ const Lanterns = ({ partData }) => {
 
 const LanternContainer = styled.div`
   position: absolute;
-  top: 348px;
-  left: 1048px;
+  top: 268px;
+  left: 858px;
 `;
 
 const LanternsWrapper = styled.div`
   position: relative;
-  display: ${({ display }) => (display ? "block" : "none")};
+  opacity: ${({ display }) => (display ? "1" : "0")};
 `;
 
 const Lantern = styled.img`
