@@ -2,6 +2,10 @@ body {
 	overflow: hidden;
 }
 
+.chapter-container {
+	animation: fadeIn 2s ease-out forwards; 
+}
+
 .experience__container, .cloud, .cloud2, .experience, .marie {
 	position: absolute;
 }

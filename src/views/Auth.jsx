@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { password } from "../constant";
 
+/***** ASSETS *****/
+import bg from "../assets/img/disclaimer_bg.jpg"; 
+
 const Auth = () => {
   const [passwordValue, setPasswordValue] = useState("");
 
@@ -23,7 +26,7 @@ const Auth = () => {
           onChange={(e) => setPasswordValue(e.target.value)}
           class="w3-border-0 w3-hover-red"
         />
-        <button onClick={login}>Login</button>
+        <button onClick={login}>Entrer</button>
       </form>
     </AuthContainer>
   );
@@ -43,6 +46,9 @@ const AuthContainer = styled.section`
   animation: fadeIn 2s ease-out;
   background-color: #282928; 
   margin: 0 auto;
+  background-image: url("${bg}"); 
+  background-size: cover; 
+  filter: grayscale(1); 
 
   h1 {
     font-size: 3rem;
@@ -53,10 +59,11 @@ const AuthContainer = styled.section`
 
   p {
     display: block;
-    max-width: 70%;
+    width: 50%;
     text-align: center;
     line-height: 1.5;
     font-size: 0.875rem;
+    text-shadow: 5px 5px 8px black; 
     padding-bottom: 2rem;
     font-family: 'din_bold';
   }
@@ -70,12 +77,11 @@ const AuthContainer = styled.section`
 
   button {
     color: white;
-    background-color: #282928; 
+    text-transform: uppercase; 
     padding-top: 1rem;
     transition: all 0.5s ease-out;
     &:hover {
       text-decoration: underline;
-      
     }
   } 
 
@@ -88,6 +94,10 @@ const Input = styled.input`
   border: 1px solid transparent;
   background-color: rgba(255,255,255,0.3);
   opacity: 0.6;
+  padding: 1rem; 
+  color: white; 
+  display: block; 
+  margin-bottom: 2rem; 
 `;
 
 export default Auth;

@@ -31,8 +31,6 @@ const Container = styled.article`
   p {
     font-size: .875rem;
   }
-
-  &::
 `;
 
 const Title = styled.h4`

@@ -35,6 +35,7 @@ const Chapter2Part3 = ({ data: { parts } = {} }) => {
 };
 
 const Bg = styled.section`
+  animation: fadeIn 2s ease-out forwards; 
   width: 100vw;
   height: 100vh;
   overflow: hidden;
