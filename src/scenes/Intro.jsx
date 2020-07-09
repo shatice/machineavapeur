@@ -2,17 +2,18 @@ import React, { useContext } from "react";
 import styled, { keyframes } from "styled-components";
 import context from "../store/context";
 
-import steamengineVideo from "../assets/videos/steamengine.mp4"; 
+import chaptersData from "../navDatas";
 
-const Intro = () => {
-  const { data } = useContext(context);
+const Intro = ( ) => {
+  const { data, chapter } = useContext(context);
   const { intro, title } = data;
+  const video = chaptersData[chapter].videoUrl;
 
   console.log(data); 
   return (
     <Container>
       <video autoPlay="autoplay" loop="loop">
-        <source src={steamengineVideo} type="video/mp4"/>
+        <source src={video} type="video/mp4"/>
       </video>
       <h1>{title}</h1>
       <p>{intro}</p>
