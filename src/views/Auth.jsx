@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import styled from "styled-components";
 import context from "../store/context";
+import { password } from "../constant";
 
 const Auth = () => {
   const [passwordValue, setPasswordValue] = useState("");
@@ -8,7 +9,8 @@ const Auth = () => {
 
   const login = (e) => {
     e.preventDefault();
-    if (passwordValue === "hetic") {
+    if (passwordValue === password) {
+      console.log(password);
       setAuth(!isAuth, state);
     }
   };
