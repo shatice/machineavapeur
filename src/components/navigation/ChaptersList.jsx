@@ -24,9 +24,13 @@ const ChaptersList = ({ isList, setIsList }) => {
     </div>
   ));
 
-  return <Container>{listeChapitres}</Container>;
+  return (
+    <Container>
+      <ClosingCross onClick={() => setIsList(false)}></ClosingCross>
+      {listeChapitres}
+    </Container>
+  );
 };
-
 
 const Container = styled.ul`
   position: fixed;
@@ -47,16 +51,36 @@ const Container = styled.ul`
 `;
 
 const ClosingCross = styled.a`
-    width: 40px;
-    height: 40px;
-    background-color:red;
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  width: 32px;
+  height: 32px;
+  :hover {
+    opacity: 1;
+  }
+  :before,
+  :after {
+    position: absolute;
+    left: 15px;
+    content: " ";
+    height: 33px;
+    width: 2px;
+    background-color: white;
+  }
+  :before {
+    transform: rotate(45deg);
+  }
+  :after {
+    transform: rotate(-45deg);
+  }
 `;
 
 const ChapterElem = styled.li`
   font-weight: bold;
   text-transform: uppercase;
   text-align: center;
-  font-family: 'notable';
+  font-family: "notable";
   margin: 0 auto;
   font-size: 3rem;
   padding-top: 3.5rem;
@@ -64,7 +88,6 @@ const ChapterElem = styled.li`
   &:hover {
     color: #c09c1c;
   }
-
 `;
 
 export default ChaptersList;
