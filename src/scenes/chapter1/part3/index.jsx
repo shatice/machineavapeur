@@ -33,6 +33,7 @@ const Container = styled.ul`
   justify-content: space-between;
   align-items: center;
   background-image: url('${bg}'); 
+  background-size: cover; 
 `;
 
 export default Chap1Part3;

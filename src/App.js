@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { createBrowserHistory } from "history";
 
@@ -10,19 +10,19 @@ import End from "./views/End";
 import CtaAudio from "./components/atoms/CtaAudio";
 import GlobalState from "./store/GlobalState";
 import Auth from "./views/Auth";
-import context from "./store/context";
 
 export const customHistory = createBrowserHistory();
 
 const App = () => {
   const [isProtected, setIsProtected] = useState(true);
-
+  const { localStorage } = window;
   useEffect(() => {
     if (isProtected === undefined) {
-      window.localStorage.setItem("isProtected", true);
+      localStorage.setItem("isProtected", true);
     }
-    setIsProtected(window.localStorage.getItem("isProtected"));
-  }, [window.localStorage]);
+    setIsProtected(localStorage.getItem("isProtected"));
+  }, [localStorage]);
+
   return (
     <GlobalState path="/chapter:chapterId/part:partId" history={customHistory}>
       <Router history={customHistory}>

@@ -19,7 +19,7 @@ const BackgroundImage = ({ src, alt, partData }) => {
           top="10"
           left="35"
           bottomCard="-400"
-          leftCard="-350"
+          leftCard="-200"
         />
       )}
     </div>

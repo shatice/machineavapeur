@@ -1,11 +1,9 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-import context from "../store/context";
 import { password } from "../constant";
 
 const Auth = () => {
   const [passwordValue, setPasswordValue] = useState("");
-  const { setAuth, isAuth, state } = useContext(context);
 
   const login = () => {
     if (passwordValue === password) {

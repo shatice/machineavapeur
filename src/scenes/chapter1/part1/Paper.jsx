@@ -45,10 +45,10 @@ const Paper = ({ partData }) => {
           setIsAnimated={paperHover}
           title={partData[0]?.cards?.[2].title}
           content={partData[0]?.cards?.[2].content}
-          bottom="50"
+          bottom="100"
           left="0"
-          leftCard="-600"
-          bottomCard="800"
+          leftCard="-100"
+          topCard="-550"
         />
       )}
     </PaperContainer>
@@ -57,7 +57,7 @@ const Paper = ({ partData }) => {
 
 const PaperContainer = styled.div`
   position: absolute;
-  bottom: -145px;
+  bottom: -100px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;

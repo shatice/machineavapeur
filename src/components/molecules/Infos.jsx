@@ -17,9 +17,6 @@ const Infos = ({ setIsAnimated, title, content, top, bottom, right, left, topCar
     left={ left }
     className="infos"
     >
-      {/**
-       * Au survol de Target, Card apparaît
-       */}
       <Target 
       title={ title }
       isActive={ isCard }
