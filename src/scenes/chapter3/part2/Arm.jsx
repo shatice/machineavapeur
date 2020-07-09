@@ -46,10 +46,10 @@ const Arm = ({ partData }) => {
             setIsAnimated={ArmisHover}
             title={partData[1]?.cards[1].title}
             content={partData[1]?.cards[1].content}
-            bottom="-45"
-            right="-120"
-            rightCard="118"
-            bottomCard="166"
+            bottom="25"
+            right="-150"
+            rightCard="318"
+            bottomCard="-166"
           />
         )}
       </ArmContainer>
@@ -67,7 +67,7 @@ const ArmContainer = styled.div`
 
 const ArmIMG = styled.img`
   position: absolute;
-  top: 343px;
+  top: 187px;
   right: -634px;
   filter: grayscale(1);
   z-index: 2;

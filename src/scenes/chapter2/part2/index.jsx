@@ -18,6 +18,7 @@ const Chapter2Part2 = ({ data: { parts } = {} }) => {
 };
 
 const Bg = styled.section`
+  animation: fadeIn 2s ease-out forwards; 
   width: 100%;
   height: 100%;
   background-image: url("${bg}");

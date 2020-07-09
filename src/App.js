@@ -35,7 +35,7 @@ const App = () => {
           </Route>
           <Route exact path="/end" component={End} />
         </Switch>
-        {!isProtected && <Auth />}
+        {!isProtected && <Auth  path="/auth" component={Auth}/>}
       </Router>
     </GlobalState>
   );

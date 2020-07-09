@@ -18,7 +18,7 @@ const Concorde = ({ partData }) => {
           setIsAnimated={isHovered}
           title={partData[1]?.cards[0].title}
           content={partData[1]?.cards[0].content}
-          top="13"
+          top="5"
           left="40"
           leftCard="-900"
           bottomCard="200"

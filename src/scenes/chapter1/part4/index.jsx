@@ -21,6 +21,7 @@ const Chap1Part4 = ({ data: { parts } = {} }) => {
 };
 
 const Container = styled.section`
+  animation: fadeIn 2s ease-out forwards; 
   width: 100%;
   height: 100%;
   padding: 0 10% 0 15%;

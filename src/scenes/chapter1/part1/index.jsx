@@ -28,7 +28,7 @@ const Chapter1Part1 = ({ data: { parts } = {} }) => {
   });
 
   return (
-    <GlobalState>
+    <GlobalState className="globalStateContainer">
       <div>
         <div
           className="container"

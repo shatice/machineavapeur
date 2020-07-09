@@ -3,14 +3,18 @@ import styled from "styled-components";
 import context from "../store/context";
 
 const Outro = () => {
-  const { data, chapter, incrementPart } = useContext(context);
+  const { 
+    data, 
+    // chapter, 
+    // incrementPart 
+  } = useContext(context);
   const { outro } = data;
 
   return (
     <Container>
       <h1>Conclusion</h1>
       <p>{outro}</p>
-      {chapter !== 2 && <div onClick={incrementPart}>Continuer</div>}
+      {/* {chapter !== 2 && <div onClick={incrementPart}>Continuer</div>} */}
     </Container>
   );
 };
@@ -25,7 +29,6 @@ const Container = styled.section`
   align-items: center;
   animation: fadeIn 2s ease-out;
 
-
   h1 {
     font-size: 3rem;
     text-transform: uppercase;
@@ -34,7 +37,7 @@ const Container = styled.section`
 
 
   p {
-    max-width: 65%;
+    max-width: 50%;
     text-align: center;
     line-height: 1.5;
     font-size: 0.875rem;

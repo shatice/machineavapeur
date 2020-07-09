@@ -25,6 +25,7 @@ const Chap1Part3 = ({ data: { parts } }) => {
 };
 
 const Container = styled.ul`
+  animation: fadeIn 2s ease-out forwards; 
   width: 100%; 
   height: 100%; 
   padding: 0 10%;
