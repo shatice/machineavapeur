@@ -62,7 +62,7 @@ const Container = styled.section`
   }
 
   p {
-    max-width: 55%;
+    max-width: 700px;
     text-align: center;
     line-height: 1.5;
     font-size: 0.875rem;

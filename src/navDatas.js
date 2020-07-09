@@ -24,7 +24,10 @@ import Chapter3Part4 from "./scenes/chapter3/part4";
 // Assets
 import steamengineVideo from "./assets/videos/steamengine.mp4"; 
 import aviationVideo from "./assets/videos/aviation.mp4"; 
-import radioactivityVideo from "./assets/videos/radioactivity.mp4"; 
+import radioactivityVideo from "./assets/videos/radioactivity.mp4";
+import steamengineImg from "./assets/img/steamengine_conclusion.jpg"; 
+import aviationImg from "./assets/img/aviation_conclusion.jpg"; 
+import radioactivityImg from "./assets/img/radioactivity_conclusion.jpg"; 
 
 export const url = "https://folle-histoire-progres.herokuapp.com/api/chapters";
 export const urlChapters =
@@ -36,6 +39,7 @@ export const chaptersData = [
     id: 0,
     apiUrl: "https://folle-histoire-progres.herokuapp.com/api/chapters/1",
     videoUrl: steamengineVideo, 
+    conclusionImg: steamengineImg, 
     data: [
       {
         //intro
@@ -69,6 +73,7 @@ export const chaptersData = [
     id: 1,
     apiUrl: "https://folle-histoire-progres.herokuapp.com/api/chapters/2",
     videoUrl: aviationVideo,
+    conclusionImg: aviationImg, 
     data: [
       {
         //intro
@@ -102,6 +107,7 @@ export const chaptersData = [
     id: 2,
     apiUrl: "https://folle-histoire-progres.herokuapp.com/api/chapters/3",
     videoUrl: radioactivityVideo,
+    conclusionImg: radioactivityImg, 
     data: [
       {
         //intro
