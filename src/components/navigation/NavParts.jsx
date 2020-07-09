@@ -113,7 +113,6 @@ const NavParts = () => {
     });
     setPart(chapter, subChapterVal);
   };
-  console.log(subChapters?.length);
   return (
     <Container
       onMouseEnter={() => setDisplayText(true)}
@@ -132,11 +131,11 @@ const NavParts = () => {
             return (
               <>
                 {i === 0 ? (
-                  <PartIcon>
+                  <PartIcon key={subChapter + i + "intro"}>
                     <Chevron isActive={i >= 0} />
                   </PartIcon>
                 ) : null}
-                <PartIcon>
+                <PartIcon key={subChapter + i}>
                   <Chevron isActive={i < subChapter} />
                 </PartIcon>
                 {i === subChapters[chapterValue]?.cards.length + 1 ? (
@@ -160,12 +159,18 @@ const NavParts = () => {
           {subChapters &&
             subChapters.map(({ title }, i) => {
               return (
-                <li onClick={() => changeUrl(chapterValue, Number(i + 1))}>
+                <li
+                  key={"title" + i}
+                  onClick={() => changeUrl(chapterValue, Number(i + 1))}
+                >
                   {title}
                 </li>
               );
             })}
-          <li onClick={() => changeUrl(chapterValue, subChapters.length + 1)}>
+          <li
+            key={"outro"}
+            onClick={() => changeUrl(chapterValue, subChapters.length + 1)}
+          >
             Outro
           </li>
         </TextContainer>
