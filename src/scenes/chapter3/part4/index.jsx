@@ -106,8 +106,8 @@ const Chapter3Part4 = ({ data: { parts } = {} }) => {
               setIsAnimated={TvHover}
               title={parts[3]?.cards[0].title}
               content={parts[3]?.cards[0].content}
-              bottom="53"
-              left="61"
+              bottom="43"
+              left="58"
               rightCard="300"
               bottomCard="10"
             />
