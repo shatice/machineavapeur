@@ -33,7 +33,7 @@ const Embleme = ({ partData }) => {
           content={partData[1]?.cards[0].content}
           bottom="-6"
           right="32"
-          rightCard="-1610"
+          rightCard="-1810"
           bottomCard="-90"
         />
       )}
@@ -53,6 +53,6 @@ const EmblemContainer = styled.div`
 const Emblem = styled.img`
   position: absolute;
   transform: scale(0.08);
-  top: 90px;
+  top: -55px;
   left: -63px;
 `;

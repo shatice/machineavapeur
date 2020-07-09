@@ -27,7 +27,7 @@ const Medecine = ({ partData }) => {
     tl.to(currentRef["Cross"], { y: 10 }, 1);
 
     setMedecineAnims(tl)
-  /* eslint-disable */
+    /* eslint-disable */
   }, []);
 
   const FrameHover = () => {
@@ -66,8 +66,8 @@ const Medecine = ({ partData }) => {
           content={partData[2]?.cards[1].content}
           bottom="105"
           right="28"
-          rightCard="-164"
-          bottomCard="-126"
+          rightCard="264"
+          bottomCard="-1026"
         />
       )}
     </Frame>

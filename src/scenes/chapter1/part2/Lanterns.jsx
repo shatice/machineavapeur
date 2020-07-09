@@ -14,10 +14,10 @@ const Lanterns = ({ partData }) => {
   return (
     <LanternContainer>
       <LanternsWrapper display={display}>
-        <Lantern src={lantern} top={330} left={-364} />
-        <Lantern src={lantern} top={314} left={-211} />
-        <Lantern src={lantern} top={250} left={-165} />
-        <Lantern src={lantern} top={261} left={-78} />
+        <Lantern src={lantern} top={210} left={-364} />
+        <Lantern src={lantern} top={214} left={-211} />
+        <Lantern src={lantern} top={150} left={-162} />
+        <Lantern src={lantern} top={161} left={-78} />
       </LanternsWrapper>
       {partData && (
         <Infos
@@ -26,7 +26,7 @@ const Lanterns = ({ partData }) => {
           content={partData[1]?.cards[1]?.content}
           top="20"
           left="-50"
-          leftCard="-740"
+          leftCard="-1740"
           bottomCard="-50"
         />
       )}

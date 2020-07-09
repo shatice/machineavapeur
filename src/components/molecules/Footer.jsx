@@ -19,6 +19,7 @@ const Footer = () => {
   );
 };
 
+
 const Container = styled.footer`
   position: fixed;
   transition: height 0.2s ease-out;
@@ -26,7 +27,7 @@ const Container = styled.footer`
   bottom: 0;
   width: 100%;
   height: fit-content;
-  padding: 1rem;
+  padding: 0.6rem;
   padding-right: 10rem;
   display: flex;
   align-items: center;
