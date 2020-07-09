@@ -7,18 +7,21 @@ const ChaptersList = ({ isList, setIsList }) => {
   const { chapter, chapters, setPart } = useContext(context);
 
   const listeChapitres = chapters.map((el, i) => (
-    <li>
-      <ChapterElem
-        isActive={chapter === i + 1}
-        onClick={() => {
-          setIsList(!isList);
-          setPart(el.id, 0);
-        }}
-        key={el.id}
-      >
-        {el.title}
-      </ChapterElem>
-    </li>
+    <div>
+      <a></a>
+      <li>
+        <ChapterElem
+          isActive={chapter === i + 1}
+          onClick={() => {
+            setIsList(!isList);
+            setPart(el.id, 0);
+          }}
+          key={el.id}
+        >
+          {el.title}
+        </ChapterElem>
+      </li>
+    </div>
   ));
 
   return <Container>{listeChapitres}</Container>;
@@ -42,9 +45,14 @@ const Container = styled.ul`
 
   );
 
-  li {
-  }
 `;
+
+const ClosingCross = styled.a`
+    width: 40px;
+    height: 40px;
+    background-color:red;
+`;
+
 const ChapterElem = styled.li`
   font-weight: bold;
   text-transform: uppercase;

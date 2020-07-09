@@ -9,13 +9,12 @@ const Home = () => {
   return (
     <Container>
       <h1>La folle histoire du progres</h1>
-      <p>
-        Aujourd’hui, le réchauffement climatique et la mise en danger de
-        certains écosystèmes sont des réalités écologiques. Dans la mise en
-        oeuvre de solutions innovantes pour contrer ces dérèglements, l’humain
-        se confronte aux conséquences de ses propres actes. À travers trois
-        grands thèmes historiques de l’humanité, faisons le parallèle entre le
-        Progrès et la crise écologique globale actuelle de la Planète.
+      <p>Aujourd’hui, le réchauffement climatique et la mise en danger de
+      certains écosystèmes sont des réalités écologiques.
+      Dans la mise en oeuvre de solutions innovantes pour contrer ces dérèglements, l’humain
+      se confronte aux conséquences de ses propres actes. À travers trois
+      grands thèmes historiques de l’humanité, faisons le parallèle entre le
+      Progrès et la crise écologique globale actuelle de la Planète.
       </p>
       <Logo />
       <Link to="chapter1/part0">Commencer l'expérience</Link>
@@ -40,6 +39,7 @@ const Container = styled.section`
     text-align: center;
   }
 
+
   p {
     font-size: 0.875rem;
     max-width: 60%;
@@ -58,14 +58,14 @@ const Container = styled.section`
 
 
   a {
-    font-size: 0.875rem;
+    font-size: 0.8rem;
     position: absolute;
-    bottom: 4rem;
+    bottom: 7rem;
     margin: 0 auto;
     text-transform: uppercase;
     text-decoration: underline;
     transition: letter-spacing 0.2s ease-out;
-
+    ${'' /* color: #C09C1C;    */}
     &:hover {
       letter-spacing: 0.05rem;
     }

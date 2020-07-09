@@ -158,11 +158,11 @@ const TextContainer = styled.div`
     cursor: pointer; 
     width: 100%;
     padding: .5rem 1rem 0; 
-    font-size: 0.875rem;
+    font-size: 1rem;
     text-align: center;
     transition: opacity 0.2s ease-out;
     animation: ${appear} .8s ease-out; 
-
+    font-family: 'din_bold_condensed';
     &:hover {
       opacity: 1; 
     }
