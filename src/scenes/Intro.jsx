@@ -9,7 +9,6 @@ const Intro = () => {
     <Container>
       <h1>{title}</h1>
       <p>{intro}</p>
-      <aside>Scroller pour découvrir</aside>
     </Container>
   );
 };

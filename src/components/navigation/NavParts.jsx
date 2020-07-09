@@ -86,12 +86,12 @@ const NavParts = () => {
             Outro
           </li>
         </TextContainer>
-       )}
+      )}
     </Container>
   );
 };
 
-const appear = keyframes `
+const appear = keyframes`
   from {
     opacity: 0; 
   } to {

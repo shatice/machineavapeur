@@ -34,7 +34,7 @@ const Container = styled.section`
 
 
   p {
-    max-width: 55%;
+    max-width: 65%;
     text-align: center;
     line-height: 1.5;
     font-size: 0.875rem;
@@ -45,13 +45,14 @@ const Container = styled.section`
     margin: 0 auto 2rem;
   }
 
-  a {
+  div {
     font-size: 0.875rem;
-    margin: 4rem auto;
+    margin: 2rem auto;
+    color: #C09C1C; 
     text-transform: uppercase;
     text-decoration: underline;
     transition: letter-spacing 0.2s ease-out;
-
+    cursor: pointer;
     &:hover {
       letter-spacing: 0.05rem;
     }
