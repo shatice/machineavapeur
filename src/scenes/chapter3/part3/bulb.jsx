@@ -8,7 +8,7 @@ import Infos from "../../../components/molecules/Infos";
 
 import gsap from "gsap";
 
-const Bulb = () => {
+const Bulb = ({ partData }) => {
 	const [bulbAnims, setBulbAnims] = useState({});
 	const [frameAnim, setFramebAnim] = useState();
 	const [bulbHover, setBulbHover] = useState(false);
@@ -23,6 +23,7 @@ const Bulb = () => {
 			{ transformOrigin: "50% 0%", rotate: -20, duration: 2, immediateRender: false })
 		setBulbAnims(tl);
 		setFramebAnim(gsap.to(currentRef["Frame"], { filter: "grayscale(0)", paused: true }));
+	/* eslint-disable */
 	}, []);
 
 	const FrameHover = () => {
@@ -45,15 +46,15 @@ const Bulb = () => {
 				currentRef["Bulb"] = element;
 			}} />
 
-			{true && (
+			{partData && (
 				<Infos
 					setIsAnimated={FrameHover}
-					title={"title"}
-					content={"content"}
+					title={partData[2]?.cards[2].title}
+					content={partData[2]?.cards[2].content}
 					bottom="105"
-					right="44"
-					rightCard="460"
-					bottomCard="102"
+					right="54"
+					rightCard="100"
+					bottomCard="-50"
 				/>
 			)}
 		</Frame>

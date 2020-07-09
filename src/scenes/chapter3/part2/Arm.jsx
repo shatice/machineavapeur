@@ -67,7 +67,7 @@ const ArmContainer = styled.div`
 
 const ArmIMG = styled.img`
   position: absolute;
-  top: 270px;
+  top: 343px;
   right: -634px;
   filter: grayscale(1);
   z-index: 2;

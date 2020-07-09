@@ -21,6 +21,7 @@ const App = () => {
       localStorage.setItem("isProtected", true);
     }
     setIsProtected(localStorage.getItem("isProtected"));
+  /* eslint-disable */
   }, [localStorage]);
 
   return (

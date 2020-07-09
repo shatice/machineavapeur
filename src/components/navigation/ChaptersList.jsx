@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 import context from "../../store/context";
 
@@ -8,7 +8,6 @@ const ChaptersList = ({ isList, setIsList }) => {
 
   const listeChapitres = chapters.map((el, i) => (
     <div>
-      <a></a>
       <li>
         <ChapterElem
           isActive={chapter === i + 1}

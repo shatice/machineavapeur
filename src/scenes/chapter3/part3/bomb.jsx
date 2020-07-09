@@ -23,6 +23,7 @@ const Bomb = ({ partData }) => {
 		tl.to(currentRef["Frame"], { backgroundColor: "#78F54F", duration: 0.3 });
 		tl.to(currentRef["Bomb"], { filter: "grayscale(0)", opacity: 1, duration: 0.5 })
 		setBombAnims(tl);
+	/* eslint-disable */
 	}, []);
 
 	const FrameHover = () => {
@@ -45,15 +46,15 @@ const Bomb = ({ partData }) => {
 				currentRef["Bomb2"] = element;
 			}} />
 
-			{true && (
+			{partData && (
 				<Infos
 					setIsAnimated={FrameHover}
-					title={"title"}
-					content={"content"}
+					title={partData[2]?.cards[0].title}
+					content={partData[2]?.cards[0].content}
 					bottom="105"
 					right="44"
-					rightCard="-1610"
-					bottomCard="0"
+					rightCard="-560"
+					bottomCard="-220"
 				/>
 			)}
 		</Frame>

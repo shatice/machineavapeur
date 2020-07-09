@@ -17,19 +17,21 @@ const Mineur = ({ partData }) => {
 
   useEffect(() => {
     var tl = gsap.timeline({ paused: true });
-    tl.fromTo(".minorBg", { filter: "brightness(1)" }, { filter: "brightness(1.6)" });
+    tl.fromTo(".minorBg", { filter: "brightness(1)", duration: 0.3 }, { filter: "brightness(1.6)", duration: 0.3 });
 
     var hat = gsap.timeline({ paused: true });
-    tl.to(currentRef["Hat"], { rotation: 20, immediateRender: false, repeat: -1, yoyo: true, ease:"bounce" })
+    tl.to(currentRef["Hat"], { rotation: 20, immediateRender: false, repeat: -1, yoyo: true, ease: "bounce" })
+    tl.to(currentRef["Minor"], { opacity: 1, duration: 0 }, 0)
+    tl.to(currentRef["Minor"], { scale: 1.1 }, 0)
 
     setAnim({ bg: tl, hat: hat });
+  /* eslint-disable */
   }, []);
-
 
   const minorIshover = () => {
     if (display) {
       anim.bg.reverse();
-      anim.hat.pause();
+      anim.hat.reverse();
     } else {
       anim.bg.play();
       anim.hat.play()
@@ -40,7 +42,9 @@ const Mineur = ({ partData }) => {
 
   return (
     <MineurContainer>
-      <MineurBody display={display}>
+      <MineurBody ref={(element) => {
+        currentRef["Minor"] = element;
+      }}>
         <Minor src={minor} />
         <Hat src={hat} ref={(element) => {
           currentRef["Hat"] = element;
@@ -72,8 +76,8 @@ const MineurContainer = styled.div`
 
 const MineurBody = styled.div`
   position: relative;
-  display: ${({ display }) => (display ? "block" : "none")};
-  transform: scale(0.8);
+  opacity: 0;
+  transform: scale(0.9);
 `;
 
 const Hat = styled.img`

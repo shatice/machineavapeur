@@ -12,8 +12,6 @@ const WrightBrother = ({ partData }) => {
     setHovered(bool);
   };
 
-  console.log(hovered);
-
   return (
     <WrightBrothersContainer>
       {partData && (

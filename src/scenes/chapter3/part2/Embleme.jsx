@@ -23,8 +23,6 @@ const Embleme = ({ partData }) => {
     setEmblemIsHover(!emblemIsHover);
   };
 
-  console.log(partData);
-
   return (
     <EmblemContainer>
       <Emblem src={emblemImg} id="emblem" />
@@ -33,7 +31,7 @@ const Embleme = ({ partData }) => {
           setIsAnimated={EmblemHover}
           title={partData[1]?.cards[0].title}
           content={partData[1]?.cards[0].content}
-          bottom="-2"
+          bottom="-23"
           right="32"
           rightCard="-410"
           bottomCard="-90"
@@ -55,6 +53,6 @@ const EmblemContainer = styled.div`
 const Emblem = styled.img`
   position: absolute;
   transform: scale(0.08);
-  top: 10px;
+  top: 90px;
   left: -63px;
 `;
