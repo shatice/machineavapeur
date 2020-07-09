@@ -35,19 +35,20 @@ const Container = styled.ul`
   position: fixed;
   bottom: 0;
   left: 0;
-  height: 100%;
   width: 100%;
-  padding: 8rem 2rem;
   background-color: #282928; 
   opacity: 0.9;
+  height: 100%;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
   /* linear-gradient(
     3deg,
     rgba(31, 31, 33, 0.31) 20%,
     rgba(31, 31, 33, 0.7) 70%,
     rgba(31, 31, 33, 1) 100% */
 
-  );
-
+  )
 `;
 
 const ClosingCross = styled.a`
@@ -83,21 +84,11 @@ const ChapterElem = styled.li`
   font-family: "notable";
   margin: 0 auto;
   font-size: 3rem;
-  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
   color: white;
   &:hover {
     color: #c09c1c;
   }
-  ${"" /* ${({ isActive }) =>
-    isActive &&
-    css`
-      border-left: 1px solid #c09c1c;
-      border-left-height: 20px;
-    `} */}
 `;
-// const ChapterElem = styled.li`
-//   display: flex;
-//   align-items: center;
-// `;
 
 export default ChaptersList;

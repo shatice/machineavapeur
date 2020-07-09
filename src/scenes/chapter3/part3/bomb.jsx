@@ -19,7 +19,7 @@ const Bomb = ({ partData }) => {
 		var tl = gsap.timeline({ paused: true });
 		tl.to(currentRef["Bomb"], { opacity: 0, duration: 0.3 });
 		tl.to(currentRef["Frame"], { backgroundColor: "#FA3F15", duration: 0.2 });
-		tl.to(currentRef["Bomb2"], { y: "75vh", duration: 1 });
+		tl.to(currentRef["Bomb2"], { y: "75vh", duration: 0.5 });
 		tl.to(currentRef["Frame"], { backgroundColor: "#78F54F", duration: 0.3 });
 		tl.to(currentRef["Bomb"], { filter: "grayscale(0)", opacity: 1, duration: 0.5 })
 		setBombAnims(tl);
