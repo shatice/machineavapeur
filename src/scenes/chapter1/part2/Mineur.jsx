@@ -25,6 +25,7 @@ const Mineur = ({ partData }) => {
     tl.to(currentRef["Minor"], { scale: 1.1 }, 0)
 
     setAnim({ bg: tl, hat: hat });
+  /* eslint-disable */
   }, []);
 
   const minorIshover = () => {
