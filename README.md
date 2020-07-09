@@ -3,6 +3,8 @@
 <a href="https://github.com/shatice/machineavapeur/tree/develop/rendu_front">Lien vers l'argumention de l'expertise Front-end</a>
 
 - Site en ligne : https://lafollehistoireduprogres.netlify.app/
+(Accès privé, mot de passe : hetic)
+<br>
 - API en ligne : http://folle-histoire-progres.herokuapp.com/api/chapters
 
 Un web-documentaire de :
