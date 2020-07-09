@@ -4,17 +4,17 @@ import styled, { keyframes } from "styled-components";
 const TargetUI = ({ title, isActive, onMouseEnter, onMouseLeave }) => {
   return (
     <Container onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
-      <OuterTarget isActive={ isActive }>
-        <InnerTarget isActive={ isActive }></InnerTarget>
+      <OuterTarget isActive={isActive}>
+        <InnerTarget isActive={isActive}></InnerTarget>
       </OuterTarget>
-      <Text isActive={ isActive }>
+      <Text isActive={isActive}>
         {title}
       </Text>
     </Container>
   );
 };
 
-const lighting = keyframes `
+const lighting = keyframes`
   from {
     background-color: rgba(0,0,0,0.4); 
   } to {
@@ -43,10 +43,10 @@ const OuterTarget = styled.div`
 `;
 
 const InnerTarget = styled.div`
-  width: 14px;
-  height: 14px;
-  margin-top: calc(20px - ( 14px / 2 ) );
-  margin-left: calc(20px - ( 14px / 2 ) );
+  width: 12px;
+  height: 12px;
+  margin-top: calc(20px - ( 12px / 2 ) );
+  margin-left: calc(20px - ( 12px / 2 ) );
   background-color: ${({ isActive }) => (isActive ? "transparent" : "white")};
   box-shadow: ${({ isActive }) => (isActive ? "none" : "1px 2px 5px black")};
   transform: ${({ isActive }) => (isActive ? "scale(2)" : "scale(1)")}; 
@@ -55,13 +55,16 @@ const InnerTarget = styled.div`
 `;
 
 const Text = styled.h4`
+  display: none;
   max-width: 200px; 
   margin-top: 1rem; 
-  font-size: .75rem; 
+  font-size: 1.1rem; 
   text-transform: uppercase; 
   text-align: center;
   color: ${({ isActive }) => (isActive ? "transparent" : "white")};
   transition: all 0.2s ease-out;
+  text-shadow: 2px 2px 5px black;
+  font-family: 'din_bold_condensed';
 `;
 
 export default TargetUI;

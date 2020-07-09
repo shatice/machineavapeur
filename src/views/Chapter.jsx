@@ -132,34 +132,48 @@ const NavTemp = styled.section`
   position: absolute;
   left: 0;
   bottom: 120px;
-  font-size: 12px;
-  color: black;
+  font-size: 14px;
+  color: white;
   z-index: 30;
   display: flex;
   justify-content: space-between;
-  padding: 3px;
-  ${'' /* background-color: white; */}
+  text-transform: uppercase;
+  bottom: 45%;
+  text-shadow: 1px 1px 2px black;
 `;
 
 const NavDecrement = styled.div`
-  padding-left: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
+  transform: rotate(-90deg);
+  transition: 0.6s all ease-in-out;
+  position: absolute;
+  left: -2rem;
   :hover {
     cursor: pointer;
   }
 `;
 
 const NavIncrement = styled.div`
-  padding-right: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
+  transform: rotate(90deg);
+  position: absolute;
+  right: -1.3rem;
   :hover {
     cursor: pointer;
   }
+  & > span {
+    margin-radius: 50%;
+    padding: 5px 6px;
+    width: 10px;
+    height: 10px; 
+    background-color: white;
+  }
 `;
+
 
 const NavChapter = styled.section`
   position: absolute;

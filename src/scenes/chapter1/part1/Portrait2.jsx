@@ -47,7 +47,7 @@ const Portrait2 = ({ partData }) => {
 				setIsAnimated={portraitHover}
 				title={partData[0]?.cards?.[1].title}
 				content={partData[0]?.cards?.[1].content}
-				bottom="50"
+				bottom="60"
 				left="10"
 				rightCard="-400"
 				bottomCard="100"
