@@ -34,7 +34,7 @@ const Container = styled.article`
 `;
 
 const Title = styled.h4`
-  margin-bottom: 0.4rem; 
+  margin-bottom: 0.7rem; 
   font-size: 2rem;
   text-transform: uppercase;
 `;
