@@ -47,8 +47,8 @@ const Paper = ({ partData }) => {
           content={partData[0]?.cards?.[2].content}
           bottom="100"
           left="0"
-          leftCard="-100"
-          topCard="-550"
+          leftCard="800"
+          topCard="-850"
         />
       )}
     </PaperContainer>
